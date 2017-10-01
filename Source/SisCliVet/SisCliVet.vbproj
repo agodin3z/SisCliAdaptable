@@ -46,15 +46,21 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -70,11 +76,77 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="cGenerica.vb" />
+    <Compile Include="vetAgenda.Designer.vb">
+      <DependentUpon>vetAgenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetAgenda.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="vetConsentimiento.Designer.vb">
+      <DependentUpon>vetConsentimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetConsentimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetCreditos.Designer.vb">
+      <DependentUpon>vetCreditos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetCreditos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="vetAbout.Designer.vb">
+      <DependentUpon>vetAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetCitas.Designer.vb">
+      <DependentUpon>vetCitas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetCitas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetConsultaGral.Designer.vb">
+      <DependentUpon>vetConsultaGral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetConsultaGral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetCtrlVacuna.Designer.vb">
+      <DependentUpon>vetCtrlVacuna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetCtrlVacuna.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetHistoConsultas.Designer.vb">
+      <DependentUpon>vetHistoConsultas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetHistoConsultas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetInfoGral.Designer.vb">
+      <DependentUpon>vetInfoGral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetInfoGral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetPacientes.Designer.vb">
+      <DependentUpon>vetPacientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetPacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetPRINCIPAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetPRINCIPAL.Designer.vb">
+      <DependentUpon>vetPRINCIPAL.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -82,23 +154,96 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="vetLogin.Designer.vb">
+      <DependentUpon>vetLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetReportPaciente.Designer.vb">
+      <DependentUpon>vetReportPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetReportPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetReportPropietarios.Designer.vb">
+      <DependentUpon>vetReportPropietarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetReportPropietarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetUpdtPaciente.Designer.vb">
+      <DependentUpon>vetUpdtPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetUpdtPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetUsuarios.Designer.vb">
+      <DependentUpon>vetUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vetUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="vetAgenda.resx">
+      <DependentUpon>vetAgenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetCitas.resx">
+      <DependentUpon>vetCitas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetConsentimiento.resx">
+      <DependentUpon>vetConsentimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetConsultaGral.resx">
+      <DependentUpon>vetConsultaGral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetCreditos.resx">
+      <DependentUpon>vetCreditos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetAbout.resx">
+      <DependentUpon>vetAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetCtrlVacuna.resx">
+      <DependentUpon>vetCtrlVacuna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetHistoConsultas.resx">
+      <DependentUpon>vetHistoConsultas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetInfoGral.resx">
+      <DependentUpon>vetInfoGral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetPacientes.resx">
+      <DependentUpon>vetPacientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetPRINCIPAL.resx">
+      <DependentUpon>vetPRINCIPAL.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetLogin.resx">
+      <DependentUpon>vetLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetReportPaciente.resx">
+      <DependentUpon>vetReportPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetReportPropietarios.resx">
+      <DependentUpon>vetReportPropietarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetUpdtPaciente.resx">
+      <DependentUpon>vetUpdtPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetUsuarios.resx">
+      <DependentUpon>vetUsuarios.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +257,15 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall_vet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_baidu_334594.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
