@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class vetHistoConsultas
+Partial Class medHistoConsulta
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -25,19 +25,19 @@ Partial Class vetHistoConsultas
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.dgvConsultas = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtFecha = New System.Windows.Forms.TextBox()
-        Me.txtPropietario = New System.Windows.Forms.TextBox()
+        Me.txtMedico = New System.Windows.Forms.TextBox()
         Me.txtPaciente = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -52,8 +52,6 @@ Partial Class vetHistoConsultas
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtRazon = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -66,11 +64,11 @@ Partial Class vetHistoConsultas
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 13)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 11)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(721, 474)
-        Me.TabControl1.TabIndex = 1
+        Me.TabControl1.TabIndex = 2
         '
         'TabPage1
         '
@@ -85,9 +83,9 @@ Partial Class vetHistoConsultas
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox1.Controls.Add(Me.dtpFechaFin)
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.dtpFecha)
+        Me.GroupBox1.Controls.Add(Me.dtpFechaInicio)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.btnLimpiar)
         Me.GroupBox1.Controls.Add(Me.btnSeleccionar)
@@ -99,6 +97,47 @@ Partial Class vetHistoConsultas
         Me.GroupBox1.Size = New System.Drawing.Size(698, 430)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'dtpFechaFin
+        '
+        Me.dtpFechaFin.Location = New System.Drawing.Point(342, 55)
+        Me.dtpFechaFin.Name = "dtpFechaFin"
+        Me.dtpFechaFin.Size = New System.Drawing.Size(217, 22)
+        Me.dtpFechaFin.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(310, 58)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(26, 15)
+        Me.Label6.TabIndex = 23
+        Me.Label6.Text = "Fin:"
+        '
+        'dtpFechaInicio
+        '
+        Me.dtpFechaInicio.Location = New System.Drawing.Point(87, 55)
+        Me.dtpFechaInicio.Name = "dtpFechaInicio"
+        Me.dtpFechaInicio.Size = New System.Drawing.Size(217, 22)
+        Me.dtpFechaInicio.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(41, 58)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(38, 15)
+        Me.Label5.TabIndex = 23
+        Me.Label5.Text = "Inicio:"
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.Location = New System.Drawing.Point(565, 50)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(108, 30)
+        Me.btnLimpiar.TabIndex = 3
+        Me.btnLimpiar.Text = "Limpiar"
+        Me.btnLimpiar.UseVisualStyleBackColor = True
         '
         'btnSeleccionar
         '
@@ -147,55 +186,12 @@ Partial Class vetHistoConsultas
         Me.TabPage2.Text = "Detalle de Consulta"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'dtpFecha
-        '
-        Me.dtpFecha.Location = New System.Drawing.Point(87, 55)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(217, 22)
-        Me.dtpFecha.TabIndex = 1
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(41, 58)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(38, 15)
-        Me.Label5.TabIndex = 23
-        Me.Label5.Text = "Inicio:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(310, 58)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(26, 15)
-        Me.Label6.TabIndex = 23
-        Me.Label6.Text = "Fin:"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(342, 55)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(217, 22)
-        Me.DateTimePicker1.TabIndex = 2
-        '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.Location = New System.Drawing.Point(565, 50)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(108, 30)
-        Me.btnLimpiar.TabIndex = 3
-        Me.btnLimpiar.Text = "Limpiar"
-        Me.btnLimpiar.UseVisualStyleBackColor = True
-        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.txtFecha)
-        Me.GroupBox3.Controls.Add(Me.txtPropietario)
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
+        Me.GroupBox3.Controls.Add(Me.txtMedico)
         Me.GroupBox3.Controls.Add(Me.txtPaciente)
         Me.GroupBox3.Controls.Add(Me.Label4)
-        Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.txtTratamiento)
@@ -208,10 +204,10 @@ Partial Class vetHistoConsultas
         Me.GroupBox3.Controls.Add(Me.Label14)
         Me.GroupBox3.Controls.Add(Me.txtRazon)
         Me.GroupBox3.Controls.Add(Me.Label18)
-        Me.GroupBox3.Location = New System.Drawing.Point(7, 8)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 7)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(698, 430)
-        Me.GroupBox3.TabIndex = 4
+        Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Consulta General"
         '
@@ -223,13 +219,13 @@ Partial Class vetHistoConsultas
         Me.txtFecha.Size = New System.Drawing.Size(152, 22)
         Me.txtFecha.TabIndex = 24
         '
-        'txtPropietario
+        'txtMedico
         '
-        Me.txtPropietario.Enabled = False
-        Me.txtPropietario.Location = New System.Drawing.Point(125, 79)
-        Me.txtPropietario.Name = "txtPropietario"
-        Me.txtPropietario.Size = New System.Drawing.Size(285, 22)
-        Me.txtPropietario.TabIndex = 24
+        Me.txtMedico.Enabled = False
+        Me.txtMedico.Location = New System.Drawing.Point(125, 56)
+        Me.txtMedico.Name = "txtMedico"
+        Me.txtMedico.Size = New System.Drawing.Size(285, 22)
+        Me.txtMedico.TabIndex = 24
         '
         'txtPaciente
         '
@@ -251,7 +247,7 @@ Partial Class vetHistoConsultas
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(71, 82)
+        Me.Label3.Location = New System.Drawing.Point(71, 59)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(48, 15)
         Me.Label3.TabIndex = 20
@@ -260,16 +256,16 @@ Partial Class vetHistoConsultas
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(51, 26)
+        Me.Label1.Location = New System.Drawing.Point(65, 26)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 15)
+        Me.Label1.Size = New System.Drawing.Size(54, 15)
         Me.Label1.TabIndex = 20
-        Me.Label1.Text = "Propietario:"
+        Me.Label1.Text = "Paciente:"
         '
         'txtTratamiento
         '
         Me.txtTratamiento.Enabled = False
-        Me.txtTratamiento.Location = New System.Drawing.Point(125, 363)
+        Me.txtTratamiento.Location = New System.Drawing.Point(125, 345)
         Me.txtTratamiento.Multiline = True
         Me.txtTratamiento.Name = "txtTratamiento"
         Me.txtTratamiento.Size = New System.Drawing.Size(526, 50)
@@ -278,7 +274,7 @@ Partial Class vetHistoConsultas
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(46, 366)
+        Me.Label17.Location = New System.Drawing.Point(46, 348)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(73, 15)
         Me.Label17.TabIndex = 20
@@ -287,7 +283,7 @@ Partial Class vetHistoConsultas
         'txtObservaciones
         '
         Me.txtObservaciones.Enabled = False
-        Me.txtObservaciones.Location = New System.Drawing.Point(125, 302)
+        Me.txtObservaciones.Location = New System.Drawing.Point(125, 284)
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(526, 50)
@@ -296,7 +292,7 @@ Partial Class vetHistoConsultas
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(33, 305)
+        Me.Label16.Location = New System.Drawing.Point(33, 287)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(86, 15)
         Me.Label16.TabIndex = 20
@@ -305,7 +301,7 @@ Partial Class vetHistoConsultas
         'txtDiagnostico
         '
         Me.txtDiagnostico.Enabled = False
-        Me.txtDiagnostico.Location = New System.Drawing.Point(125, 241)
+        Me.txtDiagnostico.Location = New System.Drawing.Point(125, 223)
         Me.txtDiagnostico.Multiline = True
         Me.txtDiagnostico.Name = "txtDiagnostico"
         Me.txtDiagnostico.Size = New System.Drawing.Size(526, 50)
@@ -314,7 +310,7 @@ Partial Class vetHistoConsultas
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(48, 244)
+        Me.Label15.Location = New System.Drawing.Point(48, 226)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(71, 15)
         Me.Label15.TabIndex = 20
@@ -323,7 +319,7 @@ Partial Class vetHistoConsultas
         'txtSintomas
         '
         Me.txtSintomas.Enabled = False
-        Me.txtSintomas.Location = New System.Drawing.Point(125, 179)
+        Me.txtSintomas.Location = New System.Drawing.Point(125, 161)
         Me.txtSintomas.Multiline = True
         Me.txtSintomas.Name = "txtSintomas"
         Me.txtSintomas.Size = New System.Drawing.Size(526, 50)
@@ -332,7 +328,7 @@ Partial Class vetHistoConsultas
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(61, 183)
+        Me.Label14.Location = New System.Drawing.Point(61, 165)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(58, 15)
         Me.Label14.TabIndex = 20
@@ -341,7 +337,7 @@ Partial Class vetHistoConsultas
         'txtRazon
         '
         Me.txtRazon.Enabled = False
-        Me.txtRazon.Location = New System.Drawing.Point(125, 118)
+        Me.txtRazon.Location = New System.Drawing.Point(125, 100)
         Me.txtRazon.Multiline = True
         Me.txtRazon.Name = "txtRazon"
         Me.txtRazon.Size = New System.Drawing.Size(526, 50)
@@ -350,37 +346,20 @@ Partial Class vetHistoConsultas
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(12, 122)
+        Me.Label18.Location = New System.Drawing.Point(12, 104)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(107, 15)
         Me.Label18.TabIndex = 20
         Me.Label18.Text = "Razon de Consulta:"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(65, 54)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(54, 15)
-        Me.Label7.TabIndex = 20
-        Me.Label7.Text = "Paciente:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(125, 51)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(285, 22)
-        Me.TextBox1.TabIndex = 24
-        '
-        'vetHistoConsultas
+        'medHistoConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(744, 496)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Open Sans", 8.25!)
-        Me.Name = "vetHistoConsultas"
+        Me.Name = "medHistoConsulta"
         Me.Text = "Historial de Consultas"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -396,23 +375,21 @@ Partial Class vetHistoConsultas
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents dtpFechaFin As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents dtpFechaInicio As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents btnSeleccionar As System.Windows.Forms.Button
     Friend WithEvents dgvConsultas As System.Windows.Forms.DataGridView
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents dtpFecha As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents txtFecha As System.Windows.Forms.TextBox
-    Friend WithEvents txtPropietario As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtMedico As System.Windows.Forms.TextBox
     Friend WithEvents txtPaciente As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtTratamiento As System.Windows.Forms.TextBox

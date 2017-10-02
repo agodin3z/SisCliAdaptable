@@ -70,12 +70,86 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cGenerica.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="..\SisCliVet\cGenerica.vb">
+      <Link>cGenerica.vb</Link>
+    </Compile>
+    <Compile Include="medAbout.Designer.vb">
+      <DependentUpon>medAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medAbout.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="medAgenda.Designer.vb">
+      <DependentUpon>medAgenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medAgenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medCitas.Designer.vb">
+      <DependentUpon>medCitas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medCitas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medConsultaGral.Designer.vb">
+      <DependentUpon>medConsultaGral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medConsultaGral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medCreditos.Designer.vb">
+      <DependentUpon>medCreditos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medCreditos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medHistoConsulta.Designer.vb">
+      <DependentUpon>medHistoConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medHistoConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medInfoGral.Designer.vb">
+      <DependentUpon>medInfoGral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medInfoGral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medLogin.Designer.vb">
+      <DependentUpon>medLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medPacientes.Designer.vb">
+      <DependentUpon>medPacientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medPacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medPRINCIPAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medPRINCIPAL.Designer.vb">
+      <DependentUpon>medPRINCIPAL.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medReportPacientes.Designer.vb">
+      <DependentUpon>medReportPacientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medReportPacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medUpdPaciente.Designer.vb">
+      <DependentUpon>medUpdPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medUpdPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medUsuarios.Designer.vb">
+      <DependentUpon>medUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -93,25 +167,52 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="medAbout.Designer.vb">
-      <DependentUpon>medAbout.vb</DependentUpon>
-    </Compile>
-    <Compile Include="medAbout.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="medAbout.resx">
+      <DependentUpon>medAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medAgenda.resx">
+      <DependentUpon>medAgenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medCitas.resx">
+      <DependentUpon>medCitas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medConsultaGral.resx">
+      <DependentUpon>medConsultaGral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medCreditos.resx">
+      <DependentUpon>medCreditos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medHistoConsulta.resx">
+      <DependentUpon>medHistoConsulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medInfoGral.resx">
+      <DependentUpon>medInfoGral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medLogin.resx">
+      <DependentUpon>medLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medPacientes.resx">
+      <DependentUpon>medPacientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medPRINCIPAL.resx">
+      <DependentUpon>medPRINCIPAL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medReportPacientes.resx">
+      <DependentUpon>medReportPacientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medUpdPaciente.resx">
+      <DependentUpon>medUpdPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medUsuarios.resx">
+      <DependentUpon>medUsuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="medAbout.resx">
-      <DependentUpon>medAbout.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +226,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

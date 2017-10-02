@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class medAbout
+Partial Class medCreditos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,8 +22,7 @@ Partial Class medAbout
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(medAbout))
-        Me.btnCreditos = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(medCreditos))
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -32,21 +31,13 @@ Partial Class medAbout
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'btnCreditos
-        '
-        Me.btnCreditos.Location = New System.Drawing.Point(27, 407)
-        Me.btnCreditos.Name = "btnCreditos"
-        Me.btnCreditos.Size = New System.Drawing.Size(99, 37)
-        Me.btnCreditos.TabIndex = 7
-        Me.btnCreditos.Text = "Ver Créditos"
-        Me.btnCreditos.UseVisualStyleBackColor = True
-        '
         'btnCerrar
         '
+        Me.btnCerrar.Font = New System.Drawing.Font("Open Sans", 8.25!)
         Me.btnCerrar.Location = New System.Drawing.Point(202, 407)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(99, 37)
-        Me.btnCerrar.TabIndex = 8
+        Me.btnCerrar.TabIndex = 7
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
@@ -54,12 +45,12 @@ Partial Class medAbout
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Open Sans", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(24, 244)
+        Me.Label3.Location = New System.Drawing.Point(78, 242)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(458, 119)
+        Me.Label3.Size = New System.Drawing.Size(350, 153)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = resources.GetString("Label3.Text")
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label2
         '
@@ -90,28 +81,25 @@ Partial Class medAbout
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
-        'medAbout
+        'medCreditos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(506, 467)
-        Me.Controls.Add(Me.btnCreditos)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Font = New System.Drawing.Font("Open Sans", 8.25!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "medAbout"
+        Me.Name = "medCreditos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "medAbout"
+        Me.Text = "medCreditos"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnCreditos As System.Windows.Forms.Button
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
