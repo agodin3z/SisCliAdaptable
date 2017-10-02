@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{224CC215-AAB6-42E4-A2DD-4F0EF6CB31CF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SisCliMed.My.MyApplication</StartupObject>
+    <RootNamespace>SisCliMed</RootNamespace>
+    <AssemblyName>SisCliMed</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SisCliMed.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SisCliMed.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SisCliVet\cGenerica.vb">
+      <Link>cGenerica.vb</Link>
+    </Compile>
+    <Compile Include="medAbout.Designer.vb">
+      <DependentUpon>medAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medAgenda.Designer.vb">
+      <DependentUpon>medAgenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medAgenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medCitas.Designer.vb">
+      <DependentUpon>medCitas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medCitas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medConsultaGral.Designer.vb">
+      <DependentUpon>medConsultaGral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medConsultaGral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medCreditos.Designer.vb">
+      <DependentUpon>medCreditos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medCreditos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medHistoConsulta.Designer.vb">
+      <DependentUpon>medHistoConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medHistoConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medInfoGral.Designer.vb">
+      <DependentUpon>medInfoGral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medInfoGral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medLogin.Designer.vb">
+      <DependentUpon>medLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medPacientes.Designer.vb">
+      <DependentUpon>medPacientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medPacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medPRINCIPAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medPRINCIPAL.Designer.vb">
+      <DependentUpon>medPRINCIPAL.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medReportPacientes.Designer.vb">
+      <DependentUpon>medReportPacientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medReportPacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medUpdPaciente.Designer.vb">
+      <DependentUpon>medUpdPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medUpdPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medUsuarios.Designer.vb">
+      <DependentUpon>medUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="medAbout.resx">
+      <DependentUpon>medAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medAgenda.resx">
+      <DependentUpon>medAgenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medCitas.resx">
+      <DependentUpon>medCitas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medConsultaGral.resx">
+      <DependentUpon>medConsultaGral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medCreditos.resx">
+      <DependentUpon>medCreditos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medHistoConsulta.resx">
+      <DependentUpon>medHistoConsulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medInfoGral.resx">
+      <DependentUpon>medInfoGral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medLogin.resx">
+      <DependentUpon>medLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medPacientes.resx">
+      <DependentUpon>medPacientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medPRINCIPAL.resx">
+      <DependentUpon>medPRINCIPAL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medReportPacientes.resx">
+      <DependentUpon>medReportPacientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medUpdPaciente.resx">
+      <DependentUpon>medUpdPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medUsuarios.resx">
+      <DependentUpon>medUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-blue.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
