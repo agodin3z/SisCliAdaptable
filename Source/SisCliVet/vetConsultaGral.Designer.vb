@@ -71,10 +71,10 @@ Partial Class vetConsultaGral
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(713, 447)
+        Me.TabPage1.Size = New System.Drawing.Size(713, 449)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Paciente"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -105,10 +105,12 @@ Partial Class vetConsultaGral
         '
         Me.dgvPacientes.AllowUserToAddRows = False
         Me.dgvPacientes.AllowUserToDeleteRows = False
+        Me.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPacientes.Location = New System.Drawing.Point(22, 49)
         Me.dgvPacientes.Name = "dgvPacientes"
         Me.dgvPacientes.ReadOnly = True
+        Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPacientes.Size = New System.Drawing.Size(649, 297)
         Me.dgvPacientes.TabIndex = 1
         '
@@ -116,7 +118,7 @@ Partial Class vetConsultaGral
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(87, 21)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(526, 22)
+        Me.txtBusqueda.Size = New System.Drawing.Size(526, 20)
         Me.txtBusqueda.TabIndex = 0
         '
         'Label2
@@ -124,17 +126,17 @@ Partial Class vetConsultaGral
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(19, 24)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 15)
+        Me.Label2.Size = New System.Drawing.Size(58, 13)
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "Búsqueda:"
         '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.GroupBox3)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(713, 447)
+        Me.TabPage2.Size = New System.Drawing.Size(713, 449)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Consulta"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -173,7 +175,7 @@ Partial Class vetConsultaGral
         Me.dtpHoraSiguiente.Location = New System.Drawing.Point(403, 337)
         Me.dtpHoraSiguiente.Name = "dtpHoraSiguiente"
         Me.dtpHoraSiguiente.ShowUpDown = True
-        Me.dtpHoraSiguiente.Size = New System.Drawing.Size(99, 22)
+        Me.dtpHoraSiguiente.Size = New System.Drawing.Size(99, 20)
         Me.dtpHoraSiguiente.TabIndex = 7
         '
         'Label5
@@ -181,7 +183,7 @@ Partial Class vetConsultaGral
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(362, 340)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 15)
+        Me.Label5.Size = New System.Drawing.Size(33, 13)
         Me.Label5.TabIndex = 45
         Me.Label5.Text = "Hora:"
         '
@@ -198,7 +200,7 @@ Partial Class vetConsultaGral
         '
         Me.dtpFechaSiguiente.Location = New System.Drawing.Point(140, 337)
         Me.dtpFechaSiguiente.Name = "dtpFechaSiguiente"
-        Me.dtpFechaSiguiente.Size = New System.Drawing.Size(215, 22)
+        Me.dtpFechaSiguiente.Size = New System.Drawing.Size(215, 20)
         Me.dtpFechaSiguiente.TabIndex = 6
         '
         'btnCancelar
@@ -232,7 +234,7 @@ Partial Class vetConsultaGral
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(58, 340)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(76, 15)
+        Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Próxima Cita:"
         '
@@ -241,7 +243,7 @@ Partial Class vetConsultaGral
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(48, 290)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(86, 15)
+        Me.Label19.Size = New System.Drawing.Size(77, 13)
         Me.Label19.TabIndex = 20
         Me.Label19.Text = "Procedimiento:"
         '
@@ -258,7 +260,7 @@ Partial Class vetConsultaGral
         Me.Label17.AutoSize = True
         Me.Label17.Location = New System.Drawing.Point(61, 237)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(73, 15)
+        Me.Label17.Size = New System.Drawing.Size(66, 13)
         Me.Label17.TabIndex = 20
         Me.Label17.Text = "Tratamiento:"
         '
@@ -275,7 +277,7 @@ Partial Class vetConsultaGral
         Me.Label16.AutoSize = True
         Me.Label16.Location = New System.Drawing.Point(48, 184)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(86, 15)
+        Me.Label16.Size = New System.Drawing.Size(81, 13)
         Me.Label16.TabIndex = 20
         Me.Label16.Text = "Observaciones:"
         '
@@ -292,7 +294,7 @@ Partial Class vetConsultaGral
         Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(63, 131)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(71, 15)
+        Me.Label15.Size = New System.Drawing.Size(66, 13)
         Me.Label15.TabIndex = 20
         Me.Label15.Text = "Diagnóstico:"
         '
@@ -309,7 +311,7 @@ Partial Class vetConsultaGral
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(76, 78)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(58, 15)
+        Me.Label14.Size = New System.Drawing.Size(55, 13)
         Me.Label14.TabIndex = 20
         Me.Label14.Text = "Síntomas:"
         '
@@ -326,17 +328,17 @@ Partial Class vetConsultaGral
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(27, 25)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(107, 15)
+        Me.Label18.Size = New System.Drawing.Size(100, 13)
         Me.Label18.TabIndex = 20
         Me.Label18.Text = "Razon de Consulta:"
         '
         'vetConsultaGral
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(744, 497)
         Me.Controls.Add(Me.TabControl1)
-        Me.Font = New System.Drawing.Font("Open Sans", 8.25!)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetConsultaGral"
         Me.Text = "Consulta General"
         Me.TabControl1.ResumeLayout(False)

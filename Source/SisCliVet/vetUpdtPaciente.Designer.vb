@@ -125,10 +125,10 @@ Partial Class vetUpdtPaciente
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(713, 492)
+        Me.TabPage1.Size = New System.Drawing.Size(713, 494)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Selección de Propietario"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -193,6 +193,7 @@ Partial Class vetUpdtPaciente
         Me.dgvPacientes.Location = New System.Drawing.Point(22, 57)
         Me.dgvPacientes.Name = "dgvPacientes"
         Me.dgvPacientes.ReadOnly = True
+        Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPacientes.Size = New System.Drawing.Size(649, 343)
         Me.dgvPacientes.TabIndex = 1
         '
@@ -200,7 +201,7 @@ Partial Class vetUpdtPaciente
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(87, 24)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(526, 22)
+        Me.txtBusqueda.Size = New System.Drawing.Size(526, 20)
         Me.txtBusqueda.TabIndex = 0
         '
         'Label2
@@ -208,7 +209,7 @@ Partial Class vetUpdtPaciente
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(19, 28)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 15)
+        Me.Label2.Size = New System.Drawing.Size(58, 13)
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "Búsqueda:"
         '
@@ -217,10 +218,10 @@ Partial Class vetUpdtPaciente
         Me.TabPage2.Controls.Add(Me.btnSiguiente)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Controls.Add(Me.GroupBox3)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(713, 492)
+        Me.TabPage2.Size = New System.Drawing.Size(713, 494)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Datos del Propietario"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -250,7 +251,7 @@ Partial Class vetUpdtPaciente
         Me.txtCodPropietario.Enabled = False
         Me.txtCodPropietario.Location = New System.Drawing.Point(191, 36)
         Me.txtCodPropietario.Name = "txtCodPropietario"
-        Me.txtCodPropietario.Size = New System.Drawing.Size(133, 22)
+        Me.txtCodPropietario.Size = New System.Drawing.Size(133, 20)
         Me.txtCodPropietario.TabIndex = 11
         '
         'Label24
@@ -258,7 +259,7 @@ Partial Class vetUpdtPaciente
         Me.Label24.AutoSize = True
         Me.Label24.Location = New System.Drawing.Point(23, 39)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(162, 15)
+        Me.Label24.Size = New System.Drawing.Size(150, 13)
         Me.Label24.TabIndex = 4
         Me.Label24.Text = "Código de Registro Generado:"
         '
@@ -305,7 +306,7 @@ Partial Class vetUpdtPaciente
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(47, 181)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(58, 15)
+        Me.Label13.Size = New System.Drawing.Size(55, 13)
         Me.Label13.TabIndex = 12
         Me.Label13.Text = "Dirección:"
         '
@@ -314,7 +315,7 @@ Partial Class vetUpdtPaciente
         Me.rdbFemenino.AutoSize = True
         Me.rdbFemenino.Location = New System.Drawing.Point(152, 142)
         Me.rdbFemenino.Name = "rdbFemenino"
-        Me.rdbFemenino.Size = New System.Drawing.Size(31, 19)
+        Me.rdbFemenino.Size = New System.Drawing.Size(31, 17)
         Me.rdbFemenino.TabIndex = 7
         Me.rdbFemenino.TabStop = True
         Me.rdbFemenino.Text = "F"
@@ -325,7 +326,7 @@ Partial Class vetUpdtPaciente
         Me.rdbMasculino.AutoSize = True
         Me.rdbMasculino.Location = New System.Drawing.Point(111, 142)
         Me.rdbMasculino.Name = "rdbMasculino"
-        Me.rdbMasculino.Size = New System.Drawing.Size(35, 19)
+        Me.rdbMasculino.Size = New System.Drawing.Size(34, 17)
         Me.rdbMasculino.TabIndex = 6
         Me.rdbMasculino.TabStop = True
         Me.rdbMasculino.Text = "M"
@@ -336,7 +337,7 @@ Partial Class vetUpdtPaciente
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(70, 142)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 15)
+        Me.Label5.Size = New System.Drawing.Size(34, 13)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Sexo:"
         '
@@ -344,49 +345,49 @@ Partial Class vetUpdtPaciente
         '
         Me.txtSegNombre.Location = New System.Drawing.Point(481, 30)
         Me.txtSegNombre.Name = "txtSegNombre"
-        Me.txtSegNombre.Size = New System.Drawing.Size(194, 22)
+        Me.txtSegNombre.Size = New System.Drawing.Size(194, 20)
         Me.txtSegNombre.TabIndex = 1
         '
         'txtDui
         '
         Me.txtDui.Location = New System.Drawing.Point(111, 104)
         Me.txtDui.Name = "txtDui"
-        Me.txtDui.Size = New System.Drawing.Size(133, 22)
+        Me.txtDui.Size = New System.Drawing.Size(133, 20)
         Me.txtDui.TabIndex = 4
         '
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(481, 104)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(194, 22)
+        Me.txtEmail.Size = New System.Drawing.Size(194, 20)
         Me.txtEmail.TabIndex = 5
         '
         'txtTelMovil
         '
         Me.txtTelMovil.Location = New System.Drawing.Point(481, 215)
         Me.txtTelMovil.Name = "txtTelMovil"
-        Me.txtTelMovil.Size = New System.Drawing.Size(133, 22)
+        Me.txtTelMovil.Size = New System.Drawing.Size(133, 20)
         Me.txtTelMovil.TabIndex = 10
         '
         'txtTelFijo
         '
         Me.txtTelFijo.Location = New System.Drawing.Point(110, 215)
         Me.txtTelFijo.Name = "txtTelFijo"
-        Me.txtTelFijo.Size = New System.Drawing.Size(133, 22)
+        Me.txtTelFijo.Size = New System.Drawing.Size(133, 20)
         Me.txtTelFijo.TabIndex = 9
         '
         'txtSegApellido
         '
         Me.txtSegApellido.Location = New System.Drawing.Point(481, 67)
         Me.txtSegApellido.Name = "txtSegApellido"
-        Me.txtSegApellido.Size = New System.Drawing.Size(194, 22)
+        Me.txtSegApellido.Size = New System.Drawing.Size(194, 20)
         Me.txtSegApellido.TabIndex = 3
         '
         'txtPriApellido
         '
         Me.txtPriApellido.Location = New System.Drawing.Point(111, 67)
         Me.txtPriApellido.Name = "txtPriApellido"
-        Me.txtPriApellido.Size = New System.Drawing.Size(193, 22)
+        Me.txtPriApellido.Size = New System.Drawing.Size(193, 20)
         Me.txtPriApellido.TabIndex = 2
         '
         'Label8
@@ -394,7 +395,7 @@ Partial Class vetUpdtPaciente
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(370, 107)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(105, 15)
+        Me.Label8.Size = New System.Drawing.Size(97, 13)
         Me.Label8.TabIndex = 4
         Me.Label8.Text = "Correo Electrónico:"
         '
@@ -403,7 +404,7 @@ Partial Class vetUpdtPaciente
         Me.Label25.AutoSize = True
         Me.Label25.Location = New System.Drawing.Point(380, 218)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(95, 15)
+        Me.Label25.Size = New System.Drawing.Size(87, 13)
         Me.Label25.TabIndex = 4
         Me.Label25.Text = "Teléfono Celular:"
         '
@@ -412,7 +413,7 @@ Partial Class vetUpdtPaciente
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(76, 107)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(29, 15)
+        Me.Label7.Size = New System.Drawing.Size(29, 13)
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "DUI:"
         '
@@ -421,7 +422,7 @@ Partial Class vetUpdtPaciente
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(26, 218)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(78, 15)
+        Me.Label6.Size = New System.Drawing.Size(71, 13)
         Me.Label6.TabIndex = 4
         Me.Label6.Text = "Teléfono Fijo:"
         '
@@ -430,7 +431,7 @@ Partial Class vetUpdtPaciente
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(373, 70)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(102, 15)
+        Me.Label3.Size = New System.Drawing.Size(93, 13)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Segundo Apellido:"
         '
@@ -438,7 +439,7 @@ Partial Class vetUpdtPaciente
         '
         Me.txtPriNombre.Location = New System.Drawing.Point(110, 30)
         Me.txtPriNombre.Name = "txtPriNombre"
-        Me.txtPriNombre.Size = New System.Drawing.Size(194, 22)
+        Me.txtPriNombre.Size = New System.Drawing.Size(194, 20)
         Me.txtPriNombre.TabIndex = 0
         '
         'Label1
@@ -446,7 +447,7 @@ Partial Class vetUpdtPaciente
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(15, 70)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(90, 15)
+        Me.Label1.Size = New System.Drawing.Size(79, 13)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Primer Apellido:"
         '
@@ -455,7 +456,7 @@ Partial Class vetUpdtPaciente
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(374, 33)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 15)
+        Me.Label4.Size = New System.Drawing.Size(93, 13)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Segundo Nombre:"
         '
@@ -464,7 +465,7 @@ Partial Class vetUpdtPaciente
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(16, 33)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(89, 15)
+        Me.Label9.Size = New System.Drawing.Size(79, 13)
         Me.Label9.TabIndex = 4
         Me.Label9.Text = "Primer Nombre:"
         '
@@ -472,10 +473,10 @@ Partial Class vetUpdtPaciente
         '
         Me.TabPage3.Controls.Add(Me.GroupBox5)
         Me.TabPage3.Controls.Add(Me.GroupBox4)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(713, 492)
+        Me.TabPage3.Size = New System.Drawing.Size(713, 494)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Datos del Paciente"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -497,7 +498,7 @@ Partial Class vetUpdtPaciente
         Me.txtCodPaciente.Enabled = False
         Me.txtCodPaciente.Location = New System.Drawing.Point(193, 30)
         Me.txtCodPaciente.Name = "txtCodPaciente"
-        Me.txtCodPaciente.Size = New System.Drawing.Size(133, 22)
+        Me.txtCodPaciente.Size = New System.Drawing.Size(133, 20)
         Me.txtCodPaciente.TabIndex = 17
         '
         'Label26
@@ -505,7 +506,7 @@ Partial Class vetUpdtPaciente
         Me.Label26.AutoSize = True
         Me.Label26.Location = New System.Drawing.Point(25, 33)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(162, 15)
+        Me.Label26.Size = New System.Drawing.Size(150, 13)
         Me.Label26.TabIndex = 18
         Me.Label26.Text = "Código de Registro Generado:"
         '
@@ -571,14 +572,14 @@ Partial Class vetUpdtPaciente
         Me.cmbUltiVacuna.Items.AddRange(New Object() {"Perro", "Gato"})
         Me.cmbUltiVacuna.Location = New System.Drawing.Point(133, 363)
         Me.cmbUltiVacuna.Name = "cmbUltiVacuna"
-        Me.cmbUltiVacuna.Size = New System.Drawing.Size(123, 23)
+        Me.cmbUltiVacuna.Size = New System.Drawing.Size(123, 21)
         Me.cmbUltiVacuna.TabIndex = 14
         '
         'dtpUltiVacuna
         '
         Me.dtpUltiVacuna.Location = New System.Drawing.Point(262, 364)
         Me.dtpUltiVacuna.Name = "dtpUltiVacuna"
-        Me.dtpUltiVacuna.Size = New System.Drawing.Size(222, 22)
+        Me.dtpUltiVacuna.Size = New System.Drawing.Size(222, 20)
         Me.dtpUltiVacuna.TabIndex = 15
         '
         'GroupBox6
@@ -597,7 +598,7 @@ Partial Class vetUpdtPaciente
         Me.chkPeluqueria.AutoSize = True
         Me.chkPeluqueria.Location = New System.Drawing.Point(20, 75)
         Me.chkPeluqueria.Name = "chkPeluqueria"
-        Me.chkPeluqueria.Size = New System.Drawing.Size(82, 19)
+        Me.chkPeluqueria.Size = New System.Drawing.Size(78, 17)
         Me.chkPeluqueria.TabIndex = 13
         Me.chkPeluqueria.Text = "Peluquería"
         Me.chkPeluqueria.UseVisualStyleBackColor = True
@@ -607,7 +608,7 @@ Partial Class vetUpdtPaciente
         Me.chkClinico.AutoSize = True
         Me.chkClinico.Location = New System.Drawing.Point(20, 35)
         Me.chkClinico.Name = "chkClinico"
-        Me.chkClinico.Size = New System.Drawing.Size(61, 19)
+        Me.chkClinico.Size = New System.Drawing.Size(59, 17)
         Me.chkClinico.TabIndex = 12
         Me.chkClinico.Text = "Clínico"
         Me.chkClinico.UseVisualStyleBackColor = True
@@ -617,7 +618,7 @@ Partial Class vetUpdtPaciente
         Me.lstVacunas.FormattingEnabled = True
         Me.lstVacunas.Location = New System.Drawing.Point(27, 247)
         Me.lstVacunas.Name = "lstVacunas"
-        Me.lstVacunas.Size = New System.Drawing.Size(142, 106)
+        Me.lstVacunas.Size = New System.Drawing.Size(142, 94)
         Me.lstVacunas.TabIndex = 10
         '
         'txtOtraVacuna
@@ -633,7 +634,7 @@ Partial Class vetUpdtPaciente
         Me.Label21.AutoSize = True
         Me.Label21.Location = New System.Drawing.Point(190, 226)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(84, 15)
+        Me.Label21.Size = New System.Drawing.Size(80, 13)
         Me.Label21.TabIndex = 27
         Me.Label21.Text = "Otras Vacunas:"
         '
@@ -642,7 +643,7 @@ Partial Class vetUpdtPaciente
         Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(16, 366)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(116, 15)
+        Me.Label20.Size = New System.Drawing.Size(109, 13)
         Me.Label20.TabIndex = 25
         Me.Label20.Text = "Fecha última vacuna:"
         '
@@ -651,7 +652,7 @@ Partial Class vetUpdtPaciente
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(24, 226)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(53, 15)
+        Me.Label11.Size = New System.Drawing.Size(52, 13)
         Me.Label11.TabIndex = 23
         Me.Label11.Text = "Vacunas:"
         '
@@ -661,7 +662,7 @@ Partial Class vetUpdtPaciente
         Me.cmbEspecie.Items.AddRange(New Object() {"Perro", "Gato"})
         Me.cmbEspecie.Location = New System.Drawing.Point(471, 17)
         Me.cmbEspecie.Name = "cmbEspecie"
-        Me.cmbEspecie.Size = New System.Drawing.Size(172, 23)
+        Me.cmbEspecie.Size = New System.Drawing.Size(172, 21)
         Me.cmbEspecie.TabIndex = 1
         '
         'txtRasgos
@@ -677,7 +678,7 @@ Partial Class vetUpdtPaciente
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(16, 164)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(103, 15)
+        Me.Label10.Size = New System.Drawing.Size(95, 13)
         Me.Label10.TabIndex = 20
         Me.Label10.Text = "Rasgos distintivos:"
         '
@@ -685,7 +686,7 @@ Partial Class vetUpdtPaciente
         '
         Me.txtEstadoRep.Location = New System.Drawing.Point(471, 120)
         Me.txtEstadoRep.Name = "txtEstadoRep"
-        Me.txtEstadoRep.Size = New System.Drawing.Size(172, 22)
+        Me.txtEstadoRep.Size = New System.Drawing.Size(172, 20)
         Me.txtEstadoRep.TabIndex = 8
         '
         'Label14
@@ -693,7 +694,7 @@ Partial Class vetUpdtPaciente
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(347, 123)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(118, 15)
+        Me.Label14.Size = New System.Drawing.Size(110, 13)
         Me.Label14.TabIndex = 18
         Me.Label14.Text = "Estado Reproductivo:"
         '
@@ -718,7 +719,7 @@ Partial Class vetUpdtPaciente
         '
         Me.dtpFechaNac.Location = New System.Drawing.Point(470, 87)
         Me.dtpFechaNac.Name = "dtpFechaNac"
-        Me.dtpFechaNac.Size = New System.Drawing.Size(222, 22)
+        Me.dtpFechaNac.Size = New System.Drawing.Size(222, 20)
         Me.dtpFechaNac.TabIndex = 6
         '
         'Label12
@@ -726,7 +727,7 @@ Partial Class vetUpdtPaciente
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(347, 90)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(117, 15)
+        Me.Label12.Size = New System.Drawing.Size(109, 13)
         Me.Label12.TabIndex = 12
         Me.Label12.Text = "Fecha de nacimiento:"
         '
@@ -735,7 +736,7 @@ Partial Class vetUpdtPaciente
         Me.rdbHembra.AutoSize = True
         Me.rdbHembra.Location = New System.Drawing.Point(152, 53)
         Me.rdbHembra.Name = "rdbHembra"
-        Me.rdbHembra.Size = New System.Drawing.Size(66, 19)
+        Me.rdbHembra.Size = New System.Drawing.Size(62, 17)
         Me.rdbHembra.TabIndex = 3
         Me.rdbHembra.TabStop = True
         Me.rdbHembra.Text = "Hembra"
@@ -746,7 +747,7 @@ Partial Class vetUpdtPaciente
         Me.rdbMacho.AutoSize = True
         Me.rdbMacho.Location = New System.Drawing.Point(86, 53)
         Me.rdbMacho.Name = "rdbMacho"
-        Me.rdbMacho.Size = New System.Drawing.Size(60, 19)
+        Me.rdbMacho.Size = New System.Drawing.Size(58, 17)
         Me.rdbMacho.TabIndex = 2
         Me.rdbMacho.TabStop = True
         Me.rdbMacho.Text = "Macho"
@@ -756,28 +757,28 @@ Partial Class vetUpdtPaciente
         '
         Me.txtNombrePaciente.Location = New System.Drawing.Point(86, 17)
         Me.txtNombrePaciente.Name = "txtNombrePaciente"
-        Me.txtNombrePaciente.Size = New System.Drawing.Size(171, 22)
+        Me.txtNombrePaciente.Size = New System.Drawing.Size(171, 20)
         Me.txtNombrePaciente.TabIndex = 0
         '
         'txtRaza
         '
         Me.txtRaza.Location = New System.Drawing.Point(471, 52)
         Me.txtRaza.Name = "txtRaza"
-        Me.txtRaza.Size = New System.Drawing.Size(172, 22)
+        Me.txtRaza.Size = New System.Drawing.Size(172, 20)
         Me.txtRaza.TabIndex = 4
         '
         'txtPeso
         '
         Me.txtPeso.Location = New System.Drawing.Point(85, 120)
         Me.txtPeso.Name = "txtPeso"
-        Me.txtPeso.Size = New System.Drawing.Size(171, 22)
+        Me.txtPeso.Size = New System.Drawing.Size(171, 20)
         Me.txtPeso.TabIndex = 7
         '
         'txtColor
         '
         Me.txtColor.Location = New System.Drawing.Point(85, 87)
         Me.txtColor.Name = "txtColor"
-        Me.txtColor.Size = New System.Drawing.Size(171, 22)
+        Me.txtColor.Size = New System.Drawing.Size(171, 20)
         Me.txtColor.TabIndex = 5
         '
         'Label15
@@ -785,7 +786,7 @@ Partial Class vetUpdtPaciente
         Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(45, 123)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(35, 15)
+        Me.Label15.Size = New System.Drawing.Size(34, 13)
         Me.Label15.TabIndex = 4
         Me.Label15.Text = "Peso:"
         '
@@ -794,7 +795,7 @@ Partial Class vetUpdtPaciente
         Me.Label16.AutoSize = True
         Me.Label16.Location = New System.Drawing.Point(424, 55)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(34, 15)
+        Me.Label16.Size = New System.Drawing.Size(35, 13)
         Me.Label16.TabIndex = 4
         Me.Label16.Text = "Raza:"
         '
@@ -803,7 +804,7 @@ Partial Class vetUpdtPaciente
         Me.Label17.AutoSize = True
         Me.Label17.Location = New System.Drawing.Point(42, 90)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(38, 15)
+        Me.Label17.Size = New System.Drawing.Size(34, 13)
         Me.Label17.TabIndex = 4
         Me.Label17.Text = "Color:"
         '
@@ -812,7 +813,7 @@ Partial Class vetUpdtPaciente
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(417, 21)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(48, 15)
+        Me.Label19.Size = New System.Drawing.Size(48, 13)
         Me.Label19.TabIndex = 4
         Me.Label19.Text = "Especie:"
         '
@@ -821,7 +822,7 @@ Partial Class vetUpdtPaciente
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(42, 55)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(35, 15)
+        Me.Label18.Size = New System.Drawing.Size(34, 13)
         Me.Label18.TabIndex = 4
         Me.Label18.Text = "Sexo:"
         '
@@ -830,17 +831,17 @@ Partial Class vetUpdtPaciente
         Me.Label22.AutoSize = True
         Me.Label22.Location = New System.Drawing.Point(28, 21)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(52, 15)
+        Me.Label22.Size = New System.Drawing.Size(47, 13)
         Me.Label22.TabIndex = 4
         Me.Label22.Text = "Nombre:"
         '
         'vetUpdtPaciente
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(744, 544)
         Me.Controls.Add(Me.TabControl1)
-        Me.Font = New System.Drawing.Font("Open Sans", 8.25!)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetUpdtPaciente"
         Me.Text = "Actualización de Información"
         Me.TabControl1.ResumeLayout(False)

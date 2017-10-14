@@ -55,9 +55,10 @@ Partial Class vetAgenda
         '
         'dtpFecha
         '
+        Me.dtpFecha.CustomFormat = "MM-dd-yyyy"
         Me.dtpFecha.Location = New System.Drawing.Point(52, 21)
         Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(217, 22)
+        Me.dtpFecha.Size = New System.Drawing.Size(215, 20)
         Me.dtpFecha.TabIndex = 1
         '
         'Label1
@@ -65,17 +66,17 @@ Partial Class vetAgenda
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(6, 24)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 15)
+        Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Fecha:"
         '
         'vetAgenda
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(605, 368)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Font = New System.Drawing.Font("Open Sans", 8.25!)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetAgenda"
         Me.Text = "Agenda"
         Me.GroupBox1.ResumeLayout(False)

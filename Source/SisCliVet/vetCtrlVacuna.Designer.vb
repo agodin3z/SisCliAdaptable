@@ -69,10 +69,10 @@ Partial Class vetCtrlVacuna
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(627, 370)
+        Me.TabPage1.Size = New System.Drawing.Size(627, 372)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Paciente"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -107,6 +107,7 @@ Partial Class vetCtrlVacuna
         Me.dgvPacientes.Location = New System.Drawing.Point(22, 57)
         Me.dgvPacientes.Name = "dgvPacientes"
         Me.dgvPacientes.ReadOnly = True
+        Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPacientes.Size = New System.Drawing.Size(577, 231)
         Me.dgvPacientes.TabIndex = 1
         '
@@ -114,7 +115,7 @@ Partial Class vetCtrlVacuna
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(87, 24)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(512, 22)
+        Me.txtBusqueda.Size = New System.Drawing.Size(512, 20)
         Me.txtBusqueda.TabIndex = 0
         '
         'Label2
@@ -122,7 +123,7 @@ Partial Class vetCtrlVacuna
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(19, 28)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 15)
+        Me.Label2.Size = New System.Drawing.Size(58, 13)
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "Búsqueda:"
         '
@@ -130,10 +131,10 @@ Partial Class vetCtrlVacuna
         '
         Me.TabPage2.Controls.Add(Me.GroupBox4)
         Me.TabPage2.Controls.Add(Me.GroupBox3)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(627, 370)
+        Me.TabPage2.Size = New System.Drawing.Size(627, 372)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Vacunación"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -156,7 +157,7 @@ Partial Class vetCtrlVacuna
         Me.txtFecha.Enabled = False
         Me.txtFecha.Location = New System.Drawing.Point(356, 29)
         Me.txtFecha.Name = "txtFecha"
-        Me.txtFecha.Size = New System.Drawing.Size(172, 22)
+        Me.txtFecha.Size = New System.Drawing.Size(172, 20)
         Me.txtFecha.TabIndex = 1
         '
         'txtHora
@@ -164,7 +165,7 @@ Partial Class vetCtrlVacuna
         Me.txtHora.Enabled = False
         Me.txtHora.Location = New System.Drawing.Point(100, 29)
         Me.txtHora.Name = "txtHora"
-        Me.txtHora.Size = New System.Drawing.Size(172, 22)
+        Me.txtHora.Size = New System.Drawing.Size(172, 20)
         Me.txtHora.TabIndex = 0
         '
         'Label23
@@ -172,7 +173,7 @@ Partial Class vetCtrlVacuna
         Me.Label23.AutoSize = True
         Me.Label23.Location = New System.Drawing.Point(59, 32)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(35, 15)
+        Me.Label23.Size = New System.Drawing.Size(33, 13)
         Me.Label23.TabIndex = 15
         Me.Label23.Text = "Hora:"
         '
@@ -181,7 +182,7 @@ Partial Class vetCtrlVacuna
         Me.Label22.AutoSize = True
         Me.Label22.Location = New System.Drawing.Point(310, 32)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(40, 15)
+        Me.Label22.Size = New System.Drawing.Size(40, 13)
         Me.Label22.TabIndex = 14
         Me.Label22.Text = "Fecha:"
         '
@@ -211,7 +212,7 @@ Partial Class vetCtrlVacuna
         Me.dtpHoraSiguiente.Location = New System.Drawing.Point(412, 125)
         Me.dtpHoraSiguiente.Name = "dtpHoraSiguiente"
         Me.dtpHoraSiguiente.ShowUpDown = True
-        Me.dtpHoraSiguiente.Size = New System.Drawing.Size(99, 22)
+        Me.dtpHoraSiguiente.Size = New System.Drawing.Size(99, 20)
         Me.dtpHoraSiguiente.TabIndex = 6
         '
         'Label5
@@ -219,7 +220,7 @@ Partial Class vetCtrlVacuna
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(371, 128)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 15)
+        Me.Label5.Size = New System.Drawing.Size(33, 13)
         Me.Label5.TabIndex = 45
         Me.Label5.Text = "Hora:"
         '
@@ -228,7 +229,7 @@ Partial Class vetCtrlVacuna
         Me.lstVacunas.FormattingEnabled = True
         Me.lstVacunas.Location = New System.Drawing.Point(19, 95)
         Me.lstVacunas.Name = "lstVacunas"
-        Me.lstVacunas.Size = New System.Drawing.Size(142, 140)
+        Me.lstVacunas.Size = New System.Drawing.Size(142, 139)
         Me.lstVacunas.TabIndex = 3
         '
         'btnGuardar
@@ -253,7 +254,7 @@ Partial Class vetCtrlVacuna
         Me.Label21.AutoSize = True
         Me.Label21.Location = New System.Drawing.Point(182, 74)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(84, 15)
+        Me.Label21.Size = New System.Drawing.Size(80, 13)
         Me.Label21.TabIndex = 33
         Me.Label21.Text = "Otras Vacunas:"
         '
@@ -261,7 +262,7 @@ Partial Class vetCtrlVacuna
         '
         Me.dtpFechaSiguiente.Location = New System.Drawing.Point(373, 95)
         Me.dtpFechaSiguiente.Name = "dtpFechaSiguiente"
-        Me.dtpFechaSiguiente.Size = New System.Drawing.Size(222, 22)
+        Me.dtpFechaSiguiente.Size = New System.Drawing.Size(222, 20)
         Me.dtpFechaSiguiente.TabIndex = 5
         '
         'Label20
@@ -269,7 +270,7 @@ Partial Class vetCtrlVacuna
         Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(370, 74)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(130, 15)
+        Me.Label20.Size = New System.Drawing.Size(124, 13)
         Me.Label20.TabIndex = 31
         Me.Label20.Text = "Fecha siguiente vacuna:"
         '
@@ -278,7 +279,7 @@ Partial Class vetCtrlVacuna
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(16, 74)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(94, 15)
+        Me.Label11.Size = New System.Drawing.Size(90, 13)
         Me.Label11.TabIndex = 30
         Me.Label11.Text = "Vacuna aplicada:"
         '
@@ -287,7 +288,7 @@ Partial Class vetCtrlVacuna
         Me.txtPaciente.Enabled = False
         Me.txtPaciente.Location = New System.Drawing.Point(140, 30)
         Me.txtPaciente.Name = "txtPaciente"
-        Me.txtPaciente.Size = New System.Drawing.Size(217, 22)
+        Me.txtPaciente.Size = New System.Drawing.Size(217, 20)
         Me.txtPaciente.TabIndex = 2
         '
         'Label9
@@ -295,17 +296,17 @@ Partial Class vetCtrlVacuna
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(16, 33)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(118, 15)
+        Me.Label9.Size = New System.Drawing.Size(109, 13)
         Me.Label9.TabIndex = 4
         Me.Label9.Text = "Nombre del Paciente:"
         '
         'vetCtrlVacuna
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(656, 422)
         Me.Controls.Add(Me.TabControl1)
-        Me.Font = New System.Drawing.Font("Open Sans", 8.25!)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetCtrlVacuna"
         Me.Text = "Control de Vacunas"
         Me.TabControl1.ResumeLayout(False)

@@ -22,6 +22,7 @@ Partial Class vetPRINCIPAL
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(vetPRINCIPAL))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.stFechaHora = New System.Windows.Forms.ToolStripStatusLabel()
@@ -41,6 +42,7 @@ Partial Class vetPRINCIPAL
         Me.GestionDeCitasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActualizarInformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HojaDeConsentimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControlDeVacunasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -50,7 +52,7 @@ Partial Class vetPRINCIPAL
         Me.ReportesDePropietariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HojaDeConsentimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -83,11 +85,11 @@ Partial Class vetPRINCIPAL
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Font = New System.Drawing.Font("Open Sans", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.AdministraciónToolStripMenuItem, Me.PacientesToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.InformaciónToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1008, 25)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1008, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -95,31 +97,31 @@ Partial Class vetPRINCIPAL
         '
         Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConectarseToolStripMenuItem, Me.DesconectarseToolStripMenuItem, Me.ToolStripSeparator1, Me.SalirToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(62, 21)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'ConectarseToolStripMenuItem
         '
         Me.ConectarseToolStripMenuItem.Name = "ConectarseToolStripMenuItem"
-        Me.ConectarseToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.ConectarseToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.ConectarseToolStripMenuItem.Text = "Conectarse"
         '
         'DesconectarseToolStripMenuItem
         '
         Me.DesconectarseToolStripMenuItem.Enabled = False
         Me.DesconectarseToolStripMenuItem.Name = "DesconectarseToolStripMenuItem"
-        Me.DesconectarseToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.DesconectarseToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.DesconectarseToolStripMenuItem.Text = "Desconectarse"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(157, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(153, 6)
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'AdministraciónToolStripMenuItem
@@ -127,19 +129,19 @@ Partial Class vetPRINCIPAL
         Me.AdministraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.InformaciónGeneralToolStripMenuItem})
         Me.AdministraciónToolStripMenuItem.Enabled = False
         Me.AdministraciónToolStripMenuItem.Name = "AdministraciónToolStripMenuItem"
-        Me.AdministraciónToolStripMenuItem.Size = New System.Drawing.Size(104, 21)
+        Me.AdministraciónToolStripMenuItem.Size = New System.Drawing.Size(100, 20)
         Me.AdministraciónToolStripMenuItem.Text = "Administración"
         '
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'InformaciónGeneralToolStripMenuItem
         '
         Me.InformaciónGeneralToolStripMenuItem.Name = "InformaciónGeneralToolStripMenuItem"
-        Me.InformaciónGeneralToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.InformaciónGeneralToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.InformaciónGeneralToolStripMenuItem.Text = "Información General"
         '
         'PacientesToolStripMenuItem
@@ -147,51 +149,57 @@ Partial Class vetPRINCIPAL
         Me.PacientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionarPacientesToolStripMenuItem, Me.GestionDeCitasToolStripMenuItem, Me.AgendaToolStripMenuItem, Me.ActualizarInformaciónToolStripMenuItem, Me.HojaDeConsentimientoToolStripMenuItem})
         Me.PacientesToolStripMenuItem.Enabled = False
         Me.PacientesToolStripMenuItem.Name = "PacientesToolStripMenuItem"
-        Me.PacientesToolStripMenuItem.Size = New System.Drawing.Size(74, 21)
+        Me.PacientesToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
         Me.PacientesToolStripMenuItem.Text = "Pacientes"
         '
         'GestionarPacientesToolStripMenuItem
         '
         Me.GestionarPacientesToolStripMenuItem.Name = "GestionarPacientesToolStripMenuItem"
-        Me.GestionarPacientesToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.GestionarPacientesToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.GestionarPacientesToolStripMenuItem.Text = "Registro de Pacientes"
         '
         'GestionDeCitasToolStripMenuItem
         '
         Me.GestionDeCitasToolStripMenuItem.Name = "GestionDeCitasToolStripMenuItem"
-        Me.GestionDeCitasToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.GestionDeCitasToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.GestionDeCitasToolStripMenuItem.Text = "Gestion de Citas"
         '
         'AgendaToolStripMenuItem
         '
         Me.AgendaToolStripMenuItem.Name = "AgendaToolStripMenuItem"
-        Me.AgendaToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.AgendaToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.AgendaToolStripMenuItem.Text = "Agenda"
         '
         'ActualizarInformaciónToolStripMenuItem
         '
         Me.ActualizarInformaciónToolStripMenuItem.Name = "ActualizarInformaciónToolStripMenuItem"
-        Me.ActualizarInformaciónToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.ActualizarInformaciónToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.ActualizarInformaciónToolStripMenuItem.Text = "Actualizar Información"
+        '
+        'HojaDeConsentimientoToolStripMenuItem
+        '
+        Me.HojaDeConsentimientoToolStripMenuItem.Name = "HojaDeConsentimientoToolStripMenuItem"
+        Me.HojaDeConsentimientoToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.HojaDeConsentimientoToolStripMenuItem.Text = "Hoja de Consentimiento"
         '
         'ConsultasToolStripMenuItem
         '
         Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaGeneralToolStripMenuItem, Me.ControlDeVacunasToolStripMenuItem})
         Me.ConsultasToolStripMenuItem.Enabled = False
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(75, 21)
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
         '
         'ConsultaGeneralToolStripMenuItem
         '
         Me.ConsultaGeneralToolStripMenuItem.Name = "ConsultaGeneralToolStripMenuItem"
-        Me.ConsultaGeneralToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.ConsultaGeneralToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ConsultaGeneralToolStripMenuItem.Text = "Consulta general"
         '
         'ControlDeVacunasToolStripMenuItem
         '
         Me.ControlDeVacunasToolStripMenuItem.Name = "ControlDeVacunasToolStripMenuItem"
-        Me.ControlDeVacunasToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.ControlDeVacunasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ControlDeVacunasToolStripMenuItem.Text = "Control de Vacunas"
         '
         'ReportesToolStripMenuItem
@@ -199,56 +207,53 @@ Partial Class vetPRINCIPAL
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HistorialConsultasToolStripMenuItem, Me.ReportesPacienteToolStripMenuItem, Me.ReportesDePropietariosToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Enabled = False
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(70, 21)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'HistorialConsultasToolStripMenuItem
         '
         Me.HistorialConsultasToolStripMenuItem.Name = "HistorialConsultasToolStripMenuItem"
-        Me.HistorialConsultasToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.HistorialConsultasToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.HistorialConsultasToolStripMenuItem.Text = "Historial de Consultas"
         '
         'ReportesPacienteToolStripMenuItem
         '
         Me.ReportesPacienteToolStripMenuItem.Name = "ReportesPacienteToolStripMenuItem"
-        Me.ReportesPacienteToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.ReportesPacienteToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.ReportesPacienteToolStripMenuItem.Text = "Reportes de Pacientes"
         '
         'ReportesDePropietariosToolStripMenuItem
         '
         Me.ReportesDePropietariosToolStripMenuItem.Name = "ReportesDePropietariosToolStripMenuItem"
-        Me.ReportesDePropietariosToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.ReportesDePropietariosToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.ReportesDePropietariosToolStripMenuItem.Text = "Reportes de Propietarios"
         '
         'InformaciónToolStripMenuItem
         '
         Me.InformaciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcercaDeToolStripMenuItem})
         Me.InformaciónToolStripMenuItem.Name = "InformaciónToolStripMenuItem"
-        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(87, 21)
+        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.InformaciónToolStripMenuItem.Text = "Información"
         '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
         '
-        'HojaDeConsentimientoToolStripMenuItem
+        'Timer1
         '
-        Me.HojaDeConsentimientoToolStripMenuItem.Name = "HojaDeConsentimientoToolStripMenuItem"
-        Me.HojaDeConsentimientoToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
-        Me.HojaDeConsentimientoToolStripMenuItem.Text = "Hoja de Consentimiento"
         '
         'vetPRINCIPAL
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.SisCliVet.My.Resources.Resources.wall_vet
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1008, 647)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Font = New System.Drawing.Font("Open Sans", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
@@ -266,7 +271,6 @@ Partial Class vetPRINCIPAL
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents stFechaHora As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents stUsuario As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents ArchivoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConectarseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -291,5 +295,7 @@ Partial Class vetPRINCIPAL
     Friend WithEvents ActualizarInformaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ControlDeVacunasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HojaDeConsentimientoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents stUsuario As System.Windows.Forms.ToolStripStatusLabel
 
 End Class

@@ -68,10 +68,10 @@ Partial Class vetCitas
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(574, 315)
+        Me.TabPage1.Size = New System.Drawing.Size(574, 317)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Listado de Pacientes"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -106,6 +106,7 @@ Partial Class vetCitas
         Me.dgvPacientes.Location = New System.Drawing.Point(22, 66)
         Me.dgvPacientes.Name = "dgvPacientes"
         Me.dgvPacientes.ReadOnly = True
+        Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPacientes.Size = New System.Drawing.Size(527, 172)
         Me.dgvPacientes.TabIndex = 1
         '
@@ -113,7 +114,7 @@ Partial Class vetCitas
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(87, 28)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(462, 22)
+        Me.txtBusqueda.Size = New System.Drawing.Size(462, 20)
         Me.txtBusqueda.TabIndex = 0
         '
         'Label2
@@ -121,7 +122,7 @@ Partial Class vetCitas
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(19, 32)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 15)
+        Me.Label2.Size = New System.Drawing.Size(58, 13)
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "Búsqueda:"
         '
@@ -130,10 +131,10 @@ Partial Class vetCitas
         Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Controls.Add(Me.btnCancelar)
         Me.TabPage2.Controls.Add(Me.btnGuardar)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(574, 315)
+        Me.TabPage2.Size = New System.Drawing.Size(574, 317)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Crear Cita"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -166,7 +167,7 @@ Partial Class vetCitas
         Me.txtOtro.Enabled = False
         Me.txtOtro.Location = New System.Drawing.Point(285, 141)
         Me.txtOtro.Name = "txtOtro"
-        Me.txtOtro.Size = New System.Drawing.Size(191, 22)
+        Me.txtOtro.Size = New System.Drawing.Size(191, 20)
         Me.txtOtro.TabIndex = 8
         '
         'dtpHoraSiguiente
@@ -175,7 +176,7 @@ Partial Class vetCitas
         Me.dtpHoraSiguiente.Location = New System.Drawing.Point(377, 73)
         Me.dtpHoraSiguiente.Name = "dtpHoraSiguiente"
         Me.dtpHoraSiguiente.ShowUpDown = True
-        Me.dtpHoraSiguiente.Size = New System.Drawing.Size(99, 22)
+        Me.dtpHoraSiguiente.Size = New System.Drawing.Size(99, 20)
         Me.dtpHoraSiguiente.TabIndex = 3
         '
         'Label5
@@ -183,7 +184,7 @@ Partial Class vetCitas
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(336, 76)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 15)
+        Me.Label5.Size = New System.Drawing.Size(33, 13)
         Me.Label5.TabIndex = 56
         Me.Label5.Text = "Hora:"
         '
@@ -191,7 +192,7 @@ Partial Class vetCitas
         '
         Me.dtpFechaSiguiente.Location = New System.Drawing.Point(107, 73)
         Me.dtpFechaSiguiente.Name = "dtpFechaSiguiente"
-        Me.dtpFechaSiguiente.Size = New System.Drawing.Size(215, 22)
+        Me.dtpFechaSiguiente.Size = New System.Drawing.Size(215, 20)
         Me.dtpFechaSiguiente.TabIndex = 2
         '
         'Label4
@@ -199,7 +200,7 @@ Partial Class vetCitas
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(14, 76)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(87, 15)
+        Me.Label4.Size = New System.Drawing.Size(79, 13)
         Me.Label4.TabIndex = 57
         Me.Label4.Text = "Programar Cita:"
         '
@@ -208,7 +209,7 @@ Partial Class vetCitas
         Me.rdbOtro.AutoSize = True
         Me.rdbOtro.Location = New System.Drawing.Point(227, 142)
         Me.rdbOtro.Name = "rdbOtro"
-        Me.rdbOtro.Size = New System.Drawing.Size(52, 19)
+        Me.rdbOtro.Size = New System.Drawing.Size(48, 17)
         Me.rdbOtro.TabIndex = 7
         Me.rdbOtro.TabStop = True
         Me.rdbOtro.Text = "Otro:"
@@ -219,7 +220,7 @@ Partial Class vetCitas
         Me.rdbPeluqueria.AutoSize = True
         Me.rdbPeluqueria.Location = New System.Drawing.Point(227, 114)
         Me.rdbPeluqueria.Name = "rdbPeluqueria"
-        Me.rdbPeluqueria.Size = New System.Drawing.Size(81, 19)
+        Me.rdbPeluqueria.Size = New System.Drawing.Size(77, 17)
         Me.rdbPeluqueria.TabIndex = 5
         Me.rdbPeluqueria.TabStop = True
         Me.rdbPeluqueria.Text = "Peluquería"
@@ -230,7 +231,7 @@ Partial Class vetCitas
         Me.rdbRefuerzo.AutoSize = True
         Me.rdbRefuerzo.Location = New System.Drawing.Point(107, 142)
         Me.rdbRefuerzo.Name = "rdbRefuerzo"
-        Me.rdbRefuerzo.Size = New System.Drawing.Size(71, 19)
+        Me.rdbRefuerzo.Size = New System.Drawing.Size(68, 17)
         Me.rdbRefuerzo.TabIndex = 6
         Me.rdbRefuerzo.TabStop = True
         Me.rdbRefuerzo.Text = "Refuerzo"
@@ -241,7 +242,7 @@ Partial Class vetCitas
         Me.rdbConsulta.AutoSize = True
         Me.rdbConsulta.Location = New System.Drawing.Point(107, 112)
         Me.rdbConsulta.Name = "rdbConsulta"
-        Me.rdbConsulta.Size = New System.Drawing.Size(114, 19)
+        Me.rdbConsulta.Size = New System.Drawing.Size(106, 17)
         Me.rdbConsulta.TabIndex = 4
         Me.rdbConsulta.TabStop = True
         Me.rdbConsulta.Text = "Consulta General"
@@ -252,7 +253,7 @@ Partial Class vetCitas
         Me.txtPropietario.Enabled = False
         Me.txtPropietario.Location = New System.Drawing.Point(377, 33)
         Me.txtPropietario.Name = "txtPropietario"
-        Me.txtPropietario.Size = New System.Drawing.Size(171, 22)
+        Me.txtPropietario.Size = New System.Drawing.Size(171, 20)
         Me.txtPropietario.TabIndex = 1
         '
         'Label1
@@ -260,7 +261,7 @@ Partial Class vetCitas
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(303, 36)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 15)
+        Me.Label1.Size = New System.Drawing.Size(60, 13)
         Me.Label1.TabIndex = 47
         Me.Label1.Text = "Propietario:"
         '
@@ -269,7 +270,7 @@ Partial Class vetCitas
         Me.txtPaciente.Enabled = False
         Me.txtPaciente.Location = New System.Drawing.Point(107, 33)
         Me.txtPaciente.Name = "txtPaciente"
-        Me.txtPaciente.Size = New System.Drawing.Size(171, 22)
+        Me.txtPaciente.Size = New System.Drawing.Size(171, 20)
         Me.txtPaciente.TabIndex = 0
         '
         'Label3
@@ -277,7 +278,7 @@ Partial Class vetCitas
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(51, 114)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(47, 15)
+        Me.Label3.Size = New System.Drawing.Size(42, 13)
         Me.Label3.TabIndex = 48
         Me.Label3.Text = "Motivo:"
         '
@@ -286,7 +287,7 @@ Partial Class vetCitas
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(41, 37)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(54, 15)
+        Me.Label18.Size = New System.Drawing.Size(52, 13)
         Me.Label18.TabIndex = 49
         Me.Label18.Text = "Paciente:"
         '
@@ -301,6 +302,7 @@ Partial Class vetCitas
         '
         'btnGuardar
         '
+        Me.btnGuardar.Enabled = False
         Me.btnGuardar.Location = New System.Drawing.Point(154, 244)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
@@ -310,11 +312,11 @@ Partial Class vetCitas
         '
         'vetCitas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(605, 368)
         Me.Controls.Add(Me.TabControl1)
-        Me.Font = New System.Drawing.Font("Open Sans", 8.25!)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetCitas"
         Me.Text = "Gestión de Citas"
         Me.TabControl1.ResumeLayout(False)

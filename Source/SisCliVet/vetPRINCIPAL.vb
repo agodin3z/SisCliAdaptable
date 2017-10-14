@@ -38,16 +38,17 @@
         End If
     End Sub
     'FIN Sistema Temporal de Login
-
     Private Sub ConectarseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConectarseToolStripMenuItem.Click
         Login()
     End Sub
 
     Private Sub vetPRINCIPAL_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Login()
+        Timer1.Start()
     End Sub
 
     Private Sub DesconectarseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DesconectarseToolStripMenuItem.Click
+        stUsuario.Text = "Usuario"
         cGenerica.vUser = 0
         Inicial()
     End Sub
@@ -106,5 +107,9 @@
 
     Private Sub HojaDeConsentimientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HojaDeConsentimientoToolStripMenuItem.Click
         cGenerica.showFrm(vetConsentimiento, Me)
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        stFechaHora.Text = Date.Now.ToString
     End Sub
 End Class

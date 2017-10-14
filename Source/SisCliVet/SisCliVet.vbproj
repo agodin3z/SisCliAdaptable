@@ -76,6 +76,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cConexion.vb" />
     <Compile Include="cGenerica.vb" />
     <Compile Include="vetAgenda.Designer.vb">
       <DependentUpon>vetAgenda.vb</DependentUpon>
