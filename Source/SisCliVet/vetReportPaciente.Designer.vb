@@ -450,6 +450,7 @@ Partial Class vetReportPaciente
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Open Sans", 8.25!)
         Me.Name = "vetReportPaciente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte de Pacientes"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

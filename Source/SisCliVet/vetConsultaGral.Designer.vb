@@ -340,6 +340,7 @@ Partial Class vetConsultaGral
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetConsultaGral"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta General"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

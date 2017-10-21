@@ -307,6 +307,7 @@ Partial Class vetConsentimiento
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetConsentimiento"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestionar Cartas de Consentimiento"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

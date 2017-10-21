@@ -2,144 +2,132 @@
 Imports System.Data.SqlClient
 
 Public Class cConexion
-
-    'cadena de conexion con la base de datos
-    'atributo que tendra la conexion con la base de datos
-    Private cn As SqlConnection
-    'da es un sqldataadapter encargado de ejecutra sentencias SQL
-    Private da As SqlDataAdapter
-    'agregar un sqlcommand
+    Private con As SqlConnection 'Cadena de conexion con la base de datos
+    Private da As SqlDataAdapter 'Encargado de ejecutar sentencias SQL
     Private comando As SqlCommand
 
-    'constructor encargado de conectar con la base de datos
+    'Encargado de conectar con la base de datos
     Sub New()
-
-        Dim cadena As String
-        Dim servidor As String = "."
+        Dim servidor As String = "ASAGI\AGSERVER"
         Dim db As String = "SISCLIAD_Vet"
-        cadena = "Data source=" & servidor & ";initial catalog=" & db & ";Integrated Security=True"
-        cn = New SqlConnection(cadena)
-
+        Dim cadena As String = "Data Source=" & servidor & ";Initial Catalog=" & db & ";Integrated Security=True"
+        con = New SqlConnection(cadena)
     End Sub
 
-    'funcion que retorna una consulta general de cualquier tabla de la base de datos
+    'Ejecuta cualquier accion de consulta
+    Private Function consultar(ByVal sql As String, ByVal tabla As String) As DataTable
+        da = New SqlDataAdapter(sql, con)
+        Dim dset As New DataSet
+        da.Fill(dset, tabla)
+        Return dset.Tables(0)
+    End Function
+
+    'Ejecuta cualquier comando de mantenimiento de tablas
+    Private Function mantenimiento(ByVal sql As String) As Integer
+        con.Open()
+        comando = New SqlCommand(sql, con)
+        Dim i As Integer = comando.ExecuteNonQuery
+        con.Close()
+        Return i
+    End Function
+
+    'Ejecuta cualquier accion de obtener un valor Integer
+    Private Function obtener(ByVal sql As String)
+        con.Open()
+        comando = New SqlCommand(sql, con)
+        Dim i = comando.ExecuteScalar
+        con.Close()
+        Return i
+    End Function
+
+    'Funcion que retorna una consulta general de cualquier tabla
     Public Function consultaGeneral(ByVal tabla As String) As DataTable
-
         Dim sql As String = "SELECT * FROM " & tabla
-        da = New SqlDataAdapter(sql, cn)
-        Dim dsa As New DataSet
-        da.Fill(dsa, tabla)
-        Return dsa.Tables(0)
-
+        Return consultar(sql, tabla)
     End Function
 
-    Public Function ValidarDatos(ByVal campos As String, ByVal tabla As String, ByVal condicion As String) As DataTable
-
-        Dim sql As String = "SELECT " & campos & " FROM " & tabla & " WHERE " & condicion
-        da = New SqlDataAdapter(sql, cn)
-        Dim dsa As New DataSet
-        da.Fill(dsa, tabla)
-        Return dsa.Tables(0)
-
-    End Function
-
+    'Funcion que retorna una consulta condicionada de cualquier tabla
     Public Function consultaCondicionada(ByVal tabla As String, ByVal condicion As String) As DataTable
-
         Dim sql As String = "SELECT * FROM " & tabla & " WHERE " & condicion
-        da = New SqlDataAdapter(sql, cn)
-        Dim dsa As New DataSet
-        da.Fill(dsa, tabla)
-        Return dsa.Tables(0)
-
+        Return consultar(sql, tabla)
     End Function
-
-    'Consulta para mandar a llamar campos con variables, y unirlos con las demas tablas de las bases de datos
-    'Usado en: la mayoria de los formularios con datagridview
-    Public Function consultaCondicionadas(ByVal campos As String, ByVal tabla As String, ByVal innerjoin As String, ByVal condicion As String) As DataTable
-
+    
+    'Consulta para mandar a llamar campos con variables, y unirlos con las demas tablas
+    Public Function consultaCondicionada(ByVal campos As String, ByVal tabla As String, ByVal innerjoin As String, ByVal condicion As String) As DataTable
         Dim sql As String = "SELECT " & campos & " FROM " & tabla & " " & innerjoin & " " & condicion
-        da = New SqlDataAdapter(sql, cn)
-        Dim dsa As New DataSet
-        da.Fill(dsa, tabla)
-        Return dsa.Tables(0)
-
+        Return consultar(sql, tabla)
     End Function
 
-    'Funcion temporal para validar la existencia de un usuario y al nuevo sumarle un +1 si existe"
-    Public Function Correlativo(ByVal campo As String, ByVal tabla As String, ByVal condicion As String) As Integer
-
-        Dim sql As String = "SELECT COUNT(" & campo & ") + 1 FROM " & tabla & " " & condicion
-        cn.Open()
-        comando = New SqlCommand(sql, cn)
-        Dim i As Integer = Integer.Parse(comando.ExecuteScalar)
-        cn.Close()
-        Return i
-
+    'Consulta para mandar a llamar campos con variables, y unirlos con las demas tablas
+    Public Function consultaCondicionada(ByVal campos As String, ByVal tabla As String, ByVal innerjoin As String) As DataTable
+        Dim sql As String = "SELECT " & campos & " FROM " & tabla & " " & innerjoin
+        Return consultar(sql, tabla)
     End Function
 
-    'Regresa el dato de si el campo que se intenta ingresar ya existe
-    'Usado en: vetUsuarios
+    'Valida datos
+    Public Function validarDatos(ByVal campos As String, ByVal tabla As String, ByVal condicion As String) As DataTable
+        Dim sql As String = "SELECT " & campos & " FROM " & tabla & " WHERE " & condicion
+        Return consultar(sql, tabla)
+    End Function
+
+    'Validar la existencia de un usuario y al nuevo sumarle un +1 si existe
+    Public Function correlativo(ByVal campo As String, ByVal tabla As String, ByVal condicion As String) As Integer
+        Dim sql As String = "SELECT COUNT(" & campo & ") + 1 FROM " & tabla & " WHERE " & condicion
+        Return obtener(sql)
+    End Function
+
+    'Verifica si el dato ya existe
     Public Function consultaExistente(ByVal tabla As String, ByVal condicion As String) As Integer
-
         Dim sql As String = "SELECT COUNT(*) FROM " & tabla & " WHERE " & condicion
-        cn.Open()
-        comando = New SqlCommand(sql, cn)
-        Dim i As Integer = Integer.Parse(comando.ExecuteScalar)
-        cn.Close()
-        Return i
-
+        Return obtener(sql)
     End Function
 
-    'funcion para agregar datos en cualquier tabla
-    Public Function InsertarFila(ByVal tabla As String, ByVal campos As String, ByVal valores As String) As Integer
-
-        Dim sql As String
-        sql = "INSERT INTO " & tabla & " " & campos & " VALUES (" & valores & ")"
-        cn.Open()
-        comando = New SqlCommand(sql, cn)
-        Dim i As Integer = comando.ExecuteNonQuery
-        cn.Close()
-        Return i
-
+    'Obtiene un valor de cualquier tabla
+    Public Function consultaExistente(ByVal campo As String, ByVal tabla As String, ByVal condicion As String)
+        Dim sql As String = "SELECT " & campo & " FROM " & tabla & " WHERE " & condicion
+        Return obtener(sql)
     End Function
 
-    'eliminar registros de cualquier tabla
+    'Agregar datos en cualquier tabla indicando el/los campos
+    Public Function insertar(ByVal tabla As String, ByVal campos As String, ByVal valores As String) As Integer
+        Dim sql As String = "INSERT INTO " & tabla & " (" & campos & ") VALUES (" & valores & ")"
+        Return mantenimiento(sql)
+    End Function
+
+    'Agregar datos en cualquier tabla 
+    Public Function insertar(ByVal tabla As String, ByVal valores As String) As Integer
+        Dim sql As String = "INSERT INTO " & tabla & " VALUES (" & valores & ")"
+        Return mantenimiento(sql)
+    End Function
+
+    'Eliminar registros de cualquier tabla
     Public Function eliminar(ByVal tabla As String, ByVal condicion As String) As Integer
-
-        Dim sql As String
-        sql = "DELETE FROM " & tabla & " WHERE " & condicion
-        cn.Open()
-        comando = New SqlCommand(sql, cn)
-        Dim i As Integer = comando.ExecuteNonQuery
-        cn.Close()
-        Return i
-
+        Dim sql As String = "DELETE FROM " & tabla & " WHERE " & condicion
+        Return mantenimiento(sql)
     End Function
 
-    'consulta filtrada para poder modificar
-    Public Function consultaFiltrada(ByVal tabla As String, ByVal condicion As String) As DataTable
-
-        Dim sql As String
-        sql = "SELECT * FROM " & tabla & " WHERE " & condicion
-        da = New SqlDataAdapter(sql, cn)
-        Dim dsa As New DataSet
-        da.Fill(dsa, tabla)
-        Return dsa.Tables(0)
-
-    End Function
-
-    'actualizar registros de cualquier tabla
+    'Actualizar registros de cualquier tabla
     Public Function actualizar(ByVal tabla As String, ByVal NuevosV As String, ByVal condicion As String) As Integer
-
-        Dim sql As String
-        sql = "UPDATE " & tabla & " SET " & NuevosV & " WHERE " & condicion
-        cn.Open()
-        comando = New SqlCommand(sql, cn)
-        Dim i As Integer = comando.ExecuteNonQuery
-        cn.Close()
+        Dim sql As String = "UPDATE " & tabla & " SET " & NuevosV & " WHERE " & condicion
+        Return mantenimiento(sql)
+    End Function
+    Public Function actualizar(ByVal tabla As String, ByVal campo As String, ByVal id As String, ByVal valId As String, ByVal img As Byte())
+        con.Open()
+        comando.CommandText = "UPDATE " & tabla & " SET " & campo & "=@foto WHERE " & id & "='" & valId & "'"
+        comando.Connection = con
+        comando.Parameters.Add("@foto", System.Data.SqlDbType.Image)
+        comando.Parameters("@foto").Value = img
+        Dim i = comando.ExecuteNonQuery()
+        con.Close()
         Return i
-
     End Function
 
+    Public Function selectImg(ByVal tabla As String, ByVal campo As String, ByVal condicion As String) As Byte()
+        con.Open()
+        comando.CommandText = "SELECT " & campo & " FROM " & tabla & " " & condicion
+        comando.Connection = con
+        Dim imagen As Byte() = CType(comando.ExecuteScalar(), Byte())
+        con.Close()
+        Return imagen
+    End Function
 End Class
-

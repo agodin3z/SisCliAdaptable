@@ -48,7 +48,8 @@
     End Sub
 
     Private Sub DesconectarseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DesconectarseToolStripMenuItem.Click
-        stUsuario.Text = "Usuario"
+        stUsuario.Text = ""
+        cGenerica.usr = ""
         cGenerica.vUser = 0
         Inicial()
     End Sub

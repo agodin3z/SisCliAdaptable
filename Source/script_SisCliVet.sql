@@ -228,7 +228,7 @@ CREATE TABLE [dbo].[Paciente](
 	[raza] [varchar](25) NOT NULL,
 	[color] [varchar](25) NOT NULL,
 	[fechaNac] [date] NULL,
-	[peso] [decimal](3, 2) NULL,
+	[peso] [decimal](7, 2) NULL,
 	[estadoRep] [varchar](25) NULL,
 	[rasgoDist] [varchar](150) NULL,
 	[idTipoReg] [int] NOT NULL,

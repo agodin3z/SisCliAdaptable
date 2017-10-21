@@ -1,14 +1,5 @@
 ﻿Public Class vetCtrlVacuna
     Dim connection As New cConexion
-
-    Private Sub LimpiarTextbox(ByVal grupo As Windows.Forms.GroupBox)
-        For Each control As Control In grupo.Controls
-            If TypeOf control Is Windows.Forms.TextBox Then
-                control.Text = ""
-            End If
-        Next
-    End Sub
-
     Dim tabla As String = "Paciente"
     'Campos de Paciente: id, nombre y especie
     'Campos de Propietario: Primer nombre y apellido
@@ -26,13 +17,13 @@
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
         condicion = "WHERE Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
-        dgvPacientes.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion)
+        dgvPacientes.DataSource = connection.consultaCondicionada(campos, tabla, join, condicion)
         dgvPacientes.Refresh()
     End Sub
 
     Private Sub vetCtrlVacuna_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         condicion = "WHERE Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
-        dgvPacientes.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion)
+        dgvPacientes.DataSource = connection.consultaCondicionada(campos, tabla, join, condicion)
         dgvPacientes.Refresh()
         txtFecha.Text = Now.ToString("MM-dd-yyyy")
         txtHora.Text = Now.ToString("HH:mm:ss")
@@ -48,7 +39,7 @@
         'Condicion para llenar el checkedListBox segun Especie
         condicion2 = "WHERE Vacuna.idEspecie = (SELECT Especie.idEspecie " &
         "FROM Especie WHERE Especie.nombre ='" & especie & "')"
-        lstVacunas.DataSource = connection.consultaCondicionadas("*", "Vacuna", "", condicion2)
+        lstVacunas.DataSource = connection.consultaCondicionada("*", "Vacuna", "", condicion2)
         lstVacunas.ValueMember = "idVacuna"
         lstVacunas.DisplayMember = "nombre"
         TabControl1.SelectTab(1)

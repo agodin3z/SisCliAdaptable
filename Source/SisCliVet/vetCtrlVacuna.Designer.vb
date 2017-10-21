@@ -308,6 +308,7 @@ Partial Class vetCtrlVacuna
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetCtrlVacuna"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Control de Vacunas"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

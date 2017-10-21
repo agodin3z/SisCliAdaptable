@@ -11,18 +11,21 @@
     Dim fila As String
     Dim condicion As String
 
+    Private Sub cargar()
+        dgvPacientes.DataSource = connection.consultaCondicionada(campos, tabla, join, condicion)
+        dgvPacientes.Refresh()
+    End Sub
+
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
         condicion = "WHERE Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
-        dgvPacientes.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion)
-        dgvPacientes.Refresh()
+        cargar()
     End Sub
 
     Private Sub vetConsentimiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtFecha.Text = Now.ToString("MM-dd-yyyy")
         txtHora.Text = Now.ToString("HH:mm:ss")
         condicion = "WHERE Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
-        dgvPacientes.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion)
-        dgvPacientes.Refresh()
+        cargar()
     End Sub
 
     Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
@@ -34,7 +37,6 @@
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-
         Dim paciente As String = txtPaciente.Text.Trim
         Dim carta As String = txtCarta.Text.Trim
         Dim tipoCarta As String = ""
@@ -56,6 +58,5 @@
             MessageBox.Show("No se ha seleccionado el tipo de carta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
-
     End Sub
 End Class

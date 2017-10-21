@@ -248,7 +248,7 @@ Partial Class vetUsuarios
         'txtPasswd
         '
         Me.txtPasswd.Location = New System.Drawing.Point(372, 22)
-        Me.txtPasswd.MaxLength = 12
+        Me.txtPasswd.MaxLength = 15
         Me.txtPasswd.Name = "txtPasswd"
         Me.txtPasswd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPasswd.Size = New System.Drawing.Size(150, 20)
@@ -257,6 +257,7 @@ Partial Class vetUsuarios
         'txtUsername
         '
         Me.txtUsername.Location = New System.Drawing.Point(122, 22)
+        Me.txtUsername.MaxLength = 10
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(151, 20)
         Me.txtUsername.TabIndex = 0
@@ -298,6 +299,7 @@ Partial Class vetUsuarios
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "vetUsuarios"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestión de Usuarios"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()

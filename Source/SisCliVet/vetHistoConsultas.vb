@@ -1,5 +1,5 @@
 ﻿Public Class vetHistoConsultas
-    Dim connection As New cConexion
+    Dim con As New cConexion
     Dim tabla As String = "Cita"
     'Cita: idPaciente, motivo, fecha
     'Paciente: Nombre
@@ -17,13 +17,14 @@
     Dim datos As New DataTable
     Dim fecha As Date
     Dim fila As String
+
     Private Sub Consulta()
-        Dim fechaInicio As String = dtpInicio.Value.ToString("MM-dd-yyyy")
-        Dim fechaFin As String = dtpFin.Value.ToString("MM-dd-yyyy")
+        Dim fechaInicio As String = dtpInicio.Value.ToString("dd-MM-yyyy")
+        Dim fechaFin As String = dtpFin.Value.ToString("dd-MM-yyyy")
         paciente = txtBusqueda.Text.Trim
         condicion = "WHERE Cita.fecha BETWEEN '" & fechaInicio & "' AND '" & fechaFin & "' OR Paciente.nombre LIKE '" &
-            paciente & "&'"
-        dgvConsultas.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion)
+            paciente & "%'"
+        dgvConsultas.DataSource = con.consultaCondicionada(campos, tabla, join, condicion)
         dgvConsultas.Refresh()
     End Sub
 
@@ -35,11 +36,7 @@
         txtBusqueda.Clear()
         dtpInicio.Value = Now
         dtpFin.Value = Now
-        For Each control As Control In GroupBox3.Controls
-            If TypeOf control Is Windows.Forms.TextBox Then
-                control.Text = ""
-            End If
-        Next
+        cGenerica.limpiarTextbox(GroupBox3)
     End Sub
 
     Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
@@ -48,7 +45,6 @@
             MessageBox.Show("No ha seleccionado una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         Else
-            Dim condicion2 As String
             Dim campos2 As String
             Dim join2 As String
             For Each celda As DataGridViewRow In dgvConsultas.SelectedRows
@@ -57,7 +53,7 @@
                 txtPaciente.Text = celda.Cells(1).Value.ToString
                 txtMedico.Text = celda.Cells(6).Value.ToString
                 fecha = celda.Cells(5).Value.ToString
-                txtFecha.Text = fecha.ToString("MM-dd-yyyy")
+                txtFecha.Text = fecha.ToString("dd-MM-yyyy")
             Next
 
             'Creando una consulta condicionada para poder buscar por la fecha de la cita
@@ -65,9 +61,10 @@
                 "ConsultaGral.observaciones, ConsultaGral.tratamiento, Cita.fecha"
             'Uniendo la tabla cita con la que se buscara en la condicion
             join2 = "INNER JOIN Cita ON Cita.idPaciente = ConsultaGral.idPaciente"
-            condicion2 = "WHERE ConsultaGral.idPaciente='" & fila & "' AND Cita.fecha='" & fecha.ToString("MM-dd-yyyy") & "'"
+            'Dim h = con.consultaExistente("hora", "Cita", "idPaciente='" & fila & "' AND fecha='" & fecha.ToString("dd-MM-yyyy") & "'")
+            Dim condicion2 As String = "WHERE ConsultaGral.idPaciente='" & fila & "' AND Cita.fecha='" & fecha.ToString("dd-MM-yyyy") & "'" ' AND Cita.hora='" & h & "'"
             'Usando un DataTable con los datos de la bd y llenando campos por el orden del select 
-            datos = connection.consultaCondicionadas(campos2, "ConsultaGral", join2, condicion2)
+            datos = con.consultaCondicionada(campos2, "ConsultaGral", join2, condicion2)
             txtRazon.Text = datos.Rows(0).Item(0).ToString
             txtSintomas.Text = datos.Rows(0).Item(1).ToString
             txtDiagnostico.Text = datos.Rows(0).Item(2).ToString
@@ -76,7 +73,7 @@
             TabControl1.SelectTab(1)
         End If
 
-       
+
     End Sub
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged

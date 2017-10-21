@@ -843,6 +843,7 @@ Partial Class vetUpdtPaciente
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetUpdtPaciente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Actualización de Información"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

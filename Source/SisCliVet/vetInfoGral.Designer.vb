@@ -175,6 +175,7 @@ Partial Class vetInfoGral
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.MaximizeBox = False
         Me.Name = "vetInfoGral"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Información General de la Clínica"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
