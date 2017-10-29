@@ -33,16 +33,18 @@
     End Sub
 
     Private Sub dgvCitas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCitas.CellDoubleClick
-        For Each celda As DataGridViewRow In dgvCitas.SelectedRows
-            Dim paciente As String = con.consultaExistente("nombre", "Paciente", "idPaciente='" & celda.Cells(1).Value.ToString() & "'")
+        If Not chkCompletas.Checked Then
+            For Each celda As DataGridViewRow In dgvCitas.SelectedRows
+                Dim paciente As String = con.consultaExistente("nombre", "Paciente", "idPaciente='" & celda.Cells(1).Value.ToString() & "'")
                 Dim respuesta As Integer = MessageBox.Show("Desea cambiar el estado del la cita del paciente: " & paciente & "?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If respuesta = 6 Then
-                If con.actualizar("Cita", "estado = 2", "idPaciente='" & celda.Cells(1).Value.ToString() & "' AND fechaCrea='" & DateTime.Parse(celda.Cells(0).Value.ToString()).ToString("dd-MM-yyyy") & "' AND fecha='" & DateTime.Parse(celda.Cells(3).Value.ToString()).ToString("dd-MM-yyyy HH:mm:ss") & "'") > 0 Then
-                    MessageBox.Show("Cita marcada como atendida!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    cargar()
+                    If con.actualizar("Cita", "estado = 2", "idPaciente='" & celda.Cells(1).Value.ToString() & "' AND fechaCrea='" & DateTime.Parse(celda.Cells(0).Value.ToString()).ToString("dd-MM-yyyy") & "' AND fecha='" & DateTime.Parse(celda.Cells(3).Value.ToString()).ToString("dd-MM-yyyy HH:mm:ss") & "'") > 0 Then
+                        MessageBox.Show("Cita marcada como atendida!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        cargar()
+                    End If
                 End If
-                End If
-        Next
+            Next
+        End If
     End Sub
 
     Private Sub chkTodo_CheckedChanged(sender As Object, e As EventArgs) Handles chkTodo.CheckedChanged

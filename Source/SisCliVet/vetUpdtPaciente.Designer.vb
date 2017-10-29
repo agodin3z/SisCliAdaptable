@@ -25,15 +25,15 @@ Partial Class vetUpdtPaciente
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.btnBorrarPropietario = New System.Windows.Forms.Button()
+        Me.btnActualizarPac = New System.Windows.Forms.Button()
+        Me.btnActualizarPro = New System.Windows.Forms.Button()
         Me.btnAgregarPaciente = New System.Windows.Forms.Button()
-        Me.btnBorrarPaciente = New System.Windows.Forms.Button()
         Me.dgvPacientes = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnCancelarP = New System.Windows.Forms.Button()
+        Me.btnGuardarPro = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtCodPropietario = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -64,16 +64,14 @@ Partial Class vetUpdtPaciente
         Me.txtCodPaciente = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnGuardarPac = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.picFoto = New System.Windows.Forms.PictureBox()
         Me.cmbUltiVacuna = New System.Windows.Forms.ComboBox()
         Me.dtpUltiVacuna = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.chkPeluqueria = New System.Windows.Forms.CheckBox()
         Me.chkClinico = New System.Windows.Forms.CheckBox()
-        Me.lstVacunas = New System.Windows.Forms.CheckedListBox()
-        Me.txtOtraVacuna = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.cmbEspecie = New System.Windows.Forms.ComboBox()
@@ -82,7 +80,6 @@ Partial Class vetUpdtPaciente
         Me.txtEstadoRep = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnCargarFoto = New System.Windows.Forms.Button()
-        Me.picFoto = New System.Windows.Forms.PictureBox()
         Me.dtpFechaNac = New System.Windows.Forms.DateTimePicker()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.rdbHembra = New System.Windows.Forms.RadioButton()
@@ -97,6 +94,8 @@ Partial Class vetUpdtPaciente
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.lstVacunas = New System.Windows.Forms.CheckedListBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -107,8 +106,8 @@ Partial Class vetUpdtPaciente
         Me.TabPage3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
         CType(Me.picFoto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -135,55 +134,45 @@ Partial Class vetUpdtPaciente
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnActualizar)
-        Me.GroupBox1.Controls.Add(Me.btnBorrarPropietario)
+        Me.GroupBox1.Controls.Add(Me.btnActualizarPac)
+        Me.GroupBox1.Controls.Add(Me.btnActualizarPro)
         Me.GroupBox1.Controls.Add(Me.btnAgregarPaciente)
-        Me.GroupBox1.Controls.Add(Me.btnBorrarPaciente)
         Me.GroupBox1.Controls.Add(Me.dgvPacientes)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 7)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(698, 473)
+        Me.GroupBox1.Size = New System.Drawing.Size(698, 468)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccionar Paciente"
         '
-        'btnActualizar
+        'btnActualizarPac
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(184, 406)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(108, 46)
-        Me.btnActualizar.TabIndex = 2
-        Me.btnActualizar.Text = "Actualizar Datos"
-        Me.btnActualizar.UseVisualStyleBackColor = True
+        Me.btnActualizarPac.Location = New System.Drawing.Point(427, 406)
+        Me.btnActualizarPac.Name = "btnActualizarPac"
+        Me.btnActualizarPac.Size = New System.Drawing.Size(108, 46)
+        Me.btnActualizarPac.TabIndex = 23
+        Me.btnActualizarPac.Text = "Actualizar " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Paciente"
+        Me.btnActualizarPac.UseVisualStyleBackColor = True
         '
-        'btnBorrarPropietario
+        'btnActualizarPro
         '
-        Me.btnBorrarPropietario.Location = New System.Drawing.Point(436, 406)
-        Me.btnBorrarPropietario.Name = "btnBorrarPropietario"
-        Me.btnBorrarPropietario.Size = New System.Drawing.Size(108, 46)
-        Me.btnBorrarPropietario.TabIndex = 4
-        Me.btnBorrarPropietario.Text = "Borrar Propietario"
-        Me.btnBorrarPropietario.UseVisualStyleBackColor = True
+        Me.btnActualizarPro.Location = New System.Drawing.Point(289, 406)
+        Me.btnActualizarPro.Name = "btnActualizarPro"
+        Me.btnActualizarPro.Size = New System.Drawing.Size(108, 46)
+        Me.btnActualizarPro.TabIndex = 2
+        Me.btnActualizarPro.Text = "Actualizar Propietario"
+        Me.btnActualizarPro.UseVisualStyleBackColor = True
         '
         'btnAgregarPaciente
         '
-        Me.btnAgregarPaciente.Location = New System.Drawing.Point(311, 406)
+        Me.btnAgregarPaciente.Location = New System.Drawing.Point(563, 406)
         Me.btnAgregarPaciente.Name = "btnAgregarPaciente"
         Me.btnAgregarPaciente.Size = New System.Drawing.Size(108, 46)
         Me.btnAgregarPaciente.TabIndex = 3
         Me.btnAgregarPaciente.Text = "Añadir Paciente"
         Me.btnAgregarPaciente.UseVisualStyleBackColor = True
-        '
-        'btnBorrarPaciente
-        '
-        Me.btnBorrarPaciente.Location = New System.Drawing.Point(563, 406)
-        Me.btnBorrarPaciente.Name = "btnBorrarPaciente"
-        Me.btnBorrarPaciente.Size = New System.Drawing.Size(108, 46)
-        Me.btnBorrarPaciente.TabIndex = 5
-        Me.btnBorrarPaciente.Text = "Borrar Paciente"
-        Me.btnBorrarPaciente.UseVisualStyleBackColor = True
         '
         'dgvPacientes
         '
@@ -215,7 +204,8 @@ Partial Class vetUpdtPaciente
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.btnSiguiente)
+        Me.TabPage2.Controls.Add(Me.btnCancelarP)
+        Me.TabPage2.Controls.Add(Me.btnGuardarPro)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Controls.Add(Me.GroupBox3)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
@@ -226,14 +216,23 @@ Partial Class vetUpdtPaciente
         Me.TabPage2.Text = "Datos del Propietario"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'btnSiguiente
+        'btnCancelarP
         '
-        Me.btnSiguiente.Location = New System.Drawing.Point(573, 428)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(108, 46)
-        Me.btnSiguiente.TabIndex = 12
-        Me.btnSiguiente.Text = "Siguiente"
-        Me.btnSiguiente.UseVisualStyleBackColor = True
+        Me.btnCancelarP.Location = New System.Drawing.Point(460, 428)
+        Me.btnCancelarP.Name = "btnCancelarP"
+        Me.btnCancelarP.Size = New System.Drawing.Size(108, 46)
+        Me.btnCancelarP.TabIndex = 13
+        Me.btnCancelarP.Text = "Cancelar"
+        Me.btnCancelarP.UseVisualStyleBackColor = True
+        '
+        'btnGuardarPro
+        '
+        Me.btnGuardarPro.Location = New System.Drawing.Point(584, 428)
+        Me.btnGuardarPro.Name = "btnGuardarPro"
+        Me.btnGuardarPro.Size = New System.Drawing.Size(108, 46)
+        Me.btnGuardarPro.TabIndex = 12
+        Me.btnGuardarPro.Text = "Guardar"
+        Me.btnGuardarPro.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -296,6 +295,7 @@ Partial Class vetUpdtPaciente
         'txtDireccion
         '
         Me.txtDireccion.Location = New System.Drawing.Point(111, 178)
+        Me.txtDireccion.MaxLength = 200
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(564, 25)
@@ -344,6 +344,7 @@ Partial Class vetUpdtPaciente
         'txtSegNombre
         '
         Me.txtSegNombre.Location = New System.Drawing.Point(481, 30)
+        Me.txtSegNombre.MaxLength = 25
         Me.txtSegNombre.Name = "txtSegNombre"
         Me.txtSegNombre.Size = New System.Drawing.Size(194, 20)
         Me.txtSegNombre.TabIndex = 1
@@ -351,6 +352,7 @@ Partial Class vetUpdtPaciente
         'txtDui
         '
         Me.txtDui.Location = New System.Drawing.Point(111, 104)
+        Me.txtDui.MaxLength = 9
         Me.txtDui.Name = "txtDui"
         Me.txtDui.Size = New System.Drawing.Size(133, 20)
         Me.txtDui.TabIndex = 4
@@ -358,6 +360,7 @@ Partial Class vetUpdtPaciente
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(481, 104)
+        Me.txtEmail.MaxLength = 50
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(194, 20)
         Me.txtEmail.TabIndex = 5
@@ -365,6 +368,7 @@ Partial Class vetUpdtPaciente
         'txtTelMovil
         '
         Me.txtTelMovil.Location = New System.Drawing.Point(481, 215)
+        Me.txtTelMovil.MaxLength = 8
         Me.txtTelMovil.Name = "txtTelMovil"
         Me.txtTelMovil.Size = New System.Drawing.Size(133, 20)
         Me.txtTelMovil.TabIndex = 10
@@ -372,6 +376,7 @@ Partial Class vetUpdtPaciente
         'txtTelFijo
         '
         Me.txtTelFijo.Location = New System.Drawing.Point(110, 215)
+        Me.txtTelFijo.MaxLength = 8
         Me.txtTelFijo.Name = "txtTelFijo"
         Me.txtTelFijo.Size = New System.Drawing.Size(133, 20)
         Me.txtTelFijo.TabIndex = 9
@@ -379,6 +384,7 @@ Partial Class vetUpdtPaciente
         'txtSegApellido
         '
         Me.txtSegApellido.Location = New System.Drawing.Point(481, 67)
+        Me.txtSegApellido.MaxLength = 25
         Me.txtSegApellido.Name = "txtSegApellido"
         Me.txtSegApellido.Size = New System.Drawing.Size(194, 20)
         Me.txtSegApellido.TabIndex = 3
@@ -386,6 +392,7 @@ Partial Class vetUpdtPaciente
         'txtPriApellido
         '
         Me.txtPriApellido.Location = New System.Drawing.Point(111, 67)
+        Me.txtPriApellido.MaxLength = 25
         Me.txtPriApellido.Name = "txtPriApellido"
         Me.txtPriApellido.Size = New System.Drawing.Size(193, 20)
         Me.txtPriApellido.TabIndex = 2
@@ -438,6 +445,7 @@ Partial Class vetUpdtPaciente
         'txtPriNombre
         '
         Me.txtPriNombre.Location = New System.Drawing.Point(110, 30)
+        Me.txtPriNombre.MaxLength = 25
         Me.txtPriNombre.Name = "txtPriNombre"
         Me.txtPriNombre.Size = New System.Drawing.Size(194, 20)
         Me.txtPriNombre.TabIndex = 0
@@ -486,7 +494,7 @@ Partial Class vetUpdtPaciente
         Me.GroupBox5.Controls.Add(Me.txtCodPaciente)
         Me.GroupBox5.Controls.Add(Me.Label26)
         Me.GroupBox5.Controls.Add(Me.btnCancelar)
-        Me.GroupBox5.Controls.Add(Me.btnGuardar)
+        Me.GroupBox5.Controls.Add(Me.btnGuardarPac)
         Me.GroupBox5.Location = New System.Drawing.Point(7, 411)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(698, 75)
@@ -519,23 +527,22 @@ Partial Class vetUpdtPaciente
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
-        'btnGuardar
+        'btnGuardarPac
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(420, 17)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
-        Me.btnGuardar.TabIndex = 18
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
+        Me.btnGuardarPac.Location = New System.Drawing.Point(420, 17)
+        Me.btnGuardarPac.Name = "btnGuardarPac"
+        Me.btnGuardarPac.Size = New System.Drawing.Size(108, 46)
+        Me.btnGuardarPac.TabIndex = 18
+        Me.btnGuardarPac.Text = "Guardar"
+        Me.btnGuardarPac.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.lstVacunas)
+        Me.GroupBox4.Controls.Add(Me.picFoto)
         Me.GroupBox4.Controls.Add(Me.cmbUltiVacuna)
         Me.GroupBox4.Controls.Add(Me.dtpUltiVacuna)
         Me.GroupBox4.Controls.Add(Me.GroupBox6)
-        Me.GroupBox4.Controls.Add(Me.lstVacunas)
-        Me.GroupBox4.Controls.Add(Me.txtOtraVacuna)
-        Me.GroupBox4.Controls.Add(Me.Label21)
         Me.GroupBox4.Controls.Add(Me.Label20)
         Me.GroupBox4.Controls.Add(Me.Label11)
         Me.GroupBox4.Controls.Add(Me.cmbEspecie)
@@ -544,7 +551,6 @@ Partial Class vetUpdtPaciente
         Me.GroupBox4.Controls.Add(Me.txtEstadoRep)
         Me.GroupBox4.Controls.Add(Me.Label14)
         Me.GroupBox4.Controls.Add(Me.btnCargarFoto)
-        Me.GroupBox4.Controls.Add(Me.picFoto)
         Me.GroupBox4.Controls.Add(Me.dtpFechaNac)
         Me.GroupBox4.Controls.Add(Me.Label12)
         Me.GroupBox4.Controls.Add(Me.rdbHembra)
@@ -564,6 +570,15 @@ Partial Class vetUpdtPaciente
         Me.GroupBox4.Size = New System.Drawing.Size(698, 408)
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
+        '
+        'picFoto
+        '
+        Me.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picFoto.Location = New System.Drawing.Point(551, 174)
+        Me.picFoto.Name = "picFoto"
+        Me.picFoto.Size = New System.Drawing.Size(141, 144)
+        Me.picFoto.TabIndex = 42
+        Me.picFoto.TabStop = False
         '
         'cmbUltiVacuna
         '
@@ -613,31 +628,6 @@ Partial Class vetUpdtPaciente
         Me.chkClinico.Text = "Clínico"
         Me.chkClinico.UseVisualStyleBackColor = True
         '
-        'lstVacunas
-        '
-        Me.lstVacunas.FormattingEnabled = True
-        Me.lstVacunas.Location = New System.Drawing.Point(27, 247)
-        Me.lstVacunas.Name = "lstVacunas"
-        Me.lstVacunas.Size = New System.Drawing.Size(142, 94)
-        Me.lstVacunas.TabIndex = 10
-        '
-        'txtOtraVacuna
-        '
-        Me.txtOtraVacuna.Location = New System.Drawing.Point(193, 247)
-        Me.txtOtraVacuna.Multiline = True
-        Me.txtOtraVacuna.Name = "txtOtraVacuna"
-        Me.txtOtraVacuna.Size = New System.Drawing.Size(164, 106)
-        Me.txtOtraVacuna.TabIndex = 11
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(190, 226)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(80, 13)
-        Me.Label21.TabIndex = 27
-        Me.Label21.Text = "Otras Vacunas:"
-        '
         'Label20
         '
         Me.Label20.AutoSize = True
@@ -650,7 +640,7 @@ Partial Class vetUpdtPaciente
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(24, 226)
+        Me.Label11.Location = New System.Drawing.Point(59, 226)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(52, 13)
         Me.Label11.TabIndex = 23
@@ -658,6 +648,7 @@ Partial Class vetUpdtPaciente
         '
         'cmbEspecie
         '
+        Me.cmbEspecie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbEspecie.FormattingEnabled = True
         Me.cmbEspecie.Items.AddRange(New Object() {"Perro", "Gato"})
         Me.cmbEspecie.Location = New System.Drawing.Point(471, 17)
@@ -668,6 +659,7 @@ Partial Class vetUpdtPaciente
         'txtRasgos
         '
         Me.txtRasgos.Location = New System.Drawing.Point(125, 160)
+        Me.txtRasgos.MaxLength = 200
         Me.txtRasgos.Multiline = True
         Me.txtRasgos.Name = "txtRasgos"
         Me.txtRasgos.Size = New System.Drawing.Size(408, 50)
@@ -685,6 +677,7 @@ Partial Class vetUpdtPaciente
         'txtEstadoRep
         '
         Me.txtEstadoRep.Location = New System.Drawing.Point(471, 120)
+        Me.txtEstadoRep.MaxLength = 25
         Me.txtEstadoRep.Name = "txtEstadoRep"
         Me.txtEstadoRep.Size = New System.Drawing.Size(172, 20)
         Me.txtEstadoRep.TabIndex = 8
@@ -706,14 +699,6 @@ Partial Class vetUpdtPaciente
         Me.btnCargarFoto.TabIndex = 16
         Me.btnCargarFoto.Text = "Cargar Foto..."
         Me.btnCargarFoto.UseVisualStyleBackColor = True
-        '
-        'picFoto
-        '
-        Me.picFoto.Location = New System.Drawing.Point(551, 172)
-        Me.picFoto.Name = "picFoto"
-        Me.picFoto.Size = New System.Drawing.Size(141, 166)
-        Me.picFoto.TabIndex = 16
-        Me.picFoto.TabStop = False
         '
         'dtpFechaNac
         '
@@ -756,6 +741,7 @@ Partial Class vetUpdtPaciente
         'txtNombrePaciente
         '
         Me.txtNombrePaciente.Location = New System.Drawing.Point(86, 17)
+        Me.txtNombrePaciente.MaxLength = 25
         Me.txtNombrePaciente.Name = "txtNombrePaciente"
         Me.txtNombrePaciente.Size = New System.Drawing.Size(171, 20)
         Me.txtNombrePaciente.TabIndex = 0
@@ -763,6 +749,7 @@ Partial Class vetUpdtPaciente
         'txtRaza
         '
         Me.txtRaza.Location = New System.Drawing.Point(471, 52)
+        Me.txtRaza.MaxLength = 25
         Me.txtRaza.Name = "txtRaza"
         Me.txtRaza.Size = New System.Drawing.Size(172, 20)
         Me.txtRaza.TabIndex = 4
@@ -770,6 +757,7 @@ Partial Class vetUpdtPaciente
         'txtPeso
         '
         Me.txtPeso.Location = New System.Drawing.Point(85, 120)
+        Me.txtPeso.MaxLength = 7
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(171, 20)
         Me.txtPeso.TabIndex = 7
@@ -777,6 +765,7 @@ Partial Class vetUpdtPaciente
         'txtColor
         '
         Me.txtColor.Location = New System.Drawing.Point(85, 87)
+        Me.txtColor.MaxLength = 25
         Me.txtColor.Name = "txtColor"
         Me.txtColor.Size = New System.Drawing.Size(171, 20)
         Me.txtColor.TabIndex = 5
@@ -835,6 +824,19 @@ Partial Class vetUpdtPaciente
         Me.Label22.TabIndex = 4
         Me.Label22.Text = "Nombre:"
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'lstVacunas
+        '
+        Me.lstVacunas.CheckOnClick = True
+        Me.lstVacunas.FormattingEnabled = True
+        Me.lstVacunas.Location = New System.Drawing.Point(125, 226)
+        Me.lstVacunas.Name = "lstVacunas"
+        Me.lstVacunas.Size = New System.Drawing.Size(142, 124)
+        Me.lstVacunas.TabIndex = 43
+        '
         'vetUpdtPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -860,23 +862,21 @@ Partial Class vetUpdtPaciente
         Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.picFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        CType(Me.picFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents btnBorrarPaciente As System.Windows.Forms.Button
     Friend WithEvents dgvPacientes As System.Windows.Forms.DataGridView
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents btnBorrarPropietario As System.Windows.Forms.Button
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
-    Friend WithEvents btnSiguiente As System.Windows.Forms.Button
+    Friend WithEvents btnGuardarPro As System.Windows.Forms.Button
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents txtCodPropietario As System.Windows.Forms.TextBox
     Friend WithEvents Label24 As System.Windows.Forms.Label
@@ -906,23 +906,18 @@ Partial Class vetUpdtPaciente
     Friend WithEvents txtCodPaciente As System.Windows.Forms.TextBox
     Friend WithEvents Label26 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
-    Friend WithEvents btnGuardar As System.Windows.Forms.Button
+    Friend WithEvents btnGuardarPac As System.Windows.Forms.Button
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents chkPeluqueria As System.Windows.Forms.CheckBox
     Friend WithEvents chkClinico As System.Windows.Forms.CheckBox
-    Friend WithEvents lstVacunas As System.Windows.Forms.CheckedListBox
-    Friend WithEvents txtOtraVacuna As System.Windows.Forms.TextBox
-    Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents cmbEspecie As System.Windows.Forms.ComboBox
     Friend WithEvents txtRasgos As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents txtEstadoRep As System.Windows.Forms.TextBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents btnCargarFoto As System.Windows.Forms.Button
-    Friend WithEvents picFoto As System.Windows.Forms.PictureBox
     Friend WithEvents dtpFechaNac As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents rdbHembra As System.Windows.Forms.RadioButton
@@ -937,8 +932,14 @@ Partial Class vetUpdtPaciente
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents btnActualizarPro As System.Windows.Forms.Button
     Friend WithEvents btnAgregarPaciente As System.Windows.Forms.Button
     Friend WithEvents cmbUltiVacuna As System.Windows.Forms.ComboBox
     Friend WithEvents dtpUltiVacuna As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btnCancelarP As System.Windows.Forms.Button
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents picFoto As System.Windows.Forms.PictureBox
+    Friend WithEvents btnActualizarPac As System.Windows.Forms.Button
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents lstVacunas As System.Windows.Forms.CheckedListBox
 End Class

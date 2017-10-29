@@ -112,10 +112,13 @@ Partial Class vetReportPropietarios
         '
         Me.dgvPropietarios.AllowUserToAddRows = False
         Me.dgvPropietarios.AllowUserToDeleteRows = False
+        Me.dgvPropietarios.AllowUserToResizeRows = False
+        Me.dgvPropietarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvPropietarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPropietarios.Location = New System.Drawing.Point(22, 57)
         Me.dgvPropietarios.Name = "dgvPropietarios"
         Me.dgvPropietarios.ReadOnly = True
+        Me.dgvPropietarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPropietarios.Size = New System.Drawing.Size(577, 173)
         Me.dgvPropietarios.TabIndex = 1
         '
@@ -335,11 +338,14 @@ Partial Class vetReportPropietarios
         '
         Me.dgvPacientes.AllowUserToAddRows = False
         Me.dgvPacientes.AllowUserToDeleteRows = False
+        Me.dgvPacientes.AllowUserToResizeRows = False
+        Me.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPacientes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvPacientes.Location = New System.Drawing.Point(3, 3)
         Me.dgvPacientes.Name = "dgvPacientes"
         Me.dgvPacientes.ReadOnly = True
+        Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPacientes.Size = New System.Drawing.Size(601, 264)
         Me.dgvPacientes.TabIndex = 0
         '
@@ -358,11 +364,14 @@ Partial Class vetReportPropietarios
         '
         Me.dgvVisitas.AllowUserToAddRows = False
         Me.dgvVisitas.AllowUserToDeleteRows = False
+        Me.dgvVisitas.AllowUserToResizeRows = False
+        Me.dgvVisitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvVisitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvVisitas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvVisitas.Location = New System.Drawing.Point(3, 3)
         Me.dgvVisitas.Name = "dgvVisitas"
         Me.dgvVisitas.ReadOnly = True
+        Me.dgvVisitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvVisitas.Size = New System.Drawing.Size(601, 264)
         Me.dgvVisitas.TabIndex = 0
         '

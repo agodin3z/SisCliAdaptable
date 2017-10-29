@@ -74,6 +74,7 @@ Partial Class vetAgenda
         Me.dgvCitas.Location = New System.Drawing.Point(6, 52)
         Me.dgvCitas.Name = "dgvCitas"
         Me.dgvCitas.ReadOnly = True
+        Me.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCitas.Size = New System.Drawing.Size(947, 286)
         Me.dgvCitas.TabIndex = 2
         '

@@ -120,10 +120,13 @@ Partial Class vetReportPaciente
         '
         Me.dgvPacientes.AllowUserToAddRows = False
         Me.dgvPacientes.AllowUserToDeleteRows = False
+        Me.dgvPacientes.AllowUserToResizeRows = False
+        Me.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPacientes.Location = New System.Drawing.Point(22, 57)
         Me.dgvPacientes.Name = "dgvPacientes"
         Me.dgvPacientes.ReadOnly = True
+        Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPacientes.Size = New System.Drawing.Size(577, 231)
         Me.dgvPacientes.TabIndex = 2
         '
@@ -222,6 +225,7 @@ Partial Class vetReportPaciente
         Me.lstVacunas.ItemHeight = 15
         Me.lstVacunas.Location = New System.Drawing.Point(128, 224)
         Me.lstVacunas.Name = "lstVacunas"
+        Me.lstVacunas.SelectionMode = System.Windows.Forms.SelectionMode.None
         Me.lstVacunas.Size = New System.Drawing.Size(120, 94)
         Me.lstVacunas.TabIndex = 49
         '
@@ -271,6 +275,7 @@ Partial Class vetReportPaciente
         '
         'picFoto
         '
+        Me.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picFoto.Location = New System.Drawing.Point(446, 161)
         Me.picFoto.Name = "picFoto"
         Me.picFoto.Size = New System.Drawing.Size(141, 144)
@@ -411,11 +416,14 @@ Partial Class vetReportPaciente
         '
         Me.dgvConsultas.AllowUserToAddRows = False
         Me.dgvConsultas.AllowUserToDeleteRows = False
+        Me.dgvConsultas.AllowUserToResizeRows = False
+        Me.dgvConsultas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvConsultas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvConsultas.Location = New System.Drawing.Point(3, 3)
         Me.dgvConsultas.Name = "dgvConsultas"
         Me.dgvConsultas.ReadOnly = True
+        Me.dgvConsultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvConsultas.Size = New System.Drawing.Size(601, 320)
         Me.dgvConsultas.TabIndex = 0
         '
@@ -434,11 +442,14 @@ Partial Class vetReportPaciente
         '
         Me.dgvVacunas.AllowUserToAddRows = False
         Me.dgvVacunas.AllowUserToDeleteRows = False
+        Me.dgvVacunas.AllowUserToResizeRows = False
+        Me.dgvVacunas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvVacunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvVacunas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvVacunas.Location = New System.Drawing.Point(3, 3)
         Me.dgvVacunas.Name = "dgvVacunas"
         Me.dgvVacunas.ReadOnly = True
+        Me.dgvVacunas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvVacunas.Size = New System.Drawing.Size(601, 320)
         Me.dgvVacunas.TabIndex = 0
         '

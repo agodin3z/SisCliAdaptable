@@ -62,12 +62,14 @@ Public Class vetPacientes
         For Each i As String In x
             If i.Length > 0 Then
                 Dim corr As Integer = con.consultaExistente("Vacuna", "idVacuna LIKE '" & nom & "%'")
-                If corr < 10 Then
-                    con.insertar("Vacuna", "'" & nom & "00" & corr & "'," & "'" & esp & "','" & i & "'")
-                ElseIf corr < 100 Then
-                    con.insertar("Vacuna", "'" & nom & "0" & corr & "'," & "'" & esp & "','" & i & "'")
-                Else
-                    con.insertar("Vacuna", "'" & nom & corr & "'," & "'" & esp & "','" & i & "'")
+                If con.consultaExistente("Vacuna", "nombre = '" & i & "'") = 0 Then
+                    If corr < 10 Then
+                        con.insertar("Vacuna", "'" & nom & "00" & corr & "'," & "'" & esp & "','" & i & "'")
+                    ElseIf corr < 100 Then
+                        con.insertar("Vacuna", "'" & nom & "0" & corr & "'," & "'" & esp & "','" & i & "'")
+                    Else
+                        con.insertar("Vacuna", "'" & nom & corr & "'," & "'" & esp & "','" & i & "'")
+                    End If
                 End If
             End If
         Next
@@ -153,7 +155,7 @@ Public Class vetPacientes
             If rdbMacho.Checked Then
                 pacGenero = "M"
             ElseIf rdbHembra.Checked Then
-                pacGenero = "F"
+                pacGenero = "H"
             End If
             Dim pacRaza As String = txtRaza.Text.Trim
             Dim pacColor As String = txtColor.Text
@@ -231,7 +233,9 @@ Public Class vetPacientes
                         For aa = 0 To lstVacunas.CheckedItems.Count - 1
                             Dim vac = lstVacunas.GetItemText(lstVacunas.CheckedItems(aa))
                             Dim vacuna As String = con.consultaExistente("idVacuna", "Vacuna", " nombre='" & vac & "'")
-                            con.insertar("Vacuna_Paciente", "'" & vacuna & "','" & codPac & "','" & fecha & "'") 'XXX
+                            If con.consultaExistente("Vacuna_Paciente", "idVacuna = '" & vacuna & "' AND idPaciente='" & codPac & "'") = 0 Then
+                                con.insertar("Vacuna_Paciente", "'" & vacuna & "','" & codPac & "','" & fecha & "'") 'XXX
+                            End If
                         Next
 
                         'Ultima Vacuna

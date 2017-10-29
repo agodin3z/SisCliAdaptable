@@ -123,6 +123,7 @@ Public Class cConexion
     End Function
 
     Public Function selectImg(ByVal tabla As String, ByVal campo As String, ByVal condicion As String) As Byte()
+        comando = New SqlCommand
         con.Open()
         comando.CommandText = "SELECT " & campo & " FROM " & tabla & " " & condicion
         comando.Connection = con

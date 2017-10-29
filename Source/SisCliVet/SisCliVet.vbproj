@@ -84,12 +84,6 @@
     <Compile Include="vetAgenda.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vetConsentimiento.Designer.vb">
-      <DependentUpon>vetConsentimiento.vb</DependentUpon>
-    </Compile>
-    <Compile Include="vetConsentimiento.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="vetCreditos.Designer.vb">
       <DependentUpon>vetCreditos.vb</DependentUpon>
     </Compile>
@@ -203,9 +197,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vetCitas.resx">
       <DependentUpon>vetCitas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vetConsentimiento.resx">
-      <DependentUpon>vetConsentimiento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vetConsultaGral.resx">
       <DependentUpon>vetConsultaGral.vb</DependentUpon>

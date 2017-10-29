@@ -139,6 +139,7 @@ Partial Class vetPosponerCita
         '
         Me.txtOtro.Enabled = False
         Me.txtOtro.Location = New System.Drawing.Point(285, 141)
+        Me.txtOtro.MaxLength = 100
         Me.txtOtro.Name = "txtOtro"
         Me.txtOtro.Size = New System.Drawing.Size(191, 22)
         Me.txtOtro.TabIndex = 8

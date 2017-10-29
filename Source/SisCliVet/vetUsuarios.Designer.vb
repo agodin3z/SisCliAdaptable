@@ -27,7 +27,6 @@ Partial Class vetUsuarios
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -54,7 +53,6 @@ Partial Class vetUsuarios
         '
         Me.GroupBox2.Controls.Add(Me.btnEliminar)
         Me.GroupBox2.Controls.Add(Me.btnModificar)
-        Me.GroupBox2.Controls.Add(Me.btnLimpiar)
         Me.GroupBox2.Controls.Add(Me.dgvUsuarios)
         Me.GroupBox2.Controls.Add(Me.txtBusqueda)
         Me.GroupBox2.Controls.Add(Me.Label4)
@@ -88,16 +86,6 @@ Partial Class vetUsuarios
         Me.btnModificar.Text = " Modificar"
         Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnModificar.UseVisualStyleBackColor = True
-        '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.btnLimpiar.Location = New System.Drawing.Point(170, 190)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(108, 46)
-        Me.btnLimpiar.TabIndex = 10
-        Me.btnLimpiar.Text = "Limpiar"
-        Me.btnLimpiar.UseVisualStyleBackColor = True
         '
         'dgvUsuarios
         '
@@ -201,6 +189,7 @@ Partial Class vetUsuarios
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(122, 50)
+        Me.txtNombre.MaxLength = 100
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(400, 20)
         Me.txtNombre.TabIndex = 2
@@ -323,7 +312,6 @@ Partial Class vetUsuarios
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
     Friend WithEvents btnModificar As System.Windows.Forms.Button
-    Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents txtPasswd As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label

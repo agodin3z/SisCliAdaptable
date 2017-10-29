@@ -132,7 +132,7 @@
 
     End Sub
 
-    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs)
         limpiarDatos()
         txtBusqueda.Text = ""
         btnGuardar.Enabled = True

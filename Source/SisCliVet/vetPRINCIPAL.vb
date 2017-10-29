@@ -51,6 +51,9 @@
         stUsuario.Text = ""
         cGenerica.usr = ""
         cGenerica.vUser = 0
+        For Each frm As Form In Me.MdiChildren
+            frm.Close()
+        Next
         Inicial()
     End Sub
 
@@ -104,10 +107,6 @@
 
     Private Sub AgendaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgendaToolStripMenuItem.Click
         cGenerica.showFrm(vetAgenda, Me)
-    End Sub
-
-    Private Sub HojaDeConsentimientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HojaDeConsentimientoToolStripMenuItem.Click
-        cGenerica.showFrm(vetConsentimiento, Me)
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

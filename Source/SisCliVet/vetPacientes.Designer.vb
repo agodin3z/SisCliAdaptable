@@ -62,6 +62,8 @@ Partial Class vetPacientes
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.lstVacunas = New System.Windows.Forms.CheckedListBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.picFoto = New System.Windows.Forms.PictureBox()
         Me.cmbUltiVacuna = New System.Windows.Forms.ComboBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -92,8 +94,6 @@ Partial Class vetPacientes
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.lstVacunas = New System.Windows.Forms.CheckedListBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -247,6 +247,7 @@ Partial Class vetPacientes
         'txtDireccion
         '
         Me.txtDireccion.Location = New System.Drawing.Point(111, 154)
+        Me.txtDireccion.MaxLength = 150
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(564, 22)
@@ -295,6 +296,7 @@ Partial Class vetPacientes
         'txtSegNombre
         '
         Me.txtSegNombre.Location = New System.Drawing.Point(481, 26)
+        Me.txtSegNombre.MaxLength = 25
         Me.txtSegNombre.Name = "txtSegNombre"
         Me.txtSegNombre.Size = New System.Drawing.Size(194, 20)
         Me.txtSegNombre.TabIndex = 3
@@ -302,6 +304,7 @@ Partial Class vetPacientes
         'txtDui
         '
         Me.txtDui.Location = New System.Drawing.Point(111, 90)
+        Me.txtDui.MaxLength = 9
         Me.txtDui.Name = "txtDui"
         Me.txtDui.Size = New System.Drawing.Size(133, 20)
         Me.txtDui.TabIndex = 6
@@ -309,6 +312,7 @@ Partial Class vetPacientes
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(481, 90)
+        Me.txtEmail.MaxLength = 50
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(194, 20)
         Me.txtEmail.TabIndex = 7
@@ -316,6 +320,7 @@ Partial Class vetPacientes
         'txtTelMovil
         '
         Me.txtTelMovil.Location = New System.Drawing.Point(481, 186)
+        Me.txtTelMovil.MaxLength = 8
         Me.txtTelMovil.Name = "txtTelMovil"
         Me.txtTelMovil.Size = New System.Drawing.Size(133, 20)
         Me.txtTelMovil.TabIndex = 12
@@ -323,6 +328,7 @@ Partial Class vetPacientes
         'txtTelFijo
         '
         Me.txtTelFijo.Location = New System.Drawing.Point(110, 186)
+        Me.txtTelFijo.MaxLength = 8
         Me.txtTelFijo.Name = "txtTelFijo"
         Me.txtTelFijo.Size = New System.Drawing.Size(133, 20)
         Me.txtTelFijo.TabIndex = 11
@@ -330,6 +336,7 @@ Partial Class vetPacientes
         'txtSegApellido
         '
         Me.txtSegApellido.Location = New System.Drawing.Point(481, 58)
+        Me.txtSegApellido.MaxLength = 25
         Me.txtSegApellido.Name = "txtSegApellido"
         Me.txtSegApellido.Size = New System.Drawing.Size(194, 20)
         Me.txtSegApellido.TabIndex = 5
@@ -337,6 +344,7 @@ Partial Class vetPacientes
         'txtPriApellido
         '
         Me.txtPriApellido.Location = New System.Drawing.Point(111, 58)
+        Me.txtPriApellido.MaxLength = 25
         Me.txtPriApellido.Name = "txtPriApellido"
         Me.txtPriApellido.Size = New System.Drawing.Size(193, 20)
         Me.txtPriApellido.TabIndex = 4
@@ -389,6 +397,7 @@ Partial Class vetPacientes
         'txtPriNombre
         '
         Me.txtPriNombre.Location = New System.Drawing.Point(110, 26)
+        Me.txtPriNombre.MaxLength = 25
         Me.txtPriNombre.Name = "txtPriNombre"
         Me.txtPriNombre.Size = New System.Drawing.Size(194, 20)
         Me.txtPriNombre.TabIndex = 2
@@ -516,6 +525,24 @@ Partial Class vetPacientes
         Me.GroupBox3.TabIndex = 8
         Me.GroupBox3.TabStop = False
         '
+        'lstVacunas
+        '
+        Me.lstVacunas.CheckOnClick = True
+        Me.lstVacunas.FormattingEnabled = True
+        Me.lstVacunas.Location = New System.Drawing.Point(208, 209)
+        Me.lstVacunas.Name = "lstVacunas"
+        Me.lstVacunas.Size = New System.Drawing.Size(142, 94)
+        Me.lstVacunas.TabIndex = 11
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(205, 191)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(52, 13)
+        Me.Label11.TabIndex = 30
+        Me.Label11.Text = "Vacunas:"
+        '
         'picFoto
         '
         Me.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
@@ -611,6 +638,7 @@ Partial Class vetPacientes
         'txtRasgos
         '
         Me.txtRasgos.Location = New System.Drawing.Point(125, 139)
+        Me.txtRasgos.MaxLength = 200
         Me.txtRasgos.Multiline = True
         Me.txtRasgos.Name = "txtRasgos"
         Me.txtRasgos.Size = New System.Drawing.Size(408, 44)
@@ -628,6 +656,7 @@ Partial Class vetPacientes
         'txtEstadoRep
         '
         Me.txtEstadoRep.Location = New System.Drawing.Point(471, 104)
+        Me.txtEstadoRep.MaxLength = 25
         Me.txtEstadoRep.Name = "txtEstadoRep"
         Me.txtEstadoRep.Size = New System.Drawing.Size(172, 20)
         Me.txtEstadoRep.TabIndex = 8
@@ -691,6 +720,7 @@ Partial Class vetPacientes
         'txtNombrePaciente
         '
         Me.txtNombrePaciente.Location = New System.Drawing.Point(86, 15)
+        Me.txtNombrePaciente.MaxLength = 25
         Me.txtNombrePaciente.Name = "txtNombrePaciente"
         Me.txtNombrePaciente.Size = New System.Drawing.Size(171, 20)
         Me.txtNombrePaciente.TabIndex = 0
@@ -698,6 +728,7 @@ Partial Class vetPacientes
         'txtRaza
         '
         Me.txtRaza.Location = New System.Drawing.Point(471, 45)
+        Me.txtRaza.MaxLength = 25
         Me.txtRaza.Name = "txtRaza"
         Me.txtRaza.Size = New System.Drawing.Size(172, 20)
         Me.txtRaza.TabIndex = 4
@@ -705,6 +736,7 @@ Partial Class vetPacientes
         'txtPeso
         '
         Me.txtPeso.Location = New System.Drawing.Point(85, 104)
+        Me.txtPeso.MaxLength = 7
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(171, 20)
         Me.txtPeso.TabIndex = 7
@@ -712,6 +744,7 @@ Partial Class vetPacientes
         'txtColor
         '
         Me.txtColor.Location = New System.Drawing.Point(85, 75)
+        Me.txtColor.MaxLength = 25
         Me.txtColor.Name = "txtColor"
         Me.txtColor.Size = New System.Drawing.Size(171, 20)
         Me.txtColor.TabIndex = 5
@@ -773,24 +806,6 @@ Partial Class vetPacientes
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'lstVacunas
-        '
-        Me.lstVacunas.CheckOnClick = True
-        Me.lstVacunas.FormattingEnabled = True
-        Me.lstVacunas.Location = New System.Drawing.Point(208, 209)
-        Me.lstVacunas.Name = "lstVacunas"
-        Me.lstVacunas.Size = New System.Drawing.Size(142, 94)
-        Me.lstVacunas.TabIndex = 11
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(205, 191)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(52, 13)
-        Me.Label11.TabIndex = 30
-        Me.Label11.Text = "Vacunas:"
         '
         'vetPacientes
         '
