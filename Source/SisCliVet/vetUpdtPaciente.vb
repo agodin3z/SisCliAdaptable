@@ -1,12 +1,5 @@
 ﻿Public Class vetUpdtPaciente
     Dim con As New cConexion
-    Dim tabla As String = "Paciente"
-    Dim campos As String = "Paciente.idPaciente AS 'Codigo del paciente', Paciente.nombre AS 'Nombre del paciente'," &
-        "Especie.nombre As 'Especie', Paciente.sexo AS 'Sexo' , Paciente.Raza AS Raza, Paciente.rasgoDist AS Rasgos," &
-        "Paciente.fechaNac AS 'Fecha de Nacimiento', Propietario.idPropietario AS 'Codigo del propietario', " &
-        "Propietario.priNombre AS 'Nombre del propietario', Propietario.priApellido AS 'Nombre del propietario'"
-    Dim join As String = "INNER JOIN Especie ON Especie.idEspecie = Paciente.idEspecie " &
-        "INNER JOIN Propietario ON Propietario.idPropietario = Paciente.idPropietario"
     Dim strImg As String
     Dim foto As Integer, boton As Integer
 
@@ -27,7 +20,6 @@
         chkClinico.Checked = False
         chkPeluqueria.Checked = False
         picFoto.BackgroundImage = Nothing
-        TabPage2.Parent = Nothing
     End Sub
 
     Private Sub inicio()
@@ -37,13 +29,22 @@
         TabPage2.Parent = Nothing
         TabPage3.Parent = Nothing
         llenarEspecie()
+        lstVacunas.DataSource = Nothing
     End Sub
+
     Private Sub cargar(ByVal sql As String)
-        dgvPacientes.DataSource = con.consultaCondicionada(campos, tabla, join, sql)
+        Dim campos As String = "Paciente.idPaciente AS 'Codigo del paciente', Paciente.nombre AS 'Nombre del paciente'," &
+        "Especie.nombre As 'Especie', Paciente.sexo AS 'Sexo' , Paciente.Raza AS Raza, Paciente.rasgoDist AS Rasgos," &
+        "Paciente.fechaNac AS 'Fecha de Nacimiento', Propietario.idPropietario AS 'Codigo del propietario', " &
+        "Propietario.priNombre AS 'Nombre del propietario', Propietario.priApellido AS 'Nombre del propietario'"
+
+        Dim join As String = "INNER JOIN Especie ON Especie.idEspecie = Paciente.idEspecie " &
+        "INNER JOIN Propietario ON Propietario.idPropietario = Paciente.idPropietario"
+
+        dgvPacientes.DataSource = con.consultaCondicionada(campos, "Paciente", join, sql)
         dgvPacientes.Refresh()
     End Sub
 
-    'AQUI
     Private Sub llenarVacunas(ByVal Ctrl As Windows.Forms.ListBox, ByVal condicion As String, ByVal tabla As String, ByVal identificacion As String, ByVal nombre As String)
         Ctrl.DataSource = con.consultaCondicionada(tabla, condicion)
         Ctrl.ValueMember = identificacion
@@ -61,8 +62,6 @@
         cmbEspecie.ValueMember = "idEspecie"
         cmbEspecie.DisplayMember = "nombre"
     End Sub
-
-    'FIN
 
     Private Sub vetUpdtPaciente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         inicio()
@@ -295,52 +294,50 @@
     End Sub
 
     Private Sub btnActualizarPac_Click(sender As Object, e As EventArgs) Handles btnActualizarPac.Click
-        Try
-            boton = 0
-            TabPage3.Parent = Me.TabControl1
-            TabControl1.SelectTab(1)
-            TabPage1.Parent = Nothing
 
-            'Tomando el dato de la fila seleccionada para llenar los otros tab
-            Dim dt As DataTable = con.consultaCondicionada("Paciente", " idPaciente='" & dgvPacientes.SelectedRows().Item(0).Cells(0).Value & "'")
-            txtCodPaciente.Text = dt.Rows(0)("idPaciente").ToString
-            txtNombrePaciente.Text = dt.Rows(0)("nombre").ToString
-            cmbEspecie.SelectedValue = dt.Rows(0)("idEspecie").ToString
+        boton = 0
+        TabPage3.Parent = Me.TabControl1
+        TabControl1.SelectTab(1)
+        TabPage1.Parent = Nothing
 
-            llenarVacunas(lstVacunas, "idPaciente = '" & txtCodPaciente.Text & "'", "Vacuna_Paciente", "idVacuna", "nombre")
-            llenarCmbUltiVacuna(cmbUltiVacuna, "idEspecie = " & cmbEspecie.SelectedValue.ToString, "Vacuna", "idVacuna", "nombre")
+        'Tomando el dato de la fila seleccionada para llenar los otros tab
+        Dim dt As DataTable = con.consultaCondicionada("Paciente", " idPaciente='" & dgvPacientes.SelectedRows().Item(0).Cells(0).Value & "'")
+        txtCodPaciente.Text = dt.Rows(0)("idPaciente").ToString
+        txtNombrePaciente.Text = dt.Rows(0)("nombre").ToString
+        cmbEspecie.SelectedValue = dt.Rows(0)("idEspecie").ToString
 
-            If dt.Rows(0)("sexo").ToString = "H" Then
-                rdbHembra.Checked = True
-            End If
-            If dt.Rows(0)("sexo").ToString = "M" Then
-                rdbMacho.Checked = True
-            End If
-            txtRaza.Text = dt.Rows(0)("raza").ToString
-            txtColor.Text = dt.Rows(0)("color").ToString
-            dtpFechaNac.Value = dt.Rows(0)("fechaNac").ToString
-            txtPeso.Text = dt.Rows(0)("peso").ToString
-            txtEstadoRep.Text = dt.Rows(0)("estadoRep").ToString
-            txtRasgos.Text = dt.Rows(0)("rasgoDist").ToString
+        llenarVacunas(lstVacunas, "idPaciente = '" & txtCodPaciente.Text & "'", "Vacuna_Paciente", "idVacuna", "nombre")
+        llenarCmbUltiVacuna(cmbUltiVacuna, "idEspecie = " & cmbEspecie.SelectedValue.ToString, "Vacuna", "idVacuna", "nombre")
 
-            cmbUltiVacuna.SelectedValue = dt.Rows(0)("ultimaVacuna").ToString
-            dtpUltiVacuna.Value = dt.Rows(0)("fechaUltiVac").ToString
+        If dt.Rows(0)("sexo").ToString = "H" Then
+            rdbHembra.Checked = True
+        End If
+        If dt.Rows(0)("sexo").ToString = "M" Then
+            rdbMacho.Checked = True
+        End If
+        txtRaza.Text = dt.Rows(0)("raza").ToString
+        txtColor.Text = dt.Rows(0)("color").ToString
+        dtpFechaNac.Value = dt.Rows(0)("fechaNac").ToString
+        txtPeso.Text = dt.Rows(0)("peso").ToString
+        txtEstadoRep.Text = dt.Rows(0)("estadoRep").ToString
+        txtRasgos.Text = dt.Rows(0)("rasgoDist").ToString
 
-            If dt.Rows(0)("idTipoReg").ToString = 1 Then
-                chkClinico.Checked = True
-            ElseIf dt.Rows(0)("idTipoReg").ToString = 2 Then
-                chkPeluqueria.Checked = True
-            ElseIf dt.Rows(0)("idTipoReg").ToString = 3 Then
-                chkClinico.Checked = True
-                chkPeluqueria.Checked = True
-            End If
+        cmbUltiVacuna.SelectedValue = dt.Rows(0)("ultimaVacuna").ToString
+        dtpUltiVacuna.Value = dt.Rows(0)("fechaUltiVac").ToString
 
-            Dim ms As New System.IO.MemoryStream(con.selectImg("Paciente", "fotografia", "WHERE idPaciente='" & txtCodPaciente.Text & "'"))
-            picFoto.BackgroundImage = Image.FromStream(ms)
+        If dt.Rows(0)("idTipoReg").ToString = 1 Then
+            chkClinico.Checked = True
+        ElseIf dt.Rows(0)("idTipoReg").ToString = 2 Then
+            chkPeluqueria.Checked = True
+        ElseIf dt.Rows(0)("idTipoReg").ToString = 3 Then
+            chkClinico.Checked = True
+            chkPeluqueria.Checked = True
+        End If
 
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-        End Try
+        Dim ms As New System.IO.MemoryStream(con.selectImg("Paciente", "fotografia", "WHERE idPaciente='" & txtCodPaciente.Text & "'"))
+        picFoto.BackgroundImage = Image.FromStream(ms)
+
+        
     End Sub
 
     Private Sub cmbEspecie_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEspecie.SelectedIndexChanged
@@ -348,5 +345,46 @@
             llenarCmbUltiVacuna(cmbUltiVacuna, "idEspecie = " & cmbEspecie.SelectedValue.ToString, "Vacuna", "idVacuna", "nombre")
             llenarVacunas(lstVacunas, "idEspecie = " & cmbEspecie.SelectedValue.ToString, "Vacuna", "idVacuna", "nombre")
         End If
+    End Sub
+
+    'Validaciones
+    Private Sub txtPriNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPriNombre.KeyPress
+        cGenerica.SoloTexto(txtPriNombre, e)
+    End Sub
+    Private Sub txtSegNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSegNombre.KeyPress
+        cGenerica.SoloTexto(txtSegNombre, e)
+    End Sub
+    Private Sub txtPriApellido_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPriApellido.KeyPress
+        cGenerica.SoloTexto(txtPriApellido, e)
+    End Sub
+    Private Sub txtSegApellido_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSegApellido.KeyPress
+        cGenerica.SoloTexto(txtSegApellido, e)
+    End Sub
+    Private Sub txtTelFijo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelFijo.KeyPress
+        cGenerica.Telefono(txtTelFijo, e)
+    End Sub
+    Private Sub txtTelMovil_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelMovil.KeyPress
+        cGenerica.Telefono(txtTelMovil, e)
+    End Sub
+    Private Sub txtDui_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDui.KeyPress
+        cGenerica.SoloNumeros(txtDui, e)
+    End Sub
+    Private Sub txtNombrePaciente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombrePaciente.KeyPress
+        cGenerica.SoloTexto(txtNombrePaciente, e)
+    End Sub
+    Private Sub txtRaza_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRaza.KeyPress
+        cGenerica.SoloTexto(txtRaza, e)
+    End Sub
+    Private Sub txtRasgos_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRasgos.KeyPress
+        cGenerica.SoloTexto(txtRasgos, e)
+    End Sub
+    Private Sub txtColor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtColor.KeyPress
+        cGenerica.SoloTexto(txtColor, e)
+    End Sub
+    Private Sub txtEstadoRep_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEstadoRep.KeyPress
+        cGenerica.SoloTexto(txtEstadoRep, e)
+    End Sub
+    Private Sub txtPeso_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPeso.KeyPress
+        cGenerica.DosDecimales(txtPeso, e)
     End Sub
 End Class

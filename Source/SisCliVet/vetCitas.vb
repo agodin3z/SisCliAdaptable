@@ -1,15 +1,6 @@
 ﻿Public Class vetCitas
     Dim con As New cConexion
-    Dim tabla As String = "Paciente"
-    'Campos del dgv: Codigo del paciente, su nombre, codigo del propietario, primer nombre y apellido
-    Dim campos As String = "Paciente.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente'," &
-    "Propietario.idPropietario AS 'Codigo del Propietario', Propietario.priNombre AS 'Nombre del Propietario'," &
-    "Propietario.priApellido AS 'Apellido del Propietario'"
-    'Uniendo la tabla de Propietario para poder llamar el primer nombre y apellido
-    Dim join As String = "INNER JOIN Propietario ON Propietario.idPropietario = Paciente.idPropietario"
     Dim paciente As String
-    Dim propietario As String
-    'Dim condicion As String
 
     Private Sub limpiar()
         txtBusqueda.Clear()
@@ -22,8 +13,14 @@
         rdbRefuerzo.Checked = False
         TabPage2.Parent = Nothing
     End Sub
+
     Private Sub cargar(ByVal condicion As String)
-        dgvPacientes.DataSource = con.consultaCondicionada(campos, tabla, join, condicion)
+        Dim campos As String = "Paciente.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente'," &
+        "Propietario.idPropietario AS 'Codigo del Propietario', Propietario.priNombre AS 'Nombre del Propietario'," &
+        "Propietario.priApellido AS 'Apellido del Propietario'"
+        Dim join As String = "INNER JOIN Propietario ON Propietario.idPropietario = Paciente.idPropietario"
+
+        dgvPacientes.DataSource = con.consultaCondicionada(campos, "Paciente", join, condicion)
         dgvPacientes.Refresh()
     End Sub
 
@@ -38,6 +35,7 @@
 
     Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         If dgvPacientes.SelectedRows.Count > 0 Then
+            Dim propietario As String
             TabPage2.Parent = Me.TabControl1
             TabControl1.SelectTab(1)
             'Tomando el dato de la fila seleccionada para llenar el otro tab
@@ -113,5 +111,10 @@
     Private Sub btnPosponer_Click(sender As Object, e As EventArgs) Handles btnPosponer.Click
         Dim f As New vetPosponerCita
         f.ShowDialog()
+    End Sub
+
+    'Validacion
+    Private Sub txtOtro_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtOtro.KeyPress
+        cGenerica.SoloTexto(txtOtro, e)
     End Sub
 End Class

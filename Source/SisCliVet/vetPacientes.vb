@@ -281,4 +281,44 @@ Public Class vetPacientes
         nuevaVacuna()
     End Sub
 
+    'Validaciones
+    Private Sub txtPriNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPriNombre.KeyPress
+        cGenerica.SoloTexto(txtPriNombre, e)
+    End Sub
+    Private Sub txtSegNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSegNombre.KeyPress
+        cGenerica.SoloTexto(txtSegNombre, e)
+    End Sub
+    Private Sub txtPriApellido_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPriApellido.KeyPress
+        cGenerica.SoloTexto(txtPriApellido, e)
+    End Sub
+    Private Sub txtSegApellido_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSegApellido.KeyPress
+        cGenerica.SoloTexto(txtSegApellido, e)
+    End Sub
+    Private Sub txtTelFijo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelFijo.KeyPress
+        cGenerica.Telefono(txtTelFijo, e)
+    End Sub
+    Private Sub txtTelMovil_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelMovil.KeyPress
+        cGenerica.Telefono(txtTelMovil, e)
+    End Sub
+    Private Sub txtDui_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDui.KeyPress
+        cGenerica.SoloNumeros(txtDui, e)
+    End Sub
+    Private Sub txtNombrePaciente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombrePaciente.KeyPress
+        cGenerica.SoloTexto(txtNombrePaciente, e)
+    End Sub
+    Private Sub txtRaza_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRaza.KeyPress
+        cGenerica.SoloTexto(txtRaza, e)
+    End Sub
+    Private Sub txtRasgos_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRasgos.KeyPress
+        cGenerica.SoloTexto(txtRasgos, e)
+    End Sub
+    Private Sub txtColor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtColor.KeyPress
+        cGenerica.SoloTexto(txtColor, e)
+    End Sub
+    Private Sub txtEstadoRep_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEstadoRep.KeyPress
+        cGenerica.SoloTexto(txtEstadoRep, e)
+    End Sub
+    Private Sub txtPeso_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPeso.KeyPress
+        cGenerica.DosDecimales(txtPeso, e)
+    End Sub
 End Class

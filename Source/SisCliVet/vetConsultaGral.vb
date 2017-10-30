@@ -1,24 +1,24 @@
 ﻿Public Class vetConsultaGral
     Dim con As New cConexion
-    Dim tabla As String = "Cita"
-    'Campos: Codigo del Paciente y su nombre, fecha y hora de creacion de la cita, el motivo y el usuario que la creo 
-    Dim campos As String = "Cita.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente'," &
-    "Cita.fechaCrea AS 'Fecha de Creacion', Cita.fecha AS 'Hora de la cita'," & "Cita.motivo AS 'Motivo de la cita'," &
-    "Usuario.nombre AS 'Encargado'"
-    'Uniendo las tablas de Paciente para el id y Usuario para el nombre de usuario
-    Dim join As String = "INNER JOIN Paciente ON Paciente.idPaciente = Cita.idPaciente " &
-        "INNER JOIN Usuario ON Usuario.username = Cita.username"
     Dim paciente As String = ""
     Dim cita As DateTime
 
 
     Private Sub cargar(ByVal condicion As String)
-        dgvPacientes.DataSource = con.consultaCondicionada(campos, tabla, join, condicion)
+        Dim tabla As String = "Cita"
+        Dim campos As String = "Cita.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente'," &
+        "Cita.fechaCrea AS 'Fecha de Creacion', Cita.fecha AS 'Hora de la cita'," & "Cita.motivo AS 'Motivo de la cita'," &
+        "Usuario.nombre AS 'Encargado'"
+        Dim join As String = "INNER JOIN Paciente ON Paciente.idPaciente = Cita.idPaciente " &
+            "INNER JOIN Usuario ON Usuario.username = Cita.username"
+
+        dgvPacientes.DataSource = con.consultaCondicionada(campos, tabla, Join, condicion)
         dgvPacientes.Refresh()
     End Sub
 
     Private Sub btnVacunas_Click(sender As Object, e As EventArgs) Handles btnVacunas.Click
-        cGenerica.ShowDlg(vetCtrlVacuna, Me) 'Deberia enviar datos a segunda pestaña
+        Dim f As New vetCtrlVacuna
+        cGenerica.ShowDlg(f, Me)
     End Sub
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged

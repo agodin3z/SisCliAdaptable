@@ -9,7 +9,6 @@
         ReportesToolStripMenuItem.Enabled = False
     End Sub
 
-    'Sistema Temporal de Login
     Private Sub Login()
         Do
             cGenerica.ShowDlg(vetLogin, Me)
@@ -37,7 +36,7 @@
             MessageBox.Show("Error al iniciar sesión", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
-    'FIN Sistema Temporal de Login
+
     Private Sub ConectarseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConectarseToolStripMenuItem.Click
         Login()
     End Sub

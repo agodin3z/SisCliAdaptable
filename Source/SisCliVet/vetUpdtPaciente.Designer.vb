@@ -66,6 +66,7 @@ Partial Class vetUpdtPaciente
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardarPac = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.lstVacunas = New System.Windows.Forms.CheckedListBox()
         Me.picFoto = New System.Windows.Forms.PictureBox()
         Me.cmbUltiVacuna = New System.Windows.Forms.ComboBox()
         Me.dtpUltiVacuna = New System.Windows.Forms.DateTimePicker()
@@ -95,7 +96,6 @@ Partial Class vetUpdtPaciente
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.lstVacunas = New System.Windows.Forms.CheckedListBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -571,6 +571,15 @@ Partial Class vetUpdtPaciente
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
         '
+        'lstVacunas
+        '
+        Me.lstVacunas.CheckOnClick = True
+        Me.lstVacunas.FormattingEnabled = True
+        Me.lstVacunas.Location = New System.Drawing.Point(125, 226)
+        Me.lstVacunas.Name = "lstVacunas"
+        Me.lstVacunas.Size = New System.Drawing.Size(142, 124)
+        Me.lstVacunas.TabIndex = 43
+        '
         'picFoto
         '
         Me.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
@@ -827,15 +836,6 @@ Partial Class vetUpdtPaciente
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'lstVacunas
-        '
-        Me.lstVacunas.CheckOnClick = True
-        Me.lstVacunas.FormattingEnabled = True
-        Me.lstVacunas.Location = New System.Drawing.Point(125, 226)
-        Me.lstVacunas.Name = "lstVacunas"
-        Me.lstVacunas.Size = New System.Drawing.Size(142, 124)
-        Me.lstVacunas.TabIndex = 43
         '
         'vetUpdtPaciente
         '

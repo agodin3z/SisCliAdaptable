@@ -2,6 +2,22 @@
 Public Class vetInfoGral
     Dim con As New cConexion
     Dim nomAnterior As String = ""
+
+    Private Sub vetInfoGral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If con.consultaExistente("InfoClinica", "nombre LIKE '%" & txtNombre.Text & "%'") > 0 Then
+            Dim dt As DataTable = con.consultaGeneral("InfoClinica")
+            txtNombre.Text = dt.Rows(0)("nombre").ToString
+            txtAmbito.Text = dt.Rows(0)("ambito").ToString
+            txtDireccion.Text = dt.Rows(0)("direccion").ToString
+            txtTelefono.Text = dt.Rows(0)("telefono").ToString
+            If con.consultaExistente("logo", "InfoClinica", "nombre LIKE '%" & txtNombre.Text & "%'").ToString.Length > 0 Then
+                Dim ms As New MemoryStream(con.selectImg("InfoClinica", "TOP 1 logo", ""))
+                picLogo.BackgroundImage = Image.FromStream(ms)
+            End If
+            nomAnterior = txtNombre.Text.Trim
+        End If
+    End Sub
+
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         If txtNombre.Text = "" And picLogo.BackgroundImage Is Nothing Then
             MessageBox.Show("Debe introducir al menos un nombre y el logo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -44,16 +60,8 @@ Public Class vetInfoGral
         End If
     End Sub
 
-    Private Sub vetInfoGral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If con.consultaExistente("InfoClinica", "nombre LIKE '%" & txtNombre.Text & "%'") > 0 Then
-            Dim dt As DataTable = con.consultaGeneral("InfoClinica")
-            txtNombre.Text = dt.Rows(0)("nombre").ToString
-            txtAmbito.Text = dt.Rows(0)("ambito").ToString
-            txtDireccion.Text = dt.Rows(0)("direccion").ToString
-            txtTelefono.Text = dt.Rows(0)("telefono").ToString
-            Dim ms As New MemoryStream(con.selectImg("InfoClinica", "TOP 1 logo", ""))
-            picLogo.BackgroundImage = Image.FromStream(ms)
-            nomAnterior = txtNombre.Text.Trim
-        End If
+    
+    Private Sub txtTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelefono.KeyPress
+        cGenerica.Telefono(txtTelefono, e)
     End Sub
 End Class

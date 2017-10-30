@@ -35,6 +35,7 @@ Partial Class medInfoGral
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -80,6 +81,7 @@ Partial Class medInfoGral
         '
         'picLogo
         '
+        Me.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picLogo.Location = New System.Drawing.Point(413, 17)
         Me.picLogo.Name = "picLogo"
         Me.picLogo.Size = New System.Drawing.Size(141, 144)
@@ -98,6 +100,7 @@ Partial Class medInfoGral
         'txtTelefono
         '
         Me.txtTelefono.Location = New System.Drawing.Point(71, 82)
+        Me.txtTelefono.MaxLength = 8
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(133, 22)
         Me.txtTelefono.TabIndex = 2
@@ -105,6 +108,7 @@ Partial Class medInfoGral
         'txtDireccion
         '
         Me.txtDireccion.Location = New System.Drawing.Point(71, 112)
+        Me.txtDireccion.MaxLength = 200
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(319, 46)
@@ -113,6 +117,7 @@ Partial Class medInfoGral
         'txtAmbito
         '
         Me.txtAmbito.Location = New System.Drawing.Point(71, 52)
+        Me.txtAmbito.MaxLength = 50
         Me.txtAmbito.Name = "txtAmbito"
         Me.txtAmbito.Size = New System.Drawing.Size(319, 22)
         Me.txtAmbito.TabIndex = 1
@@ -138,6 +143,7 @@ Partial Class medInfoGral
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(71, 22)
+        Me.txtNombre.MaxLength = 50
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(215, 22)
         Me.txtNombre.TabIndex = 0
@@ -159,6 +165,10 @@ Partial Class medInfoGral
         Me.Label1.Size = New System.Drawing.Size(52, 15)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Nombre:"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'medInfoGral
         '
@@ -188,4 +198,5 @@ Partial Class medInfoGral
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 End Class

@@ -40,9 +40,6 @@ Partial Class medConsultaGral
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.dtpHoraSiguiente = New System.Windows.Forms.DateTimePicker()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.dtpFechaSiguiente = New System.Windows.Forms.DateTimePicker()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.txtTratamiento = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -83,6 +80,7 @@ Partial Class medConsultaGral
         Me.Label28 = New System.Windows.Forms.Label()
         Me.txtFechaReceta = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
+        Me.dtpFechaSiguiente = New System.Windows.Forms.DateTimePicker()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -148,10 +146,13 @@ Partial Class medConsultaGral
         '
         Me.dgvPacientes.AllowUserToAddRows = False
         Me.dgvPacientes.AllowUserToDeleteRows = False
+        Me.dgvPacientes.AllowUserToResizeRows = False
+        Me.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPacientes.Location = New System.Drawing.Point(22, 49)
         Me.dgvPacientes.Name = "dgvPacientes"
         Me.dgvPacientes.ReadOnly = True
+        Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPacientes.Size = New System.Drawing.Size(649, 297)
         Me.dgvPacientes.TabIndex = 1
         '
@@ -211,6 +212,7 @@ Partial Class medConsultaGral
         'txtMotivo
         '
         Me.txtMotivo.Location = New System.Drawing.Point(137, 34)
+        Me.txtMotivo.MaxLength = 250
         Me.txtMotivo.Name = "txtMotivo"
         Me.txtMotivo.Size = New System.Drawing.Size(566, 22)
         Me.txtMotivo.TabIndex = 1
@@ -271,8 +273,6 @@ Partial Class medConsultaGral
         '
         'TabPage4
         '
-        Me.TabPage4.Controls.Add(Me.dtpHoraSiguiente)
-        Me.TabPage4.Controls.Add(Me.Label32)
         Me.TabPage4.Controls.Add(Me.dtpFechaSiguiente)
         Me.TabPage4.Controls.Add(Me.Label33)
         Me.TabPage4.Controls.Add(Me.txtTratamiento)
@@ -291,31 +291,6 @@ Partial Class medConsultaGral
         Me.TabPage4.Text = "Diágnostico Médico"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
-        'dtpHoraSiguiente
-        '
-        Me.dtpHoraSiguiente.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpHoraSiguiente.Location = New System.Drawing.Point(384, 246)
-        Me.dtpHoraSiguiente.Name = "dtpHoraSiguiente"
-        Me.dtpHoraSiguiente.ShowUpDown = True
-        Me.dtpHoraSiguiente.Size = New System.Drawing.Size(99, 22)
-        Me.dtpHoraSiguiente.TabIndex = 6
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(343, 249)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(35, 15)
-        Me.Label32.TabIndex = 49
-        Me.Label32.Text = "Hora:"
-        '
-        'dtpFechaSiguiente
-        '
-        Me.dtpFechaSiguiente.Location = New System.Drawing.Point(111, 246)
-        Me.dtpFechaSiguiente.Name = "dtpFechaSiguiente"
-        Me.dtpFechaSiguiente.Size = New System.Drawing.Size(215, 22)
-        Me.dtpFechaSiguiente.TabIndex = 5
-        '
         'Label33
         '
         Me.Label33.AutoSize = True
@@ -328,6 +303,7 @@ Partial Class medConsultaGral
         'txtTratamiento
         '
         Me.txtTratamiento.Location = New System.Drawing.Point(111, 188)
+        Me.txtTratamiento.MaxLength = 500
         Me.txtTratamiento.Multiline = True
         Me.txtTratamiento.Name = "txtTratamiento"
         Me.txtTratamiento.Size = New System.Drawing.Size(526, 44)
@@ -345,6 +321,7 @@ Partial Class medConsultaGral
         'txtObservaciones
         '
         Me.txtObservaciones.Location = New System.Drawing.Point(111, 130)
+        Me.txtObservaciones.MaxLength = 250
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(526, 44)
@@ -362,6 +339,7 @@ Partial Class medConsultaGral
         'txtDiagnostico
         '
         Me.txtDiagnostico.Location = New System.Drawing.Point(111, 72)
+        Me.txtDiagnostico.MaxLength = 250
         Me.txtDiagnostico.Multiline = True
         Me.txtDiagnostico.Name = "txtDiagnostico"
         Me.txtDiagnostico.Size = New System.Drawing.Size(526, 44)
@@ -379,6 +357,7 @@ Partial Class medConsultaGral
         'txtSintomas
         '
         Me.txtSintomas.Location = New System.Drawing.Point(111, 15)
+        Me.txtSintomas.MaxLength = 250
         Me.txtSintomas.Multiline = True
         Me.txtSintomas.Name = "txtSintomas"
         Me.txtSintomas.Size = New System.Drawing.Size(526, 44)
@@ -442,6 +421,7 @@ Partial Class medConsultaGral
         'txtObservacionesSignos
         '
         Me.txtObservacionesSignos.Location = New System.Drawing.Point(199, 209)
+        Me.txtObservacionesSignos.MaxLength = 250
         Me.txtObservacionesSignos.Multiline = True
         Me.txtObservacionesSignos.Name = "txtObservacionesSignos"
         Me.txtObservacionesSignos.Size = New System.Drawing.Size(440, 40)
@@ -645,6 +625,7 @@ Partial Class medConsultaGral
         '
         'txtMedicamentoReceta
         '
+        Me.txtMedicamentoReceta.Enabled = False
         Me.txtMedicamentoReceta.Location = New System.Drawing.Point(147, 126)
         Me.txtMedicamentoReceta.Multiline = True
         Me.txtMedicamentoReceta.Name = "txtMedicamentoReceta"
@@ -693,6 +674,15 @@ Partial Class medConsultaGral
         Me.Label29.Size = New System.Drawing.Size(117, 15)
         Me.Label29.TabIndex = 0
         Me.Label29.Text = "Fecha de la Consulta:"
+        '
+        'dtpFechaSiguiente
+        '
+        Me.dtpFechaSiguiente.CustomFormat = "dddd, dd 'de' MMMM 'del'  yyyy  '|  Hora:' hh:mm:s tt"
+        Me.dtpFechaSiguiente.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpFechaSiguiente.Location = New System.Drawing.Point(111, 245)
+        Me.dtpFechaSiguiente.Name = "dtpFechaSiguiente"
+        Me.dtpFechaSiguiente.Size = New System.Drawing.Size(351, 22)
+        Me.dtpFechaSiguiente.TabIndex = 59
         '
         'medConsultaGral
         '
@@ -784,8 +774,6 @@ Partial Class medConsultaGral
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents txtFechaReceta As System.Windows.Forms.TextBox
     Friend WithEvents Label29 As System.Windows.Forms.Label
-    Friend WithEvents dtpHoraSiguiente As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label32 As System.Windows.Forms.Label
-    Friend WithEvents dtpFechaSiguiente As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents dtpFechaSiguiente As System.Windows.Forms.DateTimePicker
 End Class

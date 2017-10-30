@@ -1,22 +1,21 @@
 ﻿Public Class vetAgenda
     Dim con As New cConexion
-    Dim tabla As String = "Cita"
-    Dim campos As String = "Cita.fechaCrea AS 'Fecha de Creacion', Cita.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente'," &
-                            "Cita.fecha AS 'Fecha de Realización'," &
-                            " Cita.motivo AS 'Motivo de la cita', Usuario.nombre AS 'Encargado'"
-    'Uniendo las tablas de Paciente y Usuario
-    Dim join As String = "INNER JOIN Paciente ON Paciente.idPaciente = Cita.idPaciente " &
-                        "INNER JOIN Usuario ON Usuario.username = Cita.username"
     Dim condicion As String
 
     Private Sub cargarFecha()
         Dim fecMin As DateTime = New DateTime(dtpFecha.Value.Year, dtpFecha.Value.Month, dtpFecha.Value.Day, 0, 0, 0)
         Dim fecMax As DateTime = New DateTime(dtpFecha.Value.Year, dtpFecha.Value.Month, dtpFecha.Value.Day, 23, 59, 59)
 
-        condicion = "WHERE fecha BETWEEN '" & fecMin.ToString("dd-MM-yyyy HH:mm:ss") & "' AND '" & fecMax.ToString("dd-MM-yyyy HH:mm:ss") & "' AND estado = 1"
-        cargar()
+        cargar("WHERE fecha BETWEEN '" & fecMin.ToString("dd-MM-yyyy HH:mm:ss") & "' AND '" & fecMax.ToString("dd-MM-yyyy HH:mm:ss") & "' AND estado = 1")
     End Sub
-    Private Sub cargar()
+    Private Sub cargar(ByVal condicion As String)
+        Dim tabla As String = "Cita"
+        Dim campos As String = "Cita.fechaCrea AS 'Fecha de Creacion', Cita.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente'," &
+                                "Cita.fecha AS 'Fecha de Realización'," &
+                                " Cita.motivo AS 'Motivo de la cita', Usuario.nombre AS 'Encargado'"
+
+        Dim join As String = "INNER JOIN Paciente ON Paciente.idPaciente = Cita.idPaciente " &
+                            "INNER JOIN Usuario ON Usuario.username = Cita.username"
         dgvCitas.DataSource = con.consultaCondicionada(campos, tabla, join, condicion)
         dgvCitas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         dgvCitas.Refresh()
@@ -40,7 +39,7 @@
                 If respuesta = 6 Then
                     If con.actualizar("Cita", "estado = 2", "idPaciente='" & celda.Cells(1).Value.ToString() & "' AND fechaCrea='" & DateTime.Parse(celda.Cells(0).Value.ToString()).ToString("dd-MM-yyyy") & "' AND fecha='" & DateTime.Parse(celda.Cells(3).Value.ToString()).ToString("dd-MM-yyyy HH:mm:ss") & "'") > 0 Then
                         MessageBox.Show("Cita marcada como atendida!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        cargar()
+                        cargar("WHERE estado = 1")
                     End If
                 End If
             Next
@@ -50,8 +49,7 @@
     Private Sub chkTodo_CheckedChanged(sender As Object, e As EventArgs) Handles chkTodo.CheckedChanged
         If chkTodo.Checked Then
             chkCompletas.Checked = False
-            condicion = "WHERE estado = 1"
-            cargar()
+            cargar("WHERE estado = 1")
         Else
             cargarFecha()
         End If
@@ -60,8 +58,7 @@
     Private Sub chkCompletas_CheckedChanged(sender As Object, e As EventArgs) Handles chkCompletas.CheckedChanged
         If chkCompletas.Checked Then
             chkTodo.Checked = False
-            condicion = "WHERE estado = 2"
-            cargar()
+            cargar("WHERE estado = 2")
         Else
             cargarFecha()
         End If

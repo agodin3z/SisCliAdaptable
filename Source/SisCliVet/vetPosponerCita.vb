@@ -1,17 +1,6 @@
 ﻿Public Class vetPosponerCita
     Dim con As New cConexion
-    Dim tabla As String = "Cita"
-    Dim campos As String = "Cita.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente', (Propietario.priNombre + ' ' +  Propietario.priApellido) AS 'Propietario'," &
-                            "Cita.fecha AS 'Fecha de la Cita'," &
-                            " Cita.motivo AS 'Motivo', Usuario.nombre AS 'Encargado', " &
-                            "Cita.fechaCrea AS 'Fecha de Creación', Cita.horaCrea AS 'Hora de Creación'"
-    'Uniendo las tablas de Paciente y Usuario
-    Dim join As String = " INNER JOIN Paciente ON Paciente.idPaciente = Cita.idPaciente " &
-                        "INNER JOIN Usuario ON Usuario.username = Cita.username" &
-                        " INNER JOIN Propietario ON Propietario.idPropietario = Paciente.idPropietario "
-    Dim condicion As String = "WHERE estado = 1"
-    Dim paciente As String
-    Dim propietario As String
+    Dim paciente As String = ""
     Dim fecha As String, fec As Date
     Dim hora As String
 
@@ -24,8 +13,19 @@
         rdbPeluqueria.Checked = False
         rdbRefuerzo.Checked = False
     End Sub
+
     Private Sub cargar()
-        dgvCitas.DataSource = con.consultaCondicionada(campos, tabla, join, condicion)
+        Dim campos As String = "Cita.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente', (Propietario.priNombre + ' ' +  Propietario.priApellido) AS 'Propietario'," &
+                                "Cita.fecha AS 'Fecha de la Cita'," &
+                                " Cita.motivo AS 'Motivo', Usuario.nombre AS 'Encargado', " &
+                                "Cita.fechaCrea AS 'Fecha de Creación', Cita.horaCrea AS 'Hora de Creación'"
+
+        Dim join As String = " INNER JOIN Paciente ON Paciente.idPaciente = Cita.idPaciente " &
+                            "INNER JOIN Usuario ON Usuario.username = Cita.username" &
+                            " INNER JOIN Propietario ON Propietario.idPropietario = Paciente.idPropietario "
+        Dim condicion As String = "WHERE estado = 1"
+
+        dgvCitas.DataSource = con.consultaCondicionada(campos, "Cita", join, condicion)
         dgvCitas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         dgvCitas.Refresh()
     End Sub
@@ -92,7 +92,7 @@
 
         Dim nVals = " motivo ='" & motivo & "', fecha='" & fechaProx & "', username='" & cGenerica.usr & "'"
 
-        If con.consultaExistente("Cita", "idPaciente<>'" & paciente & "' AND fecha='" & fechaProx & "'") > 0 Then
+        If con.consultaExistente("Cita", "idPaciente <>'" & paciente & "' AND fecha='" & fechaProx & "'") > 0 Then
             MessageBox.Show("Ya existe una cita registrada para la hora que esta indicando", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             If con.actualizar("Cita", nVals, "idPaciente='" & paciente & "' AND fechaCrea='" & fecha & "' AND horaCrea='" & hora & "'") > 0 Then
@@ -115,5 +115,10 @@
         Else
             txtOtro.Enabled = False
         End If
+    End Sub
+
+    'Validacion
+    Private Sub txtOtro_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtOtro.KeyPress
+        cGenerica.SoloTexto(txtOtro, e)
     End Sub
 End Class

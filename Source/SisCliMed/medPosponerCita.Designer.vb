@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class medCitas
+Partial Class medPosponerCita
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -25,11 +25,7 @@ Partial Class medCitas
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnPosponer = New System.Windows.Forms.Button()
-        Me.btnSeleccionar = New System.Windows.Forms.Button()
-        Me.dgvPacientes = New System.Windows.Forms.DataGridView()
-        Me.txtBusqueda = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.dgvCitas = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dtpFechaSiguiente = New System.Windows.Forms.DateTimePicker()
@@ -45,7 +41,7 @@ Partial Class medCitas
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.dgvPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCitas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -54,11 +50,11 @@ Partial Class medCitas
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(11, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(11, 13)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(582, 343)
-        Me.TabControl1.TabIndex = 6
+        Me.TabControl1.TabIndex = 7
         '
         'TabPage1
         '
@@ -68,70 +64,33 @@ Partial Class medCitas
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(574, 315)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Listado de Pacientes"
+        Me.TabPage1.Text = "Listado de Citas"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnPosponer)
-        Me.GroupBox1.Controls.Add(Me.btnSeleccionar)
-        Me.GroupBox1.Controls.Add(Me.dgvPacientes)
-        Me.GroupBox1.Controls.Add(Me.txtBusqueda)
-        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.dgvCitas)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 8)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(562, 302)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Seleccionar Paciente"
+        Me.GroupBox1.Text = "Seleccionar la Cita"
         '
-        'btnPosponer
+        'dgvCitas
         '
-        Me.btnPosponer.Location = New System.Drawing.Point(22, 244)
-        Me.btnPosponer.Name = "btnPosponer"
-        Me.btnPosponer.Size = New System.Drawing.Size(108, 46)
-        Me.btnPosponer.TabIndex = 24
-        Me.btnPosponer.Text = "Posponer Cita"
-        Me.btnPosponer.UseVisualStyleBackColor = True
-        '
-        'btnSeleccionar
-        '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(441, 244)
-        Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
-        Me.btnSeleccionar.TabIndex = 2
-        Me.btnSeleccionar.Text = "Seleccionar"
-        Me.btnSeleccionar.UseVisualStyleBackColor = True
-        '
-        'dgvPacientes
-        '
-        Me.dgvPacientes.AllowUserToAddRows = False
-        Me.dgvPacientes.AllowUserToDeleteRows = False
-        Me.dgvPacientes.AllowUserToResizeRows = False
-        Me.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPacientes.Location = New System.Drawing.Point(22, 66)
-        Me.dgvPacientes.Name = "dgvPacientes"
-        Me.dgvPacientes.ReadOnly = True
-        Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvPacientes.Size = New System.Drawing.Size(527, 172)
-        Me.dgvPacientes.TabIndex = 1
-        '
-        'txtBusqueda
-        '
-        Me.txtBusqueda.Location = New System.Drawing.Point(87, 28)
-        Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(462, 22)
-        Me.txtBusqueda.TabIndex = 0
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(19, 32)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 15)
-        Me.Label2.TabIndex = 22
-        Me.Label2.Text = "Búsqueda:"
+        Me.dgvCitas.AllowUserToAddRows = False
+        Me.dgvCitas.AllowUserToDeleteRows = False
+        Me.dgvCitas.AllowUserToResizeRows = False
+        Me.dgvCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCitas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvCitas.Location = New System.Drawing.Point(3, 18)
+        Me.dgvCitas.Name = "dgvCitas"
+        Me.dgvCitas.ReadOnly = True
+        Me.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvCitas.Size = New System.Drawing.Size(556, 281)
+        Me.dgvCitas.TabIndex = 1
         '
         'TabPage2
         '
@@ -143,7 +102,7 @@ Partial Class medCitas
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(574, 315)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Crear Cita"
+        Me.TabPage2.Text = "Actualizar Cita"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GroupBox2
@@ -252,20 +211,20 @@ Partial Class medCitas
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'medCitas
+        'medPosponerCita
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(605, 368)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Open Sans", 8.25!)
-        Me.Name = "medCitas"
-        Me.Text = "Gestión de Citas"
+        Me.Name = "medPosponerCita"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Posponer Cita"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        CType(Me.dgvPacientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCitas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -275,21 +234,17 @@ Partial Class medCitas
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents btnSeleccionar As System.Windows.Forms.Button
-    Friend WithEvents dgvPacientes As System.Windows.Forms.DataGridView
-    Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents dgvCitas As System.Windows.Forms.DataGridView
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents dtpFechaSiguiente As System.Windows.Forms.DateTimePicker
+    Friend WithEvents cmbMedico As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents txtMotivo As System.Windows.Forms.TextBox
     Friend WithEvents txtPaciente As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
-    Friend WithEvents cmbMedico As System.Windows.Forms.ComboBox
-    Friend WithEvents txtMotivo As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents btnPosponer As System.Windows.Forms.Button
-    Friend WithEvents dtpFechaSiguiente As System.Windows.Forms.DateTimePicker
 End Class

@@ -132,14 +132,6 @@
 
     End Sub
 
-    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs)
-        limpiarDatos()
-        txtBusqueda.Text = ""
-        btnGuardar.Enabled = True
-        btnModificar.Enabled = False
-        btnEliminar.Enabled = False
-    End Sub
-
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Dim condicion As String = "username = '" & fila & "'"
         Dim respuesta As Integer = MessageBox.Show("Desea eliminar el usuario: " & fila & " ?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -199,5 +191,9 @@
         If (e.ColumnIndex = 1 And e.Value <> Nothing) Then
             e.Value = New String("*", e.Value.ToString().Length)
         End If
+    End Sub
+
+    Private Sub txtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
+        cGenerica.SoloTexto(txtNombre, e)
     End Sub
 End Class

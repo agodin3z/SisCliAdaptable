@@ -11,7 +11,6 @@
     Dim paciente As String
     Dim condicion As String
     Dim condicion2 As String
-    Dim fila As String = ""
     Dim especie As String = ""
 
     Private Sub llenarVacunas(ByVal Ctrl As Windows.Forms.ListBox, ByVal condicion As String, ByVal tabla As String, ByVal identificacion As String, ByVal nombre As String)
@@ -57,6 +56,7 @@
     End Sub
 
     Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
+        TabControl1.SelectTab(1)
         'Llenando los campos de la siguiente tab
         For Each celda As DataGridViewRow In dgvPacientes.SelectedRows
             paciente = celda.Cells(0).Value.ToString
@@ -71,19 +71,20 @@
         "FROM Especie WHERE Especie.nombre ='" & especie & "')"
         Dim condicion3 As String = "WHERE idPaciente = '" & paciente & "'"
         Dim inner As String = "INNER JOIN Vacuna ON Vacuna_Paciente.idVacuna = Vacuna.idVacuna"
-        'llenarVacunas(lstVacunas, condicion3, "Vacuna_Paciente", "idVacuna", "nombre")
         llenarVacunas(lstAplicar, condicion2, "Vacuna", "idVacuna", "nombre")
 
         lstVacunas.DataSource = con.consultaCondicionada("*", "Vacuna_Paciente", inner, condicion3)
         lstVacunas.ValueMember = "idVacuna"
         lstVacunas.DisplayMember = "nombre"
-        
-        TabControl1.SelectTab(1)
+
+        For i = 0 To lstVacunas.Items.Count - 1
+            lstVacunas.SetItemChecked(i, True)
+        Next
+
 
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        'paciente = txtPaciente.Text.Trim
 
         Dim fecha As DateTime = txtFecha.Text
 
@@ -111,6 +112,8 @@
             If cont > 0 Then
                 MessageBox.Show("Se han registrado " & cont & " Vacunas", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 con.insertar("Cita", "'" & fecha & "','" & txtHora.Text & "','" & "Refuerzo" & "','" & dtpFechaSiguiente.Value.ToString("dd-MM-yyyy HH:mm:ss") & "','" & paciente & "','" & cGenerica.usr & "',1")
+            Else
+                MessageBox.Show("No se han registrado Vacunas nuevas", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
 
             For i = 0 To lstVacunas.Items.Count - 1
@@ -130,5 +133,12 @@
 
     Private Sub txtOtraVacuna_Leave(sender As Object, e As EventArgs) Handles txtOtraVacuna.Leave
         nuevaVacuna()
+    End Sub
+
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        cGenerica.limpiarTextbox(GroupBox3)
+        cGenerica.limpiarTextbox(GroupBox4)
+        lstVacunas.DataSource = Nothing
+        lstAplicar.DataSource = Nothing
     End Sub
 End Class

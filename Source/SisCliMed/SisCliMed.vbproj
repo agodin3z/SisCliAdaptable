@@ -73,6 +73,7 @@
     <Compile Include="..\SisCliVet\cGenerica.vb">
       <Link>cGenerica.vb</Link>
     </Compile>
+    <Compile Include="cConexion.vb" />
     <Compile Include="medAbout.Designer.vb">
       <DependentUpon>medAbout.vb</DependentUpon>
     </Compile>
@@ -152,6 +153,12 @@
     <Compile Include="medUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="medPosponerCita.Designer.vb">
+      <DependentUpon>medPosponerCita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medPosponerCita.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -208,6 +215,9 @@
     <EmbeddedResource Include="medUsuarios.resx">
       <DependentUpon>medUsuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="medPosponerCita.resx">
+      <DependentUpon>medPosponerCita.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -232,6 +242,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall_med.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
