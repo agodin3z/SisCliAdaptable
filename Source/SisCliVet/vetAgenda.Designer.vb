@@ -23,6 +23,8 @@ Partial Class vetAgenda
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chkCompletas = New System.Windows.Forms.CheckBox()
+        Me.chkTodo = New System.Windows.Forms.CheckBox()
         Me.dgvCitas = New System.Windows.Forms.DataGridView()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -32,25 +34,48 @@ Partial Class vetAgenda
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.chkCompletas)
+        Me.GroupBox1.Controls.Add(Me.chkTodo)
         Me.GroupBox1.Controls.Add(Me.dgvCitas)
         Me.GroupBox1.Controls.Add(Me.dtpFecha)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(581, 344)
+        Me.GroupBox1.Size = New System.Drawing.Size(959, 344)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Citas"
+        '
+        'chkCompletas
+        '
+        Me.chkCompletas.AutoSize = True
+        Me.chkCompletas.Location = New System.Drawing.Point(452, 23)
+        Me.chkCompletas.Name = "chkCompletas"
+        Me.chkCompletas.Size = New System.Drawing.Size(140, 17)
+        Me.chkCompletas.TabIndex = 4
+        Me.chkCompletas.Text = "Mostrar las completadas"
+        Me.chkCompletas.UseVisualStyleBackColor = True
+        '
+        'chkTodo
+        '
+        Me.chkTodo.AutoSize = True
+        Me.chkTodo.Location = New System.Drawing.Point(285, 23)
+        Me.chkTodo.Name = "chkTodo"
+        Me.chkTodo.Size = New System.Drawing.Size(161, 17)
+        Me.chkTodo.TabIndex = 3
+        Me.chkTodo.Text = "Mostrar todas las pendientes"
+        Me.chkTodo.UseVisualStyleBackColor = True
         '
         'dgvCitas
         '
         Me.dgvCitas.AllowUserToAddRows = False
         Me.dgvCitas.AllowUserToDeleteRows = False
         Me.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCitas.Location = New System.Drawing.Point(9, 52)
+        Me.dgvCitas.Location = New System.Drawing.Point(6, 52)
         Me.dgvCitas.Name = "dgvCitas"
         Me.dgvCitas.ReadOnly = True
-        Me.dgvCitas.Size = New System.Drawing.Size(566, 286)
+        Me.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvCitas.Size = New System.Drawing.Size(947, 286)
         Me.dgvCitas.TabIndex = 2
         '
         'dtpFecha
@@ -74,10 +99,11 @@ Partial Class vetAgenda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(605, 368)
+        Me.ClientSize = New System.Drawing.Size(983, 368)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetAgenda"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agenda"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -89,4 +115,6 @@ Partial Class vetAgenda
     Friend WithEvents dgvCitas As System.Windows.Forms.DataGridView
     Friend WithEvents dtpFecha As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents chkTodo As System.Windows.Forms.CheckBox
+    Friend WithEvents chkCompletas As System.Windows.Forms.CheckBox
 End Class

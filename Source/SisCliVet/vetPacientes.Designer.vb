@@ -62,23 +62,23 @@ Partial Class vetPacientes
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.lstVacunas = New System.Windows.Forms.CheckedListBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.picFoto = New System.Windows.Forms.PictureBox()
         Me.cmbUltiVacuna = New System.Windows.Forms.ComboBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.chkPeluqueria = New System.Windows.Forms.CheckBox()
         Me.chkClinico = New System.Windows.Forms.CheckBox()
-        Me.lstVacunas = New System.Windows.Forms.CheckedListBox()
         Me.txtOtraVacuna = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.dtpUltiVacuna = New System.Windows.Forms.DateTimePicker()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.cmbEspecie = New System.Windows.Forms.ComboBox()
         Me.txtRasgos = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtEstadoRep = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnCargarFoto = New System.Windows.Forms.Button()
-        Me.picFoto = New System.Windows.Forms.PictureBox()
         Me.dtpFechaNac = New System.Windows.Forms.DateTimePicker()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.rdbHembra = New System.Windows.Forms.RadioButton()
@@ -93,6 +93,7 @@ Partial Class vetPacientes
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -101,8 +102,8 @@ Partial Class vetPacientes
         Me.TabPage2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
         CType(Me.picFoto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -246,6 +247,7 @@ Partial Class vetPacientes
         'txtDireccion
         '
         Me.txtDireccion.Location = New System.Drawing.Point(111, 154)
+        Me.txtDireccion.MaxLength = 150
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(564, 22)
@@ -294,6 +296,7 @@ Partial Class vetPacientes
         'txtSegNombre
         '
         Me.txtSegNombre.Location = New System.Drawing.Point(481, 26)
+        Me.txtSegNombre.MaxLength = 25
         Me.txtSegNombre.Name = "txtSegNombre"
         Me.txtSegNombre.Size = New System.Drawing.Size(194, 20)
         Me.txtSegNombre.TabIndex = 3
@@ -301,6 +304,7 @@ Partial Class vetPacientes
         'txtDui
         '
         Me.txtDui.Location = New System.Drawing.Point(111, 90)
+        Me.txtDui.MaxLength = 9
         Me.txtDui.Name = "txtDui"
         Me.txtDui.Size = New System.Drawing.Size(133, 20)
         Me.txtDui.TabIndex = 6
@@ -308,6 +312,7 @@ Partial Class vetPacientes
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(481, 90)
+        Me.txtEmail.MaxLength = 50
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(194, 20)
         Me.txtEmail.TabIndex = 7
@@ -315,6 +320,7 @@ Partial Class vetPacientes
         'txtTelMovil
         '
         Me.txtTelMovil.Location = New System.Drawing.Point(481, 186)
+        Me.txtTelMovil.MaxLength = 8
         Me.txtTelMovil.Name = "txtTelMovil"
         Me.txtTelMovil.Size = New System.Drawing.Size(133, 20)
         Me.txtTelMovil.TabIndex = 12
@@ -322,6 +328,7 @@ Partial Class vetPacientes
         'txtTelFijo
         '
         Me.txtTelFijo.Location = New System.Drawing.Point(110, 186)
+        Me.txtTelFijo.MaxLength = 8
         Me.txtTelFijo.Name = "txtTelFijo"
         Me.txtTelFijo.Size = New System.Drawing.Size(133, 20)
         Me.txtTelFijo.TabIndex = 11
@@ -329,6 +336,7 @@ Partial Class vetPacientes
         'txtSegApellido
         '
         Me.txtSegApellido.Location = New System.Drawing.Point(481, 58)
+        Me.txtSegApellido.MaxLength = 25
         Me.txtSegApellido.Name = "txtSegApellido"
         Me.txtSegApellido.Size = New System.Drawing.Size(194, 20)
         Me.txtSegApellido.TabIndex = 5
@@ -336,6 +344,7 @@ Partial Class vetPacientes
         'txtPriApellido
         '
         Me.txtPriApellido.Location = New System.Drawing.Point(111, 58)
+        Me.txtPriApellido.MaxLength = 25
         Me.txtPriApellido.Name = "txtPriApellido"
         Me.txtPriApellido.Size = New System.Drawing.Size(193, 20)
         Me.txtPriApellido.TabIndex = 4
@@ -388,6 +397,7 @@ Partial Class vetPacientes
         'txtPriNombre
         '
         Me.txtPriNombre.Location = New System.Drawing.Point(110, 26)
+        Me.txtPriNombre.MaxLength = 25
         Me.txtPriNombre.Name = "txtPriNombre"
         Me.txtPriNombre.Size = New System.Drawing.Size(194, 20)
         Me.txtPriNombre.TabIndex = 2
@@ -480,21 +490,21 @@ Partial Class vetPacientes
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.lstVacunas)
+        Me.GroupBox3.Controls.Add(Me.Label11)
+        Me.GroupBox3.Controls.Add(Me.picFoto)
         Me.GroupBox3.Controls.Add(Me.cmbUltiVacuna)
         Me.GroupBox3.Controls.Add(Me.GroupBox6)
-        Me.GroupBox3.Controls.Add(Me.lstVacunas)
         Me.GroupBox3.Controls.Add(Me.txtOtraVacuna)
         Me.GroupBox3.Controls.Add(Me.Label21)
         Me.GroupBox3.Controls.Add(Me.dtpUltiVacuna)
         Me.GroupBox3.Controls.Add(Me.Label20)
-        Me.GroupBox3.Controls.Add(Me.Label11)
         Me.GroupBox3.Controls.Add(Me.cmbEspecie)
         Me.GroupBox3.Controls.Add(Me.txtRasgos)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.txtEstadoRep)
         Me.GroupBox3.Controls.Add(Me.Label14)
         Me.GroupBox3.Controls.Add(Me.btnCargarFoto)
-        Me.GroupBox3.Controls.Add(Me.picFoto)
         Me.GroupBox3.Controls.Add(Me.dtpFechaNac)
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Controls.Add(Me.rdbHembra)
@@ -514,6 +524,33 @@ Partial Class vetPacientes
         Me.GroupBox3.Size = New System.Drawing.Size(698, 354)
         Me.GroupBox3.TabIndex = 8
         Me.GroupBox3.TabStop = False
+        '
+        'lstVacunas
+        '
+        Me.lstVacunas.CheckOnClick = True
+        Me.lstVacunas.FormattingEnabled = True
+        Me.lstVacunas.Location = New System.Drawing.Point(208, 209)
+        Me.lstVacunas.Name = "lstVacunas"
+        Me.lstVacunas.Size = New System.Drawing.Size(142, 94)
+        Me.lstVacunas.TabIndex = 11
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(205, 191)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(52, 13)
+        Me.Label11.TabIndex = 30
+        Me.Label11.Text = "Vacunas:"
+        '
+        'picFoto
+        '
+        Me.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picFoto.Location = New System.Drawing.Point(551, 149)
+        Me.picFoto.Name = "picFoto"
+        Me.picFoto.Size = New System.Drawing.Size(141, 144)
+        Me.picFoto.TabIndex = 28
+        Me.picFoto.TabStop = False
         '
         'cmbUltiVacuna
         '
@@ -556,26 +593,18 @@ Partial Class vetPacientes
         Me.chkClinico.Text = "Clínico"
         Me.chkClinico.UseVisualStyleBackColor = True
         '
-        'lstVacunas
-        '
-        Me.lstVacunas.FormattingEnabled = True
-        Me.lstVacunas.Location = New System.Drawing.Point(27, 214)
-        Me.lstVacunas.Name = "lstVacunas"
-        Me.lstVacunas.Size = New System.Drawing.Size(142, 79)
-        Me.lstVacunas.TabIndex = 10
-        '
         'txtOtraVacuna
         '
-        Me.txtOtraVacuna.Location = New System.Drawing.Point(193, 214)
+        Me.txtOtraVacuna.Location = New System.Drawing.Point(19, 214)
         Me.txtOtraVacuna.Multiline = True
         Me.txtOtraVacuna.Name = "txtOtraVacuna"
         Me.txtOtraVacuna.Size = New System.Drawing.Size(164, 89)
-        Me.txtOtraVacuna.TabIndex = 11
+        Me.txtOtraVacuna.TabIndex = 10
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(190, 196)
+        Me.Label21.Location = New System.Drawing.Point(16, 196)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(80, 13)
         Me.Label21.TabIndex = 27
@@ -597,15 +626,6 @@ Partial Class vetPacientes
         Me.Label20.TabIndex = 25
         Me.Label20.Text = "Fecha última vacuna:"
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(24, 196)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(52, 13)
-        Me.Label11.TabIndex = 23
-        Me.Label11.Text = "Vacunas:"
-        '
         'cmbEspecie
         '
         Me.cmbEspecie.FormattingEnabled = True
@@ -618,6 +638,7 @@ Partial Class vetPacientes
         'txtRasgos
         '
         Me.txtRasgos.Location = New System.Drawing.Point(125, 139)
+        Me.txtRasgos.MaxLength = 200
         Me.txtRasgos.Multiline = True
         Me.txtRasgos.Name = "txtRasgos"
         Me.txtRasgos.Size = New System.Drawing.Size(408, 44)
@@ -635,6 +656,7 @@ Partial Class vetPacientes
         'txtEstadoRep
         '
         Me.txtEstadoRep.Location = New System.Drawing.Point(471, 104)
+        Me.txtEstadoRep.MaxLength = 25
         Me.txtEstadoRep.Name = "txtEstadoRep"
         Me.txtEstadoRep.Size = New System.Drawing.Size(172, 20)
         Me.txtEstadoRep.TabIndex = 8
@@ -656,14 +678,6 @@ Partial Class vetPacientes
         Me.btnCargarFoto.TabIndex = 17
         Me.btnCargarFoto.Text = "Cargar Foto..."
         Me.btnCargarFoto.UseVisualStyleBackColor = True
-        '
-        'picFoto
-        '
-        Me.picFoto.Location = New System.Drawing.Point(551, 149)
-        Me.picFoto.Name = "picFoto"
-        Me.picFoto.Size = New System.Drawing.Size(141, 144)
-        Me.picFoto.TabIndex = 16
-        Me.picFoto.TabStop = False
         '
         'dtpFechaNac
         '
@@ -706,6 +720,7 @@ Partial Class vetPacientes
         'txtNombrePaciente
         '
         Me.txtNombrePaciente.Location = New System.Drawing.Point(86, 15)
+        Me.txtNombrePaciente.MaxLength = 25
         Me.txtNombrePaciente.Name = "txtNombrePaciente"
         Me.txtNombrePaciente.Size = New System.Drawing.Size(171, 20)
         Me.txtNombrePaciente.TabIndex = 0
@@ -713,6 +728,7 @@ Partial Class vetPacientes
         'txtRaza
         '
         Me.txtRaza.Location = New System.Drawing.Point(471, 45)
+        Me.txtRaza.MaxLength = 25
         Me.txtRaza.Name = "txtRaza"
         Me.txtRaza.Size = New System.Drawing.Size(172, 20)
         Me.txtRaza.TabIndex = 4
@@ -720,6 +736,7 @@ Partial Class vetPacientes
         'txtPeso
         '
         Me.txtPeso.Location = New System.Drawing.Point(85, 104)
+        Me.txtPeso.MaxLength = 7
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(171, 20)
         Me.txtPeso.TabIndex = 7
@@ -727,6 +744,7 @@ Partial Class vetPacientes
         'txtColor
         '
         Me.txtColor.Location = New System.Drawing.Point(85, 75)
+        Me.txtColor.MaxLength = 25
         Me.txtColor.Name = "txtColor"
         Me.txtColor.Size = New System.Drawing.Size(171, 20)
         Me.txtColor.TabIndex = 5
@@ -785,6 +803,10 @@ Partial Class vetPacientes
         Me.Label18.TabIndex = 4
         Me.Label18.Text = "Nombre:"
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'vetPacientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -793,6 +815,7 @@ Partial Class vetPacientes
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetPacientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registro de Paciente"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -807,9 +830,9 @@ Partial Class vetPacientes
         Me.GroupBox5.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.picFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        CType(Me.picFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -842,19 +865,16 @@ Partial Class vetPacientes
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents lstVacunas As System.Windows.Forms.CheckedListBox
     Friend WithEvents txtOtraVacuna As System.Windows.Forms.TextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents dtpUltiVacuna As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents cmbEspecie As System.Windows.Forms.ComboBox
     Friend WithEvents txtRasgos As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtEstadoRep As System.Windows.Forms.TextBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents btnCargarFoto As System.Windows.Forms.Button
-    Friend WithEvents picFoto As System.Windows.Forms.PictureBox
     Friend WithEvents dtpFechaNac As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents rdbHembra As System.Windows.Forms.RadioButton
@@ -884,4 +904,8 @@ Partial Class vetPacientes
     Friend WithEvents chkPeluqueria As System.Windows.Forms.CheckBox
     Friend WithEvents chkClinico As System.Windows.Forms.CheckBox
     Friend WithEvents cmbUltiVacuna As System.Windows.Forms.ComboBox
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents picFoto As System.Windows.Forms.PictureBox
+    Friend WithEvents lstVacunas As System.Windows.Forms.CheckedListBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
 End Class

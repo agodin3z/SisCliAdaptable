@@ -22,6 +22,7 @@ Partial Class medPRINCIPAL
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(medPRINCIPAL))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,7 +45,13 @@ Partial Class medPRINCIPAL
         Me.ReportesPacienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.stFechaHora = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.stUsuario = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -184,14 +191,43 @@ Partial Class medPRINCIPAL
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.stFechaHora, Me.ToolStripSeparator2, Me.stUsuario})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 624)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(1008, 23)
+        Me.StatusStrip1.TabIndex = 5
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'stFechaHora
+        '
+        Me.stFechaHora.Name = "stFechaHora"
+        Me.stFechaHora.Size = New System.Drawing.Size(0, 18)
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 23)
+        '
+        'stUsuario
+        '
+        Me.stUsuario.Name = "stUsuario"
+        Me.stUsuario.Size = New System.Drawing.Size(0, 18)
+        '
+        'Timer1
+        '
         '
         'medPRINCIPAL
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.SisCliMed.My.Resources.Resources.wall_med
         Me.ClientSize = New System.Drawing.Size(1008, 647)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Open Sans", 8.25!)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -201,6 +237,8 @@ Partial Class medPRINCIPAL
         Me.Text = "SISCLIAD | Sistema Clínico de Medicina General"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -226,5 +264,10 @@ Partial Class medPRINCIPAL
     Friend WithEvents ReportesPacienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents InformaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+    Friend WithEvents stFechaHora As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents stUsuario As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 
 End Class

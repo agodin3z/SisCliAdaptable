@@ -71,7 +71,9 @@ Partial Class medLogin
         '
         Me.txtPasswd.Font = New System.Drawing.Font("Open Sans", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPasswd.Location = New System.Drawing.Point(184, 169)
+        Me.txtPasswd.MaxLength = 16
         Me.txtPasswd.Name = "txtPasswd"
+        Me.txtPasswd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPasswd.Size = New System.Drawing.Size(196, 22)
         Me.txtPasswd.TabIndex = 6
         '
@@ -79,6 +81,7 @@ Partial Class medLogin
         '
         Me.txtUsr.Font = New System.Drawing.Font("Open Sans", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsr.Location = New System.Drawing.Point(184, 101)
+        Me.txtUsr.MaxLength = 10
         Me.txtUsr.Name = "txtUsr"
         Me.txtUsr.Size = New System.Drawing.Size(198, 22)
         Me.txtUsr.TabIndex = 5

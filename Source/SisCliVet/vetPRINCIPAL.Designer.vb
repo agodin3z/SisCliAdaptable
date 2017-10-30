@@ -42,7 +42,6 @@ Partial Class vetPRINCIPAL
         Me.GestionDeCitasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActualizarInformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HojaDeConsentimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControlDeVacunasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -146,7 +145,7 @@ Partial Class vetPRINCIPAL
         '
         'PacientesToolStripMenuItem
         '
-        Me.PacientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionarPacientesToolStripMenuItem, Me.GestionDeCitasToolStripMenuItem, Me.AgendaToolStripMenuItem, Me.ActualizarInformaciónToolStripMenuItem, Me.HojaDeConsentimientoToolStripMenuItem})
+        Me.PacientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionarPacientesToolStripMenuItem, Me.GestionDeCitasToolStripMenuItem, Me.AgendaToolStripMenuItem, Me.ActualizarInformaciónToolStripMenuItem})
         Me.PacientesToolStripMenuItem.Enabled = False
         Me.PacientesToolStripMenuItem.Name = "PacientesToolStripMenuItem"
         Me.PacientesToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
@@ -155,32 +154,26 @@ Partial Class vetPRINCIPAL
         'GestionarPacientesToolStripMenuItem
         '
         Me.GestionarPacientesToolStripMenuItem.Name = "GestionarPacientesToolStripMenuItem"
-        Me.GestionarPacientesToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.GestionarPacientesToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.GestionarPacientesToolStripMenuItem.Text = "Registro de Pacientes"
         '
         'GestionDeCitasToolStripMenuItem
         '
         Me.GestionDeCitasToolStripMenuItem.Name = "GestionDeCitasToolStripMenuItem"
-        Me.GestionDeCitasToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.GestionDeCitasToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.GestionDeCitasToolStripMenuItem.Text = "Gestion de Citas"
         '
         'AgendaToolStripMenuItem
         '
         Me.AgendaToolStripMenuItem.Name = "AgendaToolStripMenuItem"
-        Me.AgendaToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.AgendaToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.AgendaToolStripMenuItem.Text = "Agenda"
         '
         'ActualizarInformaciónToolStripMenuItem
         '
         Me.ActualizarInformaciónToolStripMenuItem.Name = "ActualizarInformaciónToolStripMenuItem"
-        Me.ActualizarInformaciónToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.ActualizarInformaciónToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.ActualizarInformaciónToolStripMenuItem.Text = "Actualizar Información"
-        '
-        'HojaDeConsentimientoToolStripMenuItem
-        '
-        Me.HojaDeConsentimientoToolStripMenuItem.Name = "HojaDeConsentimientoToolStripMenuItem"
-        Me.HojaDeConsentimientoToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
-        Me.HojaDeConsentimientoToolStripMenuItem.Text = "Hoja de Consentimiento"
         '
         'ConsultasToolStripMenuItem
         '
@@ -294,7 +287,6 @@ Partial Class vetPRINCIPAL
     Friend WithEvents AgendaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ActualizarInformaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ControlDeVacunasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HojaDeConsentimientoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents stUsuario As System.Windows.Forms.ToolStripStatusLabel
 

@@ -1,40 +1,35 @@
 ﻿Public Class vetConsultaGral
+    Dim con As New cConexion
+    Dim paciente As String = ""
+    Dim cita As DateTime
 
-    Private Sub LimpiarTextbox(ByVal grupo As Windows.Forms.GroupBox)
-        For Each control As Control In grupo.Controls
-            If TypeOf control Is Windows.Forms.TextBox Then
-                control.Text = ""
-            End If
-        Next
+
+    Private Sub cargar(ByVal condicion As String)
+        Dim tabla As String = "Cita"
+        Dim campos As String = "Cita.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente'," &
+        "Cita.fechaCrea AS 'Fecha de Creacion', Cita.fecha AS 'Hora de la cita'," & "Cita.motivo AS 'Motivo de la cita'," &
+        "Usuario.nombre AS 'Encargado'"
+        Dim join As String = "INNER JOIN Paciente ON Paciente.idPaciente = Cita.idPaciente " &
+            "INNER JOIN Usuario ON Usuario.username = Cita.username"
+
+        dgvPacientes.DataSource = con.consultaCondicionada(campos, tabla, Join, condicion)
+        dgvPacientes.Refresh()
     End Sub
 
-    Dim connection As New cConexion
-    Dim tabla As String = "Cita"
-    'Campos: Codigo del Paciente y su nombre, fecha y hora de creacion de la cita, el motivo y el usuario que la creo 
-    Dim campos As String = "Cita.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente'," &
-    "Cita.fechaCrea AS 'Fecha de Creacion', Cita.hora AS 'Hora de la cita'," & "Cita.motivo AS 'Motivo de la cita'," &
-    "Usuario.nombre AS 'Encargado'"
-    'Uniendo las tablas de Paciente para el id y Usuario para el nombre de usuario
-    Dim join As String = "INNER JOIN Paciente ON Paciente.idPaciente = Cita.idPaciente " &
-        "INNER JOIN Usuario ON Usuario.username = Cita.username"
-    Dim condicion As String
-    Dim fila As String = ""
-    Dim usuario As String = vetPRINCIPAL.stUsuario.Text
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnVacunas.Click
-        cGenerica.ShowDlg(vetCtrlVacuna, Me) 'Deberia enviar datos a segunda pestaña
+    Private Sub btnVacunas_Click(sender As Object, e As EventArgs) Handles btnVacunas.Click
+        Dim f As New vetCtrlVacuna
+        cGenerica.ShowDlg(f, Me)
     End Sub
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
-        condicion = "WHERE Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
-        dgvPacientes.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion)
-        dgvPacientes.Refresh()
+        cargar("WHERE Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'")
     End Sub
 
     Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         'Dato para usar luego en el insert'
         For Each celda As DataGridViewRow In dgvPacientes.SelectedRows
-            fila = celda.Cells(0).Value.ToString
+            paciente = celda.Cells(0).Value.ToString
+            cita = celda.Cells(3).Value
         Next
         TabControl1.SelectTab(1)
 
@@ -47,24 +42,23 @@
         Dim diagnostico As String = txtDiagnostico.Text.Trim
         Dim observacion As String = txtObservaciones.Text.Trim
         Dim tratamiento As String = txtTratamiento.Text.Trim
-        Dim procedimiento As String = txtProcedimiento.Text.Trim
-        Dim proxFecha As String = dtpFechaSiguiente.Value.ToString("MM-dd-yyyy")
-        Dim proxHora As String = dtpHoraSiguiente.Value.ToString("HH:mm:ss")
-        Dim campos As String = "(idPaciente, razonConsulta, sintomas, diagnostico, observaciones, tratamiento, fecha, hora, username)"
-        Dim valores As String
-        valores = "'" & fila & "','" & razon & "','" & sintomas & "','" & diagnostico & "','" & observacion & "','" &
-            tratamiento & "','" & proxFecha & "','" & proxHora & "','" & usuario & "'"
-        MessageBox.Show(valores)
+        Dim proxFecha As String = dtpFechaSiguiente.Value.ToString("dd-MM-yyyy HH:mm:ss")
+        Dim valores As String = "'" & paciente & "','" & razon & "','" & sintomas & "','" & diagnostico & "','" & observacion & "','" &
+            tratamiento & "','" & proxFecha & "','" & cGenerica.usr & "'"
+
         If DateDiff(DateInterval.Day, Date.Now, dtpFechaSiguiente.Value) <= 0 Then
-            MessageBox.Show("Ingrese una fecha con al menos 1 dia de anticipacion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Ingrese una fecha con al menos 1 dia de anticipacion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
 
-        If connection.InsertarFila("ConsultaGral", campos, valores) > 0 Then
+        If con.insertar("ConsultaGral", valores) > 0 Then
             MessageBox.Show("Consulta ingresada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            LimpiarTextbox(GroupBox1)
-            LimpiarTextbox(GroupBox3)
+            con.actualizar("Cita", "estado=2", "idPaciente='" & paciente & "' AND fecha='" & cita.ToString("dd-MM-yyyy HH:mm:ss") & "'")
+            con.insertar("Cita", "'" & Now.ToString("dd-MM-yyyy") & "','" & Now.ToString("HH:mm:ss") & "','" & "Consulta General" & "','" & dtpFechaSiguiente.Value.ToString("dd-MM-yyyy HH:mm:ss") & "','" & paciente & "','" & cGenerica.usr & "',1")
+            cGenerica.limpiarTextbox(GroupBox1)
+            cGenerica.limpiarTextbox(GroupBox3)
+            cargar("WHERE estado=1")
             TabControl1.SelectTab(0)
         Else
             MessageBox.Show("Problema ingresando la consulta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -74,14 +68,13 @@
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        LimpiarTextbox(GroupBox1)
-        LimpiarTextbox(GroupBox3)
+        cGenerica.limpiarTextbox(GroupBox1)
+        cGenerica.limpiarTextbox(GroupBox3)
         TabControl1.SelectTab(0)
     End Sub
 
     Private Sub vetConsultaGral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        condicion = "WHERE Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
-        dgvPacientes.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion)
-        dgvPacientes.Refresh()
+        cargar("WHERE estado=1")
     End Sub
+
 End Class

@@ -1,43 +1,40 @@
 ﻿Public Class vetUsuarios
-    Dim connection As New cConexion
+    Dim con As New cConexion
     Dim tabla As String = "Usuario"
-    Dim fila As String
-    Dim user As String
-    Dim contra As String
-    Dim nombre As String
-    Dim titulo As String
-    Dim rol As String
-    Dim campos As String = "Usuario.username AS 'Usuario', Usuario.passwd AS 'Contraseña', Usuario.nombre AS 'Nombre real del usuario'," &
-        "Rol.nombre AS 'Rol/Funcion'"
-    Dim join As String = "INNER JOIN Rol ON Rol.idRol = Usuario.idRol "
-    Sub LimpiarDatos()
-        For Each control As Control In GroupBox1.Controls
-            If TypeOf control Is Windows.Forms.TextBox Then
-                control.Text = ""
-            End If
-        Next
+    Dim fila As String, user As String, contra As String, nombre As String, titulo As String, rol As String
+    Dim campos As String = "Usuario.username AS 'Usuario', Usuario.passwd AS 'Contraseña', Usuario.titulo AS 'Titulo', Usuario.nombre AS 'Nombre Real', Rol.nombre AS 'Rol/Funcion'"
+    Dim join As String = "INNER JOIN Rol ON Usuario.idRol = Rol.idRol"
 
-        rdbDr.Checked = True
+    Private Sub limpiarDatos()
+        cGenerica.limpiarTextbox(GroupBox1)
+        rdbDr.Checked = False
         rdbDra.Checked = False
+    End Sub
+
+    Private Sub refrescar()
+        limpiarDatos()
+        dgvUsuarios.DataSource = con.consultaCondicionada(campos, tabla, join)
+        dgvUsuarios.Refresh()
+        cmbRol.DataSource = con.consultaGeneral("Rol")
+        cmbRol.ValueMember = "idRol"
+        cmbRol.DisplayMember = "nombre"
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Try
-
-            Dim campos As String = "(username,passwd,nombre,idRol)"
-            Dim valores As String
-            Dim condicion As String
             user = txtUsername.Text.Trim
             contra = txtPasswd.Text.Trim
-            nombre = txtNombre.Text.Trim
+            nombre = LTrim(txtNombre.Text)
             rol = cmbRol.SelectedValue
+
             If rdbDr.Checked Then
                 titulo = "Dr."
             ElseIf rdbDra.Checked Then
                 titulo = "Dra."
             End If
-            valores = "'" & user & "','" & contra & "','" & titulo & " " & nombre & "','" & rol & "'"
-            condicion = "username ='" & user & "'"
+
+            Dim valores As String = "'" & user & "','" & contra & "','" & titulo & "','" & nombre & "','" & rol & "'"
+            Dim condicion As String = " username ='" & user & "'"
 
             If user.Length = 0 Then
                 MessageBox.Show("No ha ingresado nombre de usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -53,25 +50,19 @@
                 Exit Sub
             End If
 
-            If txtUsername.TextLength > 10 And txtUsername.TextLength < 1 Then
-                MessageBox.Show("El usuario debe ser de 10 caracteres maximo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If txtUsername.TextLength < 5 Then
+                MessageBox.Show("El usuario debe ser de al menos 5 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
-            ElseIf txtPasswd.TextLength > 15 And txtPasswd.TextLength < 1 Then
-                MessageBox.Show("La contraseña debe ser de 15 caracteres maximo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf txtPasswd.TextLength < 6 Then
+                MessageBox.Show("La contraseña debe ser de al menos 6 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
             Else
-
-                If connection.consultaExistente(tabla, condicion) > 0 Then
+                If con.consultaExistente(tabla, condicion) > 0 Then
                     MessageBox.Show("Nombre de usuario ya existe, intente con otro nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
-
-                    If connection.InsertarFila(tabla, campos, valores) > 0 Then
-                        MessageBox.Show("Usuario ingresado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Dim condicion2 As String
-                        condicion2 = "WHERE username LIKE '" & txtBusqueda.Text & "'"
-                        dgvUsuarios.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion2)
-                        dgvUsuarios.Refresh()
-                        LimpiarDatos()
+                    If con.insertar(tabla, valores) > 0 Then
+                        MessageBox.Show("Usuario ingresado", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        refrescar()
                     Else
                         MessageBox.Show("Error no se pudieron ingresar los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
@@ -87,32 +78,22 @@
     End Sub
 
     Private Sub vetUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim condicion As String
-        condicion = "WHERE username LIKE '" & txtBusqueda.Text & "%'"
-        dgvUsuarios.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion)
-        dgvUsuarios.Refresh()
-        cmbRol.DataSource = connection.consultaGeneral("Rol")
-        cmbRol.ValueMember = "idRol"
-        cmbRol.DisplayMember = "nombre"
+        refrescar()
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-
         Try
             If txtUsername.Text = "" Or txtPasswd.Text = "" Or txtNombre.Text = "" Or cmbRol.SelectedIndex = -1 Then
                 MessageBox.Show("Faltan datos a ingresar, revisar campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
-            ElseIf txtUsername.TextLength > 10 And txtUsername.TextLength < 1 Then
-                MessageBox.Show("El usuario debe ser de 10 caracteres maximo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf txtUsername.TextLength < 5 Then
+                MessageBox.Show("El usuario debe ser de al menos 5 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
-            ElseIf txtPasswd.TextLength > 15 And txtPasswd.TextLength < 1 Then
-                MessageBox.Show("La contraseña debe ser de 15 caracteres maximo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf txtPasswd.TextLength < 6 Then
+                MessageBox.Show("La contraseña debe ser de al menos 6 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
             Else
-                Dim respuesta As Integer
-                Dim condicion As String
                 Dim campos As String = "username,passwd,nombre,idRol"
-                Dim valores As String
                 user = txtUsername.Text.Trim
                 contra = txtPasswd.Text.Trim
                 nombre = txtNombre.Text.Trim
@@ -122,25 +103,21 @@
                 ElseIf rdbDra.Checked Then
                     titulo = "Dra."
                 End If
-                valores = "username = '" & user & "', passwd = '" & contra & "', nombre ='" &
-                    titulo & " " & nombre & "', idRol ='" & rol & "'"
+                Dim valores As String = "username = '" & user & "', passwd = '" & contra & "', titulo ='" &
+                    titulo & "', nombre ='" & nombre & "', idRol ='" & rol & "'"
 
-                condicion = "username = '" & user & "'"
+                Dim condicion As String = "username = '" & user & "'"
 
-                respuesta = MessageBox.Show("Desea modificar los datos del usuario: " & fila & " ?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim respuesta As Integer = MessageBox.Show("Desea modificar los datos del usuario: " & fila & " ?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
                 If respuesta = 6 Then
-                    If connection.actualizar(tabla, valores, condicion) > 0 Then
-                        MessageBox.Show("Usuario actualizado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Dim condicion2 As String
-                        condicion2 = "WHERE username LIKE '" & txtBusqueda.Text & "%'"
-                        dgvUsuarios.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion2)
-                        dgvUsuarios.Refresh()
+                    If con.actualizar(tabla, valores, condicion) > 0 Then
+                        MessageBox.Show("Usuario actualizado", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         txtUsername.Enabled = True
                         btnModificar.Enabled = False
                         btnEliminar.Enabled = False
                         btnGuardar.Enabled = True
-                        LimpiarDatos()
+                        refrescar()
                     Else
                         MessageBox.Show("Error no se pudieron actualizar los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
@@ -155,69 +132,68 @@
 
     End Sub
 
-    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
-
-        LimpiarDatos()
-        txtBusqueda.Text = ""
-
-    End Sub
-
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-
-        Dim respuesta As Integer
         Dim condicion As String = "username = '" & fila & "'"
-        respuesta = MessageBox.Show("Desea eliminar el usuario: " & fila & " ?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim respuesta As Integer = MessageBox.Show("Desea eliminar el usuario: " & fila & " ?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If respuesta = 6 Then
-            If connection.eliminar(tabla, condicion) > 0 Then
+            If con.eliminar(tabla, condicion) > 0 Then
                 MessageBox.Show("Usuario con sus datos eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Dim condicion2 As String
-                condicion2 = "WHERE username LIKE '" & txtBusqueda.Text & "%'"
-                dgvUsuarios.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion2)
-                dgvUsuarios.Refresh()
                 txtUsername.Enabled = True
                 btnModificar.Enabled = False
                 btnEliminar.Enabled = False
                 btnGuardar.Enabled = True
-                LimpiarDatos()
+                refrescar()
             End If
         End If
 
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-
         txtUsername.Enabled = True
         btnModificar.Enabled = False
         btnEliminar.Enabled = False
         btnGuardar.Enabled = True
-
-        LimpiarDatos()
-        
+        refrescar()
     End Sub
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
-        Dim condicion As String
-        condicion = "WHERE username LIKE '" & txtBusqueda.Text.Trim & "%'"
-        dgvUsuarios.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion)
+        Dim condicion As String = "WHERE username LIKE '" & txtBusqueda.Text.Trim & "%'"
+        dgvUsuarios.DataSource = con.consultaCondicionada(campos, tabla, join, condicion)
         dgvUsuarios.Refresh()
-
     End Sub
 
 
     Private Sub dgvUsuarios_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellDoubleClick
-
         txtUsername.Enabled = False
         btnModificar.Enabled = True
-        btnEliminar.Enabled = True
         btnGuardar.Enabled = False
-
         For Each celda As DataGridViewRow In dgvUsuarios.SelectedRows
             fila = celda.Cells(0).Value.ToString
             txtUsername.Text = celda.Cells(0).Value.ToString
             txtPasswd.Text = celda.Cells(1).Value.ToString
-            txtNombre.Text = celda.Cells(2).Value.ToString
-            cmbRol.SelectedItem = celda.Cells(3).Value.ToString
+            If celda.Cells(2).Value.ToString = "Dr." Then
+                rdbDr.Checked = True
+            ElseIf celda.Cells(2).Value.ToString = "Dra." Then
+                rdbDra.Checked = True
+            End If
+            txtNombre.Text = celda.Cells(3).Value.ToString
+            cmbRol.SelectedValue = con.consultaExistente("idRol", "Rol", "nombre = '" & celda.Cells(4).Value.ToString & "'")
+            If cGenerica.usr <> celda.Cells(0).Value.ToString Then
+                btnEliminar.Enabled = True
+            Else
+                btnEliminar.Enabled = False
+            End If
         Next
+    End Sub
 
+    'Ocultar contraseña en DataGridView
+    Private Sub dgvUsuarios_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvUsuarios.CellFormatting
+        If (e.ColumnIndex = 1 And e.Value <> Nothing) Then
+            e.Value = New String("*", e.Value.ToString().Length)
+        End If
+    End Sub
+
+    Private Sub txtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
+        cGenerica.SoloTexto(txtNombre, e)
     End Sub
 End Class

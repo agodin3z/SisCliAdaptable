@@ -1,101 +1,85 @@
 ﻿Public Class vetHistoConsultas
-    Dim connection As New cConexion
-    Dim tabla As String = "Cita"
-    'Cita: idPaciente, motivo, fecha
-    'Paciente: Nombre
-    'Propietario: Primer nombre, Primer Apellido
-    'Usuario: Nombre
-    Dim campos As String = "Cita.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente'," &
-    "Propietario.priNombre AS 'Nombre del propietario', Propietario.priApellido AS 'Apellido del propietario'," &
-    "Cita.motivo AS 'Motivo de la consulta'," & "Cita.fecha AS 'Fecha de la cita'," & "Usuario.nombre AS 'Encargado'"
-    'Uniendo las tablas de Paciente y Usuario para llamar los datos del nombre del paciente y el usuario
-    Dim join As String = "INNER JOIN Paciente ON Paciente.idPaciente = Cita.idPaciente " &
-        "INNER JOIN Usuario ON Usuario.username = Cita.username " &
-        "INNER JOIN Propietario ON Propietario.idPropietario = Paciente.idPropietario"
-    Dim condicion As String
-    Dim paciente As String
-    Dim datos As New DataTable
-    Dim fecha As Date
-    Dim fila As String
+    Dim con As New cConexion
+
+    Private Sub limpiar()
+        txtBusqueda.Clear()
+        dtpInicio.Value = Now.ToString("dd-MM-yyyy 00:00:00")
+        dtpFin.Value = Now.ToString("dd-MM-yyyy 23:59:59")
+        cGenerica.limpiarTextbox(GroupBox3)
+    End Sub
+
     Private Sub Consulta()
-        Dim fechaInicio As String = dtpInicio.Value.ToString("MM-dd-yyyy")
-        Dim fechaFin As String = dtpFin.Value.ToString("MM-dd-yyyy")
-        paciente = txtBusqueda.Text.Trim
-        condicion = "WHERE Cita.fecha BETWEEN '" & fechaInicio & "' AND '" & fechaFin & "' OR Paciente.nombre LIKE '" &
-            paciente & "&'"
-        dgvConsultas.DataSource = connection.consultaCondicionadas(campos, tabla, join, condicion)
+        Dim campos As String = "ConsultaGral.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente'," &
+        "(Propietario.priNombre + ' ' + Propietario.priApellido) AS 'Nombre del propietario', ConsultaGral.fecha AS 'Hora de la cita'," &
+        "ConsultaGral.razonConsulta AS 'Motivo de la Consulta', (Usuario.titulo + ' ' + Usuario.nombre) AS 'Encargado'"
+
+        Dim join As String = " INNER JOIN Paciente ON Paciente.idPaciente = ConsultaGral.idPaciente " &
+            " INNER JOIN Usuario ON Usuario.username = ConsultaGral.username" &
+            " INNER JOIN Propietario ON Propietario.idPropietario = Paciente.idPropietario"
+
+        Dim condicion As String = "WHERE ConsultaGral.fecha BETWEEN '" & dtpInicio.Value.ToString("dd-MM-yyyy") & "' AND '" &
+            dtpFin.Value.ToString("dd-MM-yyyy") & "' AND Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
+
+        dgvConsultas.DataSource = con.consultaCondicionada(campos, "ConsultaGral", join, condicion)
         dgvConsultas.Refresh()
     End Sub
 
     Private Sub vetHistoConsultas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Consulta()
+        limpiar()
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
-        txtBusqueda.Clear()
-        dtpInicio.Value = Now
-        dtpFin.Value = Now
-        For Each control As Control In GroupBox3.Controls
-            If TypeOf control Is Windows.Forms.TextBox Then
-                control.Text = ""
-            End If
-        Next
+        limpiar()
     End Sub
 
     Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
+        Try
 
-        If dgvConsultas.SelectedRows.Count <= 0 Then
-            MessageBox.Show("No ha seleccionado una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        Else
-            Dim condicion2 As String
-            Dim campos2 As String
-            Dim join2 As String
-            For Each celda As DataGridViewRow In dgvConsultas.SelectedRows
-                fila = celda.Cells(0).Value.ToString
-                txtPropietario.Text = celda.Cells(2).Value.ToString & " " & celda.Cells(3).Value.ToString
-                txtPaciente.Text = celda.Cells(1).Value.ToString
-                txtMedico.Text = celda.Cells(6).Value.ToString
-                fecha = celda.Cells(5).Value.ToString
-                txtFecha.Text = fecha.ToString("MM-dd-yyyy")
-            Next
+            If dgvConsultas.SelectedRows.Count <= 0 Then
+                MessageBox.Show("No ha seleccionado una usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            Else
+                TabControl1.SelectTab(1)
+                Dim fecha As DateTime
+                Dim paciente As String = ""
 
-            'Creando una consulta condicionada para poder buscar por la fecha de la cita
-            campos2 = "ConsultaGral.razonConsulta, ConsultaGral.sintomas, ConsultaGral.diagnostico," &
-                "ConsultaGral.observaciones, ConsultaGral.tratamiento, Cita.fecha"
-            'Uniendo la tabla cita con la que se buscara en la condicion
-            join2 = "INNER JOIN Cita ON Cita.idPaciente = ConsultaGral.idPaciente"
-            condicion2 = "WHERE ConsultaGral.idPaciente='" & fila & "' AND Cita.fecha='" & fecha.ToString("MM-dd-yyyy") & "'"
-            'Usando un DataTable con los datos de la bd y llenando campos por el orden del select 
-            datos = connection.consultaCondicionadas(campos2, "ConsultaGral", join2, condicion2)
-            txtRazon.Text = datos.Rows(0).Item(0).ToString
-            txtSintomas.Text = datos.Rows(0).Item(1).ToString
-            txtDiagnostico.Text = datos.Rows(0).Item(2).ToString
-            txtObservaciones.Text = datos.Rows(0).Item(3).ToString
-            txtTratamiento.Text = datos.Rows(0).Item(4).ToString
-            TabControl1.SelectTab(1)
-        End If
+                For Each celda As DataGridViewRow In dgvConsultas.SelectedRows
+                    paciente = celda.Cells(0).Value.ToString
+                    txtPaciente.Text = celda.Cells(1).Value.ToString
+                    txtPropietario.Text = celda.Cells(2).Value.ToString
+                    txtMedico.Text = celda.Cells(5).Value.ToString
+                    fecha = celda.Cells(3).Value.ToString
+                    txtFecha.Text = fecha.ToString("dd-MM-yyyy HH:mm:ss")
+                Next
 
-       
+                Dim dt As DataTable = con.consultaCondicionada("ConsultaGral", "idPaciente='" & paciente & "' AND fecha='" & fecha.ToString("dd-MM-yyyy HH:mm:ss") & "'")
+                txtRazon.Text = dt.Rows(0)("razonConsulta").ToString
+                txtSintomas.Text = dt.Rows(0)("sintomas").ToString
+                txtDiagnostico.Text = dt.Rows(0)("diagnostico").ToString
+                txtObservaciones.Text = dt.Rows(0)("observaciones").ToString
+                txtTratamiento.Text = dt.Rows(0)("tratamiento").ToString
+
+            End If
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
         Consulta()
     End Sub
 
-    Private Sub dtpInicio_ValueChanged(sender As Object, e As EventArgs) Handles dtpInicio.ValueChanged
+    Private Sub dtpInicio_ValueChanged(sender As Object, e As EventArgs) Handles dtpInicio.ValueChanged, dtpFin.ValueChanged
         If dtpInicio.Value < dtpFin.Value Then
             Consulta()
         Else
             MessageBox.Show("La fecha de fin no puede ser menor que la de inicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dtpFin.Value = Now
         End If
     End Sub
 
-    Private Sub dtpFin_ValueChanged(sender As Object, e As EventArgs) Handles dtpFin.ValueChanged
-        If dtpInicio.Value < dtpFin.Value Then
-            Consulta()
-        Else
-            MessageBox.Show("La fecha de fin no puede ser menor que la de inicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        cGenerica.limpiarTextbox(GroupBox3)
     End Sub
 End Class

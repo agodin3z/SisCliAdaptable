@@ -383,6 +383,7 @@ Partial Class vetHistoConsultas
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetHistoConsultas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Historial de Consultas"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

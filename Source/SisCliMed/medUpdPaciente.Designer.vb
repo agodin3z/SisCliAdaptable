@@ -70,10 +70,7 @@ Partial Class medUpdPaciente
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtAntecedentes = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtFotografia = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnCargarFoto = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -133,10 +130,13 @@ Partial Class medUpdPaciente
         '
         Me.dgvPacientes.AllowUserToAddRows = False
         Me.dgvPacientes.AllowUserToDeleteRows = False
+        Me.dgvPacientes.AllowUserToResizeRows = False
+        Me.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPacientes.Location = New System.Drawing.Point(22, 49)
         Me.dgvPacientes.Name = "dgvPacientes"
         Me.dgvPacientes.ReadOnly = True
+        Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPacientes.Size = New System.Drawing.Size(661, 210)
         Me.dgvPacientes.TabIndex = 1
         '
@@ -247,6 +247,7 @@ Partial Class medUpdPaciente
         'txtDireccion
         '
         Me.txtDireccion.Location = New System.Drawing.Point(128, 171)
+        Me.txtDireccion.MaxLength = 200
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(562, 22)
@@ -273,6 +274,7 @@ Partial Class medUpdPaciente
         'txtSegNombre
         '
         Me.txtSegNombre.Location = New System.Drawing.Point(456, 26)
+        Me.txtSegNombre.MaxLength = 25
         Me.txtSegNombre.Name = "txtSegNombre"
         Me.txtSegNombre.Size = New System.Drawing.Size(194, 22)
         Me.txtSegNombre.TabIndex = 3
@@ -280,6 +282,7 @@ Partial Class medUpdPaciente
         'txtDui
         '
         Me.txtDui.Location = New System.Drawing.Point(128, 98)
+        Me.txtDui.MaxLength = 9
         Me.txtDui.Name = "txtDui"
         Me.txtDui.Size = New System.Drawing.Size(132, 22)
         Me.txtDui.TabIndex = 6
@@ -287,6 +290,7 @@ Partial Class medUpdPaciente
         'txtEstadoCivil
         '
         Me.txtEstadoCivil.Location = New System.Drawing.Point(456, 98)
+        Me.txtEstadoCivil.MaxLength = 25
         Me.txtEstadoCivil.Name = "txtEstadoCivil"
         Me.txtEstadoCivil.Size = New System.Drawing.Size(194, 22)
         Me.txtEstadoCivil.TabIndex = 7
@@ -294,6 +298,7 @@ Partial Class medUpdPaciente
         'txtTelMovil
         '
         Me.txtTelMovil.Location = New System.Drawing.Point(383, 208)
+        Me.txtTelMovil.MaxLength = 8
         Me.txtTelMovil.Name = "txtTelMovil"
         Me.txtTelMovil.Size = New System.Drawing.Size(133, 22)
         Me.txtTelMovil.TabIndex = 12
@@ -301,6 +306,7 @@ Partial Class medUpdPaciente
         'txtTelFijo
         '
         Me.txtTelFijo.Location = New System.Drawing.Point(127, 208)
+        Me.txtTelFijo.MaxLength = 8
         Me.txtTelFijo.Name = "txtTelFijo"
         Me.txtTelFijo.Size = New System.Drawing.Size(133, 22)
         Me.txtTelFijo.TabIndex = 11
@@ -308,6 +314,7 @@ Partial Class medUpdPaciente
         'txtSegApellido
         '
         Me.txtSegApellido.Location = New System.Drawing.Point(456, 62)
+        Me.txtSegApellido.MaxLength = 25
         Me.txtSegApellido.Name = "txtSegApellido"
         Me.txtSegApellido.Size = New System.Drawing.Size(194, 22)
         Me.txtSegApellido.TabIndex = 5
@@ -315,6 +322,7 @@ Partial Class medUpdPaciente
         'txtPriApellido
         '
         Me.txtPriApellido.Location = New System.Drawing.Point(128, 62)
+        Me.txtPriApellido.MaxLength = 25
         Me.txtPriApellido.Name = "txtPriApellido"
         Me.txtPriApellido.Size = New System.Drawing.Size(193, 22)
         Me.txtPriApellido.TabIndex = 4
@@ -376,6 +384,7 @@ Partial Class medUpdPaciente
         'txtPriNombre
         '
         Me.txtPriNombre.Location = New System.Drawing.Point(127, 26)
+        Me.txtPriNombre.MaxLength = 25
         Me.txtPriNombre.Name = "txtPriNombre"
         Me.txtPriNombre.Size = New System.Drawing.Size(194, 22)
         Me.txtPriNombre.TabIndex = 2
@@ -431,9 +440,9 @@ Partial Class medUpdPaciente
         Me.GroupBox5.Controls.Add(Me.Label12)
         Me.GroupBox5.Controls.Add(Me.txtEmergencia1)
         Me.GroupBox5.Controls.Add(Me.Label16)
-        Me.GroupBox5.Location = New System.Drawing.Point(7, 153)
+        Me.GroupBox5.Location = New System.Drawing.Point(7, 138)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(698, 108)
+        Me.GroupBox5.Size = New System.Drawing.Size(698, 123)
         Me.GroupBox5.TabIndex = 27
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Datos de Emergencia"
@@ -441,6 +450,7 @@ Partial Class medUpdPaciente
         'txtTelEmergencia2
         '
         Me.txtTelEmergencia2.Location = New System.Drawing.Point(506, 69)
+        Me.txtTelEmergencia2.MaxLength = 8
         Me.txtTelEmergencia2.Name = "txtTelEmergencia2"
         Me.txtTelEmergencia2.Size = New System.Drawing.Size(171, 22)
         Me.txtTelEmergencia2.TabIndex = 5
@@ -448,6 +458,7 @@ Partial Class medUpdPaciente
         'txtTelEmergencia1
         '
         Me.txtTelEmergencia1.Location = New System.Drawing.Point(506, 30)
+        Me.txtTelEmergencia1.MaxLength = 8
         Me.txtTelEmergencia1.Name = "txtTelEmergencia1"
         Me.txtTelEmergencia1.Size = New System.Drawing.Size(171, 22)
         Me.txtTelEmergencia1.TabIndex = 3
@@ -473,6 +484,7 @@ Partial Class medUpdPaciente
         'txtEmergencia2
         '
         Me.txtEmergencia2.Location = New System.Drawing.Point(191, 69)
+        Me.txtEmergencia2.MaxLength = 75
         Me.txtEmergencia2.Name = "txtEmergencia2"
         Me.txtEmergencia2.Size = New System.Drawing.Size(223, 22)
         Me.txtEmergencia2.TabIndex = 4
@@ -489,6 +501,7 @@ Partial Class medUpdPaciente
         'txtEmergencia1
         '
         Me.txtEmergencia1.Location = New System.Drawing.Point(191, 30)
+        Me.txtEmergencia1.MaxLength = 75
         Me.txtEmergencia1.Name = "txtEmergencia1"
         Me.txtEmergencia1.Size = New System.Drawing.Size(223, 22)
         Me.txtEmergencia1.TabIndex = 2
@@ -523,13 +536,10 @@ Partial Class medUpdPaciente
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.txtAntecedentes)
-        Me.GroupBox3.Controls.Add(Me.Label11)
-        Me.GroupBox3.Controls.Add(Me.txtFotografia)
         Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Controls.Add(Me.btnCargarFoto)
         Me.GroupBox3.Location = New System.Drawing.Point(7, 9)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(698, 132)
+        Me.GroupBox3.Size = New System.Drawing.Size(698, 103)
         Me.GroupBox3.TabIndex = 24
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Datos Adicionales"
@@ -537,27 +547,11 @@ Partial Class medUpdPaciente
         'txtAntecedentes
         '
         Me.txtAntecedentes.Location = New System.Drawing.Point(102, 28)
+        Me.txtAntecedentes.MaxLength = 200
         Me.txtAntecedentes.Multiline = True
         Me.txtAntecedentes.Name = "txtAntecedentes"
         Me.txtAntecedentes.Size = New System.Drawing.Size(575, 44)
         Me.txtAntecedentes.TabIndex = 0
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(33, 89)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(63, 15)
-        Me.Label11.TabIndex = 20
-        Me.Label11.Text = "Fotografía:"
-        '
-        'txtFotografia
-        '
-        Me.txtFotografia.Enabled = False
-        Me.txtFotografia.Location = New System.Drawing.Point(102, 86)
-        Me.txtFotografia.Name = "txtFotografia"
-        Me.txtFotografia.Size = New System.Drawing.Size(226, 22)
-        Me.txtFotografia.TabIndex = 5
         '
         'Label1
         '
@@ -567,15 +561,6 @@ Partial Class medUpdPaciente
         Me.Label1.Size = New System.Drawing.Size(80, 15)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Antecedentes:"
-        '
-        'btnCargarFoto
-        '
-        Me.btnCargarFoto.Location = New System.Drawing.Point(334, 81)
-        Me.btnCargarFoto.Name = "btnCargarFoto"
-        Me.btnCargarFoto.Size = New System.Drawing.Size(141, 30)
-        Me.btnCargarFoto.TabIndex = 1
-        Me.btnCargarFoto.Text = "Cargar Foto..."
-        Me.btnCargarFoto.UseVisualStyleBackColor = True
         '
         'medUpdPaciente
         '
@@ -643,10 +628,7 @@ Partial Class medUpdPaciente
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents txtAntecedentes As System.Windows.Forms.TextBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents txtFotografia As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents btnCargarFoto As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents dgvPacientes As System.Windows.Forms.DataGridView
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox

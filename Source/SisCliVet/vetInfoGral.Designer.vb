@@ -100,6 +100,7 @@ Partial Class vetInfoGral
         'txtTelefono
         '
         Me.txtTelefono.Location = New System.Drawing.Point(71, 82)
+        Me.txtTelefono.MaxLength = 8
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(133, 20)
         Me.txtTelefono.TabIndex = 2
@@ -107,6 +108,7 @@ Partial Class vetInfoGral
         'txtDireccion
         '
         Me.txtDireccion.Location = New System.Drawing.Point(71, 112)
+        Me.txtDireccion.MaxLength = 200
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(319, 46)
@@ -115,6 +117,7 @@ Partial Class vetInfoGral
         'txtAmbito
         '
         Me.txtAmbito.Location = New System.Drawing.Point(71, 52)
+        Me.txtAmbito.MaxLength = 50
         Me.txtAmbito.Name = "txtAmbito"
         Me.txtAmbito.Size = New System.Drawing.Size(319, 20)
         Me.txtAmbito.TabIndex = 1
@@ -140,6 +143,7 @@ Partial Class vetInfoGral
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(71, 22)
+        Me.txtNombre.MaxLength = 50
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(215, 20)
         Me.txtNombre.TabIndex = 0
@@ -175,6 +179,7 @@ Partial Class vetInfoGral
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.MaximizeBox = False
         Me.Name = "vetInfoGral"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Información General de la Clínica"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

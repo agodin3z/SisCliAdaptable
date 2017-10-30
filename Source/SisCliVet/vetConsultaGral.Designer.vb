@@ -31,15 +31,11 @@ Partial Class vetConsultaGral
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.dtpHoraSiguiente = New System.Windows.Forms.DateTimePicker()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnVacunas = New System.Windows.Forms.Button()
         Me.dtpFechaSiguiente = New System.Windows.Forms.DateTimePicker()
+        Me.btnVacunas = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.txtProcedimiento = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.txtTratamiento = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txtObservaciones = New System.Windows.Forms.TextBox()
@@ -143,15 +139,11 @@ Partial Class vetConsultaGral
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.dtpHoraSiguiente)
-        Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Controls.Add(Me.btnVacunas)
         Me.GroupBox3.Controls.Add(Me.dtpFechaSiguiente)
+        Me.GroupBox3.Controls.Add(Me.btnVacunas)
         Me.GroupBox3.Controls.Add(Me.btnCancelar)
         Me.GroupBox3.Controls.Add(Me.btnGuardar)
-        Me.GroupBox3.Controls.Add(Me.txtProcedimiento)
         Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Controls.Add(Me.Label19)
         Me.GroupBox3.Controls.Add(Me.txtTratamiento)
         Me.GroupBox3.Controls.Add(Me.Label17)
         Me.GroupBox3.Controls.Add(Me.txtObservaciones)
@@ -169,43 +161,27 @@ Partial Class vetConsultaGral
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Consulta General"
         '
-        'dtpHoraSiguiente
+        'dtpFechaSiguiente
         '
-        Me.dtpHoraSiguiente.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpHoraSiguiente.Location = New System.Drawing.Point(403, 337)
-        Me.dtpHoraSiguiente.Name = "dtpHoraSiguiente"
-        Me.dtpHoraSiguiente.ShowUpDown = True
-        Me.dtpHoraSiguiente.Size = New System.Drawing.Size(99, 20)
-        Me.dtpHoraSiguiente.TabIndex = 7
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(362, 340)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(33, 13)
-        Me.Label5.TabIndex = 45
-        Me.Label5.Text = "Hora:"
+        Me.dtpFechaSiguiente.CustomFormat = "dddd, dd 'de' MMMM 'del'  yyyy  '|  Hora:' hh:mm:s tt"
+        Me.dtpFechaSiguiente.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpFechaSiguiente.Location = New System.Drawing.Point(140, 302)
+        Me.dtpFechaSiguiente.Name = "dtpFechaSiguiente"
+        Me.dtpFechaSiguiente.Size = New System.Drawing.Size(327, 20)
+        Me.dtpFechaSiguiente.TabIndex = 21
         '
         'btnVacunas
         '
-        Me.btnVacunas.Location = New System.Drawing.Point(547, 337)
+        Me.btnVacunas.Location = New System.Drawing.Point(547, 287)
         Me.btnVacunas.Name = "btnVacunas"
-        Me.btnVacunas.Size = New System.Drawing.Size(119, 23)
+        Me.btnVacunas.Size = New System.Drawing.Size(119, 35)
         Me.btnVacunas.TabIndex = 8
         Me.btnVacunas.Text = "Registrar Vacuna"
         Me.btnVacunas.UseVisualStyleBackColor = True
         '
-        'dtpFechaSiguiente
-        '
-        Me.dtpFechaSiguiente.Location = New System.Drawing.Point(140, 337)
-        Me.dtpFechaSiguiente.Name = "dtpFechaSiguiente"
-        Me.dtpFechaSiguiente.Size = New System.Drawing.Size(215, 20)
-        Me.dtpFechaSiguiente.TabIndex = 6
-        '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(365, 375)
+        Me.btnCancelar.Location = New System.Drawing.Point(376, 349)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
         Me.btnCancelar.TabIndex = 10
@@ -214,42 +190,26 @@ Partial Class vetConsultaGral
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(227, 375)
+        Me.btnGuardar.Location = New System.Drawing.Point(238, 349)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
         Me.btnGuardar.TabIndex = 9
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'txtProcedimiento
-        '
-        Me.txtProcedimiento.Location = New System.Drawing.Point(140, 287)
-        Me.txtProcedimiento.Multiline = True
-        Me.txtProcedimiento.Name = "txtProcedimiento"
-        Me.txtProcedimiento.Size = New System.Drawing.Size(526, 44)
-        Me.txtProcedimiento.TabIndex = 5
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(58, 340)
+        Me.Label1.Location = New System.Drawing.Point(58, 305)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Próxima Cita:"
         '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(48, 290)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(77, 13)
-        Me.Label19.TabIndex = 20
-        Me.Label19.Text = "Procedimiento:"
-        '
         'txtTratamiento
         '
         Me.txtTratamiento.Location = New System.Drawing.Point(140, 234)
+        Me.txtTratamiento.MaxLength = 250
         Me.txtTratamiento.Multiline = True
         Me.txtTratamiento.Name = "txtTratamiento"
         Me.txtTratamiento.Size = New System.Drawing.Size(526, 44)
@@ -267,6 +227,7 @@ Partial Class vetConsultaGral
         'txtObservaciones
         '
         Me.txtObservaciones.Location = New System.Drawing.Point(140, 181)
+        Me.txtObservaciones.MaxLength = 250
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(526, 44)
@@ -284,6 +245,7 @@ Partial Class vetConsultaGral
         'txtDiagnostico
         '
         Me.txtDiagnostico.Location = New System.Drawing.Point(140, 128)
+        Me.txtDiagnostico.MaxLength = 250
         Me.txtDiagnostico.Multiline = True
         Me.txtDiagnostico.Name = "txtDiagnostico"
         Me.txtDiagnostico.Size = New System.Drawing.Size(526, 44)
@@ -301,6 +263,7 @@ Partial Class vetConsultaGral
         'txtSintomas
         '
         Me.txtSintomas.Location = New System.Drawing.Point(140, 75)
+        Me.txtSintomas.MaxLength = 250
         Me.txtSintomas.Multiline = True
         Me.txtSintomas.Name = "txtSintomas"
         Me.txtSintomas.Size = New System.Drawing.Size(526, 44)
@@ -318,6 +281,7 @@ Partial Class vetConsultaGral
         'txtRazon
         '
         Me.txtRazon.Location = New System.Drawing.Point(140, 22)
+        Me.txtRazon.MaxLength = 250
         Me.txtRazon.Multiline = True
         Me.txtRazon.Name = "txtRazon"
         Me.txtRazon.Size = New System.Drawing.Size(526, 44)
@@ -340,6 +304,7 @@ Partial Class vetConsultaGral
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "vetConsultaGral"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta General"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -361,12 +326,9 @@ Partial Class vetConsultaGral
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents dtpFechaSiguiente As System.Windows.Forms.DateTimePicker
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
-    Friend WithEvents txtProcedimiento As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents txtTratamiento As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents txtObservaciones As System.Windows.Forms.TextBox
@@ -378,6 +340,5 @@ Partial Class vetConsultaGral
     Friend WithEvents txtRazon As System.Windows.Forms.TextBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents btnVacunas As System.Windows.Forms.Button
-    Friend WithEvents dtpHoraSiguiente As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents dtpFechaSiguiente As System.Windows.Forms.DateTimePicker
 End Class

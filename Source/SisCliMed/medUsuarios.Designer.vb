@@ -25,12 +25,7 @@ Partial Class medUsuarios
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -56,7 +51,6 @@ Partial Class medUsuarios
         '
         Me.GroupBox2.Controls.Add(Me.btnEliminar)
         Me.GroupBox2.Controls.Add(Me.btnModificar)
-        Me.GroupBox2.Controls.Add(Me.btnLimpiar)
         Me.GroupBox2.Controls.Add(Me.dgvUsuarios)
         Me.GroupBox2.Controls.Add(Me.txtBusqueda)
         Me.GroupBox2.Controls.Add(Me.Label4)
@@ -89,52 +83,19 @@ Partial Class medUsuarios
         Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.Font = New System.Drawing.Font("Open Sans", 8.25!)
-        Me.btnLimpiar.Location = New System.Drawing.Point(170, 190)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(108, 46)
-        Me.btnLimpiar.TabIndex = 10
-        Me.btnLimpiar.Text = "Limpiar"
-        Me.btnLimpiar.UseVisualStyleBackColor = True
-        '
         'dgvUsuarios
         '
         Me.dgvUsuarios.AllowUserToAddRows = False
         Me.dgvUsuarios.AllowUserToDeleteRows = False
+        Me.dgvUsuarios.AllowUserToResizeRows = False
+        Me.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
         Me.dgvUsuarios.Location = New System.Drawing.Point(6, 52)
         Me.dgvUsuarios.Name = "dgvUsuarios"
         Me.dgvUsuarios.ReadOnly = True
+        Me.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvUsuarios.Size = New System.Drawing.Size(516, 132)
         Me.dgvUsuarios.TabIndex = 9
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Usuario"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Rol"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Contraseña"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.HeaderText = "Nombre"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
         '
         'txtBusqueda
         '
@@ -208,6 +169,7 @@ Partial Class medUsuarios
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(122, 50)
+        Me.txtNombre.MaxLength = 100
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(400, 22)
         Me.txtNombre.TabIndex = 2
@@ -255,7 +217,7 @@ Partial Class medUsuarios
         'txtPasswd
         '
         Me.txtPasswd.Location = New System.Drawing.Point(372, 22)
-        Me.txtPasswd.MaxLength = 12
+        Me.txtPasswd.MaxLength = 16
         Me.txtPasswd.Name = "txtPasswd"
         Me.txtPasswd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPasswd.Size = New System.Drawing.Size(150, 22)
@@ -264,6 +226,7 @@ Partial Class medUsuarios
         'txtUsername
         '
         Me.txtUsername.Location = New System.Drawing.Point(122, 22)
+        Me.txtUsername.MaxLength = 10
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(151, 22)
         Me.txtUsername.TabIndex = 0
@@ -316,12 +279,7 @@ Partial Class medUsuarios
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
     Friend WithEvents btnModificar As System.Windows.Forms.Button
-    Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents dgvUsuarios As System.Windows.Forms.DataGridView
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
