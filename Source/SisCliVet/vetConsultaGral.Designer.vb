@@ -46,6 +46,7 @@ Partial Class vetConsultaGral
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtRazon = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -139,6 +140,7 @@ Partial Class vetConsultaGral
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.btnImprimir)
         Me.GroupBox3.Controls.Add(Me.dtpFechaSiguiente)
         Me.GroupBox3.Controls.Add(Me.btnVacunas)
         Me.GroupBox3.Controls.Add(Me.btnCancelar)
@@ -296,6 +298,15 @@ Partial Class vetConsultaGral
         Me.Label18.TabIndex = 20
         Me.Label18.Text = "Razon de Consulta:"
         '
+        'btnImprimir
+        '
+        Me.btnImprimir.Location = New System.Drawing.Point(564, 328)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(75, 34)
+        Me.btnImprimir.TabIndex = 22
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.UseVisualStyleBackColor = True
+        '
         'vetConsultaGral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -341,4 +352,5 @@ Partial Class vetConsultaGral
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents btnVacunas As System.Windows.Forms.Button
     Friend WithEvents dtpFechaSiguiente As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btnImprimir As System.Windows.Forms.Button
 End Class

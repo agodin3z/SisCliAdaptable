@@ -17,7 +17,7 @@
 
     Private Sub medPacientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtHora.Text = Now.ToString("HH:mm:ss")
-        txtFecha.Text = Today.ToString("MM-dd-yyyy")
+        txtFecha.Text = Today.ToString("dd-MM-yyyy")
         TabPage2.Parent = Nothing
     End Sub
 

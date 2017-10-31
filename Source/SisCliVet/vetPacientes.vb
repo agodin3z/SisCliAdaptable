@@ -105,7 +105,7 @@ Public Class vetPacientes
             proTelFijo = txtTelFijo.Text.Trim
             proTelMovil = txtTelMovil.Text.Trim
             hora = Date.Now.ToString("HH:mm:ss")
-            fecha = Date.Now.ToString("dd-MM-yyyy")
+            fecha = Date.Now.ToString("MM-dd-yyyy")
 
             If proPrimerNombre.Length = 0 Then
                 MessageBox.Show("Ingrese su Primer Nombre", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -159,7 +159,7 @@ Public Class vetPacientes
             End If
             Dim pacRaza As String = txtRaza.Text.Trim
             Dim pacColor As String = txtColor.Text
-            Dim pacFecha As String = dtpFechaNac.Value.ToString("dd-MM-yyyy")
+            Dim pacFecha As String = dtpFechaNac.Value.ToString("MM-dd-yyyy")
             Dim peso As String = txtPeso.Text.Trim
             Dim estado As String = txtEstadoRep.Text.Trim
             Dim rasgos As String = txtRasgos.Text.Trim
@@ -174,7 +174,7 @@ Public Class vetPacientes
                 tipoRegistro = "3"
             End If
             Dim ultimaVacuna As String = cmbUltiVacuna.SelectedValue.ToString
-            Dim fechaUltimaVacuna As String = dtpUltiVacuna.Value.ToString("dd-MM-yyyy")
+            Dim fechaUltimaVacuna As String = dtpUltiVacuna.Value.ToString("MM-dd-yyyy")
 
             If pacNombre.Length = 0 Then
                 MessageBox.Show("Ingrese el nombre del paciente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)

@@ -80,7 +80,7 @@ Partial Class medAgenda
         '
         'dtpFecha
         '
-        Me.dtpFecha.CustomFormat = "MM-dd-yyyy"
+        Me.dtpFecha.CustomFormat = "dd-MM-yyyy"
         Me.dtpFecha.Location = New System.Drawing.Point(52, 21)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(215, 22)
