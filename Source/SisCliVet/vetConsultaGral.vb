@@ -3,7 +3,6 @@
     Dim paciente As String = ""
     Dim cita As DateTime
 
-
     Private Sub cargar(ByVal condicion As String)
         Dim tabla As String = "Cita"
         Dim campos As String = "Cita.idPaciente AS 'Codigo del Paciente', Paciente.nombre AS 'Nombre del Paciente'," &
@@ -77,4 +76,7 @@
         cargar("WHERE estado=1")
     End Sub
 
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        cGenerica.ShowDlg(vetReporteReceta, Me)
+    End Sub
 End Class

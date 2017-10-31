@@ -80,7 +80,7 @@ Public Class vetPacientes
 
     Private Sub vetPacientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtHora.Text = Now.ToString("HH:mm:ss")
-        txtFecha.Text = Today.ToString("MM-dd-yyyy")
+        txtFecha.Text = Today.ToString("dd-MM-yyyy")
         llenarEspecie()
         llenarVacunas(lstVacunas, "idEspecie = 1", "Vacuna", "idVacuna", "nombre")
         llenarCmbUltiVacuna(cmbUltiVacuna, "idEspecie = 1", "Vacuna", "idVacuna", "nombre")

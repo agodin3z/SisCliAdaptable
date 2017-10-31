@@ -46,10 +46,17 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -135,6 +142,18 @@
       <DependentUpon>medPRINCIPAL.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="medReceta.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>medReceta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="medReporteReceta.Designer.vb">
+      <DependentUpon>medReporteReceta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medReporteReceta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="medReportPacientes.Designer.vb">
       <DependentUpon>medReportPacientes.vb</DependentUpon>
     </Compile>
@@ -206,6 +225,13 @@
     <EmbeddedResource Include="medPRINCIPAL.resx">
       <DependentUpon>medPRINCIPAL.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="medReceta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>medReceta.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medReporteReceta.resx">
+      <DependentUpon>medReporteReceta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="medReportPacientes.resx">
       <DependentUpon>medReportPacientes.vb</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +271,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wall_med.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

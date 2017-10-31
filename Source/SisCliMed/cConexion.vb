@@ -8,7 +8,7 @@ Public Class cConexion
 
     'Encargado de conectar con la base de datos
     Sub New()
-        Dim servidor As String = "ASAGI\AGSERVER"
+        Dim servidor As String = "."
         Dim db As String = "SISCLIAD_Med"
         Dim cadena As String = "Data Source=" & servidor & ";Initial Catalog=" & db & ";Integrated Security=True"
         con = New SqlConnection(cadena)

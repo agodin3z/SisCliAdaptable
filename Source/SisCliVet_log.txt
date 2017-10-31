@@ -1,0 +1,29 @@
+vetAgenda.vb : No le hace falta nada, ya deberia mostrar todo lo necesario para la agenda, en el codigo van incluido los campos y el inner join
+
+vetCitas.vb: A este no le falta mucho, tal vez solo una verificacion de que la cita sea en un tiempo futuro y que el txtOtro tenga texto cuando esta marcado, y el campo estado, que es un int en la tabla de la bd
+
+vetConsentimiento.vb: La funcion de insertar le hace falta, que incluya la imagen y que valide que tiene la ruta de la imagen y que cambie al otro tab control al seleccionar.
+
+vetConsultaGral.vb: Aparte de registrar una vacuna, le hace falta tal vez una mejor verificacion de la proxima cita, no se validaron los textbox porque todos tiene opcion de ser null. Ah y deje un messagebox en consulta general que muestra todos los datos y olvide de borrar.
+
+vetCtrlVacuna.vb: Ya se puede seleccionar el paciente y llena los campos del nombre del paciente, hora y fecha, y lista las vacunas segun la id de la especie, pero aun no tiene la funcion de guardar el dato pero si deberia estar la variable para tomar los campos seleccionados en lstVacunas y en Otras Vacunas.
+
+vetHistoConsultas.vb: Este tendria que estar validado en cuanto a la fecha de inicio y de fin para que la primera no sea mayor que la otra, y que muestre los datos de la consulta elegida, verificar que el txtBusqueda este buscando tambien a los pacientes.
+
+vetInfoGral.vb: ya estaban las variables para tomar los datos de los campos, y esta el openfiledialog para tomar la imagen, pero le falta insertar a la bd todos estos campos y que se puedan borrar.
+
+vetLogin.vb: Ya estaba haciendo la consulta con la base de datos con el usuario y la contra, deje comentado el sistema temporal en caso no hayas creado un usuario para ambos roles; lo unico que recien me fije es que si el usuario tiene una password, con mayusculas y le da en entrar, no lo deja entrar pero no le dice que sus datos son erroneos, y tampoco recuerda los datos del usuario.
+
+vetPacientes.vb: La cuestion con este es que los campos a ingresar no tienen un zerofill, asi que tipo un paciente o propietario tendria la primera letra del nombre y apellido + los ultimos 2 digitos del año + el correlativo que estaria en 1 y no 001, lo mismo para paciente; las vacunas no se toman en cuenta y no se ha cargado la foto, el campo no esta en la base de datos tampoco.
+
+vetReportPaciente y vetReportPropietario no tienen codigo
+
+vetUpdtPaciente.vb solo tiene el codigo para que muestre en el dgv algunos de los datos del paciente y/o propietario, donde se incluye el codigo de ambos para que se pudiera mandar a llamar sus datos a la bd a traves de eso.
+
+vetUsuario: Incluye las funciones de ingresar, limpiar, modificar y eliminar, cuando se modifica un dato que se selecciona del dgv, el nombre aparece de un solo con el titulo, el codigo tiene un messagebox en el catch, recien me dio un error ingresando un usuario, supongo el dgv ya no se esta actualizando al ingresar un nuevo usuario pero si cuando se elimina.
+
+Otro: no hice un metodo para limpiar campos, la mayoria lo tienen en su mismo codigo, y cConexion tiene varios metodos que podrian obviarse de otros que ya se estan usando ej: el que mas se usa es el de consultaCondicionadas, pero hay uno llamado consultaCondicionada (ver vetPacientes.vb)
+
+
+
+

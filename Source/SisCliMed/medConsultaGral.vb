@@ -90,4 +90,8 @@
             inicio()
         End If
     End Sub
+
+    Private Sub btnImprimirReceta_Click(sender As Object, e As EventArgs) Handles btnImprimirReceta.Click
+        cGenerica.ShowDlg(medReporteReceta, Me)
+    End Sub
 End Class
