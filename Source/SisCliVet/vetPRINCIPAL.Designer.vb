@@ -52,8 +52,33 @@ Partial Class vetPRINCIPAL
         Me.InformaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.toolAdmin = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
+        Me.toolMed = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripButton7 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton8 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton9 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton10 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton11 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton12 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton13 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton14 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton15 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton16 = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.toolAdmin.SuspendLayout()
+        Me.toolMed.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -101,6 +126,7 @@ Partial Class vetPRINCIPAL
         '
         'ConectarseToolStripMenuItem
         '
+        Me.ConectarseToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_entrar
         Me.ConectarseToolStripMenuItem.Name = "ConectarseToolStripMenuItem"
         Me.ConectarseToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.ConectarseToolStripMenuItem.Text = "Conectarse"
@@ -108,6 +134,7 @@ Partial Class vetPRINCIPAL
         'DesconectarseToolStripMenuItem
         '
         Me.DesconectarseToolStripMenuItem.Enabled = False
+        Me.DesconectarseToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_salir
         Me.DesconectarseToolStripMenuItem.Name = "DesconectarseToolStripMenuItem"
         Me.DesconectarseToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.DesconectarseToolStripMenuItem.Text = "Desconectarse"
@@ -119,6 +146,7 @@ Partial Class vetPRINCIPAL
         '
         'SalirToolStripMenuItem
         '
+        Me.SalirToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_cancel
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
@@ -133,12 +161,14 @@ Partial Class vetPRINCIPAL
         '
         'UsuariosToolStripMenuItem
         '
+        Me.UsuariosToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_med
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
         Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'InformaciónGeneralToolStripMenuItem
         '
+        Me.InformaciónGeneralToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_hospital
         Me.InformaciónGeneralToolStripMenuItem.Name = "InformaciónGeneralToolStripMenuItem"
         Me.InformaciónGeneralToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.InformaciónGeneralToolStripMenuItem.Text = "Información General"
@@ -153,24 +183,28 @@ Partial Class vetPRINCIPAL
         '
         'GestionarPacientesToolStripMenuItem
         '
+        Me.GestionarPacientesToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_pet
         Me.GestionarPacientesToolStripMenuItem.Name = "GestionarPacientesToolStripMenuItem"
         Me.GestionarPacientesToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.GestionarPacientesToolStripMenuItem.Text = "Registro de Pacientes"
         '
         'GestionDeCitasToolStripMenuItem
         '
+        Me.GestionDeCitasToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_check_cita
         Me.GestionDeCitasToolStripMenuItem.Name = "GestionDeCitasToolStripMenuItem"
         Me.GestionDeCitasToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.GestionDeCitasToolStripMenuItem.Text = "Gestion de Citas"
         '
         'AgendaToolStripMenuItem
         '
+        Me.AgendaToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_agenda
         Me.AgendaToolStripMenuItem.Name = "AgendaToolStripMenuItem"
         Me.AgendaToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.AgendaToolStripMenuItem.Text = "Agenda"
         '
         'ActualizarInformaciónToolStripMenuItem
         '
+        Me.ActualizarInformaciónToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_edit
         Me.ActualizarInformaciónToolStripMenuItem.Name = "ActualizarInformaciónToolStripMenuItem"
         Me.ActualizarInformaciónToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.ActualizarInformaciónToolStripMenuItem.Text = "Actualizar Información"
@@ -185,12 +219,14 @@ Partial Class vetPRINCIPAL
         '
         'ConsultaGeneralToolStripMenuItem
         '
+        Me.ConsultaGeneralToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_icon
         Me.ConsultaGeneralToolStripMenuItem.Name = "ConsultaGeneralToolStripMenuItem"
         Me.ConsultaGeneralToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ConsultaGeneralToolStripMenuItem.Text = "Consulta general"
         '
         'ControlDeVacunasToolStripMenuItem
         '
+        Me.ControlDeVacunasToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_chart
         Me.ControlDeVacunasToolStripMenuItem.Name = "ControlDeVacunasToolStripMenuItem"
         Me.ControlDeVacunasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ControlDeVacunasToolStripMenuItem.Text = "Control de Vacunas"
@@ -205,18 +241,21 @@ Partial Class vetPRINCIPAL
         '
         'HistorialConsultasToolStripMenuItem
         '
+        Me.HistorialConsultasToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_history
         Me.HistorialConsultasToolStripMenuItem.Name = "HistorialConsultasToolStripMenuItem"
         Me.HistorialConsultasToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.HistorialConsultasToolStripMenuItem.Text = "Historial de Consultas"
         '
         'ReportesPacienteToolStripMenuItem
         '
+        Me.ReportesPacienteToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_list
         Me.ReportesPacienteToolStripMenuItem.Name = "ReportesPacienteToolStripMenuItem"
         Me.ReportesPacienteToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.ReportesPacienteToolStripMenuItem.Text = "Reportes de Pacientes"
         '
         'ReportesDePropietariosToolStripMenuItem
         '
+        Me.ReportesDePropietariosToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_list
         Me.ReportesDePropietariosToolStripMenuItem.Name = "ReportesDePropietariosToolStripMenuItem"
         Me.ReportesDePropietariosToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.ReportesDePropietariosToolStripMenuItem.Text = "Reportes de Propietarios"
@@ -230,12 +269,202 @@ Partial Class vetPRINCIPAL
         '
         'AcercaDeToolStripMenuItem
         '
+        Me.AcercaDeToolStripMenuItem.Image = Global.SisCliVet.My.Resources.Resources.vet_info
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
         Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
         '
         'Timer1
         '
+        '
+        'toolAdmin
+        '
+        Me.toolAdmin.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripSeparator3, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripButton5, Me.ToolStripSeparator4, Me.ToolStripButton6})
+        Me.toolAdmin.Location = New System.Drawing.Point(0, 24)
+        Me.toolAdmin.Name = "toolAdmin"
+        Me.toolAdmin.Size = New System.Drawing.Size(1008, 38)
+        Me.toolAdmin.TabIndex = 4
+        Me.toolAdmin.Text = "ToolStrip1"
+        Me.toolAdmin.Visible = False
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Image = Global.SisCliVet.My.Resources.Resources.vet_med
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(56, 35)
+        Me.ToolStripButton1.Text = "Usuarios"
+        Me.ToolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.Image = Global.SisCliVet.My.Resources.Resources.vet_hospital
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(47, 35)
+        Me.ToolStripButton2.Text = "Clínica"
+        Me.ToolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 38)
+        '
+        'ToolStripButton3
+        '
+        Me.ToolStripButton3.Image = Global.SisCliVet.My.Resources.Resources.vet_history
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(63, 35)
+        Me.ToolStripButton3.Text = "Consultas"
+        Me.ToolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripButton4
+        '
+        Me.ToolStripButton4.Image = Global.SisCliVet.My.Resources.Resources.vet_list
+        Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton4.Name = "ToolStripButton4"
+        Me.ToolStripButton4.Size = New System.Drawing.Size(61, 35)
+        Me.ToolStripButton4.Text = "Pacientes"
+        Me.ToolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripButton5
+        '
+        Me.ToolStripButton5.Image = Global.SisCliVet.My.Resources.Resources.vet_list
+        Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton5.Name = "ToolStripButton5"
+        Me.ToolStripButton5.Size = New System.Drawing.Size(74, 35)
+        Me.ToolStripButton5.Text = "Propietarios"
+        Me.ToolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 38)
+        '
+        'ToolStripButton6
+        '
+        Me.ToolStripButton6.Image = Global.SisCliVet.My.Resources.Resources.vet_info
+        Me.ToolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton6.Name = "ToolStripButton6"
+        Me.ToolStripButton6.Size = New System.Drawing.Size(76, 35)
+        Me.ToolStripButton6.Text = "Información"
+        Me.ToolStripButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'toolMed
+        '
+        Me.toolMed.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton7, Me.ToolStripButton8, Me.ToolStripButton9, Me.ToolStripButton10, Me.ToolStripSeparator5, Me.ToolStripButton11, Me.ToolStripButton12, Me.ToolStripSeparator6, Me.ToolStripButton13, Me.ToolStripButton14, Me.ToolStripButton15, Me.ToolStripSeparator7, Me.ToolStripButton16})
+        Me.toolMed.Location = New System.Drawing.Point(0, 24)
+        Me.toolMed.Name = "toolMed"
+        Me.toolMed.Size = New System.Drawing.Size(1008, 38)
+        Me.toolMed.TabIndex = 5
+        Me.toolMed.Text = "ToolStrip2"
+        Me.toolMed.Visible = False
+        '
+        'ToolStripButton7
+        '
+        Me.ToolStripButton7.Image = Global.SisCliVet.My.Resources.Resources.vet_pet
+        Me.ToolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton7.Name = "ToolStripButton7"
+        Me.ToolStripButton7.Size = New System.Drawing.Size(110, 35)
+        Me.ToolStripButton7.Text = "Registrar Pacientes"
+        Me.ToolStripButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripButton8
+        '
+        Me.ToolStripButton8.Image = Global.SisCliVet.My.Resources.Resources.vet_check_cita
+        Me.ToolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton8.Name = "ToolStripButton8"
+        Me.ToolStripButton8.Size = New System.Drawing.Size(37, 35)
+        Me.ToolStripButton8.Text = "Citas"
+        Me.ToolStripButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripButton9
+        '
+        Me.ToolStripButton9.Image = Global.SisCliVet.My.Resources.Resources.vet_agenda
+        Me.ToolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton9.Name = "ToolStripButton9"
+        Me.ToolStripButton9.Size = New System.Drawing.Size(52, 35)
+        Me.ToolStripButton9.Text = "Agenda"
+        Me.ToolStripButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripButton10
+        '
+        Me.ToolStripButton10.Image = Global.SisCliVet.My.Resources.Resources.vet_edit
+        Me.ToolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton10.Name = "ToolStripButton10"
+        Me.ToolStripButton10.Size = New System.Drawing.Size(131, 35)
+        Me.ToolStripButton10.Text = "Actualizar Información"
+        Me.ToolStripButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 38)
+        '
+        'ToolStripButton11
+        '
+        Me.ToolStripButton11.Image = Global.SisCliVet.My.Resources.Resources.vet_icon
+        Me.ToolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton11.Name = "ToolStripButton11"
+        Me.ToolStripButton11.Size = New System.Drawing.Size(101, 35)
+        Me.ToolStripButton11.Text = "Consulta General"
+        Me.ToolStripButton11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripButton12
+        '
+        Me.ToolStripButton12.Image = Global.SisCliVet.My.Resources.Resources.vet_chart
+        Me.ToolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton12.Name = "ToolStripButton12"
+        Me.ToolStripButton12.Size = New System.Drawing.Size(113, 35)
+        Me.ToolStripButton12.Text = "Control de Vacunas"
+        Me.ToolStripButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 38)
+        '
+        'ToolStripButton13
+        '
+        Me.ToolStripButton13.Image = Global.SisCliVet.My.Resources.Resources.vet_history
+        Me.ToolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton13.Name = "ToolStripButton13"
+        Me.ToolStripButton13.Size = New System.Drawing.Size(63, 35)
+        Me.ToolStripButton13.Text = "Consultas"
+        Me.ToolStripButton13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripButton14
+        '
+        Me.ToolStripButton14.Image = Global.SisCliVet.My.Resources.Resources.vet_list
+        Me.ToolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton14.Name = "ToolStripButton14"
+        Me.ToolStripButton14.Size = New System.Drawing.Size(61, 35)
+        Me.ToolStripButton14.Text = "Pacientes"
+        Me.ToolStripButton14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripButton15
+        '
+        Me.ToolStripButton15.Image = Global.SisCliVet.My.Resources.Resources.vet_list
+        Me.ToolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton15.Name = "ToolStripButton15"
+        Me.ToolStripButton15.Size = New System.Drawing.Size(74, 35)
+        Me.ToolStripButton15.Text = "Propietarios"
+        Me.ToolStripButton15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 38)
+        '
+        'ToolStripButton16
+        '
+        Me.ToolStripButton16.Image = Global.SisCliVet.My.Resources.Resources.vet_info
+        Me.ToolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton16.Name = "ToolStripButton16"
+        Me.ToolStripButton16.Size = New System.Drawing.Size(76, 35)
+        Me.ToolStripButton16.Text = "Información"
+        Me.ToolStripButton16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'vetPRINCIPAL
         '
@@ -244,6 +473,8 @@ Partial Class vetPRINCIPAL
         Me.BackgroundImage = Global.SisCliVet.My.Resources.Resources.wall_vet
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1008, 647)
+        Me.Controls.Add(Me.toolMed)
+        Me.Controls.Add(Me.toolAdmin)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -257,6 +488,10 @@ Partial Class vetPRINCIPAL
         Me.StatusStrip1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.toolAdmin.ResumeLayout(False)
+        Me.toolAdmin.PerformLayout()
+        Me.toolMed.ResumeLayout(False)
+        Me.toolMed.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -289,5 +524,28 @@ Partial Class vetPRINCIPAL
     Friend WithEvents ControlDeVacunasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents stUsuario As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents toolAdmin As System.Windows.Forms.ToolStrip
+    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton4 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton5 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripButton6 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents toolMed As System.Windows.Forms.ToolStrip
+    Friend WithEvents ToolStripButton7 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton8 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton9 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton10 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripButton11 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton12 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripButton13 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton14 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton15 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripButton16 As System.Windows.Forms.ToolStripButton
 
 End Class

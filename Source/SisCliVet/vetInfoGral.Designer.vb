@@ -25,7 +25,6 @@ Partial Class vetInfoGral
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnCargarLogo = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.btnBorrar = New System.Windows.Forms.Button()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
@@ -36,6 +35,7 @@ Partial Class vetInfoGral
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -63,38 +63,38 @@ Partial Class vetInfoGral
         '
         'btnCargarLogo
         '
+        Me.btnCargarLogo.Image = Global.SisCliVet.My.Resources.Resources.vet_picture
         Me.btnCargarLogo.Location = New System.Drawing.Point(413, 168)
         Me.btnCargarLogo.Name = "btnCargarLogo"
         Me.btnCargarLogo.Size = New System.Drawing.Size(141, 46)
         Me.btnCargarLogo.TabIndex = 4
-        Me.btnCargarLogo.Text = "Cargar Logo..."
+        Me.btnCargarLogo.Text = "  Cargar Logo..."
+        Me.btnCargarLogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCargarLogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCargarLogo.UseVisualStyleBackColor = True
         '
         'btnActualizar
         '
+        Me.btnActualizar.Image = Global.SisCliVet.My.Resources.Resources.vet_save
         Me.btnActualizar.Location = New System.Drawing.Point(96, 168)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(108, 46)
         Me.btnActualizar.TabIndex = 5
-        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.Text = "  Actualizar"
+        Me.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnActualizar.UseVisualStyleBackColor = True
-        '
-        'picLogo
-        '
-        Me.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picLogo.Location = New System.Drawing.Point(413, 17)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(141, 144)
-        Me.picLogo.TabIndex = 9
-        Me.picLogo.TabStop = False
         '
         'btnBorrar
         '
+        Me.btnBorrar.Image = Global.SisCliVet.My.Resources.Resources.vet_delete
         Me.btnBorrar.Location = New System.Drawing.Point(255, 168)
         Me.btnBorrar.Name = "btnBorrar"
         Me.btnBorrar.Size = New System.Drawing.Size(108, 46)
         Me.btnBorrar.TabIndex = 6
-        Me.btnBorrar.Text = "Borrar"
+        Me.btnBorrar.Text = "  Borrar"
+        Me.btnBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBorrar.UseVisualStyleBackColor = True
         '
         'txtTelefono
@@ -169,6 +169,15 @@ Partial Class vetInfoGral
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'picLogo
+        '
+        Me.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picLogo.Location = New System.Drawing.Point(413, 17)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(141, 144)
+        Me.picLogo.TabIndex = 9
+        Me.picLogo.TabStop = False
         '
         'vetInfoGral
         '

@@ -195,20 +195,26 @@ Partial Class medPosponerCita
         '
         'btnCancelar
         '
+        Me.btnCancelar.Image = Global.SisCliMed.My.Resources.Resources.vet_cancel
         Me.btnCancelar.Location = New System.Drawing.Point(315, 263)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
         Me.btnCancelar.TabIndex = 8
         Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
+        Me.btnGuardar.Image = Global.SisCliMed.My.Resources.Resources.vet_save
         Me.btnGuardar.Location = New System.Drawing.Point(148, 263)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
         Me.btnGuardar.TabIndex = 7
-        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.Text = "  Guardar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'medPosponerCita

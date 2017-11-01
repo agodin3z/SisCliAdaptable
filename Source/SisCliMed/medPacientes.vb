@@ -17,7 +17,7 @@
 
     Private Sub medPacientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtHora.Text = Now.ToString("HH:mm:ss")
-        txtFecha.Text = Today.ToString("dd-MM-yyyy")
+        txtFecha.Text = Today.ToString("MM-dd-yyyy")
         TabPage2.Parent = Nothing
     End Sub
 
@@ -33,9 +33,9 @@
             direccion = txtDireccion.Text.Trim
             telFijo = txtTelFijo.Text.Trim
             telMovil = txtTelMovil.Text.Trim
-            fechaNac = dtpFechaNac.Value.ToString("dd-MM-yyyy")
+            fechaNac = dtpFechaNac.Value.ToString("MM-dd-yyyy")
             hora = Date.Now.ToString("HH:mm:ss")
-            fecha = Date.Now.ToString("dd-MM-yyyy")
+            fecha = Date.Now.ToString("MM-dd-yyyy")
 
             If pNombre.Length = 0 Then
                 MessageBox.Show("Ingrese el primer nombre", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -46,7 +46,7 @@
             ElseIf genero.Length = 0 Then
                 MessageBox.Show("Ingrese el genero del paciente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
-            ElseIf dtpFechaNac.Value.ToString("dd-MM-yyyy") = Now.ToString("dd-MM-yyyy") Then
+            ElseIf dtpFechaNac.Value.ToString("MM-dd-yyyy") = Now.ToString("MM-dd-yyyy") Then
                 MessageBox.Show("Ingrese la fecha de nacimiento", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
             End If

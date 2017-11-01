@@ -40,8 +40,8 @@
             txtMotivo.Text = celda.Cells(4).Value
             txtMedicoReceta.Text = celda.Cells(5).Value
         Next
-        txtFecha.Text = Now.ToString("dd-MM-yyyy")
-        txtFechaReceta.Text = Now.ToString("dd-MM-yyyy")
+        txtFecha.Text = Now.ToString("MM-dd-yyyy")
+        txtFechaReceta.Text = Now.ToString("MM-dd-yyyy")
         TabPage3.Parent = Me.TabControl1
         TabControl1.SelectTab(1)
         TabControl2.SelectTab(0)
@@ -69,16 +69,16 @@
 
         Dim valores = "'" & paciente & "','" & cGenerica.usr & "','" & txtMotivo.Text.Trim & "','" & txtSintomas.Text.Trim & "','" &
                 txtDiagnostico.Text.Trim & "','" & txtObservaciones.Text.Trim & "','" & txtTratamiento.Text.Trim & "','" &
-                Now.ToString("dd-MM-yyyy") & "','" & Now.ToString("HH:mm:ss") & "','" & nudPresionMax.Value & "','" &
+                Now.ToString("MM-dd-yyyy") & "','" & Now.ToString("HH:mm:ss") & "','" & nudPresionMax.Value & "','" &
                 nudPresionMin.Value & "','" & nudTemp.Value & "','" & nudEstatura.Value & "','" & nudPeso.Value & "','" &
                 nudPulso.Value & "','" & nudRespiracion.Value & "','" & txtObservacionesSignos.Text.Trim & "'"
 
         If con.insertar("ConsultaGral", valores) > 0 Then
             MessageBox.Show("Consulta registrada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            con.actualizar("Cita", "estado=2", "idPaciente='" & paciente & "' AND fecha='" & cita.ToString("dd-MM-yyyy HH:mm:ss") & "'")
+            con.actualizar("Cita", "estado=2", "idPaciente='" & paciente & "' AND fecha='" & cita.ToString("MM-dd-yyyy HH:mm:ss") & "'")
 
-            Dim vals = "'" & Now.ToString("dd-MM-yyyy") & "','" & Now.ToString("HH:mm:ss") & "',' Seguimiento: " &
-                        txtMotivo.Text.Trim & "','" & dtpFechaSiguiente.Value.ToString("dd-MM-yyyy HH:mm:ss") &
+            Dim vals = "'" & Now.ToString("MM-dd-yyyy") & "','" & Now.ToString("HH:mm:ss") & "',' Seguimiento: " &
+                        txtMotivo.Text.Trim & "','" & dtpFechaSiguiente.Value.ToString("MM-dd-yyyy HH:mm:ss") &
                         "','" & paciente & "','" & cGenerica.usr & "',1"
             con.insertar("Cita", vals)
             inicio()

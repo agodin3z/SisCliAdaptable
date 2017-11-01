@@ -92,11 +92,14 @@ Partial Class vetCtrlVacuna
         '
         'btnSeleccionar
         '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(491, 294)
+        Me.btnSeleccionar.Image = Global.SisCliVet.My.Resources.Resources.vet_check
+        Me.btnSeleccionar.Location = New System.Drawing.Point(480, 294)
         Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
+        Me.btnSeleccionar.Size = New System.Drawing.Size(119, 46)
         Me.btnSeleccionar.TabIndex = 2
-        Me.btnSeleccionar.Text = "Seleccionar"
+        Me.btnSeleccionar.Text = "  Seleccionar"
+        Me.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'dgvPacientes
@@ -237,11 +240,14 @@ Partial Class vetCtrlVacuna
         '
         'btnGuardar
         '
+        Me.btnGuardar.Image = Global.SisCliVet.My.Resources.Resources.vet_save
         Me.btnGuardar.Location = New System.Drawing.Point(501, 220)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
         Me.btnGuardar.TabIndex = 7
-        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.Text = "  Guardar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'txtOtraVacuna

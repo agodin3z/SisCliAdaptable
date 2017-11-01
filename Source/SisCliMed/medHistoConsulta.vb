@@ -14,27 +14,24 @@
         dgvConsultas.Refresh()
     End Sub
 
-    Private Sub inicio()
-        limpiar()
-        consulta()
-    End Sub
     Private Sub consulta()
-        Dim condicion As String = "WHERE ConsultaGral.fecha BETWEEN '" & dtpFechaInicio.Value.ToString("dd-MM-yyyy") & "' AND '" & dtpFechaFin.Value.ToString("dd-MM-yyyy") & "' AND Paciente.idPaciente LIKE '" &
+        Dim condicion As String = "WHERE ConsultaGral.fecha BETWEEN '" & dtpFechaInicio.Value.ToString("MM-dd-yyyy") & "' AND '" & dtpFechaFin.Value.ToString("MM-dd-yyyy") & "' AND Paciente.idPaciente LIKE '" &
             txtBusqueda.Text.Trim & "%'"
         cargar(condicion)
     End Sub
 
     Private Sub limpiar()
         txtBusqueda.Clear()
-        dtpFechaInicio.Value = Now.ToString("dd-MM-yyyy 00:00:00")
-        dtpFechaFin.Value = Now.ToString("dd-MM-yyyy 23:59:59")
+        dtpFechaInicio.Value = Now.ToString("MM-dd-yyyy 00:00:00")
+        dtpFechaFin.Value = Now.ToString("MM-dd-yyyy 23:59:59")
+        cargar("")
         cGenerica.limpiarTextbox(GroupBox2)
         cGenerica.limpiarTextbox(GroupBox3)
         cGenerica.limpiarTextbox(GroupBox4)
     End Sub
 
     Private Sub medHistoConsulta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        inicio()
+        cargar("")
     End Sub
 
     Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
@@ -57,7 +54,7 @@
                     txtHora.Text = celda.Cells(3).Value.ToString
                 Next
 
-                Dim dt As DataTable = con.consultaCondicionada("ConsultaGral", "idPaciente='" & paciente & "' AND fecha='" & DateTime.Parse(txtFecha.Text).ToString("dd-MM-yyyy") & "' AND hora='" & DateTime.Parse(txtHora.Text).ToString("HH:mm:ss") & "'")
+                Dim dt As DataTable = con.consultaCondicionada("ConsultaGral", "idPaciente='" & paciente & "' AND fecha='" & DateTime.Parse(txtFecha.Text).ToString("MM-dd-yyyy") & "' AND hora='" & DateTime.Parse(txtHora.Text).ToString("HH:mm:ss") & "'")
 
                 txtRazon.Text = dt.Rows(0)("motivoConsulta").ToString
                 txtSintomas.Text = dt.Rows(0)("sintomas").ToString

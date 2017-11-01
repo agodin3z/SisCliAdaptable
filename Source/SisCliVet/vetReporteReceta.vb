@@ -7,7 +7,7 @@
         For Each celda As DataGridViewRow In vetConsultaGral.dgvPacientes.SelectedRows
             paciente = celda.Cells(1).Value.ToString
             fecha = celda.Cells(2).Value.ToString
-            fecha = fecha.ToString("dd-MM-yyyy")
+            fecha = fecha.ToString("MM-dd-yyyy")
             doctor = celda.Cells(5).Value.ToString
         Next
         Dim reporte As New vetReceta

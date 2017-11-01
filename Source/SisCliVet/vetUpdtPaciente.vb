@@ -203,8 +203,8 @@
                     Exit Sub
                 End If
 
-                Dim valores2 = "nombre='" & txtNombrePaciente.Text & "', idEspecie=" & cmbEspecie.SelectedValue & ", sexo='" & sexo & "', raza='" & txtRaza.Text & "', color='" & txtColor.Text & "', fechaNac='" & dtpFechaNac.Value.ToString("dd-MM-yyyy") &
-                    "', peso='" & txtPeso.Text & "', estadoRep='" & txtEstadoRep.Text & "', rasgoDist='" & txtRasgos.Text & "', idTipoReg=" & tipoRegistro & ", ultimaVacuna='" & cmbUltiVacuna.SelectedValue & "', fechaUltiVac='" & dtpUltiVacuna.Value.ToString("dd-MM-yyyy") & "'"
+                Dim valores2 = "nombre='" & txtNombrePaciente.Text & "', idEspecie=" & cmbEspecie.SelectedValue & ", sexo='" & sexo & "', raza='" & txtRaza.Text & "', color='" & txtColor.Text & "', fechaNac='" & dtpFechaNac.Value.ToString("MM-dd-yyyy") &
+                    "', peso='" & txtPeso.Text & "', estadoRep='" & txtEstadoRep.Text & "', rasgoDist='" & txtRasgos.Text & "', idTipoReg=" & tipoRegistro & ", ultimaVacuna='" & cmbUltiVacuna.SelectedValue & "', fechaUltiVac='" & dtpUltiVacuna.Value.ToString("MM-dd-yyyy") & "'"
                 If con.actualizar("Paciente", valores2, "idPaciente='" & txtCodPaciente.Text & "'") Then
                     If foto = 1 Then
                         If picFoto.BackgroundImage Is Nothing Then
@@ -250,8 +250,8 @@
                     txtCodPaciente.Text = codigo & con.correlativo("idPaciente", "Paciente", condicion2)
                 End If
 
-                Dim valores2 = "'" & txtCodPaciente.Text & "','" & propietario & "','" & txtNombrePaciente.Text & "'," & cmbEspecie.SelectedValue & ",'" & sexo & "','" & txtRaza.Text & "','" & txtColor.Text & "','" & dtpFechaNac.Value.ToString("dd-MM-yyyy") &
-                    "','" & txtPeso.Text & "','" & txtEstadoRep.Text & "','" & txtRasgos.Text & "'," & tipoRegistro & ",'','','" & Now.ToString("dd-MM-yyyy") & "','" & Now.ToString("HH:mm:ss") & "',''"
+                Dim valores2 = "'" & txtCodPaciente.Text & "','" & propietario & "','" & txtNombrePaciente.Text & "'," & cmbEspecie.SelectedValue & ",'" & sexo & "','" & txtRaza.Text & "','" & txtColor.Text & "','" & dtpFechaNac.Value.ToString("MM-dd-yyyy") &
+                    "','" & txtPeso.Text & "','" & txtEstadoRep.Text & "','" & txtRasgos.Text & "'," & tipoRegistro & ",'','','" & Now.ToString("MM-dd-yyyy") & "','" & Now.ToString("HH:mm:ss") & "',''"
 
                 If con.insertar("Paciente", valores2) > 0 Then
                     MessageBox.Show("Paciente ingresado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -273,13 +273,13 @@
                             Dim vac = lstVacunas.GetItemText(lstVacunas.CheckedItems(aa))
                             Dim vacuna As String = con.consultaExistente("idVacuna", "Vacuna", " nombre='" & vac & "'")
                             If con.consultaExistente("Vacuna_Paciente", "idVacuna = '" & vacuna & "' AND idPaciente='" & txtCodPaciente.Text & "'") = 0 Then
-                                con.insertar("Vacuna_Paciente", "'" & vacuna & "','" & txtCodPaciente.Text & "','" & Now.ToString("dd-MM-yyyy") & "'") 'XXX
+                                con.insertar("Vacuna_Paciente", "'" & vacuna & "','" & txtCodPaciente.Text & "','" & Now.ToString("MM-dd-yyyy") & "'") 'XXX
                             End If
 
                         Next
 
                         'Ultima Vacuna
-                        con.actualizar("Paciente", "ultimaVacuna='" & cmbUltiVacuna.SelectedValue & "', fechaUltiVac='" & dtpUltiVacuna.Value.ToString("dd-MM-yyyy") & "'", "idPaciente='" & txtCodPaciente.Text & "'")
+                        con.actualizar("Paciente", "ultimaVacuna='" & cmbUltiVacuna.SelectedValue & "', fechaUltiVac='" & dtpUltiVacuna.Value.ToString("MM-dd-yyyy") & "'", "idPaciente='" & txtCodPaciente.Text & "'")
                     End If
 
                     inicio()

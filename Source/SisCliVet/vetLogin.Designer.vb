@@ -95,22 +95,26 @@ Partial Class vetLogin
         'btnCerrar
         '
         Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCerrar.Image = Global.SisCliVet.My.Resources.Resources.vet_cancel
         Me.btnCerrar.Location = New System.Drawing.Point(278, 227)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(96, 53)
         Me.btnCerrar.TabIndex = 4
-        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.Text = " Cerrar"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
         'btnEntrar
         '
         Me.btnEntrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEntrar.Image = Global.SisCliVet.My.Resources.Resources.vet_check
         Me.btnEntrar.Location = New System.Drawing.Point(176, 227)
         Me.btnEntrar.Name = "btnEntrar"
         Me.btnEntrar.Size = New System.Drawing.Size(96, 53)
         Me.btnEntrar.TabIndex = 3
-        Me.btnEntrar.Text = "Entrar"
+        Me.btnEntrar.Text = " Entrar"
+        Me.btnEntrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEntrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEntrar.UseVisualStyleBackColor = True
         '

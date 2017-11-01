@@ -25,17 +25,12 @@ Partial Class vetReportPropietarios
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.dgvPropietarios = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.dgvPacientes = New System.Windows.Forms.DataGridView()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.dgvVisitas = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtCodPropietario = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -53,6 +48,11 @@ Partial Class vetReportPropietarios
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.dgvPacientes = New System.Windows.Forms.DataGridView()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.dgvVisitas = New System.Windows.Forms.DataGridView()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -60,11 +60,11 @@ Partial Class vetReportPropietarios
         Me.TabPage2.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         CType(Me.dgvPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
         CType(Me.dgvVisitas, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -100,15 +100,6 @@ Partial Class vetReportPropietarios
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccionar Propietario"
-        '
-        'btnSeleccionar
-        '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(491, 237)
-        Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
-        Me.btnSeleccionar.TabIndex = 2
-        Me.btnSeleccionar.Text = "Seleccionar"
-        Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'dgvPropietarios
         '
@@ -172,58 +163,6 @@ Partial Class vetReportPropietarios
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Datos Personales"
         Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'TabPage4
-        '
-        Me.TabPage4.Controls.Add(Me.dgvPacientes)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(607, 270)
-        Me.TabPage4.TabIndex = 1
-        Me.TabPage4.Text = "Pacientes Registrados"
-        Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'dgvPacientes
-        '
-        Me.dgvPacientes.AllowUserToAddRows = False
-        Me.dgvPacientes.AllowUserToDeleteRows = False
-        Me.dgvPacientes.AllowUserToResizeRows = False
-        Me.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPacientes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvPacientes.Location = New System.Drawing.Point(3, 3)
-        Me.dgvPacientes.Name = "dgvPacientes"
-        Me.dgvPacientes.ReadOnly = True
-        Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvPacientes.Size = New System.Drawing.Size(601, 264)
-        Me.dgvPacientes.TabIndex = 0
-        '
-        'TabPage5
-        '
-        Me.TabPage5.Controls.Add(Me.dgvVisitas)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(607, 270)
-        Me.TabPage5.TabIndex = 2
-        Me.TabPage5.Text = "Historial de Visitas"
-        Me.TabPage5.UseVisualStyleBackColor = True
-        '
-        'dgvVisitas
-        '
-        Me.dgvVisitas.AllowUserToAddRows = False
-        Me.dgvVisitas.AllowUserToDeleteRows = False
-        Me.dgvVisitas.AllowUserToResizeRows = False
-        Me.dgvVisitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvVisitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvVisitas.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvVisitas.Location = New System.Drawing.Point(3, 3)
-        Me.dgvVisitas.Name = "dgvVisitas"
-        Me.dgvVisitas.ReadOnly = True
-        Me.dgvVisitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvVisitas.Size = New System.Drawing.Size(601, 264)
-        Me.dgvVisitas.TabIndex = 0
         '
         'GroupBox2
         '
@@ -386,6 +325,70 @@ Partial Class vetReportPropietarios
         Me.Label9.TabIndex = 35
         Me.Label9.Text = "Nombre Completo:"
         '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.dgvPacientes)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(607, 270)
+        Me.TabPage4.TabIndex = 1
+        Me.TabPage4.Text = "Pacientes Registrados"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'dgvPacientes
+        '
+        Me.dgvPacientes.AllowUserToAddRows = False
+        Me.dgvPacientes.AllowUserToDeleteRows = False
+        Me.dgvPacientes.AllowUserToResizeRows = False
+        Me.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPacientes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvPacientes.Location = New System.Drawing.Point(3, 3)
+        Me.dgvPacientes.Name = "dgvPacientes"
+        Me.dgvPacientes.ReadOnly = True
+        Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvPacientes.Size = New System.Drawing.Size(601, 264)
+        Me.dgvPacientes.TabIndex = 0
+        '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.dgvVisitas)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(607, 270)
+        Me.TabPage5.TabIndex = 2
+        Me.TabPage5.Text = "Historial de Visitas"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'dgvVisitas
+        '
+        Me.dgvVisitas.AllowUserToAddRows = False
+        Me.dgvVisitas.AllowUserToDeleteRows = False
+        Me.dgvVisitas.AllowUserToResizeRows = False
+        Me.dgvVisitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvVisitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvVisitas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvVisitas.Location = New System.Drawing.Point(3, 3)
+        Me.dgvVisitas.Name = "dgvVisitas"
+        Me.dgvVisitas.ReadOnly = True
+        Me.dgvVisitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvVisitas.Size = New System.Drawing.Size(601, 264)
+        Me.dgvVisitas.TabIndex = 0
+        '
+        'btnSeleccionar
+        '
+        Me.btnSeleccionar.Image = Global.SisCliVet.My.Resources.Resources.vet_check
+        Me.btnSeleccionar.Location = New System.Drawing.Point(482, 237)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(117, 46)
+        Me.btnSeleccionar.TabIndex = 2
+        Me.btnSeleccionar.Text = "  Seleccionar"
+        Me.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSeleccionar.UseVisualStyleBackColor = True
+        '
         'vetReportPropietarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
@@ -404,12 +407,12 @@ Partial Class vetReportPropietarios
         Me.TabPage2.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         CType(Me.dgvPacientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         CType(Me.dgvVisitas, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

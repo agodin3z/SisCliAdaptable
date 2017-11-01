@@ -25,7 +25,6 @@ Partial Class vetCitas
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnPosponer = New System.Windows.Forms.Button()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.dgvPacientes = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
@@ -46,6 +45,7 @@ Partial Class vetCitas
         Me.Label18 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnPosponer = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -89,22 +89,16 @@ Partial Class vetCitas
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccionar Paciente"
         '
-        'btnPosponer
-        '
-        Me.btnPosponer.Location = New System.Drawing.Point(22, 244)
-        Me.btnPosponer.Name = "btnPosponer"
-        Me.btnPosponer.Size = New System.Drawing.Size(108, 46)
-        Me.btnPosponer.TabIndex = 23
-        Me.btnPosponer.Text = "Posponer Cita"
-        Me.btnPosponer.UseVisualStyleBackColor = True
-        '
         'btnSeleccionar
         '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(441, 244)
+        Me.btnSeleccionar.Image = Global.SisCliVet.My.Resources.Resources.vet_check_cita
+        Me.btnSeleccionar.Location = New System.Drawing.Point(436, 244)
         Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
+        Me.btnSeleccionar.Size = New System.Drawing.Size(113, 46)
         Me.btnSeleccionar.TabIndex = 2
-        Me.btnSeleccionar.Text = "Seleccionar"
+        Me.btnSeleccionar.Text = "  Seleccionar"
+        Me.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'dgvPacientes
@@ -285,22 +279,40 @@ Partial Class vetCitas
         '
         'btnCancelar
         '
+        Me.btnCancelar.Image = Global.SisCliVet.My.Resources.Resources.vet_cancel
         Me.btnCancelar.Location = New System.Drawing.Point(291, 244)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
         Me.btnCancelar.TabIndex = 10
-        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.Text = "  Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
         Me.btnGuardar.Enabled = False
+        Me.btnGuardar.Image = Global.SisCliVet.My.Resources.Resources.vet_save
         Me.btnGuardar.Location = New System.Drawing.Point(154, 244)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
         Me.btnGuardar.TabIndex = 9
-        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.Text = "  Guardar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnGuardar.UseVisualStyleBackColor = True
+        '
+        'btnPosponer
+        '
+        Me.btnPosponer.Image = Global.SisCliVet.My.Resources.Resources.vet_calendar
+        Me.btnPosponer.Location = New System.Drawing.Point(22, 244)
+        Me.btnPosponer.Name = "btnPosponer"
+        Me.btnPosponer.Size = New System.Drawing.Size(121, 46)
+        Me.btnPosponer.TabIndex = 23
+        Me.btnPosponer.Text = "  Posponer Cita"
+        Me.btnPosponer.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnPosponer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPosponer.UseVisualStyleBackColor = True
         '
         'vetCitas
         '

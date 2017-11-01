@@ -30,7 +30,6 @@ Partial Class vetHistoConsultas
         Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnLimpiar = New System.Windows.Forms.Button()
-        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.dgvConsultas = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -54,6 +53,7 @@ Partial Class vetHistoConsultas
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtRazon = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -134,21 +134,15 @@ Partial Class vetHistoConsultas
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(565, 50)
+        Me.btnLimpiar.Image = Global.SisCliVet.My.Resources.Resources.vet_clean
+        Me.btnLimpiar.Location = New System.Drawing.Point(565, 38)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(108, 30)
+        Me.btnLimpiar.Size = New System.Drawing.Size(108, 42)
         Me.btnLimpiar.TabIndex = 3
-        Me.btnLimpiar.Text = "Limpiar"
+        Me.btnLimpiar.Text = "  Limpiar"
+        Me.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnLimpiar.UseVisualStyleBackColor = True
-        '
-        'btnSeleccionar
-        '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(563, 365)
-        Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
-        Me.btnSeleccionar.TabIndex = 5
-        Me.btnSeleccionar.Text = "Seleccionar"
-        Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'dgvConsultas
         '
@@ -374,6 +368,18 @@ Partial Class vetHistoConsultas
         Me.Label18.Size = New System.Drawing.Size(100, 13)
         Me.Label18.TabIndex = 20
         Me.Label18.Text = "Razon de Consulta:"
+        '
+        'btnSeleccionar
+        '
+        Me.btnSeleccionar.Image = Global.SisCliVet.My.Resources.Resources.vet_check_cita
+        Me.btnSeleccionar.Location = New System.Drawing.Point(552, 365)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(119, 46)
+        Me.btnSeleccionar.TabIndex = 5
+        Me.btnSeleccionar.Text = "  Seleccionar"
+        Me.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'vetHistoConsultas
         '

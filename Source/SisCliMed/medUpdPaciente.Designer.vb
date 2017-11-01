@@ -119,11 +119,14 @@ Partial Class medUpdPaciente
         '
         'btnSeleccionar
         '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(575, 265)
+        Me.btnSeleccionar.Image = Global.SisCliMed.My.Resources.Resources.vet_check
+        Me.btnSeleccionar.Location = New System.Drawing.Point(564, 265)
         Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
+        Me.btnSeleccionar.Size = New System.Drawing.Size(119, 46)
         Me.btnSeleccionar.TabIndex = 23
-        Me.btnSeleccionar.Text = "Seleccionar"
+        Me.btnSeleccionar.Text = "  Seleccionar"
+        Me.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'dgvPacientes
@@ -220,11 +223,13 @@ Partial Class medUpdPaciente
         '
         'btnSiguiente
         '
+        Me.btnSiguiente.Image = Global.SisCliMed.My.Resources.Resources.vet_next
         Me.btnSiguiente.Location = New System.Drawing.Point(581, 257)
         Me.btnSiguiente.Name = "btnSiguiente"
         Me.btnSiguiente.Size = New System.Drawing.Size(108, 46)
         Me.btnSiguiente.TabIndex = 15
         Me.btnSiguiente.Text = "Siguiente"
+        Me.btnSiguiente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'dtpFechaNac
@@ -517,20 +522,26 @@ Partial Class medUpdPaciente
         '
         'btnCancelar
         '
+        Me.btnCancelar.Image = Global.SisCliMed.My.Resources.Resources.vet_cancel
         Me.btnCancelar.Location = New System.Drawing.Point(374, 273)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
         Me.btnCancelar.TabIndex = 7
-        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.Text = "  Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
+        Me.btnGuardar.Image = Global.SisCliMed.My.Resources.Resources.vet_save
         Me.btnGuardar.Location = New System.Drawing.Point(243, 273)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
         Me.btnGuardar.TabIndex = 6
-        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.Text = "  Guardar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'GroupBox3

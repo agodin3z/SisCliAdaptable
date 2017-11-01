@@ -6,7 +6,7 @@
         Dim fecMin As DateTime = New DateTime(dtpFecha.Value.Year, dtpFecha.Value.Month, dtpFecha.Value.Day, 0, 0, 0)
         Dim fecMax As DateTime = New DateTime(dtpFecha.Value.Year, dtpFecha.Value.Month, dtpFecha.Value.Day, 23, 59, 59)
 
-        cargar("WHERE fecha BETWEEN '" & fecMin.ToString("dd-MM-yyyy HH:mm:ss") & "' AND '" & fecMax.ToString("dd-MM-yyyy HH:mm:ss") & "' AND estado = 1")
+        cargar("WHERE fecha BETWEEN '" & fecMin.ToString("MM-dd-yyyy HH:mm:ss") & "' AND '" & fecMax.ToString("MM-dd-yyyy HH:mm:ss") & "' AND estado = 1")
     End Sub
     Private Sub cargar(ByVal condicion As String)
         Dim tabla As String = "Cita"
@@ -37,7 +37,7 @@
                 Dim paciente As String = con.consultaExistente("nombre", "Paciente", "idPaciente='" & celda.Cells(1).Value.ToString() & "'")
                 Dim respuesta As Integer = MessageBox.Show("Desea cambiar el estado del la cita del paciente: " & paciente & "?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If respuesta = 6 Then
-                    If con.actualizar("Cita", "estado = 2", "idPaciente='" & celda.Cells(1).Value.ToString() & "' AND fechaCrea='" & DateTime.Parse(celda.Cells(0).Value.ToString()).ToString("dd-MM-yyyy") & "' AND fecha='" & DateTime.Parse(celda.Cells(3).Value.ToString()).ToString("dd-MM-yyyy HH:mm:ss") & "'") > 0 Then
+                    If con.actualizar("Cita", "estado = 2", "idPaciente='" & celda.Cells(1).Value.ToString() & "' AND fechaCrea='" & DateTime.Parse(celda.Cells(0).Value.ToString()).ToString("MM-dd-yyyy") & "' AND fecha='" & DateTime.Parse(celda.Cells(3).Value.ToString()).ToString("MM-dd-yyyy HH:mm:ss") & "'") > 0 Then
                         MessageBox.Show("Cita marcada como atendida!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         cargar("WHERE estado = 1")
                     End If

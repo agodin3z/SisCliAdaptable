@@ -25,8 +25,6 @@ Partial Class medCitas
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnPosponer = New System.Windows.Forms.Button()
-        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.dgvPacientes = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -41,6 +39,8 @@ Partial Class medCitas
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnPosponer = New System.Windows.Forms.Button()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -84,24 +84,6 @@ Partial Class medCitas
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccionar Paciente"
-        '
-        'btnPosponer
-        '
-        Me.btnPosponer.Location = New System.Drawing.Point(22, 244)
-        Me.btnPosponer.Name = "btnPosponer"
-        Me.btnPosponer.Size = New System.Drawing.Size(108, 46)
-        Me.btnPosponer.TabIndex = 24
-        Me.btnPosponer.Text = "Posponer Cita"
-        Me.btnPosponer.UseVisualStyleBackColor = True
-        '
-        'btnSeleccionar
-        '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(441, 244)
-        Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
-        Me.btnSeleccionar.TabIndex = 2
-        Me.btnSeleccionar.Text = "Seleccionar"
-        Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'dgvPacientes
         '
@@ -236,20 +218,50 @@ Partial Class medCitas
         '
         'btnCancelar
         '
+        Me.btnCancelar.Image = Global.SisCliMed.My.Resources.Resources.vet_cancel
         Me.btnCancelar.Location = New System.Drawing.Point(315, 263)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
         Me.btnCancelar.TabIndex = 8
-        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.Text = "  Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnPosponer
+        '
+        Me.btnPosponer.Image = Global.SisCliMed.My.Resources.Resources.vet_calendar
+        Me.btnPosponer.Location = New System.Drawing.Point(22, 244)
+        Me.btnPosponer.Name = "btnPosponer"
+        Me.btnPosponer.Size = New System.Drawing.Size(131, 46)
+        Me.btnPosponer.TabIndex = 24
+        Me.btnPosponer.Text = "  Posponer Cita"
+        Me.btnPosponer.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnPosponer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPosponer.UseVisualStyleBackColor = True
+        '
+        'btnSeleccionar
+        '
+        Me.btnSeleccionar.Image = Global.SisCliMed.My.Resources.Resources.vet_check_cita
+        Me.btnSeleccionar.Location = New System.Drawing.Point(428, 244)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(121, 46)
+        Me.btnSeleccionar.TabIndex = 2
+        Me.btnSeleccionar.Text = "  Seleccionar"
+        Me.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
+        Me.btnGuardar.Image = Global.SisCliMed.My.Resources.Resources.vet_save
         Me.btnGuardar.Location = New System.Drawing.Point(148, 263)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
         Me.btnGuardar.TabIndex = 7
-        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.Text = "  Guardar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'medCitas

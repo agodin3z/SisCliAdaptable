@@ -32,7 +32,6 @@ Partial Class medPacientes
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.dtpFechaNac = New System.Windows.Forms.DateTimePicker()
         Me.cmbGenero = New System.Windows.Forms.ComboBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
@@ -66,10 +65,11 @@ Partial Class medPacientes
         Me.txtEmergencia1 = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtAntecedentes = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -198,15 +198,6 @@ Partial Class medPacientes
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos Personales"
-        '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.Location = New System.Drawing.Point(582, 186)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(108, 46)
-        Me.btnSiguiente.TabIndex = 15
-        Me.btnSiguiente.Text = "Siguiente"
-        Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'dtpFechaNac
         '
@@ -498,21 +489,15 @@ Partial Class medPacientes
         '
         'btnCancelar
         '
+        Me.btnCancelar.Image = Global.SisCliMed.My.Resources.Resources.vet_cancel
         Me.btnCancelar.Location = New System.Drawing.Point(373, 270)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
         Me.btnCancelar.TabIndex = 8
-        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.Text = "  Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCancelar.UseVisualStyleBackColor = True
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.Location = New System.Drawing.Point(242, 270)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(108, 46)
-        Me.btnAgregar.TabIndex = 7
-        Me.btnAgregar.Text = "Agregar"
-        Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -542,6 +527,29 @@ Partial Class medPacientes
         Me.Label1.Size = New System.Drawing.Size(80, 15)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Antecedentes:"
+        '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.Image = Global.SisCliMed.My.Resources.Resources.vet_next
+        Me.btnSiguiente.Location = New System.Drawing.Point(582, 186)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(108, 46)
+        Me.btnSiguiente.TabIndex = 15
+        Me.btnSiguiente.Text = "Siguiente"
+        Me.btnSiguiente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.btnSiguiente.UseVisualStyleBackColor = True
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Image = Global.SisCliMed.My.Resources.Resources.vet_plus
+        Me.btnAgregar.Location = New System.Drawing.Point(242, 270)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(108, 46)
+        Me.btnAgregar.TabIndex = 7
+        Me.btnAgregar.Text = "  Agregar"
+        Me.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'medPacientes
         '

@@ -32,10 +32,6 @@ Partial Class vetReportPaciente
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.dgvConsultas = New System.Windows.Forms.DataGridView()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.dgvVacunas = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtCodPaciente = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
@@ -45,7 +41,6 @@ Partial Class vetReportPaciente
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtEstadoRep = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.picFoto = New System.Windows.Forms.PictureBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtEspecie = New System.Windows.Forms.TextBox()
         Me.txtSexo = New System.Windows.Forms.TextBox()
@@ -60,6 +55,11 @@ Partial Class vetReportPaciente
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.dgvConsultas = New System.Windows.Forms.DataGridView()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.dgvVacunas = New System.Windows.Forms.DataGridView()
+        Me.picFoto = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -67,11 +67,11 @@ Partial Class vetReportPaciente
         Me.TabPage2.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         CType(Me.dgvConsultas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
         CType(Me.dgvVacunas, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
         CType(Me.picFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -111,11 +111,14 @@ Partial Class vetReportPaciente
         '
         'btnSeleccionar
         '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(491, 294)
+        Me.btnSeleccionar.Image = Global.SisCliVet.My.Resources.Resources.vet_check
+        Me.btnSeleccionar.Location = New System.Drawing.Point(480, 294)
         Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
+        Me.btnSeleccionar.Size = New System.Drawing.Size(119, 46)
         Me.btnSeleccionar.TabIndex = 3
-        Me.btnSeleccionar.Text = "Seleccionar"
+        Me.btnSeleccionar.Text = "  Seleccionar"
+        Me.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'dgvPacientes
@@ -180,58 +183,6 @@ Partial Class vetReportPaciente
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Datos Generales"
         Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'TabPage5
-        '
-        Me.TabPage5.Controls.Add(Me.dgvConsultas)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(607, 326)
-        Me.TabPage5.TabIndex = 2
-        Me.TabPage5.Text = "Historial de Consultas"
-        Me.TabPage5.UseVisualStyleBackColor = True
-        '
-        'dgvConsultas
-        '
-        Me.dgvConsultas.AllowUserToAddRows = False
-        Me.dgvConsultas.AllowUserToDeleteRows = False
-        Me.dgvConsultas.AllowUserToResizeRows = False
-        Me.dgvConsultas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
-        Me.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvConsultas.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvConsultas.Location = New System.Drawing.Point(3, 3)
-        Me.dgvConsultas.Name = "dgvConsultas"
-        Me.dgvConsultas.ReadOnly = True
-        Me.dgvConsultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvConsultas.Size = New System.Drawing.Size(601, 320)
-        Me.dgvConsultas.TabIndex = 0
-        '
-        'TabPage4
-        '
-        Me.TabPage4.Controls.Add(Me.dgvVacunas)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(607, 326)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Control de Vacunas"
-        Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'dgvVacunas
-        '
-        Me.dgvVacunas.AllowUserToAddRows = False
-        Me.dgvVacunas.AllowUserToDeleteRows = False
-        Me.dgvVacunas.AllowUserToResizeRows = False
-        Me.dgvVacunas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvVacunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvVacunas.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvVacunas.Location = New System.Drawing.Point(3, 3)
-        Me.dgvVacunas.Name = "dgvVacunas"
-        Me.dgvVacunas.ReadOnly = True
-        Me.dgvVacunas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvVacunas.Size = New System.Drawing.Size(601, 320)
-        Me.dgvVacunas.TabIndex = 0
         '
         'GroupBox2
         '
@@ -335,15 +286,6 @@ Partial Class vetReportPaciente
         Me.Label14.Size = New System.Drawing.Size(118, 15)
         Me.Label14.TabIndex = 67
         Me.Label14.Text = "Estado Reproductivo:"
-        '
-        'picFoto
-        '
-        Me.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picFoto.Location = New System.Drawing.Point(459, 182)
-        Me.picFoto.Name = "picFoto"
-        Me.picFoto.Size = New System.Drawing.Size(141, 144)
-        Me.picFoto.TabIndex = 66
-        Me.picFoto.TabStop = False
         '
         'Label10
         '
@@ -464,6 +406,67 @@ Partial Class vetReportPaciente
         Me.Label18.TabIndex = 52
         Me.Label18.Text = "Nombre:"
         '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.dgvConsultas)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(607, 326)
+        Me.TabPage5.TabIndex = 2
+        Me.TabPage5.Text = "Historial de Consultas"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'dgvConsultas
+        '
+        Me.dgvConsultas.AllowUserToAddRows = False
+        Me.dgvConsultas.AllowUserToDeleteRows = False
+        Me.dgvConsultas.AllowUserToResizeRows = False
+        Me.dgvConsultas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvConsultas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvConsultas.Location = New System.Drawing.Point(3, 3)
+        Me.dgvConsultas.Name = "dgvConsultas"
+        Me.dgvConsultas.ReadOnly = True
+        Me.dgvConsultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvConsultas.Size = New System.Drawing.Size(601, 322)
+        Me.dgvConsultas.TabIndex = 0
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.dgvVacunas)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(607, 326)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Control de Vacunas"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'dgvVacunas
+        '
+        Me.dgvVacunas.AllowUserToAddRows = False
+        Me.dgvVacunas.AllowUserToDeleteRows = False
+        Me.dgvVacunas.AllowUserToResizeRows = False
+        Me.dgvVacunas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvVacunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvVacunas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvVacunas.Location = New System.Drawing.Point(3, 3)
+        Me.dgvVacunas.Name = "dgvVacunas"
+        Me.dgvVacunas.ReadOnly = True
+        Me.dgvVacunas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvVacunas.Size = New System.Drawing.Size(601, 322)
+        Me.dgvVacunas.TabIndex = 0
+        '
+        'picFoto
+        '
+        Me.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picFoto.Location = New System.Drawing.Point(459, 182)
+        Me.picFoto.Name = "picFoto"
+        Me.picFoto.Size = New System.Drawing.Size(141, 144)
+        Me.picFoto.TabIndex = 66
+        Me.picFoto.TabStop = False
+        '
         'vetReportPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
@@ -482,12 +485,12 @@ Partial Class vetReportPaciente
         Me.TabPage2.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         CType(Me.dgvConsultas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         CType(Me.dgvVacunas, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         CType(Me.picFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

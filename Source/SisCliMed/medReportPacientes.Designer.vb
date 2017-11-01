@@ -111,11 +111,14 @@ Partial Class medReportPacientes
         '
         'btnSeleccionar
         '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(491, 294)
+        Me.btnSeleccionar.Image = Global.SisCliMed.My.Resources.Resources.vet_check
+        Me.btnSeleccionar.Location = New System.Drawing.Point(485, 294)
         Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
+        Me.btnSeleccionar.Size = New System.Drawing.Size(114, 46)
         Me.btnSeleccionar.TabIndex = 3
-        Me.btnSeleccionar.Text = "Seleccionar"
+        Me.btnSeleccionar.Text = "  Seleccionar"
+        Me.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'dgvPacientes

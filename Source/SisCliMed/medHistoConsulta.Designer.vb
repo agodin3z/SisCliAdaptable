@@ -29,38 +29,13 @@ Partial Class medHistoConsulta
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnLimpiar = New System.Windows.Forms.Button()
-        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.dgvConsultas = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.txtFecha = New System.Windows.Forms.TextBox()
-        Me.txtMedico = New System.Windows.Forms.TextBox()
-        Me.txtPaciente = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtHora = New System.Windows.Forms.TextBox()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtObservacionesSignos = New System.Windows.Forms.TextBox()
-        Me.txtIMC = New System.Windows.Forms.TextBox()
-        Me.txtPeso = New System.Windows.Forms.TextBox()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtTratamiento = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -72,13 +47,38 @@ Partial Class medHistoConsulta
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtRazon = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.txtPulso = New System.Windows.Forms.TextBox()
-        Me.txtPesoKg = New System.Windows.Forms.TextBox()
-        Me.txtTemp = New System.Windows.Forms.TextBox()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtObservacionesSignos = New System.Windows.Forms.TextBox()
         Me.txtPresionMax = New System.Windows.Forms.TextBox()
-        Me.txtResp = New System.Windows.Forms.TextBox()
-        Me.txtPresionMin = New System.Windows.Forms.TextBox()
+        Me.txtTemp = New System.Windows.Forms.TextBox()
+        Me.txtPesoKg = New System.Windows.Forms.TextBox()
+        Me.txtPulso = New System.Windows.Forms.TextBox()
+        Me.txtIMC = New System.Windows.Forms.TextBox()
         Me.txtEstatura = New System.Windows.Forms.TextBox()
+        Me.txtPresionMin = New System.Windows.Forms.TextBox()
+        Me.txtResp = New System.Windows.Forms.TextBox()
+        Me.txtPeso = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtHora = New System.Windows.Forms.TextBox()
+        Me.txtFecha = New System.Windows.Forms.TextBox()
+        Me.txtMedico = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtPaciente = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -87,9 +87,9 @@ Partial Class medHistoConsulta
         Me.GroupBox3.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -162,24 +162,6 @@ Partial Class medHistoConsulta
         Me.Label5.TabIndex = 23
         Me.Label5.Text = "Inicio:"
         '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.Location = New System.Drawing.Point(565, 50)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(108, 30)
-        Me.btnLimpiar.TabIndex = 3
-        Me.btnLimpiar.Text = "Limpiar"
-        Me.btnLimpiar.UseVisualStyleBackColor = True
-        '
-        'btnSeleccionar
-        '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(563, 365)
-        Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
-        Me.btnSeleccionar.TabIndex = 5
-        Me.btnSeleccionar.Text = "Seleccionar"
-        Me.btnSeleccionar.UseVisualStyleBackColor = True
-        '
         'dgvConsultas
         '
         Me.dgvConsultas.AllowUserToAddRows = False
@@ -239,74 +221,6 @@ Partial Class medHistoConsulta
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Consulta General"
         '
-        'txtFecha
-        '
-        Me.txtFecha.Enabled = False
-        Me.txtFecha.Location = New System.Drawing.Point(499, 23)
-        Me.txtFecha.Name = "txtFecha"
-        Me.txtFecha.Size = New System.Drawing.Size(152, 22)
-        Me.txtFecha.TabIndex = 24
-        '
-        'txtMedico
-        '
-        Me.txtMedico.Enabled = False
-        Me.txtMedico.Location = New System.Drawing.Point(125, 56)
-        Me.txtMedico.Name = "txtMedico"
-        Me.txtMedico.Size = New System.Drawing.Size(285, 22)
-        Me.txtMedico.TabIndex = 24
-        '
-        'txtPaciente
-        '
-        Me.txtPaciente.Enabled = False
-        Me.txtPaciente.Location = New System.Drawing.Point(125, 23)
-        Me.txtPaciente.Name = "txtPaciente"
-        Me.txtPaciente.Size = New System.Drawing.Size(285, 22)
-        Me.txtPaciente.TabIndex = 24
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(453, 25)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 15)
-        Me.Label4.TabIndex = 20
-        Me.Label4.Text = "Fecha:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(71, 59)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(48, 15)
-        Me.Label3.TabIndex = 20
-        Me.Label3.Text = "Médico:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(65, 26)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 15)
-        Me.Label1.TabIndex = 20
-        Me.Label1.Text = "Paciente:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(453, 58)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(35, 15)
-        Me.Label7.TabIndex = 20
-        Me.Label7.Text = "Hora:"
-        '
-        'txtHora
-        '
-        Me.txtHora.Enabled = False
-        Me.txtHora.Location = New System.Drawing.Point(499, 56)
-        Me.txtHora.Name = "txtHora"
-        Me.txtHora.Size = New System.Drawing.Size(152, 22)
-        Me.txtHora.TabIndex = 24
-        '
         'TabControl2
         '
         Me.TabControl2.Controls.Add(Me.TabPage3)
@@ -327,161 +241,6 @@ Partial Class medHistoConsulta
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Detalles Generales"
         Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'TabPage4
-        '
-        Me.TabPage4.Controls.Add(Me.GroupBox2)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(678, 312)
-        Me.TabPage4.TabIndex = 1
-        Me.TabPage4.Text = "Signos Vitales"
-        Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.txtObservacionesSignos)
-        Me.GroupBox2.Controls.Add(Me.txtPresionMax)
-        Me.GroupBox2.Controls.Add(Me.txtTemp)
-        Me.GroupBox2.Controls.Add(Me.txtPesoKg)
-        Me.GroupBox2.Controls.Add(Me.txtPulso)
-        Me.GroupBox2.Controls.Add(Me.txtIMC)
-        Me.GroupBox2.Controls.Add(Me.txtEstatura)
-        Me.GroupBox2.Controls.Add(Me.txtPresionMin)
-        Me.GroupBox2.Controls.Add(Me.txtResp)
-        Me.GroupBox2.Controls.Add(Me.txtPeso)
-        Me.GroupBox2.Controls.Add(Me.Label23)
-        Me.GroupBox2.Controls.Add(Me.Label22)
-        Me.GroupBox2.Controls.Add(Me.Label27)
-        Me.GroupBox2.Controls.Add(Me.Label21)
-        Me.GroupBox2.Controls.Add(Me.Label26)
-        Me.GroupBox2.Controls.Add(Me.Label20)
-        Me.GroupBox2.Controls.Add(Me.Label25)
-        Me.GroupBox2.Controls.Add(Me.Label13)
-        Me.GroupBox2.Controls.Add(Me.Label24)
-        Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 6)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(666, 300)
-        Me.GroupBox2.TabIndex = 0
-        Me.GroupBox2.TabStop = False
-        '
-        'txtObservacionesSignos
-        '
-        Me.txtObservacionesSignos.Enabled = False
-        Me.txtObservacionesSignos.Location = New System.Drawing.Point(204, 222)
-        Me.txtObservacionesSignos.MaxLength = 250
-        Me.txtObservacionesSignos.Multiline = True
-        Me.txtObservacionesSignos.Name = "txtObservacionesSignos"
-        Me.txtObservacionesSignos.Size = New System.Drawing.Size(440, 40)
-        Me.txtObservacionesSignos.TabIndex = 50
-        '
-        'txtIMC
-        '
-        Me.txtIMC.Enabled = False
-        Me.txtIMC.Location = New System.Drawing.Point(204, 187)
-        Me.txtIMC.Name = "txtIMC"
-        Me.txtIMC.Size = New System.Drawing.Size(120, 22)
-        Me.txtIMC.TabIndex = 49
-        '
-        'txtPeso
-        '
-        Me.txtPeso.Enabled = False
-        Me.txtPeso.Location = New System.Drawing.Point(524, 113)
-        Me.txtPeso.Name = "txtPeso"
-        Me.txtPeso.Size = New System.Drawing.Size(120, 22)
-        Me.txtPeso.TabIndex = 46
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(112, 225)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(86, 15)
-        Me.Label23.TabIndex = 39
-        Me.Label23.Text = "Observaciones:"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(168, 190)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(30, 15)
-        Me.Label22.TabIndex = 38
-        Me.Label22.Text = "IMC:"
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(415, 153)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(103, 15)
-        Me.Label27.TabIndex = 37
-        Me.Label27.Text = "Respiración (/min):"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(127, 153)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(71, 15)
-        Me.Label21.TabIndex = 36
-        Me.Label21.Text = "Pulso (LPM):"
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(456, 116)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(62, 15)
-        Me.Label26.TabIndex = 35
-        Me.Label26.Text = "Peso (Lbs):"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(141, 116)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(57, 15)
-        Me.Label20.TabIndex = 34
-        Me.Label20.Text = "Peso (Kg):"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(442, 78)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(76, 15)
-        Me.Label25.TabIndex = 33
-        Me.Label25.Text = "Estatura (cm):"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(101, 78)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(97, 15)
-        Me.Label13.TabIndex = 32
-        Me.Label13.Text = "Temperatura (°C):"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(344, 41)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(174, 15)
-        Me.Label24.TabIndex = 40
-        Me.Label24.Text = "Presión Arterial Mínima (mmHg):"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(22, 41)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(176, 15)
-        Me.Label12.TabIndex = 31
-        Me.Label12.Text = "Presión Arterial Máxima (mmHg):"
         '
         'GroupBox4
         '
@@ -591,29 +350,54 @@ Partial Class medHistoConsulta
         Me.Label18.TabIndex = 36
         Me.Label18.Text = "Razon de Consulta:"
         '
-        'txtPulso
+        'TabPage4
         '
-        Me.txtPulso.Enabled = False
-        Me.txtPulso.Location = New System.Drawing.Point(204, 150)
-        Me.txtPulso.Name = "txtPulso"
-        Me.txtPulso.Size = New System.Drawing.Size(120, 22)
-        Me.txtPulso.TabIndex = 49
+        Me.TabPage4.Controls.Add(Me.GroupBox2)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(678, 312)
+        Me.TabPage4.TabIndex = 1
+        Me.TabPage4.Text = "Signos Vitales"
+        Me.TabPage4.UseVisualStyleBackColor = True
         '
-        'txtPesoKg
+        'GroupBox2
         '
-        Me.txtPesoKg.Enabled = False
-        Me.txtPesoKg.Location = New System.Drawing.Point(204, 113)
-        Me.txtPesoKg.Name = "txtPesoKg"
-        Me.txtPesoKg.Size = New System.Drawing.Size(120, 22)
-        Me.txtPesoKg.TabIndex = 49
+        Me.GroupBox2.Controls.Add(Me.txtObservacionesSignos)
+        Me.GroupBox2.Controls.Add(Me.txtPresionMax)
+        Me.GroupBox2.Controls.Add(Me.txtTemp)
+        Me.GroupBox2.Controls.Add(Me.txtPesoKg)
+        Me.GroupBox2.Controls.Add(Me.txtPulso)
+        Me.GroupBox2.Controls.Add(Me.txtIMC)
+        Me.GroupBox2.Controls.Add(Me.txtEstatura)
+        Me.GroupBox2.Controls.Add(Me.txtPresionMin)
+        Me.GroupBox2.Controls.Add(Me.txtResp)
+        Me.GroupBox2.Controls.Add(Me.txtPeso)
+        Me.GroupBox2.Controls.Add(Me.Label23)
+        Me.GroupBox2.Controls.Add(Me.Label22)
+        Me.GroupBox2.Controls.Add(Me.Label27)
+        Me.GroupBox2.Controls.Add(Me.Label21)
+        Me.GroupBox2.Controls.Add(Me.Label26)
+        Me.GroupBox2.Controls.Add(Me.Label20)
+        Me.GroupBox2.Controls.Add(Me.Label25)
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Controls.Add(Me.Label24)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(666, 300)
+        Me.GroupBox2.TabIndex = 0
+        Me.GroupBox2.TabStop = False
         '
-        'txtTemp
+        'txtObservacionesSignos
         '
-        Me.txtTemp.Enabled = False
-        Me.txtTemp.Location = New System.Drawing.Point(204, 75)
-        Me.txtTemp.Name = "txtTemp"
-        Me.txtTemp.Size = New System.Drawing.Size(120, 22)
-        Me.txtTemp.TabIndex = 49
+        Me.txtObservacionesSignos.Enabled = False
+        Me.txtObservacionesSignos.Location = New System.Drawing.Point(204, 222)
+        Me.txtObservacionesSignos.MaxLength = 250
+        Me.txtObservacionesSignos.Multiline = True
+        Me.txtObservacionesSignos.Name = "txtObservacionesSignos"
+        Me.txtObservacionesSignos.Size = New System.Drawing.Size(440, 40)
+        Me.txtObservacionesSignos.TabIndex = 50
         '
         'txtPresionMax
         '
@@ -623,13 +407,45 @@ Partial Class medHistoConsulta
         Me.txtPresionMax.Size = New System.Drawing.Size(120, 22)
         Me.txtPresionMax.TabIndex = 49
         '
-        'txtResp
+        'txtTemp
         '
-        Me.txtResp.Enabled = False
-        Me.txtResp.Location = New System.Drawing.Point(524, 150)
-        Me.txtResp.Name = "txtResp"
-        Me.txtResp.Size = New System.Drawing.Size(120, 22)
-        Me.txtResp.TabIndex = 46
+        Me.txtTemp.Enabled = False
+        Me.txtTemp.Location = New System.Drawing.Point(204, 75)
+        Me.txtTemp.Name = "txtTemp"
+        Me.txtTemp.Size = New System.Drawing.Size(120, 22)
+        Me.txtTemp.TabIndex = 49
+        '
+        'txtPesoKg
+        '
+        Me.txtPesoKg.Enabled = False
+        Me.txtPesoKg.Location = New System.Drawing.Point(204, 113)
+        Me.txtPesoKg.Name = "txtPesoKg"
+        Me.txtPesoKg.Size = New System.Drawing.Size(120, 22)
+        Me.txtPesoKg.TabIndex = 49
+        '
+        'txtPulso
+        '
+        Me.txtPulso.Enabled = False
+        Me.txtPulso.Location = New System.Drawing.Point(204, 150)
+        Me.txtPulso.Name = "txtPulso"
+        Me.txtPulso.Size = New System.Drawing.Size(120, 22)
+        Me.txtPulso.TabIndex = 49
+        '
+        'txtIMC
+        '
+        Me.txtIMC.Enabled = False
+        Me.txtIMC.Location = New System.Drawing.Point(204, 187)
+        Me.txtIMC.Name = "txtIMC"
+        Me.txtIMC.Size = New System.Drawing.Size(120, 22)
+        Me.txtIMC.TabIndex = 49
+        '
+        'txtEstatura
+        '
+        Me.txtEstatura.Enabled = False
+        Me.txtEstatura.Location = New System.Drawing.Point(524, 75)
+        Me.txtEstatura.Name = "txtEstatura"
+        Me.txtEstatura.Size = New System.Drawing.Size(120, 22)
+        Me.txtEstatura.TabIndex = 46
         '
         'txtPresionMin
         '
@@ -639,13 +455,203 @@ Partial Class medHistoConsulta
         Me.txtPresionMin.Size = New System.Drawing.Size(120, 22)
         Me.txtPresionMin.TabIndex = 46
         '
-        'txtEstatura
+        'txtResp
         '
-        Me.txtEstatura.Enabled = False
-        Me.txtEstatura.Location = New System.Drawing.Point(524, 75)
-        Me.txtEstatura.Name = "txtEstatura"
-        Me.txtEstatura.Size = New System.Drawing.Size(120, 22)
-        Me.txtEstatura.TabIndex = 46
+        Me.txtResp.Enabled = False
+        Me.txtResp.Location = New System.Drawing.Point(524, 150)
+        Me.txtResp.Name = "txtResp"
+        Me.txtResp.Size = New System.Drawing.Size(120, 22)
+        Me.txtResp.TabIndex = 46
+        '
+        'txtPeso
+        '
+        Me.txtPeso.Enabled = False
+        Me.txtPeso.Location = New System.Drawing.Point(524, 113)
+        Me.txtPeso.Name = "txtPeso"
+        Me.txtPeso.Size = New System.Drawing.Size(120, 22)
+        Me.txtPeso.TabIndex = 46
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(112, 225)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(86, 15)
+        Me.Label23.TabIndex = 39
+        Me.Label23.Text = "Observaciones:"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(168, 190)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(30, 15)
+        Me.Label22.TabIndex = 38
+        Me.Label22.Text = "IMC:"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(415, 153)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(103, 15)
+        Me.Label27.TabIndex = 37
+        Me.Label27.Text = "Respiración (/min):"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(127, 153)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(71, 15)
+        Me.Label21.TabIndex = 36
+        Me.Label21.Text = "Pulso (LPM):"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(456, 116)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(62, 15)
+        Me.Label26.TabIndex = 35
+        Me.Label26.Text = "Peso (Lbs):"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(141, 116)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(57, 15)
+        Me.Label20.TabIndex = 34
+        Me.Label20.Text = "Peso (Kg):"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(442, 78)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(76, 15)
+        Me.Label25.TabIndex = 33
+        Me.Label25.Text = "Estatura (cm):"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(101, 78)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(97, 15)
+        Me.Label13.TabIndex = 32
+        Me.Label13.Text = "Temperatura (°C):"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(344, 41)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(174, 15)
+        Me.Label24.TabIndex = 40
+        Me.Label24.Text = "Presión Arterial Mínima (mmHg):"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(22, 41)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(176, 15)
+        Me.Label12.TabIndex = 31
+        Me.Label12.Text = "Presión Arterial Máxima (mmHg):"
+        '
+        'txtHora
+        '
+        Me.txtHora.Enabled = False
+        Me.txtHora.Location = New System.Drawing.Point(499, 56)
+        Me.txtHora.Name = "txtHora"
+        Me.txtHora.Size = New System.Drawing.Size(152, 22)
+        Me.txtHora.TabIndex = 24
+        '
+        'txtFecha
+        '
+        Me.txtFecha.Enabled = False
+        Me.txtFecha.Location = New System.Drawing.Point(499, 23)
+        Me.txtFecha.Name = "txtFecha"
+        Me.txtFecha.Size = New System.Drawing.Size(152, 22)
+        Me.txtFecha.TabIndex = 24
+        '
+        'txtMedico
+        '
+        Me.txtMedico.Enabled = False
+        Me.txtMedico.Location = New System.Drawing.Point(125, 56)
+        Me.txtMedico.Name = "txtMedico"
+        Me.txtMedico.Size = New System.Drawing.Size(285, 22)
+        Me.txtMedico.TabIndex = 24
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(453, 58)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(35, 15)
+        Me.Label7.TabIndex = 20
+        Me.Label7.Text = "Hora:"
+        '
+        'txtPaciente
+        '
+        Me.txtPaciente.Enabled = False
+        Me.txtPaciente.Location = New System.Drawing.Point(125, 23)
+        Me.txtPaciente.Name = "txtPaciente"
+        Me.txtPaciente.Size = New System.Drawing.Size(285, 22)
+        Me.txtPaciente.TabIndex = 24
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(453, 25)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(40, 15)
+        Me.Label4.TabIndex = 20
+        Me.Label4.Text = "Fecha:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(71, 59)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(48, 15)
+        Me.Label3.TabIndex = 20
+        Me.Label3.Text = "Médico:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(65, 26)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(54, 15)
+        Me.Label1.TabIndex = 20
+        Me.Label1.Text = "Paciente:"
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.Image = Global.SisCliMed.My.Resources.Resources.vet_clean
+        Me.btnLimpiar.Location = New System.Drawing.Point(565, 42)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(108, 38)
+        Me.btnLimpiar.TabIndex = 3
+        Me.btnLimpiar.Text = "  Limpiar"
+        Me.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLimpiar.UseVisualStyleBackColor = True
+        '
+        'btnSeleccionar
+        '
+        Me.btnSeleccionar.Image = Global.SisCliMed.My.Resources.Resources.vet_check_cita
+        Me.btnSeleccionar.Location = New System.Drawing.Point(549, 365)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(122, 46)
+        Me.btnSeleccionar.TabIndex = 5
+        Me.btnSeleccionar.Text = "  Seleccionar"
+        Me.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'medHistoConsulta
         '
@@ -666,11 +672,11 @@ Partial Class medHistoConsulta
         Me.GroupBox3.PerformLayout()
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

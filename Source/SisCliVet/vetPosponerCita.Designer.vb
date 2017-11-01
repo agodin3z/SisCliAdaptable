@@ -242,21 +242,27 @@ Partial Class vetPosponerCita
         '
         'btnCancelar
         '
+        Me.btnCancelar.Image = Global.SisCliVet.My.Resources.Resources.vet_cancel
         Me.btnCancelar.Location = New System.Drawing.Point(291, 244)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
         Me.btnCancelar.TabIndex = 10
-        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.Text = "  Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
         Me.btnGuardar.Enabled = False
+        Me.btnGuardar.Image = Global.SisCliVet.My.Resources.Resources.vet_save
         Me.btnGuardar.Location = New System.Drawing.Point(154, 244)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
         Me.btnGuardar.TabIndex = 9
-        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.Text = "  Guardar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'vetPosponerCita

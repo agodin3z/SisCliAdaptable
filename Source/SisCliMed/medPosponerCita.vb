@@ -15,7 +15,7 @@
     Private Sub limpiar()
         txtPaciente.Clear()
         txtMotivo.Clear()
-        dtpFechaSiguiente.Value = Now.ToString("dd-MM-yyyy HH:mm:ss")
+        dtpFechaSiguiente.Value = Now.ToString("MM-dd-yyyy HH:mm:ss")
         TabPage1.Parent = Me.TabControl1
         TabControl1.SelectTab(0)
         TabPage2.Parent = Nothing
@@ -43,10 +43,10 @@
         For Each celda As DataGridViewRow In dgvCitas.SelectedRows
             paciente = celda.Cells(0).Value.ToString
             txtPaciente.Text = celda.Cells(1).Value.ToString
-            dtpFechaSiguiente.Value = DateTime.Parse(celda.Cells(2).Value).ToString("dd-MM-yyyy HH:mm:ss")
+            dtpFechaSiguiente.Value = DateTime.Parse(celda.Cells(2).Value).ToString("MM-dd-yyyy HH:mm:ss")
             txtMotivo.Text = celda.Cells(3).Value.ToString
             cmbMedico.SelectedValue = con.consultaExistente("username", "Usuario", "nombre='" & celda.Cells(4).Value.ToString & "'")
-            fecha = DateTime.Parse(celda.Cells(5).Value).ToString("dd-MM-yyyy")
+            fecha = DateTime.Parse(celda.Cells(5).Value).ToString("MM-dd-yyyy")
             hora = DateTime.Parse(celda.Cells(6).Value.ToString()).ToString("HH:mm:ss")
         Next
 
@@ -57,7 +57,7 @@
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Dim fechaProx As String = dtpFechaSiguiente.Value.ToString("dd-MM-yyyy HH:mm:ss")
+        Dim fechaProx As String = dtpFechaSiguiente.Value.ToString("MM-dd-yyyy HH:mm:ss")
         Dim motivo As String = txtMotivo.Text.Trim
         Dim estado As String = "1"
 

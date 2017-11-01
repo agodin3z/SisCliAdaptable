@@ -297,6 +297,78 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-check-cita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-entrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-hospital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-agenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-info.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

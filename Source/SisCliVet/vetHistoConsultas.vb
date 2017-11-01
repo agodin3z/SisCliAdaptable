@@ -3,8 +3,8 @@
 
     Private Sub limpiar()
         txtBusqueda.Clear()
-        dtpInicio.Value = Now.ToString("dd-MM-yyyy 00:00:00")
-        dtpFin.Value = Now.ToString("dd-MM-yyyy 23:59:59")
+        dtpInicio.Value = Now.ToString("MM-dd-yyyy 00:00:00")
+        dtpFin.Value = Now.ToString("MM-dd-yyyy 23:59:59")
         cGenerica.limpiarTextbox(GroupBox3)
     End Sub
 
@@ -17,8 +17,8 @@
             " INNER JOIN Usuario ON Usuario.username = ConsultaGral.username" &
             " INNER JOIN Propietario ON Propietario.idPropietario = Paciente.idPropietario"
 
-        Dim condicion As String = "WHERE ConsultaGral.fecha BETWEEN '" & dtpInicio.Value.ToString("dd-MM-yyyy") & "' AND '" &
-            dtpFin.Value.ToString("dd-MM-yyyy") & "' AND Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
+        Dim condicion As String = "WHERE ConsultaGral.fecha BETWEEN '" & dtpInicio.Value.ToString("MM-dd-yyyy") & "' AND '" &
+            dtpFin.Value.ToString("MM-dd-yyyy") & "' AND Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
 
         dgvConsultas.DataSource = con.consultaCondicionada(campos, "ConsultaGral", join, condicion)
         dgvConsultas.Refresh()
@@ -49,10 +49,10 @@
                     txtPropietario.Text = celda.Cells(2).Value.ToString
                     txtMedico.Text = celda.Cells(5).Value.ToString
                     fecha = celda.Cells(3).Value.ToString
-                    txtFecha.Text = fecha.ToString("dd-MM-yyyy HH:mm:ss")
+                    txtFecha.Text = fecha.ToString("MM-dd-yyyy HH:mm:ss")
                 Next
 
-                Dim dt As DataTable = con.consultaCondicionada("ConsultaGral", "idPaciente='" & paciente & "' AND fecha='" & fecha.ToString("dd-MM-yyyy HH:mm:ss") & "'")
+                Dim dt As DataTable = con.consultaCondicionada("ConsultaGral", "idPaciente='" & paciente & "' AND fecha='" & fecha.ToString("MM-dd-yyyy HH:mm:ss") & "'")
                 txtRazon.Text = dt.Rows(0)("razonConsulta").ToString
                 txtSintomas.Text = dt.Rows(0)("sintomas").ToString
                 txtDiagnostico.Text = dt.Rows(0)("diagnostico").ToString

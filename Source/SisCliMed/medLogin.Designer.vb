@@ -23,13 +23,13 @@ Partial Class medLogin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.chkRecordar = New System.Windows.Forms.CheckBox()
-        Me.btnEntrar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.txtPasswd = New System.Windows.Forms.TextBox()
         Me.txtUsr = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnEntrar = New System.Windows.Forms.Button()
         Me.picLogin = New System.Windows.Forms.PictureBox()
         CType(Me.picLogin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,25 +45,16 @@ Partial Class medLogin
         Me.chkRecordar.Text = "Recordar mis datos"
         Me.chkRecordar.UseVisualStyleBackColor = True
         '
-        'btnEntrar
-        '
-        Me.btnEntrar.Font = New System.Drawing.Font("Open Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEntrar.Location = New System.Drawing.Point(184, 230)
-        Me.btnEntrar.Name = "btnEntrar"
-        Me.btnEntrar.Size = New System.Drawing.Size(96, 53)
-        Me.btnEntrar.TabIndex = 10
-        Me.btnEntrar.Text = "Entrar"
-        Me.btnEntrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnEntrar.UseVisualStyleBackColor = True
-        '
         'btnCerrar
         '
         Me.btnCerrar.Font = New System.Drawing.Font("Open Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCerrar.Image = Global.SisCliMed.My.Resources.Resources.vet_cancel
         Me.btnCerrar.Location = New System.Drawing.Point(286, 230)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(96, 53)
         Me.btnCerrar.TabIndex = 12
-        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.Text = "  Cerrar"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
@@ -115,6 +106,19 @@ Partial Class medLogin
         Me.Label1.Size = New System.Drawing.Size(153, 26)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Inicio de Sesión"
+        '
+        'btnEntrar
+        '
+        Me.btnEntrar.Font = New System.Drawing.Font("Open Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEntrar.Image = Global.SisCliMed.My.Resources.Resources.vet_check
+        Me.btnEntrar.Location = New System.Drawing.Point(184, 230)
+        Me.btnEntrar.Name = "btnEntrar"
+        Me.btnEntrar.Size = New System.Drawing.Size(96, 53)
+        Me.btnEntrar.TabIndex = 10
+        Me.btnEntrar.Text = "  Entrar"
+        Me.btnEntrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnEntrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEntrar.UseVisualStyleBackColor = True
         '
         'picLogin
         '

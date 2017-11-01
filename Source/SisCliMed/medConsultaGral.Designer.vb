@@ -25,13 +25,10 @@ Partial Class medConsultaGral
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.dgvPacientes = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.txtMotivo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtPaciente = New System.Windows.Forms.TextBox()
@@ -81,6 +78,9 @@ Partial Class medConsultaGral
         Me.Label28 = New System.Windows.Forms.Label()
         Me.txtFechaReceta = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -133,15 +133,6 @@ Partial Class medConsultaGral
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccionar Paciente"
         '
-        'btnSeleccionar
-        '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(563, 364)
-        Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
-        Me.btnSeleccionar.TabIndex = 2
-        Me.btnSeleccionar.Text = "Seleccionar"
-        Me.btnSeleccionar.UseVisualStyleBackColor = True
-        '
         'dgvPacientes
         '
         Me.dgvPacientes.AllowUserToAddRows = False
@@ -190,24 +181,6 @@ Partial Class medConsultaGral
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Consulta"
         Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Location = New System.Drawing.Point(373, 395)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
-        Me.btnCancelar.TabIndex = 42
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.Location = New System.Drawing.Point(235, 395)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
-        Me.btnGuardar.TabIndex = 41
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'txtMotivo
         '
@@ -616,11 +589,14 @@ Partial Class medConsultaGral
         '
         'btnImprimirReceta
         '
+        Me.btnImprimirReceta.Image = Global.SisCliMed.My.Resources.Resources.vet_print
         Me.btnImprimirReceta.Location = New System.Drawing.Point(294, 236)
         Me.btnImprimirReceta.Name = "btnImprimirReceta"
         Me.btnImprimirReceta.Size = New System.Drawing.Size(108, 46)
         Me.btnImprimirReceta.TabIndex = 11
-        Me.btnImprimirReceta.Text = "Imprimir"
+        Me.btnImprimirReceta.Text = "  Imprimir"
+        Me.btnImprimirReceta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnImprimirReceta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnImprimirReceta.UseVisualStyleBackColor = True
         '
         'Label30
@@ -683,6 +659,42 @@ Partial Class medConsultaGral
         Me.Label29.Size = New System.Drawing.Size(110, 13)
         Me.Label29.TabIndex = 0
         Me.Label29.Text = "Fecha de la Consulta:"
+        '
+        'btnSeleccionar
+        '
+        Me.btnSeleccionar.Image = Global.SisCliMed.My.Resources.Resources.vet_check_cita
+        Me.btnSeleccionar.Location = New System.Drawing.Point(555, 364)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(116, 46)
+        Me.btnSeleccionar.TabIndex = 2
+        Me.btnSeleccionar.Text = "  Seleccionar"
+        Me.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSeleccionar.UseVisualStyleBackColor = True
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Image = Global.SisCliMed.My.Resources.Resources.vet_cancel
+        Me.btnCancelar.Location = New System.Drawing.Point(373, 395)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
+        Me.btnCancelar.TabIndex = 42
+        Me.btnCancelar.Text = "  Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Image = Global.SisCliMed.My.Resources.Resources.vet_save
+        Me.btnGuardar.Location = New System.Drawing.Point(235, 395)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
+        Me.btnGuardar.TabIndex = 41
+        Me.btnGuardar.Text = "  Guardar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'medConsultaGral
         '

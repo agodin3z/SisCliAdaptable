@@ -118,13 +118,88 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="wall_med" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wall_med.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-picture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-clean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-entrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-entrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-add-user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-add-user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-hospital" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-hospital.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-calendar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-calendar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="med" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\med.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wall_med" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wall_med.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="vet-info1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-info1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-edit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-edit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-med" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-med.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-history" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-history.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-salir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-agenda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-agenda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-check-cita" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-check-cita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vet-edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vet-edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

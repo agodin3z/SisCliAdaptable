@@ -25,16 +25,12 @@ Partial Class vetConsultaGral
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.dgvPacientes = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dtpFechaSiguiente = New System.Windows.Forms.DateTimePicker()
-        Me.btnVacunas = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtTratamiento = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -46,7 +42,11 @@ Partial Class vetConsultaGral
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtRazon = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnVacunas = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -88,15 +88,6 @@ Partial Class vetConsultaGral
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccionar Paciente"
-        '
-        'btnSeleccionar
-        '
-        Me.btnSeleccionar.Location = New System.Drawing.Point(563, 364)
-        Me.btnSeleccionar.Name = "btnSeleccionar"
-        Me.btnSeleccionar.Size = New System.Drawing.Size(108, 46)
-        Me.btnSeleccionar.TabIndex = 2
-        Me.btnSeleccionar.Text = "Seleccionar"
-        Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
         'dgvPacientes
         '
@@ -171,33 +162,6 @@ Partial Class vetConsultaGral
         Me.dtpFechaSiguiente.Name = "dtpFechaSiguiente"
         Me.dtpFechaSiguiente.Size = New System.Drawing.Size(327, 20)
         Me.dtpFechaSiguiente.TabIndex = 21
-        '
-        'btnVacunas
-        '
-        Me.btnVacunas.Location = New System.Drawing.Point(547, 287)
-        Me.btnVacunas.Name = "btnVacunas"
-        Me.btnVacunas.Size = New System.Drawing.Size(119, 35)
-        Me.btnVacunas.TabIndex = 8
-        Me.btnVacunas.Text = "Registrar Vacuna"
-        Me.btnVacunas.UseVisualStyleBackColor = True
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Location = New System.Drawing.Point(376, 349)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
-        Me.btnCancelar.TabIndex = 10
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.Location = New System.Drawing.Point(238, 349)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
-        Me.btnGuardar.TabIndex = 9
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -298,14 +262,65 @@ Partial Class vetConsultaGral
         Me.Label18.TabIndex = 20
         Me.Label18.Text = "Razon de Consulta:"
         '
+        'btnSeleccionar
+        '
+        Me.btnSeleccionar.Image = Global.SisCliVet.My.Resources.Resources.vet_check_cita
+        Me.btnSeleccionar.Location = New System.Drawing.Point(556, 364)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(115, 46)
+        Me.btnSeleccionar.TabIndex = 2
+        Me.btnSeleccionar.Text = "  Seleccionar"
+        Me.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSeleccionar.UseVisualStyleBackColor = True
+        '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(564, 328)
+        Me.btnImprimir.Image = Global.SisCliVet.My.Resources.Resources.vet_print
+        Me.btnImprimir.Location = New System.Drawing.Point(523, 328)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(75, 34)
+        Me.btnImprimir.Size = New System.Drawing.Size(143, 34)
         Me.btnImprimir.TabIndex = 22
-        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.Text = "  Generar Receta"
+        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnImprimir.UseVisualStyleBackColor = True
+        '
+        'btnVacunas
+        '
+        Me.btnVacunas.Image = Global.SisCliVet.My.Resources.Resources.vet_plus
+        Me.btnVacunas.Location = New System.Drawing.Point(523, 287)
+        Me.btnVacunas.Name = "btnVacunas"
+        Me.btnVacunas.Size = New System.Drawing.Size(143, 35)
+        Me.btnVacunas.TabIndex = 8
+        Me.btnVacunas.Text = "  Registrar Vacuna"
+        Me.btnVacunas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnVacunas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnVacunas.UseVisualStyleBackColor = True
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Image = Global.SisCliVet.My.Resources.Resources.vet_cancel
+        Me.btnCancelar.Location = New System.Drawing.Point(376, 349)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
+        Me.btnCancelar.TabIndex = 10
+        Me.btnCancelar.Text = "  Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Image = Global.SisCliVet.My.Resources.Resources.vet_save
+        Me.btnGuardar.Location = New System.Drawing.Point(238, 349)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
+        Me.btnGuardar.TabIndex = 9
+        Me.btnGuardar.Text = "  Guardar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'vetConsultaGral
         '

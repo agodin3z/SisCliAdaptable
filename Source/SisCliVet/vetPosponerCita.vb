@@ -44,10 +44,10 @@
             paciente = celda.Cells(0).Value.ToString
             txtPaciente.Text = celda.Cells(1).Value.ToString
             txtPropietario.Text = celda.Cells(2).Value.ToString
-            fec = DateTime.Parse(celda.Cells(3).Value).ToString("dd-MM-yyyy HH:mm:ss")
+            fec = DateTime.Parse(celda.Cells(3).Value).ToString("MM-dd-yyyy HH:mm:ss")
             dtpFechaSiguiente.Value = fec
             motivo = celda.Cells(4).Value.ToString
-            fecha = CType(celda.Cells(6).Value, Date).ToString("dd-MM-yyyy")
+            fecha = CType(celda.Cells(6).Value, Date).ToString("MM-dd-yyyy")
             hora = DateTime.Parse(celda.Cells(7).Value.ToString()).ToString("HH:mm:ss")
 
             If motivo = "Consulta General" Then
@@ -69,7 +69,7 @@
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Dim fechaProx As String = dtpFechaSiguiente.Value.ToString("dd-MM-yyyy HH:mm:ss")
+        Dim fechaProx As String = dtpFechaSiguiente.Value.ToString("MM-dd-yyyy HH:mm:ss")
         Dim motivo As String = ""
         If rdbConsulta.Checked Then
             motivo = "Consulta General"

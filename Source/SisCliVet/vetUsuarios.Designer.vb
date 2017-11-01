@@ -26,7 +26,6 @@ Partial Class vetUsuarios
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -36,14 +35,15 @@ Partial Class vetUsuarios
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.cmbRol = New System.Windows.Forms.ComboBox()
         Me.txtPasswd = New System.Windows.Forms.TextBox()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -67,25 +67,15 @@ Partial Class vetUsuarios
         '
         Me.btnEliminar.Enabled = False
         Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.btnEliminar.Image = Global.SisCliVet.My.Resources.Resources.vet_delete
         Me.btnEliminar.Location = New System.Drawing.Point(414, 190)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(108, 46)
         Me.btnEliminar.TabIndex = 12
         Me.btnEliminar.Text = " Eliminar"
+        Me.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEliminar.UseVisualStyleBackColor = True
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Enabled = False
-        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.btnModificar.Location = New System.Drawing.Point(293, 190)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(108, 46)
-        Me.btnModificar.TabIndex = 11
-        Me.btnModificar.Text = " Modificar"
-        Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnModificar.UseVisualStyleBackColor = True
         '
         'dgvUsuarios
         '
@@ -203,27 +193,6 @@ Partial Class vetUsuarios
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Nombre Completo:"
         '
-        'btnCancelar
-        '
-        Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.btnCancelar.Location = New System.Drawing.Point(414, 80)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
-        Me.btnCancelar.TabIndex = 7
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.btnGuardar.Location = New System.Drawing.Point(293, 80)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
-        Me.btnGuardar.TabIndex = 6
-        Me.btnGuardar.Text = " Agregar"
-        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnGuardar.UseVisualStyleBackColor = True
-        '
         'cmbRol
         '
         Me.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -277,6 +246,46 @@ Partial Class vetUsuarios
         Me.Label1.Size = New System.Drawing.Size(99, 13)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Nombre de usuario:"
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Enabled = False
+        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.btnModificar.Image = Global.SisCliVet.My.Resources.Resources.vet_edit1
+        Me.btnModificar.Location = New System.Drawing.Point(293, 190)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(108, 46)
+        Me.btnModificar.TabIndex = 11
+        Me.btnModificar.Text = " Modificar"
+        Me.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.btnCancelar.Image = Global.SisCliVet.My.Resources.Resources.vet_cancel
+        Me.btnCancelar.Location = New System.Drawing.Point(414, 80)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
+        Me.btnCancelar.TabIndex = 7
+        Me.btnCancelar.Text = " Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.btnGuardar.Image = Global.SisCliVet.My.Resources.Resources.vet_plus
+        Me.btnGuardar.Location = New System.Drawing.Point(293, 80)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
+        Me.btnGuardar.TabIndex = 6
+        Me.btnGuardar.Text = " Agregar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'vetUsuarios
         '

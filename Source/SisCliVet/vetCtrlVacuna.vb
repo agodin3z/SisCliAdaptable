@@ -51,7 +51,7 @@
         condicion = "WHERE Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
         dgvPacientes.DataSource = con.consultaCondicionada(campos, tabla, join, condicion)
         dgvPacientes.Refresh()
-        txtFecha.Text = Now.ToString("dd-MM-yyyy")
+        txtFecha.Text = Now.ToString("MM-dd-yyyy")
         txtHora.Text = Now.ToString("HH:mm:ss")
     End Sub
 
@@ -64,7 +64,7 @@
             especie = celda.Cells(2).Value.ToString
         Next
 
-        txtFecha.Text = Now.ToString("dd-MM-yyyy")
+        txtFecha.Text = Now.ToString("MM-dd-yyyy")
         txtHora.Text = Now.ToString("HH:mm:ss")
         'Condicion para llenar el checkedListBox segun Especie
         condicion2 = "Vacuna.idEspecie = (SELECT Especie.idEspecie " &
@@ -105,13 +105,13 @@
                 Dim vac = lstAplicar.GetItemText(lstAplicar.CheckedItems(aa))
                 Dim vacuna As String = con.consultaExistente("idVacuna", "Vacuna", " nombre='" & vac & "'")
                 If con.consultaExistente("Vacuna_Paciente", "idVacuna = '" & vacuna & "' AND idPaciente='" & paciente & "'") = 0 Then
-                    cont += con.insertar("Vacuna_Paciente", "'" & vacuna & "','" & paciente & "','" & fecha.ToString("dd-MM-yyyy") & "'") 'XXX
-                    con.actualizar("Paciente", "ultimaVacuna='" & vacuna & "', fechaUltiVac='" & fecha.ToString("dd-MM-yyyy") & "'", "idPaciente='" & paciente & "'")
+                    cont += con.insertar("Vacuna_Paciente", "'" & vacuna & "','" & paciente & "','" & fecha.ToString("MM-dd-yyyy") & "'") 'XXX
+                    con.actualizar("Paciente", "ultimaVacuna='" & vacuna & "', fechaUltiVac='" & fecha.ToString("MM-dd-yyyy") & "'", "idPaciente='" & paciente & "'")
                 End If
             Next
             If cont > 0 Then
                 MessageBox.Show("Se han registrado " & cont & " Vacunas", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                con.insertar("Cita", "'" & fecha & "','" & txtHora.Text & "','" & "Refuerzo" & "','" & dtpFechaSiguiente.Value.ToString("dd-MM-yyyy HH:mm:ss") & "','" & paciente & "','" & cGenerica.usr & "',1")
+                con.insertar("Cita", "'" & fecha & "','" & txtHora.Text & "','" & "Refuerzo" & "','" & dtpFechaSiguiente.Value.ToString("MM-dd-yyyy HH:mm:ss") & "','" & paciente & "','" & cGenerica.usr & "',1")
             Else
                 MessageBox.Show("No se han registrado Vacunas nuevas", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
