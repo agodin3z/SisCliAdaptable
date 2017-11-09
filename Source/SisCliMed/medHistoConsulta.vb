@@ -15,7 +15,7 @@
     End Sub
 
     Private Sub consulta()
-        Dim condicion As String = "WHERE ConsultaGral.fecha BETWEEN '" & dtpFechaInicio.Value.ToString("MM-dd-yyyy") & "' AND '" & dtpFechaFin.Value.ToString("MM-dd-yyyy") & "' AND Paciente.idPaciente LIKE '" &
+        Dim condicion As String = "WHERE ConsultaGral.fecha BETWEEN '" & dtpFechaInicio.Value.ToString("yyyy-MM-dd") & "' AND '" & dtpFechaFin.Value.ToString("yyyy-MM-dd") & "' AND Paciente.idPaciente LIKE '" &
             txtBusqueda.Text.Trim & "%'"
         cargar(condicion)
     End Sub
@@ -54,7 +54,7 @@
                     txtHora.Text = celda.Cells(3).Value.ToString
                 Next
 
-                Dim dt As DataTable = con.consultaCondicionada("ConsultaGral", "idPaciente='" & paciente & "' AND fecha='" & DateTime.Parse(txtFecha.Text).ToString("MM-dd-yyyy") & "' AND hora='" & DateTime.Parse(txtHora.Text).ToString("HH:mm:ss") & "'")
+                Dim dt As DataTable = con.consultaCondicionada("ConsultaGral", "idPaciente='" & paciente & "' AND fecha='" & DateTime.Parse(txtFecha.Text).ToString("yyyy-MM-dd") & "' AND hora='" & DateTime.Parse(txtHora.Text).ToString("HH:mm:ss") & "'")
 
                 txtRazon.Text = dt.Rows(0)("motivoConsulta").ToString
                 txtSintomas.Text = dt.Rows(0)("sintomas").ToString
@@ -91,7 +91,7 @@
             consulta()
         Else
             MessageBox.Show("La fecha de fin no puede ser menor que la de inicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            dtpFechaFin.Value = Now
+
         End If
     End Sub
 

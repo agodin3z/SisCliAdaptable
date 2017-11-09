@@ -98,7 +98,7 @@
             Dim valores As String = "priNombre='" & txtPriNombre.Text.Trim & "', segNombre='" & txtSegNombre.Text.Trim & "', " &
                                     "priApellido='" & txtPriApellido.Text.Trim & "', segApellido='" & txtSegApellido.Text.Trim & "', " &
                                     "dui='" & txtDui.Text.Trim & "', estadoCivil='" & txtEstadoCivil.Text.Trim & "', " &
-                                    "genero='" & cmbGenero.SelectedItem & "', fechaNac='" & dtpFechaNac.Value.ToString("MM-dd-yyyy") & "', " &
+                                    "genero='" & cmbGenero.SelectedItem & "', fechaNac='" & dtpFechaNac.Value.ToString("yyyy-MM-dd") & "', " &
                                     "direccion='" & txtDireccion.Text.Trim & "', telFijo='" & txtTelFijo.Text.Trim & "', " &
                                     "telMovil='" & txtTelMovil.Text.Trim & "', antecedentes='" & txtAntecedentes.Text.Trim & "'"
 

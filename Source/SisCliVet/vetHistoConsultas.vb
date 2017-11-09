@@ -17,8 +17,8 @@
             " INNER JOIN Usuario ON Usuario.username = ConsultaGral.username" &
             " INNER JOIN Propietario ON Propietario.idPropietario = Paciente.idPropietario"
 
-        Dim condicion As String = "WHERE ConsultaGral.fecha BETWEEN '" & dtpInicio.Value.ToString("MM-dd-yyyy") & "' AND '" &
-            dtpFin.Value.ToString("MM-dd-yyyy") & "' AND Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
+        Dim condicion As String = "WHERE ConsultaGral.fecha BETWEEN '" & dtpInicio.Value.ToString("yyyy-MM-dd") & "' AND '" &
+            dtpFin.Value.ToString("yyyy-MM-dd") & "' AND Paciente.nombre LIKE '" & txtBusqueda.Text.Trim & "%'"
 
         dgvConsultas.DataSource = con.consultaCondicionada(campos, "ConsultaGral", join, condicion)
         dgvConsultas.Refresh()
@@ -49,10 +49,10 @@
                     txtPropietario.Text = celda.Cells(2).Value.ToString
                     txtMedico.Text = celda.Cells(5).Value.ToString
                     fecha = celda.Cells(3).Value.ToString
-                    txtFecha.Text = fecha.ToString("MM-dd-yyyy HH:mm:ss")
+                    txtFecha.Text = fecha.ToString("yyyy-MM-dd HH:mm:ss")
                 Next
 
-                Dim dt As DataTable = con.consultaCondicionada("ConsultaGral", "idPaciente='" & paciente & "' AND fecha='" & fecha.ToString("MM-dd-yyyy HH:mm:ss") & "'")
+                Dim dt As DataTable = con.consultaCondicionada("ConsultaGral", "idPaciente='" & paciente & "' AND fecha='" & fecha.ToString("yyyy-MM-dd HH:mm:ss") & "'")
                 txtRazon.Text = dt.Rows(0)("razonConsulta").ToString
                 txtSintomas.Text = dt.Rows(0)("sintomas").ToString
                 txtDiagnostico.Text = dt.Rows(0)("diagnostico").ToString
@@ -75,7 +75,7 @@
             Consulta()
         Else
             MessageBox.Show("La fecha de fin no puede ser menor que la de inicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            dtpFin.Value = Now
+
         End If
     End Sub
 

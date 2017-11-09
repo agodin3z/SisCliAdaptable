@@ -25,10 +25,15 @@ Partial Class vetUpdtPaciente
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnActualizarPac = New System.Windows.Forms.Button()
+        Me.btnActualizarPro = New System.Windows.Forms.Button()
+        Me.btnAgregarPaciente = New System.Windows.Forms.Button()
         Me.dgvPacientes = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnCancelarP = New System.Windows.Forms.Button()
+        Me.btnGuardarPro = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtCodPropietario = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -62,6 +67,7 @@ Partial Class vetUpdtPaciente
         Me.btnGuardarPac = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.lstVacunas = New System.Windows.Forms.CheckedListBox()
+        Me.picFoto = New System.Windows.Forms.PictureBox()
         Me.cmbUltiVacuna = New System.Windows.Forms.ComboBox()
         Me.dtpUltiVacuna = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -74,6 +80,7 @@ Partial Class vetUpdtPaciente
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtEstadoRep = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.btnCargarFoto = New System.Windows.Forms.Button()
         Me.dtpFechaNac = New System.Windows.Forms.DateTimePicker()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.rdbHembra = New System.Windows.Forms.RadioButton()
@@ -89,13 +96,6 @@ Partial Class vetUpdtPaciente
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.btnActualizarPac = New System.Windows.Forms.Button()
-        Me.btnActualizarPro = New System.Windows.Forms.Button()
-        Me.btnAgregarPaciente = New System.Windows.Forms.Button()
-        Me.btnCancelarP = New System.Windows.Forms.Button()
-        Me.btnGuardarPro = New System.Windows.Forms.Button()
-        Me.picFoto = New System.Windows.Forms.PictureBox()
-        Me.btnCargarFoto = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -106,8 +106,8 @@ Partial Class vetUpdtPaciente
         Me.TabPage3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
         CType(Me.picFoto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -146,6 +146,42 @@ Partial Class vetUpdtPaciente
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccionar Paciente"
+        '
+        'btnActualizarPac
+        '
+        Me.btnActualizarPac.Image = Global.SisCliVet.My.Resources.Resources.vet_edit
+        Me.btnActualizarPac.Location = New System.Drawing.Point(375, 406)
+        Me.btnActualizarPac.Name = "btnActualizarPac"
+        Me.btnActualizarPac.Size = New System.Drawing.Size(151, 46)
+        Me.btnActualizarPac.TabIndex = 23
+        Me.btnActualizarPac.Text = "  Actualizar Paciente"
+        Me.btnActualizarPac.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnActualizarPac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnActualizarPac.UseVisualStyleBackColor = True
+        '
+        'btnActualizarPro
+        '
+        Me.btnActualizarPro.Image = Global.SisCliVet.My.Resources.Resources.vet_edit
+        Me.btnActualizarPro.Location = New System.Drawing.Point(207, 406)
+        Me.btnActualizarPro.Name = "btnActualizarPro"
+        Me.btnActualizarPro.Size = New System.Drawing.Size(152, 46)
+        Me.btnActualizarPro.TabIndex = 2
+        Me.btnActualizarPro.Text = " Actualizar Propietario"
+        Me.btnActualizarPro.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnActualizarPro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnActualizarPro.UseVisualStyleBackColor = True
+        '
+        'btnAgregarPaciente
+        '
+        Me.btnAgregarPaciente.Image = Global.SisCliVet.My.Resources.Resources.vet_plus
+        Me.btnAgregarPaciente.Location = New System.Drawing.Point(541, 406)
+        Me.btnAgregarPaciente.Name = "btnAgregarPaciente"
+        Me.btnAgregarPaciente.Size = New System.Drawing.Size(130, 46)
+        Me.btnAgregarPaciente.TabIndex = 3
+        Me.btnAgregarPaciente.Text = " Añadir Paciente"
+        Me.btnAgregarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAgregarPaciente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAgregarPaciente.UseVisualStyleBackColor = True
         '
         'dgvPacientes
         '
@@ -188,6 +224,30 @@ Partial Class vetUpdtPaciente
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Datos del Propietario"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'btnCancelarP
+        '
+        Me.btnCancelarP.Image = Global.SisCliVet.My.Resources.Resources.vet_cancel
+        Me.btnCancelarP.Location = New System.Drawing.Point(460, 428)
+        Me.btnCancelarP.Name = "btnCancelarP"
+        Me.btnCancelarP.Size = New System.Drawing.Size(108, 46)
+        Me.btnCancelarP.TabIndex = 13
+        Me.btnCancelarP.Text = "  Cancelar"
+        Me.btnCancelarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelarP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCancelarP.UseVisualStyleBackColor = True
+        '
+        'btnGuardarPro
+        '
+        Me.btnGuardarPro.Image = Global.SisCliVet.My.Resources.Resources.vet_save
+        Me.btnGuardarPro.Location = New System.Drawing.Point(584, 428)
+        Me.btnGuardarPro.Name = "btnGuardarPro"
+        Me.btnGuardarPro.Size = New System.Drawing.Size(108, 46)
+        Me.btnGuardarPro.TabIndex = 12
+        Me.btnGuardarPro.Text = "  Guardar"
+        Me.btnGuardarPro.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardarPro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnGuardarPro.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -541,6 +601,15 @@ Partial Class vetUpdtPaciente
         Me.lstVacunas.Size = New System.Drawing.Size(142, 124)
         Me.lstVacunas.TabIndex = 43
         '
+        'picFoto
+        '
+        Me.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picFoto.Location = New System.Drawing.Point(551, 174)
+        Me.picFoto.Name = "picFoto"
+        Me.picFoto.Size = New System.Drawing.Size(141, 144)
+        Me.picFoto.TabIndex = 42
+        Me.picFoto.TabStop = False
+        '
         'cmbUltiVacuna
         '
         Me.cmbUltiVacuna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -652,6 +721,18 @@ Partial Class vetUpdtPaciente
         Me.Label14.TabIndex = 18
         Me.Label14.Text = "Estado Reproductivo:"
         '
+        'btnCargarFoto
+        '
+        Me.btnCargarFoto.Image = Global.SisCliVet.My.Resources.Resources.vet_picture
+        Me.btnCargarFoto.Location = New System.Drawing.Point(551, 344)
+        Me.btnCargarFoto.Name = "btnCargarFoto"
+        Me.btnCargarFoto.Size = New System.Drawing.Size(141, 46)
+        Me.btnCargarFoto.TabIndex = 16
+        Me.btnCargarFoto.Text = "  Cargar Foto..."
+        Me.btnCargarFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCargarFoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCargarFoto.UseVisualStyleBackColor = True
+        '
         'dtpFechaNac
         '
         Me.dtpFechaNac.Location = New System.Drawing.Point(470, 87)
@@ -713,6 +794,7 @@ Partial Class vetUpdtPaciente
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(171, 20)
         Me.txtPeso.TabIndex = 7
+        Me.txtPeso.Text = "0.00"
         '
         'txtColor
         '
@@ -780,87 +862,6 @@ Partial Class vetUpdtPaciente
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'btnActualizarPac
-        '
-        Me.btnActualizarPac.Image = Global.SisCliVet.My.Resources.Resources.vet_edit
-        Me.btnActualizarPac.Location = New System.Drawing.Point(375, 406)
-        Me.btnActualizarPac.Name = "btnActualizarPac"
-        Me.btnActualizarPac.Size = New System.Drawing.Size(151, 46)
-        Me.btnActualizarPac.TabIndex = 23
-        Me.btnActualizarPac.Text = "  Actualizar Paciente"
-        Me.btnActualizarPac.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnActualizarPac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnActualizarPac.UseVisualStyleBackColor = True
-        '
-        'btnActualizarPro
-        '
-        Me.btnActualizarPro.Image = Global.SisCliVet.My.Resources.Resources.vet_edit
-        Me.btnActualizarPro.Location = New System.Drawing.Point(207, 406)
-        Me.btnActualizarPro.Name = "btnActualizarPro"
-        Me.btnActualizarPro.Size = New System.Drawing.Size(152, 46)
-        Me.btnActualizarPro.TabIndex = 2
-        Me.btnActualizarPro.Text = " Actualizar Propietario"
-        Me.btnActualizarPro.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnActualizarPro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnActualizarPro.UseVisualStyleBackColor = True
-        '
-        'btnAgregarPaciente
-        '
-        Me.btnAgregarPaciente.Image = Global.SisCliVet.My.Resources.Resources.vet_plus
-        Me.btnAgregarPaciente.Location = New System.Drawing.Point(541, 406)
-        Me.btnAgregarPaciente.Name = "btnAgregarPaciente"
-        Me.btnAgregarPaciente.Size = New System.Drawing.Size(130, 46)
-        Me.btnAgregarPaciente.TabIndex = 3
-        Me.btnAgregarPaciente.Text = " Añadir Paciente"
-        Me.btnAgregarPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAgregarPaciente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAgregarPaciente.UseVisualStyleBackColor = True
-        '
-        'btnCancelarP
-        '
-        Me.btnCancelarP.Image = Global.SisCliVet.My.Resources.Resources.vet_cancel
-        Me.btnCancelarP.Location = New System.Drawing.Point(460, 428)
-        Me.btnCancelarP.Name = "btnCancelarP"
-        Me.btnCancelarP.Size = New System.Drawing.Size(108, 46)
-        Me.btnCancelarP.TabIndex = 13
-        Me.btnCancelarP.Text = "  Cancelar"
-        Me.btnCancelarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnCancelarP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCancelarP.UseVisualStyleBackColor = True
-        '
-        'btnGuardarPro
-        '
-        Me.btnGuardarPro.Image = Global.SisCliVet.My.Resources.Resources.vet_save
-        Me.btnGuardarPro.Location = New System.Drawing.Point(584, 428)
-        Me.btnGuardarPro.Name = "btnGuardarPro"
-        Me.btnGuardarPro.Size = New System.Drawing.Size(108, 46)
-        Me.btnGuardarPro.TabIndex = 12
-        Me.btnGuardarPro.Text = "  Guardar"
-        Me.btnGuardarPro.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnGuardarPro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnGuardarPro.UseVisualStyleBackColor = True
-        '
-        'picFoto
-        '
-        Me.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picFoto.Location = New System.Drawing.Point(551, 174)
-        Me.picFoto.Name = "picFoto"
-        Me.picFoto.Size = New System.Drawing.Size(141, 144)
-        Me.picFoto.TabIndex = 42
-        Me.picFoto.TabStop = False
-        '
-        'btnCargarFoto
-        '
-        Me.btnCargarFoto.Image = Global.SisCliVet.My.Resources.Resources.vet_picture
-        Me.btnCargarFoto.Location = New System.Drawing.Point(551, 344)
-        Me.btnCargarFoto.Name = "btnCargarFoto"
-        Me.btnCargarFoto.Size = New System.Drawing.Size(141, 46)
-        Me.btnCargarFoto.TabIndex = 16
-        Me.btnCargarFoto.Text = "  Cargar Foto..."
-        Me.btnCargarFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnCargarFoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCargarFoto.UseVisualStyleBackColor = True
-        '
         'vetUpdtPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -886,9 +887,9 @@ Partial Class vetUpdtPaciente
         Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.picFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        CType(Me.picFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

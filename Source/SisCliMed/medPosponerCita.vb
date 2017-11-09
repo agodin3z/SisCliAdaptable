@@ -46,7 +46,7 @@
             dtpFechaSiguiente.Value = DateTime.Parse(celda.Cells(2).Value).ToString("MM-dd-yyyy HH:mm:ss")
             txtMotivo.Text = celda.Cells(3).Value.ToString
             cmbMedico.SelectedValue = con.consultaExistente("username", "Usuario", "nombre='" & celda.Cells(4).Value.ToString & "'")
-            fecha = DateTime.Parse(celda.Cells(5).Value).ToString("MM-dd-yyyy")
+            fecha = DateTime.Parse(celda.Cells(5).Value).ToString("yyyy-MM-dd")
             hora = DateTime.Parse(celda.Cells(6).Value.ToString()).ToString("HH:mm:ss")
         Next
 
@@ -57,7 +57,7 @@
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Dim fechaProx As String = dtpFechaSiguiente.Value.ToString("MM-dd-yyyy HH:mm:ss")
+        Dim fechaProx As String = dtpFechaSiguiente.Value.ToString("yyyy-MM-dd HH:mm:ss")
         Dim motivo As String = txtMotivo.Text.Trim
         Dim estado As String = "1"
 
