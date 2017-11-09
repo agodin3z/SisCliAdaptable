@@ -56,8 +56,8 @@
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Dim fechaProx As String = dtpFechaSiguiente.Value.ToString("MM-dd-yyyy HH:mm:ss")
-        Dim fecha As String = Date.Now.ToString("MM-dd-yyyy")
+        Dim fechaProx As String = dtpFechaSiguiente.Value.ToString("yyyy-MM-dd HH:mm:ss")
+        Dim fecha As String = Date.Now.ToString("yyyy-MM-dd")
         Dim hora As String = Date.Now.ToString("HH:mm:ss")
         Dim motivo As String = txtMotivo.Text.Trim
         Dim estado As String = "1"

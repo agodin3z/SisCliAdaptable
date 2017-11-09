@@ -1,7 +1,7 @@
 ﻿Public Class vetUsuarios
     Dim con As New cConexion
     Dim tabla As String = "Usuario"
-    Dim fila As String, user As String, contra As String, nombre As String, titulo As String, rol As String
+    Dim fila As String, user As String, contra As String, nombre As String, titulo As String = "", rol As String
     Dim campos As String = "Usuario.username AS 'Usuario', Usuario.passwd AS 'Contraseña', Usuario.titulo AS 'Titulo', Usuario.nombre AS 'Nombre Real', Rol.nombre AS 'Rol/Funcion'"
     Dim join As String = "INNER JOIN Rol ON Usuario.idRol = Rol.idRol"
 

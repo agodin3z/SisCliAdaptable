@@ -105,13 +105,13 @@
                 Dim vac = lstAplicar.GetItemText(lstAplicar.CheckedItems(aa))
                 Dim vacuna As String = con.consultaExistente("idVacuna", "Vacuna", " nombre='" & vac & "'")
                 If con.consultaExistente("Vacuna_Paciente", "idVacuna = '" & vacuna & "' AND idPaciente='" & paciente & "'") = 0 Then
-                    cont += con.insertar("Vacuna_Paciente", "'" & vacuna & "','" & paciente & "','" & fecha.ToString("MM-dd-yyyy") & "'") 'XXX
-                    con.actualizar("Paciente", "ultimaVacuna='" & vacuna & "', fechaUltiVac='" & fecha.ToString("MM-dd-yyyy") & "'", "idPaciente='" & paciente & "'")
+                    cont += con.insertar("Vacuna_Paciente", "'" & vacuna & "','" & paciente & "','" & fecha.ToString("yyyy-MM-dd") & "'") 'XXX
+                    con.actualizar("Paciente", "ultimaVacuna='" & vacuna & "', fechaUltiVac='" & fecha.ToString("yyyy-MM-dd") & "'", "idPaciente='" & paciente & "'")
                 End If
             Next
             If cont > 0 Then
                 MessageBox.Show("Se han registrado " & cont & " Vacunas", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                con.insertar("Cita", "'" & fecha & "','" & txtHora.Text & "','" & "Refuerzo" & "','" & dtpFechaSiguiente.Value.ToString("MM-dd-yyyy HH:mm:ss") & "','" & paciente & "','" & cGenerica.usr & "',1")
+                con.insertar("Cita", "'" & fecha & "','" & txtHora.Text & "','" & "Refuerzo" & "','" & dtpFechaSiguiente.Value.ToString("yyyy-MM-dd HH:mm:ss") & "','" & paciente & "','" & cGenerica.usr & "',1")
             Else
                 MessageBox.Show("No se han registrado Vacunas nuevas", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If

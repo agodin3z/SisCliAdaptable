@@ -30,6 +30,7 @@ Partial Class vetPacientes
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.txtCodPropietario = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -63,6 +64,7 @@ Partial Class vetPacientes
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.lstVacunas = New System.Windows.Forms.CheckedListBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.picFoto = New System.Windows.Forms.PictureBox()
         Me.cmbUltiVacuna = New System.Windows.Forms.ComboBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.chkPeluqueria = New System.Windows.Forms.CheckBox()
@@ -92,8 +94,6 @@ Partial Class vetPacientes
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.picFoto = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -102,8 +102,8 @@ Partial Class vetPacientes
         Me.TabPage2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
         CType(Me.picFoto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -187,6 +187,17 @@ Partial Class vetPacientes
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Otros datos"
+        '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.Image = Global.SisCliVet.My.Resources.Resources.vet_next
+        Me.btnSiguiente.Location = New System.Drawing.Point(564, 18)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(108, 46)
+        Me.btnSiguiente.TabIndex = 14
+        Me.btnSiguiente.Text = "Siguiente"
+        Me.btnSiguiente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'txtCodPropietario
         '
@@ -540,6 +551,15 @@ Partial Class vetPacientes
         Me.Label11.TabIndex = 30
         Me.Label11.Text = "Vacunas:"
         '
+        'picFoto
+        '
+        Me.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picFoto.Location = New System.Drawing.Point(551, 149)
+        Me.picFoto.Name = "picFoto"
+        Me.picFoto.Size = New System.Drawing.Size(141, 144)
+        Me.picFoto.TabIndex = 28
+        Me.picFoto.TabStop = False
+        '
         'cmbUltiVacuna
         '
         Me.cmbUltiVacuna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -731,6 +751,7 @@ Partial Class vetPacientes
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(171, 20)
         Me.txtPeso.TabIndex = 7
+        Me.txtPeso.Text = "0.00"
         '
         'txtColor
         '
@@ -798,26 +819,6 @@ Partial Class vetPacientes
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.Image = Global.SisCliVet.My.Resources.Resources.vet_next
-        Me.btnSiguiente.Location = New System.Drawing.Point(564, 18)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(108, 46)
-        Me.btnSiguiente.TabIndex = 14
-        Me.btnSiguiente.Text = "Siguiente"
-        Me.btnSiguiente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.btnSiguiente.UseVisualStyleBackColor = True
-        '
-        'picFoto
-        '
-        Me.picFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picFoto.Location = New System.Drawing.Point(551, 149)
-        Me.picFoto.Name = "picFoto"
-        Me.picFoto.Size = New System.Drawing.Size(141, 144)
-        Me.picFoto.TabIndex = 28
-        Me.picFoto.TabStop = False
-        '
         'vetPacientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -841,9 +842,9 @@ Partial Class vetPacientes
         Me.GroupBox5.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.picFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        CType(Me.picFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -12,7 +12,7 @@
         Dim fecMin As DateTime = New DateTime(dtpFecha.Value.Year, dtpFecha.Value.Month, dtpFecha.Value.Day, 0, 0, 0)
         Dim fecMax As DateTime = New DateTime(dtpFecha.Value.Year, dtpFecha.Value.Month, dtpFecha.Value.Day, 23, 59, 59)
 
-        condicion = "WHERE fecha BETWEEN '" & fecMin.ToString("MM-dd-yyyy HH:mm:ss") & "' AND '" & fecMax.ToString("MM-dd-yyyy HH:mm:ss") & "' AND estado = 1"
+        condicion = "WHERE fecha BETWEEN '" & fecMin.ToString("yyyy-MM-dd HH:mm:ss") & "' AND '" & fecMax.ToString("yyyy-MM-dd HH:mm:ss") & "' AND estado = 1"
         cargar()
     End Sub
 

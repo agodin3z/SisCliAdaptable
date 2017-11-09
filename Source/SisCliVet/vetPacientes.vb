@@ -47,7 +47,6 @@ Public Class vetPacientes
         Dim nuevo As String = cmbEspecie.Text
         If con.consultaExistente("Especie", "nombre='" & nuevo & "'") = 0 Then
             If con.insertar("Especie", "'" & nuevo & "'") > 0 Then
-                MessageBox.Show("Agregado")
             End If
         End If
         llenarEspecie()
@@ -105,7 +104,7 @@ Public Class vetPacientes
             proTelFijo = txtTelFijo.Text.Trim
             proTelMovil = txtTelMovil.Text.Trim
             hora = Date.Now.ToString("HH:mm:ss")
-            fecha = Date.Now.ToString("MM-dd-yyyy")
+            fecha = Date.Now.ToString("yyyy-MM-dd")
 
             If proPrimerNombre.Length = 0 Then
                 MessageBox.Show("Ingrese su Primer Nombre", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -113,16 +112,13 @@ Public Class vetPacientes
             ElseIf proPrimerApellido.Length = 0 Then
                 MessageBox.Show("Ingrese Apellido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
-            ElseIf proEmail.Length = 0 Then
-                MessageBox.Show("Ingrese su correo electronico", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Exit Sub
             ElseIf proGenero.Length = 0 Then
                 MessageBox.Show("Ingrese el genero del propietario", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
             End If
 
 
-            priNomApe = Mid(proPrimerNombre, 1, 1).ToUpper + Mid(proPrimerApellido, 1, 1).ToUpper + Mid(fecha, 9, 2)
+            priNomApe = Mid(proPrimerNombre, 1, 1).ToUpper + Mid(proPrimerApellido, 1, 1).ToUpper + Mid(fecha, 3, 2)
             condicion = "idPropietario LIKE '" & priNomApe & "%'"
             If con.correlativo("idPropietario", tabla, condicion) < 10 Then
                 codigo = priNomApe & "00" & con.correlativo("idPropietario", tabla, condicion)
@@ -159,7 +155,7 @@ Public Class vetPacientes
             End If
             Dim pacRaza As String = txtRaza.Text.Trim
             Dim pacColor As String = txtColor.Text
-            Dim pacFecha As String = dtpFechaNac.Value.ToString("MM-dd-yyyy")
+            Dim pacFecha As String = dtpFechaNac.Value.ToString("yyyy-MM-dd")
             Dim peso As String = txtPeso.Text.Trim
             Dim estado As String = txtEstadoRep.Text.Trim
             Dim rasgos As String = txtRasgos.Text.Trim
@@ -174,7 +170,7 @@ Public Class vetPacientes
                 tipoRegistro = "3"
             End If
             Dim ultimaVacuna As String = cmbUltiVacuna.SelectedValue.ToString
-            Dim fechaUltimaVacuna As String = dtpUltiVacuna.Value.ToString("MM-dd-yyyy")
+            Dim fechaUltimaVacuna As String = dtpUltiVacuna.Value.ToString("yyyy-MM-dd")
 
             If pacNombre.Length = 0 Then
                 MessageBox.Show("Ingrese el nombre del paciente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -197,6 +193,8 @@ Public Class vetPacientes
             ElseIf fechaUltimaVacuna.Length = 0 Then
                 MessageBox.Show("Ingrese la fecha de ultima vacuna", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
+            ElseIf peso.Length = 0 Then
+                peso = "0.00"
             End If
 
             proPac = Mid(txtPriNombre.Text, 1, 1).ToUpper + Mid(txtPriApellido.Text, 1, 1).ToUpper + Mid(txtNombrePaciente.Text, 1, 2).ToUpper

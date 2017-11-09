@@ -48,7 +48,7 @@ Partial Class medReporteReceta
         Me.ClientSize = New System.Drawing.Size(812, 527)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Name = "medReporteReceta"
-        Me.Text = "medReporteReceta"
+        Me.Text = "Reporte de Receta"
         Me.ResumeLayout(False)
 
     End Sub

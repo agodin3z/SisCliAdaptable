@@ -10,6 +10,7 @@
         cGenerica.limpiarTextbox(GroupBox3)
         cGenerica.limpiarTextbox(GroupBox4)
         cGenerica.limpiarTextbox(GroupBox5)
+        cmbGenero.SelectedIndex = 0
         TabPage1.Parent = Me.TabControl1
         TabControl1.SelectTab(1)
         TabPage2.Parent = Nothing
@@ -18,6 +19,7 @@
     Private Sub medPacientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtHora.Text = Now.ToString("HH:mm:ss")
         txtFecha.Text = Today.ToString("MM-dd-yyyy")
+        cmbGenero.SelectedIndex = 0
         TabPage2.Parent = Nothing
     End Sub
 
@@ -28,14 +30,14 @@
             pApellido = txtPriApellido.Text.Trim
             sApellido = txtSegApellido.Text.Trim
             dui = txtDui.Text.Trim
-            genero = cmbGenero.SelectedItem
+            genero = cmbGenero.SelectedItem.ToString()
             estado = txtEstadoCivil.Text.Trim
             direccion = txtDireccion.Text.Trim
             telFijo = txtTelFijo.Text.Trim
             telMovil = txtTelMovil.Text.Trim
-            fechaNac = dtpFechaNac.Value.ToString("MM-dd-yyyy")
+            fechaNac = dtpFechaNac.Value.ToString("yyyy-MM-dd")
             hora = Date.Now.ToString("HH:mm:ss")
-            fecha = Date.Now.ToString("MM-dd-yyyy")
+            fecha = Date.Now.ToString("yyyy-MM-dd")
 
             If pNombre.Length = 0 Then
                 MessageBox.Show("Ingrese el primer nombre", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -52,7 +54,7 @@
             End If
 
 
-            priNomApe = Mid(pNombre, 1, 1).ToUpper + Mid(pApellido, 1, 1).ToUpper + Mid(fecha, 9, 2)
+            priNomApe = Mid(pNombre, 1, 1).ToUpper + Mid(pApellido, 1, 1).ToUpper + Mid(fecha, 3, 2)
             condicion = "idPaciente LIKE '" & priNomApe & "%'"
             If con.correlativo("idPaciente", tabla, condicion) < 10 Then
                 codigo = priNomApe & "00" & con.correlativo("idPaciente", tabla, condicion)

@@ -41,7 +41,7 @@
         Dim diagnostico As String = txtDiagnostico.Text.Trim
         Dim observacion As String = txtObservaciones.Text.Trim
         Dim tratamiento As String = txtTratamiento.Text.Trim
-        Dim proxFecha As String = dtpFechaSiguiente.Value.ToString("MM-dd-yyyy HH:mm:ss")
+        Dim proxFecha As String = dtpFechaSiguiente.Value.ToString("yyyy-MM-dd HH:mm:ss")
         Dim valores As String = "'" & paciente & "','" & razon & "','" & sintomas & "','" & diagnostico & "','" & observacion & "','" &
             tratamiento & "','" & proxFecha & "','" & cGenerica.usr & "'"
 
@@ -53,8 +53,8 @@
 
         If con.insertar("ConsultaGral", valores) > 0 Then
             MessageBox.Show("Consulta ingresada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            con.actualizar("Cita", "estado=2", "idPaciente='" & paciente & "' AND fecha='" & cita.ToString("MM-dd-yyyy HH:mm:ss") & "'")
-            con.insertar("Cita", "'" & Now.ToString("MM-dd-yyyy") & "','" & Now.ToString("HH:mm:ss") & "','" & "Consulta General" & "','" & dtpFechaSiguiente.Value.ToString("MM-dd-yyyy HH:mm:ss") & "','" & paciente & "','" & cGenerica.usr & "',1")
+            con.actualizar("Cita", "estado=2", "idPaciente='" & paciente & "' AND fecha='" & cita.ToString("yyyy-MM-dd HH:mm:ss") & "'")
+            con.insertar("Cita", "'" & Now.ToString("yyyy-MM-dd") & "','" & Now.ToString("HH:mm:ss") & "','" & "Consulta General" & "','" & dtpFechaSiguiente.Value.ToString("yyyy-MM-dd HH:mm:ss") & "','" & paciente & "','" & cGenerica.usr & "',1")
             cGenerica.limpiarTextbox(GroupBox1)
             cGenerica.limpiarTextbox(GroupBox3)
             cargar("WHERE estado=1")

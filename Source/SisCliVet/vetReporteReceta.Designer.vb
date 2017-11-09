@@ -47,7 +47,7 @@ Partial Class vetReporteReceta
         Me.ClientSize = New System.Drawing.Size(782, 544)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Name = "vetReporteReceta"
-        Me.Text = "vetReporteReceta"
+        Me.Text = "Reporte de Receta"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 

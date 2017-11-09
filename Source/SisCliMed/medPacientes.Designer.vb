@@ -32,6 +32,7 @@ Partial Class medPacientes
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.dtpFechaNac = New System.Windows.Forms.DateTimePicker()
         Me.cmbGenero = New System.Windows.Forms.ComboBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
@@ -65,11 +66,10 @@ Partial Class medPacientes
         Me.txtEmergencia1 = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtAntecedentes = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -93,10 +93,10 @@ Partial Class medPacientes
         '
         Me.TabPage1.Controls.Add(Me.GroupBox4)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(713, 329)
+        Me.TabPage1.Size = New System.Drawing.Size(713, 331)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Datos Personales"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -121,7 +121,7 @@ Partial Class medPacientes
         Me.txtFecha.Enabled = False
         Me.txtFecha.Location = New System.Drawing.Point(287, 22)
         Me.txtFecha.Name = "txtFecha"
-        Me.txtFecha.Size = New System.Drawing.Size(172, 22)
+        Me.txtFecha.Size = New System.Drawing.Size(172, 20)
         Me.txtFecha.TabIndex = 1
         '
         'txtCodPaciente
@@ -129,7 +129,7 @@ Partial Class medPacientes
         Me.txtCodPaciente.Enabled = False
         Me.txtCodPaciente.Location = New System.Drawing.Point(554, 22)
         Me.txtCodPaciente.Name = "txtCodPaciente"
-        Me.txtCodPaciente.Size = New System.Drawing.Size(133, 22)
+        Me.txtCodPaciente.Size = New System.Drawing.Size(133, 20)
         Me.txtCodPaciente.TabIndex = 13
         '
         'Label24
@@ -137,7 +137,7 @@ Partial Class medPacientes
         Me.Label24.AutoSize = True
         Me.Label24.Location = New System.Drawing.Point(475, 25)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(73, 15)
+        Me.Label24.Size = New System.Drawing.Size(69, 13)
         Me.Label24.TabIndex = 4
         Me.Label24.Text = "Registro No.:"
         '
@@ -146,7 +146,7 @@ Partial Class medPacientes
         Me.txtHora.Enabled = False
         Me.txtHora.Location = New System.Drawing.Point(53, 22)
         Me.txtHora.Name = "txtHora"
-        Me.txtHora.Size = New System.Drawing.Size(172, 22)
+        Me.txtHora.Size = New System.Drawing.Size(172, 20)
         Me.txtHora.TabIndex = 0
         '
         'Label23
@@ -154,7 +154,7 @@ Partial Class medPacientes
         Me.Label23.AutoSize = True
         Me.Label23.Location = New System.Drawing.Point(12, 25)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(35, 15)
+        Me.Label23.Size = New System.Drawing.Size(33, 13)
         Me.Label23.TabIndex = 15
         Me.Label23.Text = "Hora:"
         '
@@ -163,7 +163,7 @@ Partial Class medPacientes
         Me.Label22.AutoSize = True
         Me.Label22.Location = New System.Drawing.Point(241, 25)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(40, 15)
+        Me.Label22.Size = New System.Drawing.Size(40, 13)
         Me.Label22.TabIndex = 14
         Me.Label22.Text = "Fecha:"
         '
@@ -199,11 +199,22 @@ Partial Class medPacientes
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos Personales"
         '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.Image = Global.SisCliMed.My.Resources.Resources.vet_next
+        Me.btnSiguiente.Location = New System.Drawing.Point(582, 186)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(108, 46)
+        Me.btnSiguiente.TabIndex = 15
+        Me.btnSiguiente.Text = "Siguiente"
+        Me.btnSiguiente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.btnSiguiente.UseVisualStyleBackColor = True
+        '
         'dtpFechaNac
         '
         Me.dtpFechaNac.Location = New System.Drawing.Point(456, 119)
         Me.dtpFechaNac.Name = "dtpFechaNac"
-        Me.dtpFechaNac.Size = New System.Drawing.Size(234, 22)
+        Me.dtpFechaNac.Size = New System.Drawing.Size(234, 20)
         Me.dtpFechaNac.TabIndex = 9
         '
         'cmbGenero
@@ -213,7 +224,7 @@ Partial Class medPacientes
         Me.cmbGenero.Items.AddRange(New Object() {"Masculino", "Femenino"})
         Me.cmbGenero.Location = New System.Drawing.Point(128, 120)
         Me.cmbGenero.Name = "cmbGenero"
-        Me.cmbGenero.Size = New System.Drawing.Size(132, 23)
+        Me.cmbGenero.Size = New System.Drawing.Size(132, 21)
         Me.cmbGenero.TabIndex = 8
         '
         'txtDireccion
@@ -230,7 +241,7 @@ Partial Class medPacientes
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(64, 157)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(58, 15)
+        Me.Label13.Size = New System.Drawing.Size(55, 13)
         Me.Label13.TabIndex = 12
         Me.Label13.Text = "Dirección:"
         '
@@ -239,7 +250,7 @@ Partial Class medPacientes
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(74, 123)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(48, 15)
+        Me.Label5.Size = New System.Drawing.Size(45, 13)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Género:"
         '
@@ -248,7 +259,7 @@ Partial Class medPacientes
         Me.txtSegNombre.Location = New System.Drawing.Point(456, 26)
         Me.txtSegNombre.MaxLength = 25
         Me.txtSegNombre.Name = "txtSegNombre"
-        Me.txtSegNombre.Size = New System.Drawing.Size(194, 22)
+        Me.txtSegNombre.Size = New System.Drawing.Size(194, 20)
         Me.txtSegNombre.TabIndex = 3
         '
         'txtDui
@@ -256,7 +267,7 @@ Partial Class medPacientes
         Me.txtDui.Location = New System.Drawing.Point(128, 90)
         Me.txtDui.MaxLength = 9
         Me.txtDui.Name = "txtDui"
-        Me.txtDui.Size = New System.Drawing.Size(132, 22)
+        Me.txtDui.Size = New System.Drawing.Size(132, 20)
         Me.txtDui.TabIndex = 6
         '
         'txtEstadoCivil
@@ -264,7 +275,7 @@ Partial Class medPacientes
         Me.txtEstadoCivil.Location = New System.Drawing.Point(456, 90)
         Me.txtEstadoCivil.MaxLength = 25
         Me.txtEstadoCivil.Name = "txtEstadoCivil"
-        Me.txtEstadoCivil.Size = New System.Drawing.Size(194, 22)
+        Me.txtEstadoCivil.Size = New System.Drawing.Size(194, 20)
         Me.txtEstadoCivil.TabIndex = 7
         '
         'txtTelMovil
@@ -272,7 +283,7 @@ Partial Class medPacientes
         Me.txtTelMovil.Location = New System.Drawing.Point(383, 186)
         Me.txtTelMovil.MaxLength = 8
         Me.txtTelMovil.Name = "txtTelMovil"
-        Me.txtTelMovil.Size = New System.Drawing.Size(133, 22)
+        Me.txtTelMovil.Size = New System.Drawing.Size(133, 20)
         Me.txtTelMovil.TabIndex = 12
         '
         'txtTelFijo
@@ -280,7 +291,7 @@ Partial Class medPacientes
         Me.txtTelFijo.Location = New System.Drawing.Point(127, 186)
         Me.txtTelFijo.MaxLength = 8
         Me.txtTelFijo.Name = "txtTelFijo"
-        Me.txtTelFijo.Size = New System.Drawing.Size(133, 22)
+        Me.txtTelFijo.Size = New System.Drawing.Size(133, 20)
         Me.txtTelFijo.TabIndex = 11
         '
         'txtSegApellido
@@ -288,7 +299,7 @@ Partial Class medPacientes
         Me.txtSegApellido.Location = New System.Drawing.Point(456, 58)
         Me.txtSegApellido.MaxLength = 25
         Me.txtSegApellido.Name = "txtSegApellido"
-        Me.txtSegApellido.Size = New System.Drawing.Size(194, 22)
+        Me.txtSegApellido.Size = New System.Drawing.Size(194, 20)
         Me.txtSegApellido.TabIndex = 5
         '
         'txtPriApellido
@@ -296,7 +307,7 @@ Partial Class medPacientes
         Me.txtPriApellido.Location = New System.Drawing.Point(128, 58)
         Me.txtPriApellido.MaxLength = 25
         Me.txtPriApellido.Name = "txtPriApellido"
-        Me.txtPriApellido.Size = New System.Drawing.Size(193, 22)
+        Me.txtPriApellido.Size = New System.Drawing.Size(193, 20)
         Me.txtPriApellido.TabIndex = 4
         '
         'Label27
@@ -304,7 +315,7 @@ Partial Class medPacientes
         Me.Label27.AutoSize = True
         Me.Label27.Location = New System.Drawing.Point(332, 123)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(118, 15)
+        Me.Label27.Size = New System.Drawing.Size(111, 13)
         Me.Label27.TabIndex = 4
         Me.Label27.Text = "Fecha de Nacimiento:"
         '
@@ -313,7 +324,7 @@ Partial Class medPacientes
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(380, 93)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(70, 15)
+        Me.Label8.Size = New System.Drawing.Size(65, 13)
         Me.Label8.TabIndex = 4
         Me.Label8.Text = "Estado Civil:"
         '
@@ -322,7 +333,7 @@ Partial Class medPacientes
         Me.Label25.AutoSize = True
         Me.Label25.Location = New System.Drawing.Point(282, 189)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(95, 15)
+        Me.Label25.Size = New System.Drawing.Size(87, 13)
         Me.Label25.TabIndex = 4
         Me.Label25.Text = "Teléfono Celular:"
         '
@@ -331,7 +342,7 @@ Partial Class medPacientes
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(93, 93)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(29, 15)
+        Me.Label7.Size = New System.Drawing.Size(29, 13)
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "DUI:"
         '
@@ -340,7 +351,7 @@ Partial Class medPacientes
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(43, 189)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(78, 15)
+        Me.Label6.Size = New System.Drawing.Size(71, 13)
         Me.Label6.TabIndex = 4
         Me.Label6.Text = "Teléfono Fijo:"
         '
@@ -349,7 +360,7 @@ Partial Class medPacientes
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(348, 61)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(102, 15)
+        Me.Label3.Size = New System.Drawing.Size(93, 13)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Segundo Apellido:"
         '
@@ -358,7 +369,7 @@ Partial Class medPacientes
         Me.txtPriNombre.Location = New System.Drawing.Point(127, 26)
         Me.txtPriNombre.MaxLength = 25
         Me.txtPriNombre.Name = "txtPriNombre"
-        Me.txtPriNombre.Size = New System.Drawing.Size(194, 22)
+        Me.txtPriNombre.Size = New System.Drawing.Size(194, 20)
         Me.txtPriNombre.TabIndex = 2
         '
         'Label2
@@ -366,7 +377,7 @@ Partial Class medPacientes
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(32, 61)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(90, 15)
+        Me.Label2.Size = New System.Drawing.Size(79, 13)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Primer Apellido:"
         '
@@ -375,7 +386,7 @@ Partial Class medPacientes
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(349, 29)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 15)
+        Me.Label4.Size = New System.Drawing.Size(93, 13)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Segundo Nombre:"
         '
@@ -384,7 +395,7 @@ Partial Class medPacientes
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(33, 29)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(89, 15)
+        Me.Label9.Size = New System.Drawing.Size(79, 13)
         Me.Label9.TabIndex = 4
         Me.Label9.Text = "Primer Nombre:"
         '
@@ -394,10 +405,10 @@ Partial Class medPacientes
         Me.TabPage2.Controls.Add(Me.btnCancelar)
         Me.TabPage2.Controls.Add(Me.btnAgregar)
         Me.TabPage2.Controls.Add(Me.GroupBox3)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(713, 329)
+        Me.TabPage2.Size = New System.Drawing.Size(713, 331)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Otros Datos"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -424,7 +435,7 @@ Partial Class medPacientes
         Me.txtTelEmergencia2.Location = New System.Drawing.Point(506, 69)
         Me.txtTelEmergencia2.MaxLength = 8
         Me.txtTelEmergencia2.Name = "txtTelEmergencia2"
-        Me.txtTelEmergencia2.Size = New System.Drawing.Size(171, 22)
+        Me.txtTelEmergencia2.Size = New System.Drawing.Size(171, 20)
         Me.txtTelEmergencia2.TabIndex = 6
         '
         'txtTelEmergencia1
@@ -432,7 +443,7 @@ Partial Class medPacientes
         Me.txtTelEmergencia1.Location = New System.Drawing.Point(506, 30)
         Me.txtTelEmergencia1.MaxLength = 8
         Me.txtTelEmergencia1.Name = "txtTelEmergencia1"
-        Me.txtTelEmergencia1.Size = New System.Drawing.Size(171, 22)
+        Me.txtTelEmergencia1.Size = New System.Drawing.Size(171, 20)
         Me.txtTelEmergencia1.TabIndex = 4
         '
         'Label14
@@ -440,7 +451,7 @@ Partial Class medPacientes
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(444, 72)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(56, 15)
+        Me.Label14.Size = New System.Drawing.Size(52, 13)
         Me.Label14.TabIndex = 4
         Me.Label14.Text = "Teléfono:"
         '
@@ -449,7 +460,7 @@ Partial Class medPacientes
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(444, 33)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(56, 15)
+        Me.Label10.Size = New System.Drawing.Size(52, 13)
         Me.Label10.TabIndex = 4
         Me.Label10.Text = "Teléfono:"
         '
@@ -458,7 +469,7 @@ Partial Class medPacientes
         Me.txtEmergencia2.Location = New System.Drawing.Point(191, 69)
         Me.txtEmergencia2.MaxLength = 75
         Me.txtEmergencia2.Name = "txtEmergencia2"
-        Me.txtEmergencia2.Size = New System.Drawing.Size(223, 22)
+        Me.txtEmergencia2.Size = New System.Drawing.Size(223, 20)
         Me.txtEmergencia2.TabIndex = 5
         '
         'Label12
@@ -466,7 +477,7 @@ Partial Class medPacientes
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(14, 72)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(171, 15)
+        Me.Label12.Size = New System.Drawing.Size(162, 13)
         Me.Label12.TabIndex = 4
         Me.Label12.Text = "En caso de Emergencia llamar a:"
         '
@@ -475,7 +486,7 @@ Partial Class medPacientes
         Me.txtEmergencia1.Location = New System.Drawing.Point(191, 30)
         Me.txtEmergencia1.MaxLength = 75
         Me.txtEmergencia1.Name = "txtEmergencia1"
-        Me.txtEmergencia1.Size = New System.Drawing.Size(223, 22)
+        Me.txtEmergencia1.Size = New System.Drawing.Size(223, 20)
         Me.txtEmergencia1.TabIndex = 3
         '
         'Label16
@@ -483,7 +494,7 @@ Partial Class medPacientes
         Me.Label16.AutoSize = True
         Me.Label16.Location = New System.Drawing.Point(14, 33)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(171, 15)
+        Me.Label16.Size = New System.Drawing.Size(162, 13)
         Me.Label16.TabIndex = 4
         Me.Label16.Text = "En caso de Emergencia llamar a:"
         '
@@ -498,6 +509,18 @@ Partial Class medPacientes
         Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Image = Global.SisCliMed.My.Resources.Resources.vet_plus
+        Me.btnAgregar.Location = New System.Drawing.Point(242, 270)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(108, 46)
+        Me.btnAgregar.TabIndex = 7
+        Me.btnAgregar.Text = "  Agregar"
+        Me.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -524,40 +547,17 @@ Partial Class medPacientes
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(16, 31)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 15)
+        Me.Label1.Size = New System.Drawing.Size(76, 13)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Antecedentes:"
         '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.Image = Global.SisCliMed.My.Resources.Resources.vet_next
-        Me.btnSiguiente.Location = New System.Drawing.Point(582, 186)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(108, 46)
-        Me.btnSiguiente.TabIndex = 15
-        Me.btnSiguiente.Text = "Siguiente"
-        Me.btnSiguiente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.btnSiguiente.UseVisualStyleBackColor = True
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.Image = Global.SisCliMed.My.Resources.Resources.vet_plus
-        Me.btnAgregar.Location = New System.Drawing.Point(242, 270)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(108, 46)
-        Me.btnAgregar.TabIndex = 7
-        Me.btnAgregar.Text = "  Agregar"
-        Me.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAgregar.UseVisualStyleBackColor = True
-        '
         'medPacientes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(744, 380)
         Me.Controls.Add(Me.TabControl1)
-        Me.Font = New System.Drawing.Font("Open Sans", 8.25!)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Name = "medPacientes"
         Me.Text = "Registro de Pacientes"
         Me.TabControl1.ResumeLayout(False)
