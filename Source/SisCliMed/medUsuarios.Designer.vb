@@ -24,13 +24,7 @@ Partial Class medUsuarios
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -39,14 +33,15 @@ Partial Class medUsuarios
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.cmbRol = New System.Windows.Forms.ComboBox()
         Me.txtPasswd = New System.Windows.Forms.TextBox()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -56,7 +51,6 @@ Partial Class medUsuarios
         '
         Me.GroupBox2.Controls.Add(Me.btnEliminar)
         Me.GroupBox2.Controls.Add(Me.btnModificar)
-        Me.GroupBox2.Controls.Add(Me.btnLimpiar)
         Me.GroupBox2.Controls.Add(Me.dgvUsuarios)
         Me.GroupBox2.Controls.Add(Me.txtBusqueda)
         Me.GroupBox2.Controls.Add(Me.Label4)
@@ -70,71 +64,29 @@ Partial Class medUsuarios
         'btnEliminar
         '
         Me.btnEliminar.Font = New System.Drawing.Font("Open Sans", 8.25!)
+        Me.btnEliminar.Image = Global.SisCliMed.My.Resources.Resources.vet_delete
         Me.btnEliminar.Location = New System.Drawing.Point(414, 190)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(108, 46)
         Me.btnEliminar.TabIndex = 12
         Me.btnEliminar.Text = " Eliminar"
+        Me.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEliminar.UseVisualStyleBackColor = True
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Font = New System.Drawing.Font("Open Sans", 8.25!)
-        Me.btnModificar.Location = New System.Drawing.Point(293, 190)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(108, 46)
-        Me.btnModificar.TabIndex = 11
-        Me.btnModificar.Text = " Modificar"
-        Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnModificar.UseVisualStyleBackColor = True
-        '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.Font = New System.Drawing.Font("Open Sans", 8.25!)
-        Me.btnLimpiar.Location = New System.Drawing.Point(170, 190)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(108, 46)
-        Me.btnLimpiar.TabIndex = 10
-        Me.btnLimpiar.Text = "Limpiar"
-        Me.btnLimpiar.UseVisualStyleBackColor = True
         '
         'dgvUsuarios
         '
         Me.dgvUsuarios.AllowUserToAddRows = False
         Me.dgvUsuarios.AllowUserToDeleteRows = False
+        Me.dgvUsuarios.AllowUserToResizeRows = False
+        Me.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
         Me.dgvUsuarios.Location = New System.Drawing.Point(6, 52)
         Me.dgvUsuarios.Name = "dgvUsuarios"
         Me.dgvUsuarios.ReadOnly = True
+        Me.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvUsuarios.Size = New System.Drawing.Size(516, 132)
         Me.dgvUsuarios.TabIndex = 9
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Usuario"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Rol"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Contraseña"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.HeaderText = "Nombre"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
         '
         'txtBusqueda
         '
@@ -208,6 +160,7 @@ Partial Class medUsuarios
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(122, 50)
+        Me.txtNombre.MaxLength = 100
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(400, 22)
         Me.txtNombre.TabIndex = 2
@@ -220,27 +173,6 @@ Partial Class medUsuarios
         Me.Label5.Size = New System.Drawing.Size(106, 15)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Nombre Completo:"
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Font = New System.Drawing.Font("Open Sans", 8.25!)
-        Me.btnCancelar.Location = New System.Drawing.Point(414, 80)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
-        Me.btnCancelar.TabIndex = 7
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.Font = New System.Drawing.Font("Open Sans", 8.25!)
-        Me.btnGuardar.Location = New System.Drawing.Point(293, 80)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
-        Me.btnGuardar.TabIndex = 6
-        Me.btnGuardar.Text = " Agregar"
-        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'cmbRol
         '
@@ -255,7 +187,7 @@ Partial Class medUsuarios
         'txtPasswd
         '
         Me.txtPasswd.Location = New System.Drawing.Point(372, 22)
-        Me.txtPasswd.MaxLength = 12
+        Me.txtPasswd.MaxLength = 16
         Me.txtPasswd.Name = "txtPasswd"
         Me.txtPasswd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPasswd.Size = New System.Drawing.Size(150, 22)
@@ -264,6 +196,7 @@ Partial Class medUsuarios
         'txtUsername
         '
         Me.txtUsername.Location = New System.Drawing.Point(122, 22)
+        Me.txtUsername.MaxLength = 10
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(151, 22)
         Me.txtUsername.TabIndex = 0
@@ -295,6 +228,45 @@ Partial Class medUsuarios
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Nombre de usuario:"
         '
+        'btnModificar
+        '
+        Me.btnModificar.Font = New System.Drawing.Font("Open Sans", 8.25!)
+        Me.btnModificar.Image = Global.SisCliMed.My.Resources.Resources.vet_edit1
+        Me.btnModificar.Location = New System.Drawing.Point(293, 190)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(108, 46)
+        Me.btnModificar.TabIndex = 11
+        Me.btnModificar.Text = " Modificar"
+        Me.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Font = New System.Drawing.Font("Open Sans", 8.25!)
+        Me.btnCancelar.Image = Global.SisCliMed.My.Resources.Resources.vet_cancel
+        Me.btnCancelar.Location = New System.Drawing.Point(414, 80)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(108, 46)
+        Me.btnCancelar.TabIndex = 7
+        Me.btnCancelar.Text = " Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Font = New System.Drawing.Font("Open Sans", 8.25!)
+        Me.btnGuardar.Image = Global.SisCliMed.My.Resources.Resources.vet_plus
+        Me.btnGuardar.Location = New System.Drawing.Point(293, 80)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(108, 46)
+        Me.btnGuardar.TabIndex = 6
+        Me.btnGuardar.Text = " Agregar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnGuardar.UseVisualStyleBackColor = True
+        '
         'medUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
@@ -316,12 +288,7 @@ Partial Class medUsuarios
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
     Friend WithEvents btnModificar As System.Windows.Forms.Button
-    Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents dgvUsuarios As System.Windows.Forms.DataGridView
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox

@@ -23,10 +23,7 @@ Partial Class medInfoGral
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnCargarLogo = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
-        Me.btnBorrar = New System.Windows.Forms.Button()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.txtAmbito = New System.Windows.Forms.TextBox()
@@ -35,6 +32,10 @@ Partial Class medInfoGral
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.btnCargarLogo = New System.Windows.Forms.Button()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.btnBorrar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -60,44 +61,22 @@ Partial Class medInfoGral
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registro"
         '
-        'btnCargarLogo
-        '
-        Me.btnCargarLogo.Location = New System.Drawing.Point(413, 168)
-        Me.btnCargarLogo.Name = "btnCargarLogo"
-        Me.btnCargarLogo.Size = New System.Drawing.Size(141, 46)
-        Me.btnCargarLogo.TabIndex = 4
-        Me.btnCargarLogo.Text = "Cargar Logo..."
-        Me.btnCargarLogo.UseVisualStyleBackColor = True
-        '
         'btnActualizar
         '
+        Me.btnActualizar.Image = Global.SisCliMed.My.Resources.Resources.vet_save
         Me.btnActualizar.Location = New System.Drawing.Point(96, 168)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(108, 46)
         Me.btnActualizar.TabIndex = 5
-        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.Text = "  Actualizar"
+        Me.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnActualizar.UseVisualStyleBackColor = True
-        '
-        'picLogo
-        '
-        Me.picLogo.Location = New System.Drawing.Point(413, 17)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(141, 144)
-        Me.picLogo.TabIndex = 9
-        Me.picLogo.TabStop = False
-        '
-        'btnBorrar
-        '
-        Me.btnBorrar.Location = New System.Drawing.Point(255, 168)
-        Me.btnBorrar.Name = "btnBorrar"
-        Me.btnBorrar.Size = New System.Drawing.Size(108, 46)
-        Me.btnBorrar.TabIndex = 6
-        Me.btnBorrar.Text = "Borrar"
-        Me.btnBorrar.UseVisualStyleBackColor = True
         '
         'txtTelefono
         '
         Me.txtTelefono.Location = New System.Drawing.Point(71, 82)
+        Me.txtTelefono.MaxLength = 8
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(133, 22)
         Me.txtTelefono.TabIndex = 2
@@ -105,6 +84,7 @@ Partial Class medInfoGral
         'txtDireccion
         '
         Me.txtDireccion.Location = New System.Drawing.Point(71, 112)
+        Me.txtDireccion.MaxLength = 200
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(319, 46)
@@ -113,6 +93,7 @@ Partial Class medInfoGral
         'txtAmbito
         '
         Me.txtAmbito.Location = New System.Drawing.Point(71, 52)
+        Me.txtAmbito.MaxLength = 50
         Me.txtAmbito.Name = "txtAmbito"
         Me.txtAmbito.Size = New System.Drawing.Size(319, 22)
         Me.txtAmbito.TabIndex = 1
@@ -138,6 +119,7 @@ Partial Class medInfoGral
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(71, 22)
+        Me.txtNombre.MaxLength = 50
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(215, 22)
         Me.txtNombre.TabIndex = 0
@@ -159,6 +141,43 @@ Partial Class medInfoGral
         Me.Label1.Size = New System.Drawing.Size(52, 15)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Nombre:"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'btnCargarLogo
+        '
+        Me.btnCargarLogo.Image = Global.SisCliMed.My.Resources.Resources.vet_picture
+        Me.btnCargarLogo.Location = New System.Drawing.Point(413, 168)
+        Me.btnCargarLogo.Name = "btnCargarLogo"
+        Me.btnCargarLogo.Size = New System.Drawing.Size(141, 46)
+        Me.btnCargarLogo.TabIndex = 4
+        Me.btnCargarLogo.Text = "  Cargar Logo..."
+        Me.btnCargarLogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCargarLogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCargarLogo.UseVisualStyleBackColor = True
+        '
+        'picLogo
+        '
+        Me.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picLogo.Location = New System.Drawing.Point(413, 17)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(141, 144)
+        Me.picLogo.TabIndex = 9
+        Me.picLogo.TabStop = False
+        '
+        'btnBorrar
+        '
+        Me.btnBorrar.Image = Global.SisCliMed.My.Resources.Resources.vet_delete
+        Me.btnBorrar.Location = New System.Drawing.Point(255, 168)
+        Me.btnBorrar.Name = "btnBorrar"
+        Me.btnBorrar.Size = New System.Drawing.Size(108, 46)
+        Me.btnBorrar.TabIndex = 6
+        Me.btnBorrar.Text = "  Borrar"
+        Me.btnBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBorrar.UseVisualStyleBackColor = True
         '
         'medInfoGral
         '
@@ -188,4 +207,5 @@ Partial Class medInfoGral
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 End Class

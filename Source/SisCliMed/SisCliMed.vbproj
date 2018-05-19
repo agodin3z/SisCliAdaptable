@@ -46,10 +46,17 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -73,6 +80,7 @@
     <Compile Include="..\SisCliVet\cGenerica.vb">
       <Link>cGenerica.vb</Link>
     </Compile>
+    <Compile Include="cConexion.vb" />
     <Compile Include="medAbout.Designer.vb">
       <DependentUpon>medAbout.vb</DependentUpon>
     </Compile>
@@ -134,6 +142,18 @@
       <DependentUpon>medPRINCIPAL.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="medReceta.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>medReceta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="medReporteReceta.Designer.vb">
+      <DependentUpon>medReporteReceta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medReporteReceta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="medReportPacientes.Designer.vb">
       <DependentUpon>medReportPacientes.vb</DependentUpon>
     </Compile>
@@ -150,6 +170,12 @@
       <DependentUpon>medUsuarios.vb</DependentUpon>
     </Compile>
     <Compile Include="medUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medPosponerCita.Designer.vb">
+      <DependentUpon>medPosponerCita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="medPosponerCita.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -199,6 +225,13 @@
     <EmbeddedResource Include="medPRINCIPAL.resx">
       <DependentUpon>medPRINCIPAL.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="medReceta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>medReceta.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medReporteReceta.resx">
+      <DependentUpon>medReporteReceta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="medReportPacientes.resx">
       <DependentUpon>medReportPacientes.vb</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="medUsuarios.resx">
       <DependentUpon>medUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medPosponerCita.resx">
+      <DependentUpon>medPosponerCita.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -232,6 +268,87 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall_med.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-check-cita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-entrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-hospital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-calendar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-agenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-info1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vet-edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
